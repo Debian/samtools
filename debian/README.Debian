@@ -1,0 +1,10 @@
+SAMtools for Debian
+-------------------
+
+The extra utilities found in the ‘misc’ directory of the upstream archive are
+placed in ‘/usr/share/samtools’ and ‘/usr/lib/samtools’ for Perl scripts and
+binary executables respectively.
+
+Currently, the BAM library only exists in static version.
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 08 Aug 2009 11:50:09 +0900
