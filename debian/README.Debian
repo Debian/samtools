@@ -5,6 +5,9 @@ The extra utilities found in the ‘misc’ directory of the upstream archive ar
 placed in ‘/usr/share/samtools’ and ‘/usr/lib/samtools’ for Perl scripts and
 binary executables respectively.
 
-Currently, the BAM library only exists in static version.
+Currently, the BAM library only exists in static version. It (actually the
+whole package) is built with the -fPIC option, to allow the compilation of the
+Bio::SamTools Perl module on the amd64 platform (Debian package
+libbio-samtools-perl).
 
- -- Charles Plessy <plessy@debian.org>  Sat, 08 Aug 2009 11:50:09 +0900
+ -- Charles Plessy <plessy@debian.org>  Thu, 03 Sep 2009 19:24:02 +0900

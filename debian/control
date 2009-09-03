@@ -5,7 +5,7 @@ Maintainer: Debian-Med Packaging Team <debian-med-packaging@lists.alioth.debian.
 DM-Upload-Allowed: yes
 Uploaders: Charles Plessy <plessy@debian.org>
 Build-Depends: debhelper (>= 7), cdbs, libncurses5-dev, zlib1g-dev
-Standards-Version: 3.8.2
+Standards-Version: 3.8.3
 Homepage: http://samtools.sourceforge.net
 Vcs-Browser: http://svn.debian.org/wsvn/debian-med/trunk/packages/samtools/trunk/?rev=0&sc=0
 Vcs-Svn: svn://svn.debian.org/svn/debian-med/trunk/packages/samtools/trunk/
@@ -15,10 +15,10 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
- in the BAM format. It imports from and exports to the SAM (Sequence
- Alignment/Map) format, does sorting, merging and indexing, and allows to
- retrieve reads in any regions swiftly. It is designed to work on a stream, and
- is able to open a BAM (not SAM) file on a remote FTP server.
+ in the binary BAM format. It imports from and exports to the ascii SAM
+ (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
+ to retrieve reads in any regions swiftly. It is designed to work on a stream,
+ and is able to open a BAM (not SAM) file on a remote FTP server.
 
 Package: libbam-dev
 Architecture: any
@@ -27,6 +27,6 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: manipulates nucleotide sequence alignments in BAM or SAM format 
  The BAM library provides I/O and various operations on manipulating nucleotide
  sequence alignments in the BAM (Binary Alignment/Mapping) or SAM (Sequence
- Alignment/Map) format. It now supports importing from or exporting to TAM,
+ Alignment/Map) format. It now supports importing from or exporting to SAM,
  sorting, merging, generating pileup, and quickly retrieval of reads overlapped
  with a specified region. 

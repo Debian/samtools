@@ -1,3 +1,12 @@
+samtools (0.1.5c-2) unstable; urgency=low
+
+  * Rebuilt with -fPIC (debian/rules, README.Debian).
+  * Small corrections to the description from upstream (debian/changelog).
+  * Incremented Standards-Version to reflect conformance with Policy 3.8.3
+    (no changes needed).
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 03 Sep 2009 19:29:40 +0900
+
 samtools (0.1.5c-1) unstable; urgency=low
 
   * Initial release (Closes: #540453)
