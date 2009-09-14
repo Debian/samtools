@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#define PACKAGE_VERSION "0.1.2 (20090521)"
+#define PACKAGE_VERSION "r439"
 
 //#define MAQ_LONGREADS
 
@@ -111,9 +111,9 @@ void maq2tam_core(gzFile fp, const char *rg)
 				else if (m1->flag&(PAIRFLAG_RF|PAIRFLAG_RR)) c = 1;
 				else c = m1->pos&1;
 			}
-			flag |= c;
+			if (c) flag |= 0x20;
 		}
-		if (flag) {
+		if (m1->flag) {
 			int l = strlen(m1->name);
 			if (m1->name[l-2] == '/') {
 				flag |= (m1->name[l-1] == '1')? 0x40 : 0x80;

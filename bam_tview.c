@@ -1,6 +1,21 @@
-#ifndef _NO_CURSES
+#undef _HAVE_CURSES
+
+#if _CURSES_LIB == 0
+#elif _CURSES_LIB == 1
 #include <curses.h>
-#ifdef NCURSES_VERSION
+#ifndef NCURSES_VERSION
+#warning "_CURSES_LIB=1 but NCURSES_VERSION not defined; tview is NOT compiled"
+#else
+#define _HAVE_CURSES
+#endif
+#elif _CURSES_LIB == 2
+#include <xcurses.h>
+#define _HAVE_CURSES
+#else
+#warning "_CURSES_LIB is not 0, 1 or 2; tview is NOT compiled"
+#endif
+
+#ifdef _HAVE_CURSES
 #include <ctype.h>
 #include <assert.h>
 #include <string.h>
@@ -37,7 +52,7 @@ typedef struct {
 	faidx_t *fai;
 	bam_maqcns_t *bmc;
 
-	int ccol, last_pos, row_shift, base_for, color_for, is_dot, l_ref, ins;
+	int ccol, last_pos, row_shift, base_for, color_for, is_dot, l_ref, ins, no_skip, show_name;
 	char *ref;
 } tview_t;
 
@@ -50,11 +65,11 @@ int tv_pl_func(uint32_t tid, uint32_t pos, int n, const bam_pileup1_t *pl, void 
 	// print referece
 	rb = (tv->ref && pos - tv->left_pos < tv->l_ref)? tv->ref[pos - tv->left_pos] : 'N';
 	for (i = tv->last_pos + 1; i < pos; ++i) {
-		if (i%10 == 0) mvprintw(0, tv->ccol, "%-d", i+1);
+		if (i%10 == 0 && tv->mcol - tv->ccol >= 10) mvprintw(0, tv->ccol, "%-d", i+1);
 		c = tv->ref? tv->ref[i - tv->left_pos] : 'N';
 		mvaddch(1, tv->ccol++, c);
 	}
-	if (pos%10 == 0) mvprintw(0, tv->ccol, "%-d", pos+1);
+	if (pos%10 == 0 && tv->mcol - tv->ccol >= 10) mvprintw(0, tv->ccol, "%-d", pos+1);
 	// print consensus
 	call = bam_maqcns_call(n, pl, tv->bmc);
 	attr = A_UNDERLINE;
@@ -85,20 +100,28 @@ int tv_pl_func(uint32_t tid, uint32_t pos, int n, const bam_pileup1_t *pl, void 
 						c = bam_aux_getCSi(p->b, p->qpos);
 						// assume that if we found one color, we will be able to get the color error
 						if (tv->is_dot && '-' == bam_aux_getCEi(p->b, p->qpos)) c = bam1_strand(p->b)? ',' : '.';
-					}
-					else {
-						c = bam_nt16_rev_table[bam1_seqi(bam1_seq(p->b), p->qpos)];
-						if (tv->is_dot && toupper(c) == toupper(rb)) c = bam1_strand(p->b)? ',' : '.';
+					} else {
+						if (tv->show_name) {
+							char *name = bam1_qname(p->b);
+							c = (p->qpos + 1 >= p->b->core.l_qname)? ' ' : name[p->qpos];
+						} else {
+							c = bam_nt16_rev_table[bam1_seqi(bam1_seq(p->b), p->qpos)];
+							if (tv->is_dot && toupper(c) == toupper(rb)) c = bam1_strand(p->b)? ',' : '.';
+						}
 					}
 				} else c = '*';
 			} else { // padding
 				if (j > p->indel) c = '*';
 				else { // insertion
 					if (tv->base_for ==  TV_BASE_NUCL) {
-						c = bam_nt16_rev_table[bam1_seqi(bam1_seq(p->b), p->qpos + j)];
-						if (j == 0 && tv->is_dot && toupper(c) == toupper(rb)) c = bam1_strand(p->b)? ',' : '.';
-					}
-					else {
+						if (tv->show_name) {
+							char *name = bam1_qname(p->b);
+							c = (p->qpos + j + 1 >= p->b->core.l_qname)? ' ' : name[p->qpos + j];
+						} else {
+							c = bam_nt16_rev_table[bam1_seqi(bam1_seq(p->b), p->qpos + j)];
+							if (j == 0 && tv->is_dot && toupper(c) == toupper(rb)) c = bam1_strand(p->b)? ',' : '.';
+						}
+					} else {
 						c = bam_aux_getCSi(p->b, p->qpos + j);
 						if (tv->is_dot && '-' == bam_aux_getCEi(p->b, p->qpos + j)) c = bam1_strand(p->b)? ',' : '.';
 					}
@@ -177,13 +200,10 @@ tview_t *tv_init(const char *fn, const char *fn_fa)
 	clear();
 	noecho();
 	cbreak();
-#ifdef NCURSES_VERSION
+	tv->mrow = 24; tv->mcol = 80;
 	getmaxyx(stdscr, tv->mrow, tv->mcol);
-#else
-	tv->mrow = 80; tv->mcol = 40;
-#endif
 	tv->wgoto = newwin(3, TV_MAX_GOTO + 10, 10, 5);
-	tv->whelp = newwin(27, 40, 5, 5);
+	tv->whelp = newwin(29, 40, 5, 5);
 	tv->color_for = TV_COLOR_MAPQ;
 	start_color();
 	init_pair(1, COLOR_BLUE, COLOR_BLACK);
@@ -216,6 +236,14 @@ void tv_destroy(tview_t *tv)
 int tv_fetch_func(const bam1_t *b, void *data)
 {
 	tview_t *tv = (tview_t*)data;
+	if (tv->no_skip) {
+		uint32_t *cigar = bam1_cigar(b); // this is cheating...
+		int i;
+		for (i = 0; i <b->core.n_cigar; ++i) {
+			if ((cigar[i]&0xf) == BAM_CREF_SKIP)
+				cigar[i] = cigar[i]>>4<<4 | BAM_CDEL;
+		}
+	}
 	bam_lplbuf_push(b, tv->lplbuf);
 	return 0;
 }
@@ -240,6 +268,13 @@ int tv_draw_aln(tview_t *tv, int tid, int pos)
 	bam_lplbuf_reset(tv->lplbuf);
 	bam_fetch(tv->fp, tv->idx, tv->curr_tid, tv->left_pos, tv->left_pos + tv->mcol, tv, tv_fetch_func);
 	bam_lplbuf_push(0, tv->lplbuf);
+
+	while (tv->ccol < tv->mcol) {
+		int pos = tv->last_pos + 1;
+		if (pos%10 == 0 && tv->mcol - tv->ccol >= 10) mvprintw(0, tv->ccol, "%-d", pos+1);
+		mvaddch(1, tv->ccol++, (tv->ref && pos < tv->l_ref)? tv->ref[pos - tv->left_pos] : 'N');
+		++tv->last_pos;
+	}
 	return 0;
 }
 
@@ -292,6 +327,8 @@ static void tv_win_help(tview_t *tv) {
 	mvwprintw(win, r++, 2, "c          Color for cs color");
 	mvwprintw(win, r++, 2, "z          Color for cs qual");
 	mvwprintw(win, r++, 2, ".          Toggle on/off dot view");
+	mvwprintw(win, r++, 2, "s          Toggle on/off ref skip");
+	mvwprintw(win, r++, 2, "r          Toggle on/off rd name");
 	mvwprintw(win, r++, 2, "N          Turn on nt view");
 	mvwprintw(win, r++, 2, "C          Turn on cs view");
 	mvwprintw(win, r++, 2, "i          Toggle on/off ins");
@@ -310,7 +347,6 @@ void tv_loop(tview_t *tv)
 	tid = tv->curr_tid; pos = tv->left_pos;
 	while (1) {
 		int c = getch();
-		//if(256 < c) {c = 1 + (c%256);} // Terminal was displaying ctrl-H as 263 via ssh from Mac OS X 10.5 computer 
 		switch (c) {
 			case '?': tv_win_help(tv); break;
 			case '\033':
@@ -321,6 +357,8 @@ void tv_loop(tview_t *tv)
 			case 'n': tv->color_for = TV_COLOR_NUCL; break;
 			case 'c': tv->color_for = TV_COLOR_COL; break;
 			case 'z': tv->color_for = TV_COLOR_COLQ; break;
+			case 's': tv->no_skip = !tv->no_skip; break;
+			case 'r': tv->show_name = !tv->show_name; break;
 			case KEY_LEFT:
 			case 'h': --pos; break;
 			case KEY_RIGHT:
@@ -342,9 +380,7 @@ void tv_loop(tview_t *tv)
 			case 'k': ++tv->row_shift; break;
 			case KEY_BACKSPACE:
 			case '\177': pos -= tv->mcol; break;
-#ifdef KEY_RESIZE
 			case KEY_RESIZE: getmaxyx(stdscr, tv->mrow, tv->mcol); break;
-#endif
 			default: continue;
 		}
 		if (pos < 0) pos = 0;
@@ -368,12 +404,12 @@ int bam_tview_main(int argc, char *argv[])
 	tv_destroy(tv);
 	return 0;
 }
-#else // #ifdef NCURSES_VERSION
-#warning "The ncurses library is unavailable; tview is disabled."
+#else // #ifdef _HAVE_CURSES
+#include <stdio.h>
+#warning "No curses library is available; tview is disabled."
 int bam_tview_main(int argc, char *argv[])
 {
 	fprintf(stderr, "[bam_tview_main] The ncurses library is unavailable; tview is not compiled.\n");
 	return 1;
 }
-#endif
-#endif // #ifndef _NO_CURSES
+#endif // #ifdef _HAVE_CURSES
