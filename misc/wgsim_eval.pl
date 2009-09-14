@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 # Contact: lh3
-# Version: 0.1.3
+# Version: 0.1.5
 
 use strict;
 use warnings;
@@ -11,16 +11,18 @@ use Getopt::Std;
 exit;
 
 sub wgsim_eval {
-  my %opts;
-  getopts('pc', \%opts);
-  die("Usage: wgsim_eval.pl [-pc] <in.sam>\n") if (@ARGV == 0 && -t STDIN);
+  my %opts = (g=>5);
+  getopts('pcg:', \%opts);
+  die("Usage: wgsim_eval.pl [-pc] [-g $opts{g}] <in.sam>\n") if (@ARGV == 0 && -t STDIN);
   my (@c0, @c1);
   my ($max_q, $flag) = (0, 0);
-  my $gap = 5;
+  my $gap = $opts{g};
   $flag |= 1 if (defined $opts{p});
   $flag |= 2 if (defined $opts{c});
   while (<>) {
-	my @t = split;
+	next if (/^\@/);
+	my @t = split("\t");
+	next if (@t < 11);
 	my $line = $_;
 	my ($q, $is_correct, $chr, $left, $rght) = (int($t[4]/10), 1, $t[2], $t[3], $t[3]);
 	$max_q = $q if ($q > $max_q);
@@ -28,8 +30,11 @@ sub wgsim_eval {
 	$_ = $t[5]; s/(\d+)[MDN]/$rght+=$1,'x'/eg;
 	--$rght;
 	# correct for soft clipping
-	$left -= $1 if (/^(\d+)S/);
-	$rght += $1 if (/(\d+)S$/);
+	my ($left0, $rght0) = ($left, $rght);
+	$left -= $1 if (/^(\d+)[SH]/);
+	$rght += $1 if (/(\d+)[SH]$/);
+	$left0 -= $1 if (/(\d+)[SH]$/);
+	$rght0 += $1 if (/^(\d+)[SH]/);
 	# skip unmapped reads
 	next if (($t[1]&0x4) || $chr eq '*');
 	# parse read name and check
@@ -39,19 +44,19 @@ sub wgsim_eval {
 	  } else {
 		if ($flag & 2) {
 		  if (($t[1]&0x40) && !($t[1]&0x10)) { # F3, forward
-			$is_correct = 0 if (abs($2 - $left) > $gap);
+			$is_correct = 0 if (abs($2 - $left) > $gap && abs($2 - $left0) > $gap);
 		  } elsif (($t[1]&0x40) && ($t[1]&0x10)) { # F3, reverse
-			$is_correct = 0 if (abs($3 - $rght) > $gap);
+			$is_correct = 0 if (abs($3 - $rght) > $gap && abs($3 - $rght0) > $gap);
 		  } elsif (($t[1]&0x80) && !($t[1]&0x10)) { # R3, forward
-			$is_correct = 0 if (abs($3 - $left) > $gap);
+			$is_correct = 0 if (abs($3 - $left) > $gap && abs($3 - $left0) > $gap);
 		  } else { # R3, reverse
-			$is_correct = 0 if (abs($2 - $rght) > $gap);
+			$is_correct = 0 if (abs($2 - $rght) > $gap && abs($3 - $rght0) > $gap);
 		  }
 		} else {
 		  if ($t[1] & 0x10) { # reverse
-			$is_correct = 0 if (abs($3 - $rght) > $gap); # in case of indels that are close to the end of a reads
+			$is_correct = 0 if (abs($3 - $rght) > $gap && abs($3 - $rght0) > $gap); # in case of indels that are close to the end of a reads
 		  } else {
-			$is_correct = 0 if (abs($2 - $left) > $gap);
+			$is_correct = 0 if (abs($2 - $left) > $gap && abs($2 - $left0) > $gap);
 		  }
 		}
 	  }

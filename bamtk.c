@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <assert.h>
+#include <fcntl.h>
 #include "bam.h"
 
+#ifdef _USE_KNETFILE
+#include "knetfile.h"
+#endif
+
 #ifndef PACKAGE_VERSION
-#define PACKAGE_VERSION "0.1.5c (r385)"
+#define PACKAGE_VERSION "0.1.6 (r453)"
 #endif
 
 int bam_taf2baf(int argc, char *argv[]);
@@ -71,27 +76,33 @@ static int usage()
 	fprintf(stderr, "Program: samtools (Tools for alignments in the SAM format)\n");
 	fprintf(stderr, "Version: %s\n\n", PACKAGE_VERSION);
 	fprintf(stderr, "Usage:   samtools <command> [options]\n\n");
-	fprintf(stderr, "Command: import      import from SAM (obsolete; use `view')\n");
-	fprintf(stderr, "         view        export to the text format\n");
+	fprintf(stderr, "Command: view        SAM<->BAM conversion\n");
 	fprintf(stderr, "         sort        sort alignment file\n");
-	fprintf(stderr, "         merge       merge multiple sorted alignment files\n");
 	fprintf(stderr, "         pileup      generate pileup output\n");
 	fprintf(stderr, "         faidx       index/extract FASTA\n");
-#ifndef _NO_CURSES
+#if _CURSES_LIB != 0
 	fprintf(stderr, "         tview       text alignment viewer\n");
 #endif
 	fprintf(stderr, "         index       index alignment\n");
 	fprintf(stderr, "         fixmate     fix mate information\n");
-	fprintf(stderr, "         rmdup       remove PCR duplicates\n");
 	fprintf(stderr, "         glfview     print GLFv3 file\n");
 	fprintf(stderr, "         flagstat    simple stats\n");
-	fprintf(stderr, "         fillmd      fill the MD tag and change identical base to =\n");
+	fprintf(stderr, "         calmd       recalculate MD/NM tags and '=' bases\n");
+	fprintf(stderr, "         merge       merge sorted alignments (Picard recommended)\n");
+	fprintf(stderr, "         rmdup       remove PCR duplicates (Picard recommended)\n");
 	fprintf(stderr, "\n");
 	return 1;
 }
 
 int main(int argc, char *argv[])
 {
+#ifdef _WIN32
+	setmode(fileno(stdout), O_BINARY);
+	setmode(fileno(stdin),  O_BINARY);
+#ifdef _USE_KNETFILE
+	knet_win32_init();
+#endif
+#endif
 	if (argc < 2) return usage();
 	if (strcmp(argv[1], "view") == 0) return main_samview(argc-1, argv+1);
 	else if (strcmp(argv[1], "import") == 0) return main_import(argc-1, argv+1);
@@ -106,8 +117,9 @@ int main(int argc, char *argv[])
 	else if (strcmp(argv[1], "glfview") == 0) return glf3_view_main(argc-1, argv+1);
 	else if (strcmp(argv[1], "flagstat") == 0) return bam_flagstat(argc-1, argv+1);
 	else if (strcmp(argv[1], "tagview") == 0) return bam_tagview(argc-1, argv+1);
+	else if (strcmp(argv[1], "calmd") == 0) return bam_fillmd(argc-1, argv+1);
 	else if (strcmp(argv[1], "fillmd") == 0) return bam_fillmd(argc-1, argv+1);
-#ifndef _NO_CURSES
+#if _CURSES_LIB != 0
 	else if (strcmp(argv[1], "tview") == 0) return bam_tview_main(argc-1, argv+1);
 #endif
 	else {

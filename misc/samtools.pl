@@ -6,11 +6,12 @@ use strict;
 use warnings;
 use Getopt::Std;
 
-my $version = '0.3.2 (r321)';
+my $version = '0.3.3';
 &usage if (@ARGV < 1);
 
 my $command = shift(@ARGV);
-my %func = (showALEN=>\&showALEN, pileup2fq=>\&pileup2fq, varFilter=>\&varFilter);
+my %func = (showALEN=>\&showALEN, pileup2fq=>\&pileup2fq, varFilter=>\&varFilter,
+			unique=>\&unique, uniqcmp=>\&uniqcmp);
 
 die("Unknown command \"$command\".\n") if (!defined($func{$command}));
 &{$func{$command}};
@@ -24,9 +25,10 @@ sub showALEN {
   die(qq/Usage: samtools.pl showALEN <in.sam>\n/) if (@ARGV == 0 && -t STDIN);
   while (<>) {
 	my @t = split;
+	next if (/^\@/ || @t < 11);
 	my $l = 0;
 	$_ = $t[5];
-	s/(\d+)[SMI]/$l+=$1/eg;
+	s/(\d+)[MI]/$l+=$1/eg;
 	print join("\t", @t[0..5]), "\t$l\t", join("\t", @t[6..$#t]), "\n";
   }
 }
@@ -37,7 +39,7 @@ sub showALEN {
 
 sub varFilter {
   my %opts = (d=>3, D=>100, l=>30, Q=>25, q=>10, G=>25, s=>100, w=>10, W=>10, N=>2, p=>undef);
-  getopts('pd:D:l:Q:w:W:N:G:', \%opts);
+  getopts('pq:d:D:l:Q:w:W:N:G:', \%opts);
   die(qq/
 Usage:   samtools.pl varFilter [options] <in.cns-pileup>
 
@@ -65,7 +67,7 @@ Options: -Q INT    minimum RMS mapping quality for SNPs [$opts{Q}]
   my @staging; # (indel_filtering_score, flt_tag)
   while (<>) {
 	my @t = split;
-	next if ($t[2] eq $t[3] || $t[3] eq '*/*'); # skip non-var sites
+	next if (uc($t[2]) eq uc($t[3]) || $t[3] eq '*/*'); # skip non-var sites
 	# clear the out-of-range elements
 	while (@staging) {
 	  last if ($staging[0][2] eq $t[0] && $staging[0][3] + $max_dist >= $t[1]);
@@ -215,27 +217,128 @@ sub p2q_print_str {
 }
 
 #
-# varStats
+# unique
 #
 
-sub varStats {
-  my %opts = (d=>'', c=>5);
-  getopts('d:c:', \%opts);
-  die("Usage: samtools.pl varStats [-d dbSNP.snp] [-c $opts{c}] <in.plp.snp>\n") if (@ARGV == 0 && -t STDIN);
-  my (@cnt, %hash);
-  my $col = $opts{c} - 1;
+sub unique {
+  my %opts = (f=>250.0, q=>5, r=>2, a=>1, b=>3);
+  getopts('Qf:q:r:a:b:', \%opts);
+  die("Usage: samtools.pl unique [-f $opts{f}] <in.sam>\n") if (@ARGV == 0 && -t STDIN);
+  my $last = '';
+  my $recal_Q = !defined($opts{Q});
+  my @a;
   while (<>) {
-	my @t = split;
-	if ($t[2] eq '*') {
-	} else {
-	  my $q = $t[$col];
-	  $q = 99 if ($q > 99);
-	  $q = int($q/10);
-	  my $is_het = ($t[3] =~ /^[ACGT]$/)? 0 : 1;
-	  ++$cnt[$q][$is_het];
-	  $hash{$t[0],$t[1]} = $q;
+	my $score = -1;
+	print $_ if (/^\@/);
+	$score = $1 if (/AS:i:(\d+)/);
+	my @t = split("\t");
+	next if (@t < 11);
+	if ($score < 0) { # AS tag is unavailable
+	  my $cigar = $t[5];
+	  my ($mm, $go, $ge) = (0, 0, 0);
+	  $cigar =~ s/(\d+)[ID]/++$go,$ge+=$1/eg;
+	  $cigar = $t[5];
+	  $cigar =~ s/(\d+)M/$mm+=$1/eg;
+	  $score = $mm * $opts{a} - $go * $opts{q} - $ge * $opts{r}; # no mismatches...
+	}
+	$score = 1 if ($score < 1);
+	if ($t[0] ne $last) {
+	  &unique_aux(\@a, $opts{f}, $recal_Q) if (@a);
+	  $last = $t[0];
+	}
+	push(@a, [$score, \@t]);
+  }
+  &unique_aux(\@a, $opts{f}, $recal_Q) if (@a);
+}
+
+sub unique_aux {
+  my ($a, $fac, $is_recal) = @_;
+  my ($max, $max2, $max_i) = (0, 0, -1);
+  for (my $i = 0; $i < @$a; ++$i) {
+	if ($a->[$i][0] > $max) {
+	  $max2 = $max; $max = $a->[$i][0]; $max_i = $i;
+	} elsif ($a->[$i][0] > $max2) {
+	  $max2 = $a->[$i][0];
 	}
   }
+  if ($is_recal) {
+	my $q = int($fac * ($max - $max2) / $max + .499);
+	$q = 250 if ($q > 250);
+	$a->[$max_i][1][4] = $q < 250? $q : 250;
+  }
+  print join("\t", @{$a->[$max_i][1]});
+  @$a = ();
+}
+
+#
+# uniqcmp: compare two SAM files
+#
+
+sub uniqcmp {
+  my %opts = (q=>10, s=>100);
+  getopts('pq:s:', \%opts);
+  die("Usage: samtools.pl uniqcmp <in1.sam> <in2.sam>\n") if (@ARGV < 2);
+  my ($fh, %a);
+  warn("[uniqcmp] read the first file...\n");
+  &uniqcmp_aux($ARGV[0], \%a, 0);
+  warn("[uniqcmp] read the second file...\n");
+  &uniqcmp_aux($ARGV[1], \%a, 1);
+  warn("[uniqcmp] stats...\n");
+  my @cnt;
+  $cnt[$_] = 0 for (0..9);
+  for my $x (keys %a) {
+	my $p = $a{$x};
+	my $z;
+	if (defined($p->[0]) && defined($p->[1])) {
+	  $z = ($p->[0][0] == $p->[1][0] && $p->[0][1] eq $p->[1][1] && abs($p->[0][2] - $p->[1][2]) < $opts{s})? 0 : 1;
+	  if ($p->[0][3] >= $opts{q} && $p->[1][3] >= $opts{q}) {
+		++$cnt[$z*3+0];
+	  } elsif ($p->[0][3] >= $opts{q}) {
+		++$cnt[$z*3+1];
+	  } elsif ($p->[1][3] >= $opts{q}) {
+		++$cnt[$z*3+2];
+	  }
+	  print STDERR "$x\t$p->[0][1]:$p->[0][2]\t$p->[0][3]\t$p->[0][4]\t$p->[1][1]:$p->[1][2]\t$p->[1][3]\t$p->[1][4]\t",
+		$p->[0][5]-$p->[1][5], "\n" if ($z && defined($opts{p}) && ($p->[0][3] >= $opts{q} || $p->[1][3] >= $opts{q}));
+	} elsif (defined($p->[0])) {
+	  ++$cnt[$p->[0][3]>=$opts{q}? 6 : 7];
+	  print STDERR "$x\t$p->[0][1]:$p->[0][2]\t$p->[0][3]\t$p->[0][4]\t*\t0\t*\t",
+		$p->[0][5], "\n" if (defined($opts{p}) && $p->[0][3] >= $opts{q});
+	} else {
+	  print STDERR "$x\t*\t0\t*\t$p->[1][1]:$p->[1][2]\t$p->[1][3]\t$p->[1][4]\t",
+		-$p->[1][5], "\n" if (defined($opts{p}) && $p->[1][3] >= $opts{q});
+	  ++$cnt[$p->[1][3]>=$opts{q}? 8 : 9];
+	}
+  }
+  print "Consistent (high, high):   $cnt[0]\n";
+  print "Consistent (high, low ):   $cnt[1]\n";
+  print "Consistent (low , high):   $cnt[2]\n";
+  print "Inconsistent (high, high): $cnt[3]\n";
+  print "Inconsistent (high, low ): $cnt[4]\n";
+  print "Inconsistent (low , high): $cnt[5]\n";
+  print "Second missing (high):     $cnt[6]\n";
+  print "Second missing (low ):     $cnt[7]\n";
+  print "First  missing (high):     $cnt[8]\n";
+  print "First  missing (low ):     $cnt[9]\n";
+}
+
+sub uniqcmp_aux {
+  my ($fn, $a, $which) = @_;
+  my $fh;
+  $fn = "samtools view $fn |" if ($fn =~ /\.bam/);
+  open($fh, $fn) || die;
+  while (<$fh>) {
+	my @t = split;
+	next if (@t < 11);
+#	my $l = ($t[5] =~ /^(\d+)S/)? $1 : 0;
+	my $l = 0;
+	my ($x, $nm) = (0, 0);
+	$nm = $1 if (/NM:i:(\d+)/);
+	$_ = $t[5];
+	s/(\d+)[MI]/$x+=$1/eg;
+	@{$a->{$t[0]}[$which]} = (($t[1]&0x10)? 1 : 0, $t[2], $t[3]-$l, $t[4], "$x:$nm", $x - 4 * $nm);
+  }
+  close($fh);
 }
 
 #
