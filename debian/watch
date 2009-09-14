@@ -1,2 +1,3 @@
 version=3
-http://sf.net/samtools/samtools-([\d\.]*)\.tar\.bz2
+opts=dversionmangle=s/~dfsg// \
+  http://sf.net/samtools/samtools-([\d\.]*)\.tar\.bz2

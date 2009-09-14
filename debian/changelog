@@ -1,3 +1,14 @@
+samtools (0.1.6~dfsg-1) unstable; urgency=low
+
+  * New upstream release.
+  * Upstream sources repackaged to remove the win32 directory:
+    - The removal was done with git-import-orig in a parallel Git repository,
+      and the corresponding debian/gbp.conf file was added to this package.
+    - Mangled the ~dfsg string of the Debian version in debian/watch.
+    - Added a debian/README.source file and explanations in debian/copyright.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 14 Sep 2009 21:58:36 +0900
+
 samtools (0.1.5c-2) unstable; urgency=low
 
   * Rebuilt with -fPIC (debian/rules, README.Debian).
