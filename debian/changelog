@@ -1,3 +1,9 @@
+samtools (0.1.7~dfsg-1) UNRELEASED; urgency=low
+
+  * New upstream release: new script sam2vcf.pl, and many other changes.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 16 Nov 2009 14:25:41 +0900
+
 samtools (0.1.6~dfsg-1) unstable; urgency=low
 
   * New upstream release.
