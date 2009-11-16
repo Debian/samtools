@@ -1,6 +1,7 @@
 samtools (0.1.7~dfsg-1) UNRELEASED; urgency=low
 
   * New upstream release: new script sam2vcf.pl, and many other changes.
+  * Package converted to the format ‘3.0 (quilt)’ (debian/source/format).
 
  -- Charles Plessy <plessy@debian.org>  Mon, 16 Nov 2009 14:25:41 +0900
 
