@@ -1,4 +1,4 @@
-.TH samtools 1 "2 September 2009" "samtools-0.1.6" "Bioinformatics tools"
+.TH samtools 1 "10 November 2009" "samtools-0.1.7" "Bioinformatics tools"
 .SH NAME
 .PP
 samtools - Utilities for the Sequence Alignment/Map (SAM) format
@@ -123,8 +123,9 @@ is specified, all the alignments will be printed; otherwise only
 alignments overlapping the specified regions will be output. An
 alignment may be given multiple times if it is overlapping several
 regions. A region can be presented, for example, in the following
-format: `chr2', `chr2:1000000' or `chr2:1,000,000-2,000,000'. The
-coordinate is 1-based.
+format: `chr2' (the whole chr2), `chr2:1000000' (region starting from
+1,000,000bp) or `chr2:1,000,000-2,000,000' (region between 1,000,000 and
+2,000,000bp including the end points). The coordinate is 1-based.
 
 .B OPTIONS:
 .RS
@@ -220,14 +221,16 @@ mapping quality. A symbol `$' marks the end of a read segment.
 
 If option
 .B -c
-is applied, the consensus base, consensus quality, SNP quality and RMS
-mapping quality of the reads covering the site will be inserted between
-the `reference base' and the `read bases' columns. An indel occupies an
-additional line. Each indel line consists of chromosome name,
-coordinate, a star, the genotype, consensus quality, SNP quality, RMS
-mapping quality, # covering reads, the first alllele, the second allele,
-# reads supporting the first allele, # reads supporting the second
-allele and # reads containing indels different from the top two alleles.
+is applied, the consensus base, Phred-scaled consensus quality, SNP
+quality (i.e. the Phred-scaled probability of the consensus being
+identical to the reference) and root mean square (RMS) mapping quality
+of the reads covering the site will be inserted between the `reference
+base' and the `read bases' columns. An indel occupies an additional
+line. Each indel line consists of chromosome name, coordinate, a star,
+the genotype, consensus quality, SNP quality, RMS mapping quality, #
+covering reads, the first alllele, the second allele, # reads supporting
+the first allele, # reads supporting the second allele and # reads
+containing indels different from the top two alleles.
 
 .B OPTIONS:
 .RS
@@ -322,8 +325,6 @@ Text alignment viewer (based on the ncurses library). In the viewer,
 press `?' for help and press `g' to check the alignment start from a
 region in the format like `chr10:10,000,000'.
 
-.RE
-
 .TP
 .B fixmate
 samtools fixmate <in.nameSrt.bam> <out.bam>
@@ -341,16 +342,12 @@ This command
 .B ONLY
 works with FR orientation and requires ISIZE is correctly set.
 
-.RE
-
 .TP
 .B rmdupse
 samtools rmdupse <input.srt.bam> <out.bam>
 
 Remove potential duplicates for single-ended reads. This command will
 treat all reads as single-ended even if they are paired in fact.
-
-.RE
 
 .TP
 .B fillmd
