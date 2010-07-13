@@ -1,5 +1,0 @@
-The original sources of Samtools were modified by removing the win32 directory.
-This was done using the git-import-orig program from the git-buildpackage
-utilities. This source package is currently migrated from svn-buildpackage to
-git-buildpackage, and a get-orig-source target for debian/rules will be added
-later.
