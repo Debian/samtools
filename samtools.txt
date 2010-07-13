@@ -12,6 +12,8 @@ SYNOPSIS
 
        samtools index aln.sorted.bam
 
+       samtools idxstats aln.sorted.bam
+
        samtools view aln.sorted.bam chr2:20,100,000-20,200,000
 
        samtools merge out.bam in1.bam in2.bam in3.bam
@@ -19,6 +21,8 @@ SYNOPSIS
        samtools faidx ref.fasta
 
        samtools pileup -f ref.fasta aln.sorted.bam
+
+       samtools mpileup -f ref.fasta -r chr3:1,000-2,000 in1.bam in2.bam
 
        samtools tview aln.sorted.bam ref.fasta
 
@@ -43,46 +47,222 @@ DESCRIPTION
 
 
 COMMANDS AND OPTIONS
-       import    samtools import <in.ref_list> <in.sam> <out.bam>
+       view      samtools  view  [-bhuHS]  [-t  in.refList]  [-o  output]  [-f
+                 reqFlag]  [-F  skipFlag]  [-q minMapQ] [-l library] [-r read-
+                 Group] [-R rgFile] <in.bam>|<in.sam> [region1 [...]]
 
-                 Since 0.1.4, this command is an alias of:
+                 Extract/print all or sub alignments in SAM or BAM format.  If
+                 no  region  is specified, all the alignments will be printed;
+                 otherwise only alignments overlapping the  specified  regions
+                 will  be  output. An alignment may be given multiple times if
+                 it is overlapping several regions. A region can be presented,
+                 for  example,  in  the  following  format:  `chr2' (the whole
+                 chr2), `chr2:1000000' (region starting from  1,000,000bp)  or
+                 `chr2:1,000,000-2,000,000'   (region  between  1,000,000  and
+                 2,000,000bp including the  end  points).  The  coordinate  is
+                 1-based.
 
-                 samtools view -bt <in.ref_list> -o <out.bam> <in.sam>
+                 OPTIONS:
+
+                 -b      Output in the BAM format.
+
+                 -u      Output uncompressed BAM. This option saves time spent
+                         on compression/decomprssion  and  is  thus  preferred
+                         when the output is piped to another samtools command.
+
+                 -h      Include the header in the output.
+
+                 -H      Output the header only.
+
+                 -S      Input is in SAM. If @SQ header lines are absent,  the
+                         `-t' option is required.
+
+                 -t FILE This  file  is  TAB-delimited. Each line must contain
+                         the reference name and the length of  the  reference,
+                         one  line  for  each  distinct  reference; additional
+                         fields are ignored. This file also defines the  order
+                         of  the  reference  sequences  in sorting. If you run
+                         `samtools faidx <ref.fa>', the resultant  index  file
+                         <ref.fa>.fai  can be used as this <in.ref_list> file.
+
+                 -o FILE Output file [stdout]
+
+                 -f INT  Only output alignments with all bits in  INT  present
+                         in the FLAG field. INT can be in hex in the format of
+                         /^0x[0-9A-F]+/ [0]
+
+                 -F INT  Skip alignments with bits present in INT [0]
+
+                 -q INT  Skip alignments with MAPQ smaller than INT [0]
+
+                 -l STR  Only output reads in library STR [null]
+
+                 -r STR  Only output reads in read group STR [null]
+
+                 -R FILE Output reads in read groups listed in FILE [null]
 
 
-       sort      samtools sort [-n] [-m maxMem] <in.bam> <out.prefix>
+       tview     samtools tview <in.sorted.bam> [ref.fasta]
+
+                 Text alignment viewer (based on the ncurses library). In  the
+                 viewer,  press `?' for help and press `g' to check the align-
+                 ment   start   from   a   region   in   the    format    like
+                 `chr10:10,000,000'  or  `=10,000,000'  when  viewing the same
+                 reference sequence.
+
+
+       pileup    samtools  pileup  [-f  in.ref.fasta]  [-t  in.ref_list]   [-l
+                 in.site_list]    [-iscgS2]   [-T   theta]   [-N   nHap]   [-r
+                 pairDiffRate] <in.bam>|<in.sam>
+
+                 Print the alignment in the pileup format. In the pileup  for-
+                 mat,  each  line represents a genomic position, consisting of
+                 chromosome name, coordinate, reference base, read bases, read
+                 qualities  and  alignment  mapping  qualities. Information on
+                 match, mismatch, indel, strand, mapping quality and start and
+                 end  of  a  read  are all encoded at the read base column. At
+                 this column, a dot stands for a match to the  reference  base
+                 on  the  forward  strand,  a comma for a match on the reverse
+                 strand, `ACGTN' for a mismatch  on  the  forward  strand  and
+                 `acgtn'  for  a  mismatch  on  the  reverse strand. A pattern
+                 `\+[0-9]+[ACGTNacgtn]+'  indicates  there  is  an   insertion
+                 between  this reference position and the next reference posi-
+                 tion. The length of the insertion is given by the integer  in
+                 the  pattern, followed by the inserted sequence. Similarly, a
+                 pattern `-[0-9]+[ACGTNacgtn]+' represents a deletion from the
+                 reference.  The deleted bases will be presented as `*' in the
+                 following lines. Also at the read base column, a  symbol  `^'
+                 marks  the start of a read segment which is a contiguous sub-
+                 sequence on the read separated by `N/S/H'  CIGAR  operations.
+                 The  ASCII  of the character following `^' minus 33 gives the
+                 mapping quality. A symbol `$' marks the end of  a  read  seg-
+                 ment.
+
+                 If  option  -c  is  applied, the consensus base, Phred-scaled
+                 consensus quality, SNP quality (i.e. the Phred-scaled  proba-
+                 bility of the consensus being identical to the reference) and
+                 root mean square (RMS) mapping quality of the reads  covering
+                 the  site  will  be inserted between the `reference base' and
+                 the `read bases' columns. An  indel  occupies  an  additional
+                 line.  Each  indel  line consists of chromosome name, coordi-
+                 nate, a star, the genotype, consensus quality,  SNP  quality,
+                 RMS mapping quality, # covering reads, the first alllele, the
+                 second allele, # reads supporting the first allele,  #  reads
+                 supporting  the  second  allele and # reads containing indels
+                 different from the top two alleles.
+
+                 The position of indels is offset by -1.
+
+                 OPTIONS:
+
+                 -s        Print the mapping quality as the last column.  This
+                           option  makes  the output easier to parse, although
+                           this format is not space efficient.
+
+                 -S        The input file is in SAM.
+
+                 -i        Only output pileup lines containing indels.
+
+                 -f FILE   The reference sequence in the FASTA  format.  Index
+                           file FILE.fai will be created if absent.
+
+                 -M INT    Cap mapping quality at INT [60]
+
+                 -m INT    Filter  reads  with  flag  containing  bits  in INT
+                           [1796]
+
+                 -d INT    Use the first NUM reads in  the  pileup  for  indel
+                           calling for speed up. Zero for unlimited. [0]
+
+                 -t FILE   List  of  reference  names ane sequence lengths, in
+                           the format described for  the  import  command.  If
+                           this  option is present, samtools assumes the input
+                           <in.alignment>  is  in  SAM  format;  otherwise  it
+                           assumes in BAM format.
+
+                 -l FILE   List  of sites at which pileup is output. This file
+                           is space  delimited.  The  first  two  columns  are
+                           required  to  be chromosome and 1-based coordinate.
+                           Additional columns are ignored. It  is  recommended
+                           to use option -s together with -l as in the default
+                           format we may not know the mapping quality.
+
+                 -c        Call the consensus sequence using SOAPsnp consensus
+                           model. Options -T, -N, -I and -r are only effective
+                           when -c or -g is in use.
+
+                 -g        Generate genotype likelihood in  the  binary  GLFv3
+                           format. This option suppresses -c, -i and -s.
+
+                 -T FLOAT  The  theta parameter (error dependency coefficient)
+                           in the maq consensus calling model [0.85]
+
+                 -N INT    Number of haplotypes in the sample (>=2) [2]
+
+                 -r FLOAT  Expected fraction of differences between a pair  of
+                           haplotypes [0.001]
+
+                 -I INT    Phred  probability  of an indel in sequencing/prep.
+                           [40]
+
+
+       mpileup   samtools mpileup [-r reg] [-f in.fa] in.bam [in2.bam [...]]
+
+                 Generate pileup for multiple BAM files. Consensus calling  is
+                 not implemented.
+
+                 OPTIONS:
+
+                 -r STR  Only generate pileup in region STR [all sites]
+
+                 -f FILE The reference file [null]
+
+
+       reheader  samtools reheader <in.header.sam> <in.bam>
+
+                 Replace   the   header   in   in.bam   with   the  header  in
+                 in.header.sam.  This command is much  faster  than  replacing
+                 the header with a BAM->SAM->BAM conversion.
+
+
+       sort      samtools sort [-no] [-m maxMem] <in.bam> <out.prefix>
 
                  Sort  alignments  by  leftmost  coordinates.  File  <out.pre-
                  fix>.bam will be created. This command may also create tempo-
-                 rary files <out.prefix>.%d.bam when the whole alignment  can-
+                 rary  files <out.prefix>.%d.bam when the whole alignment can-
                  not be fitted into memory (controlled by option -m).
 
                  OPTIONS:
 
+                 -o      Output the final alignment to the standard output.
+
                  -n      Sort by read names rather than by chromosomal coordi-
                          nates
 
-                 -m INT  Approximately   the    maximum    required    memory.
+                 -m INT  Approximately    the    maximum    required   memory.
                          [500000000]
 
 
-       merge     samtools   merge   [-h   inh.sam]  [-n]  <out.bam>  <in1.bam>
+       merge     samtools  merge  [-h  inh.sam]  [-nr]   <out.bam>   <in1.bam>
                  <in2.bam> [...]
 
                  Merge multiple sorted alignments.  The header reference lists
-                 of  all  the input BAM files, and the @SQ headers of inh.sam,
+                 of all the input BAM files, and the @SQ headers  of  inh.sam,
                  if  any,  must  all  refer  to  the  same  set  of  reference
-                 sequences.   The header reference list and (unless overridden
-                 by -h) `@' headers of in1.bam will be copied to out.bam,  and
+                 sequences.  The header reference list and (unless  overridden
+                 by  -h) `@' headers of in1.bam will be copied to out.bam, and
                  the headers of other files will be ignored.
 
                  OPTIONS:
 
-                 -h FILE Use  the lines of FILE as `@' headers to be copied to
+                 -h FILE Use the lines of FILE as `@' headers to be copied  to
                          out.bam, replacing any header lines that would other-
-                         wise  be  copied  from in1.bam.  (FILE is actually in
-                         SAM format, though any alignment records it may  con-
+                         wise be copied from in1.bam.  (FILE  is  actually  in
+                         SAM  format, though any alignment records it may con-
                          tain are ignored.)
+
+                 -r      Attach an RG tag to each alignment. The tag value  is
+                         inferred from file names.
 
                  -n      The  input alignments are sorted by read names rather
                          than by chromosomal coordinates
@@ -94,57 +274,11 @@ COMMANDS AND OPTIONS
                  <aln.bam>.bai will be created.
 
 
-       view      samtools  view  [-bhuHS]  [-t  in.refList]  [-o  output]  [-f
-                 reqFlag] [-F skipFlag] [-q minMapQ] [-l  library]  [-r  read-
-                 Group] <in.bam>|<in.sam> [region1 [...]]
+       idxstats  samtools idxstats <aln.bam>
 
-                 Extract/print  all or sub alignments in SAM or BAM format. If
-                 no region is specified, all the alignments will  be  printed;
-                 otherwise  only  alignments overlapping the specified regions
-                 will be output. An alignment may be given multiple  times  if
-                 it is overlapping several regions. A region can be presented,
-                 for example, in  the  following  format:  `chr2'  (the  whole
-                 chr2),  `chr2:1000000'  (region starting from 1,000,000bp) or
-                 `chr2:1,000,000-2,000,000'  (region  between  1,000,000   and
-                 2,000,000bp  including  the  end  points).  The coordinate is
-                 1-based.
-
-                 OPTIONS:
-
-                 -b      Output in the BAM format.
-
-                 -u      Output uncompressed BAM. This option saves time spent
-                         on  compression/decomprssion  and  is  thus preferred
-                         when the output is piped to another samtools command.
-
-                 -h      Include the header in the output.
-
-                 -H      Output the header only.
-
-                 -S      Input  is in SAM. If @SQ header lines are absent, the
-                         `-t' option is required.
-
-                 -t FILE This file is TAB-delimited. Each  line  must  contain
-                         the  reference  name and the length of the reference,
-                         one line  for  each  distinct  reference;  additional
-                         fields  are ignored. This file also defines the order
-                         of the reference sequences in  sorting.  If  you  run
-                         `samtools  faidx  <ref.fa>', the resultant index file
-                         <ref.fa>.fai can be used as this <in.ref_list>  file.
-
-                 -o FILE Output file [stdout]
-
-                 -f INT  Only  output  alignments with all bits in INT present
-                         in the FLAG field. INT can be in hex in the format of
-                         /^0x[0-9A-F]+/ [0]
-
-                 -F INT  Skip alignments with bits present in INT [0]
-
-                 -q INT  Skip alignments with MAPQ smaller than INT [0]
-
-                 -l STR  Only output reads in library STR [null]
-
-                 -r STR  Only output reads in read group STR [null]
+                 Retrieve and print stats in the index file. The output is TAB
+                 delimited with each line  consisting  of  reference  sequence
+                 name, sequence length, # mapped reads and # unmapped reads.
 
 
        faidx     samtools faidx <ref.fasta> [region1 [...]]
@@ -158,141 +292,34 @@ COMMANDS AND OPTIONS
                  format.
 
 
-       pileup    samtools   pileup  [-f  in.ref.fasta]  [-t  in.ref_list]  [-l
-                 in.site_list]   [-iscgS2]   [-T   theta]   [-N   nHap]    [-r
-                 pairDiffRate] <in.bam>|<in.sam>
-
-                 Print  the alignment in the pileup format. In the pileup for-
-                 mat, each line represents a genomic position,  consisting  of
-                 chromosome name, coordinate, reference base, read bases, read
-                 qualities and alignment  mapping  qualities.  Information  on
-                 match, mismatch, indel, strand, mapping quality and start and
-                 end of a read are all encoded at the  read  base  column.  At
-                 this  column,  a dot stands for a match to the reference base
-                 on the forward strand, a comma for a  match  on  the  reverse
-                 strand,  `ACGTN'  for  a  mismatch  on the forward strand and
-                 `acgtn' for a mismatch  on  the  reverse  strand.  A  pattern
-                 `\+[0-9]+[ACGTNacgtn]+'   indicates  there  is  an  insertion
-                 between this reference position and the next reference  posi-
-                 tion.  The length of the insertion is given by the integer in
-                 the pattern, followed by the inserted sequence. Similarly,  a
-                 pattern `-[0-9]+[ACGTNacgtn]+' represents a deletion from the
-                 reference. The deleted bases will be presented as `*' in  the
-                 following  lines.  Also at the read base column, a symbol `^'
-                 marks the start of a read segment which is a contiguous  sub-
-                 sequence  on  the read separated by `N/S/H' CIGAR operations.
-                 The ASCII of the character following `^' minus 33  gives  the
-                 mapping  quality.  A  symbol `$' marks the end of a read seg-
-                 ment.
-
-                 If option -c is applied,  the  consensus  base,  Phred-scaled
-                 consensus  quality, SNP quality (i.e. the Phred-scaled proba-
-                 bility of the consensus being identical to the reference) and
-                 root  mean square (RMS) mapping quality of the reads covering
-                 the site will be inserted between the  `reference  base'  and
-                 the  `read  bases'  columns.  An indel occupies an additional
-                 line. Each indel line consists of  chromosome  name,  coordi-
-                 nate,  a  star, the genotype, consensus quality, SNP quality,
-                 RMS mapping quality, # covering reads, the first alllele, the
-                 second  allele,  # reads supporting the first allele, # reads
-                 supporting the second allele and #  reads  containing  indels
-                 different from the top two alleles.
-
-                 OPTIONS:
-
-
-                 -s        Print  the mapping quality as the last column. This
-                           option makes the output easier to  parse,  although
-                           this format is not space efficient.
-
-
-                 -S        The input file is in SAM.
-
-
-                 -i        Only output pileup lines containing indels.
-
-
-                 -f FILE   The  reference  sequence in the FASTA format. Index
-                           file FILE.fai will be created if absent.
-
-
-                 -M INT    Cap mapping quality at INT [60]
-
-
-                 -t FILE   List of reference names ane  sequence  lengths,  in
-                           the  format  described  for  the import command. If
-                           this option is present, samtools assumes the  input
-                           <in.alignment>  is  in  SAM  format;  otherwise  it
-                           assumes in BAM format.
-
-
-                 -l FILE   List of sites at which pileup is output. This  file
-                           is  space  delimited.  The  first  two  columns are
-                           required to be chromosome and  1-based  coordinate.
-                           Additional  columns  are ignored. It is recommended
-                           to use option -s together with -l as in the default
-                           format we may not know the mapping quality.
-
-
-                 -c        Call  the  consensus  sequence  using MAQ consensus
-                           model. Options -T, -N, -I and -r are only effective
-                           when -c or -g is in use.
-
-
-                 -g        Generate  genotype  likelihood  in the binary GLFv3
-                           format. This option suppresses -c, -i and -s.
-
-
-                 -T FLOAT  The theta parameter (error dependency  coefficient)
-                           in the maq consensus calling model [0.85]
-
-
-                 -N INT    Number of haplotypes in the sample (>=2) [2]
-
-
-                 -r FLOAT  Expected  fraction of differences between a pair of
-                           haplotypes [0.001]
-
-
-                 -I INT    Phred probability of an indel  in  sequencing/prep.
-                           [40]
-
-
-
-       tview     samtools tview <in.sorted.bam> [ref.fasta]
-
-                 Text  alignment viewer (based on the ncurses library). In the
-                 viewer, press `?' for help and press `g' to check the  align-
-                 ment    start    from   a   region   in   the   format   like
-                 `chr10:10,000,000'.
-
-
        fixmate   samtools fixmate <in.nameSrt.bam> <out.bam>
 
                  Fill in mate coordinates, ISIZE and mate related flags from a
                  name-sorted alignment.
 
 
-       rmdup     samtools rmdup <input.srt.bam> <out.bam>
+       rmdup     samtools rmdup [-sS] <input.srt.bam> <out.bam>
 
-                 Remove  potential PCR duplicates: if multiple read pairs have
-                 identical external coordinates, only  retain  the  pair  with
-                 highest  mapping  quality.   This  command ONLY works with FR
-                 orientation and requires ISIZE is correctly set.
+                 Remove potential PCR duplicates: if multiple read pairs  have
+                 identical  external  coordinates,  only  retain the pair with
+                 highest mapping quality.  In the paired-end mode,  this  com-
+                 mand  ONLY  works  with  FR orientation and requires ISIZE is
+                 correctly set. It does not work for unpaired reads (e.g.  two
+                 ends mapped to different chromosomes or orphan reads).
+
+                 OPTIONS:
+
+                 -s      Remove  duplicate  for  single-end reads. By default,
+                         the command works for paired-end reads only.
+
+                 -S      Treat paired-end reads and single-end reads.
 
 
-       rmdupse   samtools rmdupse <input.srt.bam> <out.bam>
-
-                 Remove potential duplicates for single-ended reads. This com-
-                 mand  will  treat  all reads as single-ended even if they are
-                 paired in fact.
-
-
-       fillmd    samtools fillmd [-e] <aln.bam> <ref.fasta>
+       calmd     samtools calmd [-eubS] <aln.bam> <ref.fasta>
 
                  Generate the MD tag. If the MD tag is already  present,  this
                  command  will  give a warning if the MD tag generated is dif-
-                 ferent from the existing tag.
+                 ferent from the existing tag. Output SAM by default.
 
                  OPTIONS:
 
@@ -300,6 +327,11 @@ COMMANDS AND OPTIONS
                          the  aligned  reference  base.  Indel caller does not
                          support the = bases at the moment.
 
+                 -u      Output uncompressed BAM
+
+                 -b      Output compressed BAM
+
+                 -S      The input is SAM with header lines
 
 
 SAM FORMAT
@@ -327,27 +359,25 @@ SAM FORMAT
        Each bit in the FLAG field is defined as:
 
 
-             +-------+--------------------------------------------------+
-             | Flag  |                   Description                    |
-             +-------+--------------------------------------------------+
-             |0x0001 | the read is paired in sequencing                 |
-             |0x0002 | the read is mapped in a proper pair              |
-             |0x0004 | the query sequence itself is unmapped            |
-             |0x0008 | the mate is unmapped                             |
-             |0x0010 | strand of the query (1 for reverse)              |
-             |0x0020 | strand of the mate                               |
-             |0x0040 | the read is the first read in a pair             |
-             |0x0080 | the read is the second read in a pair            |
-             |0x0100 | the alignment is not primary                     |
-             |0x0200 | the read fails platform/vendor quality checks    |
-             |0x0400 | the read is either a PCR or an optical duplicate |
-             +-------+--------------------------------------------------+
+          +-------+-----+--------------------------------------------------+
+          | Flag  | Chr |                   Description                    |
+          +-------+-----+--------------------------------------------------+
+          |0x0001 |  p  | the read is paired in sequencing                 |
+          |0x0002 |  P  | the read is mapped in a proper pair              |
+          |0x0004 |  u  | the query sequence itself is unmapped            |
+          |0x0008 |  U  | the mate is unmapped                             |
+          |0x0010 |  r  | strand of the query (1 for reverse)              |
+          |0x0020 |  R  | strand of the mate                               |
+          |0x0040 |  1  | the read is the first read in a pair             |
+          |0x0080 |  2  | the read is the second read in a pair            |
+          |0x0100 |  s  | the alignment is not primary                     |
+          |0x0200 |  f  | the read fails platform/vendor quality checks    |
+          |0x0400 |  d  | the read is either a PCR or an optical duplicate |
+          +-------+-----+--------------------------------------------------+
 
 LIMITATIONS
        o Unaligned   words  used  in  bam_import.c,  bam_endian.h,  bam.c  and
          bam_aux.c.
-
-       o CIGAR operation P is not properly handled at the moment.
 
        o In merging, the input files are required to have the same  number  of
          reference  sequences.  The  requirement  can be relaxed. In addition,
@@ -355,15 +385,17 @@ LIMITATIONS
          Endusers  have  to  provide  the  correct header. Picard is better at
          merging.
 
-       o Samtools' rmdup does not work for single-end data and does not remove
-         duplicates across chromosomes. Picard is better.
+       o Samtools paired-end rmdup does not  work  for  unpaired  reads  (e.g.
+         orphan  reads  or ends mapped to different chromosomes). If this is a
+         concern, please use Picard's MarkDuplicate  which  correctly  handles
+         these cases, although a little slower.
 
 
 AUTHOR
        Heng  Li from the Sanger Institute wrote the C version of samtools. Bob
        Handsaker from the Broad Institute implemented the BGZF library and Jue
        Ruan  from  Beijing  Genomics Institute wrote the RAZF library. Various
-       people in the 1000Genomes Project contributed to the SAM format  speci-
+       people in the 1000 Genomes Project contributed to the SAM format speci-
        fication.
 
 
@@ -372,4 +404,4 @@ SEE ALSO
 
 
 
-samtools-0.1.7                 10 November 2009                    samtools(1)
+samtools-0.1.8                   11 July 2010                      samtools(1)

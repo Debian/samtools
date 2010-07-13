@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
 # 
-# VCF specs: http://www.1000genomes.org/wiki/doku.php?id=1000_genomes:analysis:vcfv3.2
-
+# VCF specs: http://www.1000genomes.org/wiki/doku.php?id=1000_genomes:analysis:vcf3.3
+# 
 # Contact: pd3@sanger
-# Version: 2009-10-08
+# Version: 2010-04-23
 
 use strict;
 use warnings;
@@ -23,8 +23,12 @@ sub error
     die
         "Usage: sam2vcf.pl [OPTIONS] < in.pileup > out.vcf\n",
         "Options:\n",
-        "   -r, -refseq <file.fa>            The reference sequence, required when indels are present.\n",
-        "   -h, -?, --help                   This help message.\n",
+        "   -h, -?, --help                  This help message.\n",
+        "   -i, --indels-only               Ignore SNPs.\n",
+        "   -r, --refseq <file.fa>          The reference sequence, required when indels are present.\n",
+        "   -R, --keep-ref                  Print reference alleles as well.\n",
+        "   -s, --snps-only                 Ignore indels.\n",
+        "   -t, --column-title <string>     The column title.\n",
         "\n";
 }
 
@@ -38,7 +42,11 @@ sub parse_params
 
     while (my $arg=shift(@ARGV))
     {
+        if ( $arg eq '-R' || $arg eq '--keep-ref' ) { $opts{keep_ref}=1; next; }
         if ( $arg eq '-r' || $arg eq '--refseq' ) { $opts{refseq}=shift(@ARGV); next; }
+        if ( $arg eq '-t' || $arg eq '--column-title' ) { $opts{title}=shift(@ARGV); next; }
+        if ( $arg eq '-s' || $arg eq '--snps-only' ) { $opts{snps_only}=1; next; }
+        if ( $arg eq '-i' || $arg eq '--indels-only' ) { $opts{indels_only}=1; next; }
         if ( $arg eq '-?' || $arg eq '-h' || $arg eq '--help' ) { error(); }
 
         error("Unknown parameter \"$arg\". Run -h for help.\n");
@@ -59,13 +67,14 @@ sub iupac_to_gtype
             );
     if ( !exists($iupac{$base}) ) 
     { 
-        if ( $ref eq $base ) { return ('.','0|0'); }
-        return ($base,'1|1');
+        if ( $base ne 'A' && $base ne 'C' && $base ne 'G' && $base ne 'T' ) { error("FIXME: what is this [$base]?\n"); }
+        if ( $ref eq $base ) { return ('.','0/0'); }
+        return ($base,'1/1');
     }
     my $gt = $iupac{$base};
-    if ( $$gt[0] eq $ref  ) { return ($$gt[1],'0|1'); }
-    elsif ( $$gt[1] eq $ref ) { return ($$gt[0],'0|1'); }
-    return ("$$gt[0],$$gt[1]",'1|2');
+    if ( $$gt[0] eq $ref  ) { return ($$gt[1],'0/1'); }
+    elsif ( $$gt[1] eq $ref ) { return ($$gt[0],'0/1'); }
+    return ("$$gt[0],$$gt[1]",'1/2');
 }
 
 
@@ -97,53 +106,96 @@ sub do_pileup_to_vcf
     my $fh_out = $$opts{fh_out};
     my ($prev_chr,$prev_pos,$prev_ref);
     my $refseq;
+    my $ignore_indels = $$opts{snps_only} ? 1 : 0;
+    my $ignore_snps   = $$opts{indels_only} ? 1 : 0;
+    my $keep_ref      = $$opts{keep_ref} ? 1 : 0;
+    my $title = exists($$opts{title}) ? $$opts{title} : 'data';
+
+    print $fh_out 
+        qq[##fileformat=VCFv3.3\n],
+        qq[##INFO=DP,1,Integer,"Total Depth"\n],
+        qq[##FORMAT=GT,1,String,"Genotype"\n],
+        qq[##FORMAT=GQ,1,Integer,"Genotype Quality"\n],
+        qq[##FORMAT=DP,1,Integer,"Read Depth"\n],
+        qq[#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\t$title\n]
+        ;
 
     while (my $line=<$fh_in>)
     {
         chomp($line);
-        my ($chr,$pos,$ref,$cons,$cons_qual,$snp_qual,$rms_qual,$depth,@items) = split(/\t/,$line);
+        my (@items) = split(/\t/,$line);
+        if ( scalar @items<8 ) 
+        { 
+            error("\nToo few columns, does not look like output of 'samtools pileup -c': $line\n"); 
+        }
+        my ($chr,$pos,$ref,$cons,$cons_qual,$snp_qual,$rms_qual,$depth,$a1,$a2) = @items;
+        $ref  = uc($ref);
+        $cons = uc($cons);
 
         my ($alt,$gt);
         if ( $ref eq '*' )
         {
             # An indel is involved.
-            if ($chr ne $prev_chr || $pos ne $prev_pos) 
+            if ( $ignore_indels )
+            { 
+                $prev_ref = $ref;
+                $prev_pos = $pos;
+                $prev_chr = $chr;
+                next; 
+            }
+
+            if (!defined $prev_chr || $chr ne $prev_chr || $pos ne $prev_pos) 
             {
                 if ( !$$opts{refseq} ) { error("Cannot do indels without the reference.\n"); }
                 if ( !$refseq ) { $refseq = Fasta->new(file=>$$opts{refseq}); }
                 $ref = $refseq->get_base($chr,$pos);
+                $ref = uc($ref);
             }
             else { $ref = $prev_ref; }
 
-            # One of the alleles can be a reference and it can come in arbitrary order
+            # One of the alleles can be a reference and it can come in arbitrary order. In some
+            #   cases */* can be encountered. In such a case, look in the additional columns.
             my ($al1,$al2) = split(m{/},$cons);
+            if ( $al1 eq $al2 && $al1 eq '*' ) { $al1=$a1; $al2=$a2; }
             my $alt1 = parse_indel($al1);
             my $alt2 = parse_indel($al2);
             if ( !$alt1 && !$alt2 ) { error("FIXME: could not parse indel:\n", $line); }
-            if ( $alt1 && $alt2 && $alt1 eq $alt2 ) { $alt2=''; }
             if ( !$alt1 ) 
             { 
                 $alt=$alt2; 
-                $gt='0|1'; 
+                $gt='0/1'; 
             }
             elsif ( !$alt2 ) 
             { 
                 $alt=$alt1; 
-                $gt='0|1'; 
+                $gt='0/1'; 
             }
-            else 
+            elsif ( $alt1 eq $alt2 )
+            { 
+                $alt="$alt1"; 
+                $gt='1/1'; 
+            }
+            else
             { 
                 $alt="$alt1,$alt2"; 
-                $gt='1|2'; 
+                $gt='1/2'; 
             }
         }
         else
         {
+            if ( $ignore_snps || (!$keep_ref && $ref eq $cons) ) 
+            { 
+                $prev_ref = $ref;
+                $prev_pos = $pos;
+                $prev_chr = $chr;
+                next; 
+            }
+
             # SNP
             ($alt,$gt) = iupac_to_gtype($ref,$cons);
         }
 
-        print $fh_out "$chr\t$pos\t.\t$ref\t$alt\t$snp_qual\t0\t\tGT:GQ:DP\t$gt:$cons_qual:$depth\n";
+        print $fh_out "$chr\t$pos\t.\t$ref\t$alt\t$snp_qual\t0\tDP=$depth\tGT:GQ:DP\t$gt:$cons_qual:$depth\n";
 
         $prev_ref = $ref;
         $prev_pos = $pos;
@@ -167,7 +219,8 @@ use Carp;
 sub Fasta::new
 {
     my ($class,@args) = @_;
-    my $self = @args ? {@args} : {};
+    my $self = {@args};
+    bless $self, ref($class) || $class;
     if ( !$$self{file} ) { $self->throw(qq[Missing the parameter "file"\n]); }
     $$self{chr}  = undef;
     $$self{from} = undef;

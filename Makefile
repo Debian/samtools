@@ -1,9 +1,10 @@
 CC=			gcc
 CFLAGS=		-g -Wall -O2 #-m64 #-arch ppc
 DFLAGS=		-D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1
+KNETFILE_O=	knetfile.o
 LOBJS=		bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o	\
-			bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o knetfile.o	\
-			bam_sort.o sam_header.o
+			bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o \
+			$(KNETFILE_O) bam_sort.o sam_header.o bam_reheader.o
 AOBJS=		bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o	\
 			bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o	\
 			bamtk.o kaln.o
@@ -30,19 +31,22 @@ all-recur lib-recur clean-recur cleanlocal-recur install-recur:
 
 all:$(PROG)
 
+.PHONY:all lib clean cleanlocal
+.PHONY:all-recur lib-recur clean-recur cleanlocal-recur install-recur
+
 lib:libbam.a
 
 libbam.a:$(LOBJS)
 		$(AR) -cru $@ $(LOBJS)
 
-samtools:lib $(AOBJS)
-		$(CC) $(CFLAGS) -o $@ $(AOBJS) -lm $(LIBPATH) $(LIBCURSES) -lz -L. -lbam
+samtools:$(AOBJS) libbam.a
+		$(CC) $(CFLAGS) -o $@ $(AOBJS) libbam.a -lm $(LIBPATH) $(LIBCURSES) -lz
 
-razip:razip.o razf.o knetfile.o
-		$(CC) $(CFLAGS) -o $@ razf.o razip.o knetfile.o -lz
+razip:razip.o razf.o $(KNETFILE_O)
+		$(CC) $(CFLAGS) -o $@ razf.o razip.o $(KNETFILE_O) -lz
 
-bgzip:bgzip.o bgzf.o
-		$(CC) $(CFLAGS) -o $@ bgzf.o bgzip.o -lz
+bgzip:bgzip.o bgzf.o $(KNETFILE_O)
+		$(CC) $(CFLAGS) -o $@ bgzf.o bgzip.o $(KNETFILE_O) -lz
 
 razip.o:razf.h
 bam.o:bam.h razf.h bam_endian.h kstring.h sam_header.h
@@ -62,7 +66,23 @@ sam_header.o:sam_header.h khash.h
 faidx.o:faidx.h razf.h khash.h
 faidx_main.o:faidx.h razf.h
 
+
+libbam.1.dylib-local:$(LOBJS)
+		libtool -dynamic $(LOBJS) -o libbam.1.dylib -lc -lz
+
+libbam.so.1-local:$(LOBJS)
+		$(CC) -shared -Wl,-soname,libbam.so -o libbam.so.1 $(LOBJS) -lc -lz
+
+dylib:
+		@$(MAKE) cleanlocal; \
+		case `uname` in \
+			Linux) $(MAKE) CFLAGS="$(CFLAGS) -fPIC" libbam.so.1-local;; \
+			Darwin) $(MAKE) CFLAGS="$(CFLAGS) -fPIC" libbam.1.dylib-local;; \
+			*) echo 'Unknown OS';; \
+		esac
+
+
 cleanlocal:
-		rm -fr gmon.out *.o a.out *.dSYM razip $(PROG) *~ *.a
+		rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip $(PROG) *~ *.a *.so.* *.so *.dylib
 
 clean:cleanlocal-recur
