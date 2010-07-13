@@ -1,6 +1,6 @@
 CC=			gcc
 CXX=		g++
-CFLAGS=		-g -Wall -O2 -m64 #-arch ppc
+CFLAGS=		-g -Wall #-O2 #-m64 #-arch ppc
 CXXFLAGS=	$(CFLAGS)
 DFLAGS=		-D_FILE_OFFSET_BITS=64
 OBJS=		
@@ -27,6 +27,9 @@ lib-recur all-recur clean-recur cleanlocal-recur install-recur:
 
 lib:
 
+afs2:afs2.o
+		$(CC) $(CFLAGS) -o $@ afs2.o -lm -lz -L.. -lbam
+
 wgsim:wgsim.o
 		$(CC) $(CFLAGS) -o $@ wgsim.o -lm
 
@@ -48,7 +51,10 @@ maq2sam-long:maq2sam.c
 md5fa.o:md5.h md5fa.c
 		$(CC) $(CFLAGS) -c -I.. -o $@ md5fa.c
 
+afs2.o:afs2.c ../bam.h
+		$(CC) $(CFLAGS) -c -I.. -o $@ afs2.c
+
 cleanlocal:
-		rm -fr gmon.out *.o a.out *.dSYM $(PROG) *~ *.a
+		rm -fr gmon.out *.o a.out *.exe *.dSYM $(PROG) *~ *.a
 
 clean:cleanlocal-recur
