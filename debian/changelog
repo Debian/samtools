@@ -6,6 +6,7 @@ samtools (0.1.8-1) unstable; urgency=low
     (debian/samtools.install, debian/rules, debian/control).
   * Incremented Standards-Version to reflect conformance with Policy 3.9.0
     (debian/control, no changes needed).
+  * Added notes on how the package is tested (debian/README.Debian).
 
  -- Charles Plessy <plessy@debian.org>  Wed, 14 Jul 2010 14:08:59 +0900
 
