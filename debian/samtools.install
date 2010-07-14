@@ -2,6 +2,7 @@
 razip	usr/bin
 samtools	usr/bin
 misc/*.pl	usr/share/samtools
+misc/*.py	usr/share/samtools
 misc/wgsim	usr/lib/samtools
 misc/maq2sam-long	usr/lib/samtools
 misc/maq2sam-short	usr/lib/samtools

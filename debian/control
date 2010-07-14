@@ -1,11 +1,11 @@
 Source: samtools
 Section: science
 Priority: optional
-Maintainer: Debian-Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 DM-Upload-Allowed: yes
 Uploaders: Charles Plessy <plessy@debian.org>
 Build-Depends: debhelper (>= 7), cdbs, libncurses5-dev, zlib1g-dev
-Standards-Version: 3.8.3
+Standards-Version: 3.9.0
 Homepage: http://samtools.sourceforge.net
 Vcs-Browser: http://git.debian.org/?p=debian-med/samtools.git
 Vcs-Git: git://git.debian.org/debian-med/samtools.git
@@ -13,6 +13,7 @@ Vcs-Git: git://git.debian.org/debian-med/samtools.git
 Package: samtools
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: python
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
  in the binary BAM format. It imports from and exports to the ascii SAM

@@ -1,3 +1,14 @@
+samtools (0.1.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated the VCS fields to the current Git repository (debian/control).
+  * Install python scripts in usr/share/samtools, and suggest python
+    (debian/samtools.install, debian/rules, debian/control).
+  * Incremented Standards-Version to reflect conformance with Policy 3.9.0
+    (debian/control, no changes needed).
+
+ -- Charles Plessy <plessy@debian.org>  Wed, 14 Jul 2010 14:08:59 +0900
+
 samtools (0.1.7a~dfsg-1) unstable; urgency=low
 
   * New upstream release: new script sam2vcf.pl, and many other changes.
