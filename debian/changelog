@@ -1,3 +1,15 @@
+samtools (0.1.9-1) unstable; urgency=low
+
+  * New upstream release, and new program: bcftools.
+  * debian/rules, debian/samtools.install: install bcftools, its manpage,
+    and bcf-fix.pl and vcfutils.pl.
+  * debian/samtools.examples, debian/rules: install and clean new examples.
+  * Incremented Standards-Version to reflect conformance with Policy 3.9.1
+    (debian/control, no changes needed).
+  * Updated and reformatted debian/copyright according to latest DEP-5 draft.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 01 Nov 2010 20:06:32 +0900
+
 samtools (0.1.8-1) unstable; urgency=low
 
   * New upstream release.
