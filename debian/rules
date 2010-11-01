@@ -9,7 +9,11 @@ DEB_MAKE_BUILD_TARGET = all all-recur razip lib
 DEB_MAKE_CHECK_TARGET = -C examples all
 
 clean::
-	$(RM) examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg
+	$(RM) examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
+
+binary-install/samtools::
+	install -m 644 bcftools/README $(CURDIR)/debian/samtools/usr/share/doc/samtools/README.bcftools
+	ln -s samtools.1.gz $(CURDIR)/debian/samtools/usr/share/man/man1/bcftools.1.gz
 
 binary-fixup/samtools::
 	sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' $(CURDIR)/debian/samtools/usr/share/samtools/varfilter.py
