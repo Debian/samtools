@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>File `log' in samtools_0.1.9-1_sparc64 (Nov 7 18:21)</title><meta http-equiv="content-type" content="text/html;charset=utf-8"></head><body bgcolor="#ffffff">
+<table width="100%"><tr valign=top><td align=left><h2>File `log' in samtools_0.1.9-1_sparc64 (Nov 7 18:21)</h2></td><td align=right><a href="build.php?&pkg=samtools&arch=sparc64">samtools</a> &gt;&gt; <a href="build.php?&pkg=samtools&ver=0.1.9-1&arch=sparc64">0.1.9-1</a> &gt;&gt; <a href="build.php?&pkg=samtools&ver=0.1.9-1&arch=sparc64&stamp=1289154100">Nov&nbsp;7&nbsp;18:21</a> &gt;&gt; log</td></tr></table><p><pre>
+sbuild (Debian sbuild) 0.60.0 (23 Feb 2010) on zee.debian.org
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ samtools 0.1.9-1 (sparc64)                                 07 Nov 2010 18:18 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Package: samtools
+Version: 0.1.9-1
+Architecture: sparc64
+Chroot Build Dir: /var/lib/schroot/mount/sid-sparc64-sbuild-048dc450-8991-4418-9d76-d1c039fcc785/build/buildd-samtools_0.1.9-1-sparc64-WdElZc
+Start Time: 20101107-1818
+Hit http://debian.oregonstate.edu sid Release.gpg
+Hit http://debian.oregonstate.edu sid Release
+Hit http://debian.oregonstate.edu sid/main Sources/DiffIndex
+Hit http://ftp.debian-ports.org sid Release.gpg
+Ign http://ftp.debian-ports.org/debian/ sid/main Translation-en
+Hit http://ftp.debian-ports.org unreleased Release.gpg
+Ign http://ftp.debian-ports.org/debian/ unreleased/main Translation-en
+Hit http://incoming.debian-ports.org unstable Release.gpg
+Ign http://incoming.debian-ports.org/buildd/ unstable/main Translation-en
+Hit http://ftp.debian-ports.org sid Release
+Hit http://ftp.debian-ports.org unreleased Release
+Hit http://incoming.debian-ports.org unstable Release
+Hit http://ftp.debian-ports.org sid/main sparc64 Packages
+Hit http://incoming.debian-ports.org unstable/main Sources
+Hit http://ftp.debian-ports.org unreleased/main sparc64 Packages
+Hit http://incoming.debian-ports.org unstable/main sparc64 Packages
+Reading package lists...
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Fetch source files                                                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+Check APT
+─────────
+
+Checking available source versions...
+
+Download source files with APT
+──────────────────────────────
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
+git://git.debian.org/debian-med/samtools.git
+Need to get 358 kB of source archives.
+Get:1 http://debian.oregonstate.edu/debian/ sid/main samtools 0.1.9-1 (dsc) [1932 B]
+Get:2 http://debian.oregonstate.edu/debian/ sid/main samtools 0.1.9-1 (tar) [350 kB]
+Get:3 http://debian.oregonstate.edu/debian/ sid/main samtools 0.1.9-1 (diff) [6264 B]
+Fetched 358 kB in 0s (3720 kB/s)
+Download complete and in download only mode
+
+Check arch
+──────────
+
+** Using build dependencies supplied by package:
+Build-Depends: debhelper (&gt;= 7), cdbs, libncurses5-dev, zlib1g-dev
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Install build dependencies (internal resolver)                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Checking for already installed source dependencies...
+debhelper: missing
+Using default version 8.0.0
+cdbs: missing
+libncurses5-dev: missing
+zlib1g-dev: missing
+Checking for source dependency conflicts...
+Installing positive dependencies: debhelper cdbs libncurses5-dev zlib1g-dev
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  file gettext gettext-base html2text intltool-debian libcroco3 libglib2.0-0
+  libmagic1 libunistring0 libxml2 po-debconf
+Suggested packages:
+  devscripts doc-base dh-make gettext-doc libmail-box-perl
+Recommended packages:
+  autotools-dev autopoint libglib2.0-data shared-mime-info xml-core
+  libmail-sendmail-perl
+The following NEW packages will be installed:
+  cdbs debhelper file gettext gettext-base html2text intltool-debian libcroco3
+  libglib2.0-0 libmagic1 libncurses5-dev libunistring0 libxml2 po-debconf
+  zlib1g-dev
+debconf: delaying package configuration, since apt-utils is not installed
+0 upgraded, 15 newly installed, 0 to remove and 9 not upgraded.
+Need to get 0 B/8873 kB of archives.
+After this operation, 28.6 MB of additional disk space will be used.
+Selecting previously deselected package libmagic1.
+(Reading database ... 10787 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_5.04-5_sparc64.deb) ...
+Selecting previously deselected package file.
+Unpacking file (from .../file_5.04-5_sparc64.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.18.1.1-3_sparc64.deb) ...
+Selecting previously deselected package libxml2.
+Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-1_sparc64.deb) ...
+Selecting previously deselected package html2text.
+Unpacking html2text (from .../html2text_1.3.2a-15_sparc64.deb) ...
+Selecting previously deselected package libglib2.0-0.
+Unpacking libglib2.0-0 (from .../libglib2.0-0_2.24.2-1_sparc64.deb) ...
+Selecting previously deselected package libcroco3.
+Unpacking libcroco3 (from .../libcroco3_0.6.2-1_sparc64.deb) ...
+Selecting previously deselected package libunistring0.
+Unpacking libunistring0 (from .../libunistring0_0.9.3-3_sparc64.deb) ...
+Selecting previously deselected package gettext.
+Unpacking gettext (from .../gettext_0.18.1.1-3_sparc64.deb) ...
+Selecting previously deselected package intltool-debian.
+Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
+Selecting previously deselected package po-debconf.
+Unpacking po-debconf (from .../po-debconf_1.0.16_all.deb) ...
+Selecting previously deselected package debhelper.
+Unpacking debhelper (from .../debhelper_8.0.0_all.deb) ...
+Selecting previously deselected package cdbs.
+Unpacking cdbs (from .../archives/cdbs_0.4.89_all.deb) ...
+Selecting previously deselected package libncurses5-dev.
+Unpacking libncurses5-dev (from .../libncurses5-dev_5.7+20100313-4_sparc64.deb) ...
+Selecting previously deselected package zlib1g-dev.
+Unpacking zlib1g-dev (from .../zlib1g-dev_1%3a1.2.3.4.dfsg-3_sparc64.deb) ...
+Processing triggers for man-db ...
+Setting up libmagic1 (5.04-5) ...
+Setting up file (5.04-5) ...
+Setting up gettext-base (0.18.1.1-3) ...
+Setting up libxml2 (2.7.8.dfsg-1) ...
+Setting up html2text (1.3.2a-15) ...
+Setting up libglib2.0-0 (2.24.2-1) ...
+Setting up libcroco3 (0.6.2-1) ...
+Setting up libunistring0 (0.9.3-3) ...
+Setting up gettext (0.18.1.1-3) ...
+Setting up intltool-debian (0.35.0+20060710.1) ...
+Setting up po-debconf (1.0.16) ...
+Setting up debhelper (8.0.0) ...
+Setting up cdbs (0.4.89) ...
+Setting up libncurses5-dev (5.7+20100313-4) ...
+Setting up zlib1g-dev (1:1.2.3.4.dfsg-3) ...
+Removing negative dependencies: 
+Checking correctness of source dependencies...
+Kernel: Linux 2.6.32-bpo.5-sparc64-smp sparc64 (sparc64)
+Toolchain package versions: libc6-dev_2.11.2-6 dpkg-dev_1.15.8.5 linux-libc-dev_2.6.32-26 gcc-4.4_4.4.5-5 g++-4.4_4.4.5-5 binutils_2.20.1-15+b1 libstdc++6-4.4-dev_4.4.5-5 libstdc++6_4.4.5-5
+Package versions: apt_0.8.7 base-files_5.9 base-passwd_3.5.22 bash_4.1-3 binutils_2.20.1-15+b1 bsdmainutils_8.0.13 bsdutils_1:2.17.2-3.3 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.89 coreutils_8.5-1 cpio_2.11-4 cpp_4:4.4.5-1 cpp-4.4_4.4.5-5 dash_0.5.5.1-7.1 debconf_1.5.36 debconf-english_1.5.36 debfoster_2.7-1.1 debhelper_8.0.0 debian-archive-keyring_2010.08.28 debian-ports-archive-keyring_2010.06.16 debianutils_3.4.1 diffutils_1:3.0-1 dpkg_1.15.8.5 dpkg-dev_1.15.8.5 e2fslibs_1.41.12-2 e2fsprogs_1.41.12-2 fakeroot_1.14.4-1 file_5.04-5 findutils_4.4.2-1 g++_4:4.4.5-1 g++-4.4_4.4.5-5 gcc_4:4.4.5-1 gcc-4.4_4.4.5-5 gcc-4.4-base_4.4.5-5 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.10-4 gpgv_1.4.10-4 grep_2.6.3-3 groff-base_1.20.1-10 gzip_1.3.12-9 hostname_3.04 html2text_1.3.2a-15 initscripts_2.88dsf-12 insserv_1.14.0-2 intltool-debian_0.35.0+20060710.1 libacl1_2.2.49-4 libattr1_1:2.4.44-2 libblkid1_2.17.2-3.3 libbz2-1.0_1.0.5-6 libc-bin_2.11.2-6 libc-dev-bin_2.11.2-6 libc6_2.11.2-6 libc6-dev_2.11.2-6 libcomerr2_1.41.12-2 libcroco3_0.6.2-1 libdb4.7_4.7.25-9~sparc64 libdb4.8_4.8.30-2 libdpkg-perl_1.15.8.5 libgc1c2_1:6.8-1.2 libgcc1_1:4.4.5-5 libgcrypt11_1.4.5-2 libgdbm3_1.8.3-9 libglib2.0-0_2.24.2-1 libgmp3c2_2:4.3.2+dfsg-1 libgnutls26_2.8.6-1 libgomp1_4.4.5-5 libgpg-error0_1.6-1 libgpm2_1.20.4-3.3 libldap-2.4-2_2.4.23-6 liblocale-gettext-perl_1.05-6 liblzma2_4.999.9beta+20100810-1 libmagic1_5.04-5 libmpfr4_3.0.0-2 libncurses5_5.7+20100313-4 libncurses5-dev_5.7+20100313-4 libncursesw5_5.7+20100313-4 libpam-modules_1.1.1-6.1 libpam-runtime_1.1.1-6.1 libpam0g_1.1.1-6.1 libpcre3_8.02-1.1 libpng12-0_1.2.44-1 libreadline6_6.1-3 libsasl2-2_2.1.23.dfsg1-6 libselinux1_2.0.96-1 libsepol1_2.0.41-1 libslang2_2.2.2-4 libss2_1.41.12-2 libssl0.9.8_0.9.8o-2 libstdc++6_4.4.5-5 libstdc++6-4.4-dev_4.4.5-5 libtasn1-3_2.7-1 libtimedate-perl_1.2000-1 libunistring0_0.9.3-3 libusb-0.1-4_2:0.1.12-16 libuuid1_2.17.2-3.3 libxml2_2.7.8.dfsg-1 linux-libc-dev_2.6.32-26 login_1:4.1.4.2+svn3283-2 lsb-base_3.2-26 make_3.81-8 man-db_2.5.7-6 mawk_1.3.3-15 mount_2.17.2-3.3 ncurses-base_5.7+20100313-4 ncurses-bin_5.7+20100313-4 net-tools_1.60-23 netbase_4.43 passwd_1:4.1.4.2+svn3283-2 patch_2.6-3 perl_5.10.1-12 perl-base_5.10.1-12 perl-modules_5.10.1-16 po-debconf_1.0.16 procps_1:3.2.8-9 psmisc_22.13-1 readline-common_6.1-3 sed_4.2.1-7 sensible-utils_0.0.4 sysv-rc_2.88dsf-12 sysvinit_2.88dsf-12 sysvinit-utils_2.88dsf-12 tar_1.23-3 tzdata_2010o-1 util-linux_2.17.2-3.3 wget_1.12-2.1 xz-utils_4.999.9beta+20100810-1 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Build                                                                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+Unpack source
+─────────────
+
+dpkg-source: warning: -sn is not a valid option for Dpkg::Source::Package::V3::quilt
+gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
+gpgv: Signature made Mon Nov  1 11:10:35 2010 UTC using RSA key ID 2295D502
+gpgv: Can't check signature: public key not found
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.9-1.dsc
+dpkg-source: info: extracting samtools in samtools-0.1.9
+dpkg-source: info: unpacking samtools_0.1.9.orig.tar.bz2
+dpkg-source: info: unpacking samtools_0.1.9-1.debian.tar.gz
+
+Check disc space
+────────────────
+
+
+dpkg-buildpackage
+─────────────────
+
+dpkg-buildpackage: export CFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export CPPFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: source package samtools
+dpkg-buildpackage: source version 0.1.9-1
+ dpkg-source --before-build samtools-0.1.9
+dpkg-buildpackage: host architecture sparc64
+ /usr/bin/fakeroot debian/rules clean
+test -x debian/rules
+dh_testroot
+rm -f debian/stamp-makefile-build debian/stamp-makefile-install
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -k clean
+make[1]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim *~ *.a
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+rm -f debian/stamp-makefile-check
+dh_clean 
+rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
+ debian/rules build
+test -x debian/rules
+mkdir -p "."
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  all all-recur razip lib
+make[1]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kstring.c -o kstring.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_aux.c -o bam_aux.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam.c -o bam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_import.c -o bam_import.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam.c -o sam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_index.c -o bam_index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_pileup.c -o bam_pileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_lpileup.c -o bam_lpileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_md.c -o bam_md.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. glf.c -o glf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razf.c -o razf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. faidx.c -o faidx.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. knetfile.c -o knetfile.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_sort.c -o bam_sort.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_header.c -o sam_header.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_reheader.c -o bam_reheader.o
+ar -cru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. prob1.c -o prob1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. ld.c -o ld.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kfunc.c -o kfunc.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. index.c -o index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
+ar -cru libbcf.a bcf.o vcf.o bcfutils.o prob1.o ld.o kfunc.o index.o fet.o bcf2qcall.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+make[2]: Nothing to be done for `lib'.
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_maqcns.c -o bam_maqcns.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdup.c -o bam_rmdup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdupse.c -o bam_rmdupse.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_mate.c -o bam_mate.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_stat.c -o bam_stat.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_color.c -o bam_color.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bamtk.c -o bamtk.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kaln.c -o kaln.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf.c -o bam2bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. errmod.c -o errmod.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sample.c -o sample.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[3]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[3]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o -lm  -lz -L. -lbcf
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5sum-lite md5sum-lite.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
+gcc -g -O2 -g -Wall -O2 -fPIC -c -I.. -o md5fa.o md5fa.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5fa md5.o md5fa.o -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -o maq2sam-short maq2sam.c -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. wgsim.c -o wgsim.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o wgsim wgsim.o -lm
+make[2]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o razip razf.o razip.o knetfile.o -lz
+make[1]: Nothing to be done for `lib'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9'
+touch debian/stamp-makefile-build
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -C examples all
+make[1]: Entering directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/examples'
+../samtools faidx ex1.fa
+../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
+[sam_header_read2] 2 sequences loaded.
+make[1]: *** [ex1.bam] Bus error
+make[1]: *** Deleting file `ex1.bam'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.9-1-sparc64-WdElZc/samtools-0.1.9/examples'
+make: *** [debian/stamp-makefile-check] Error 2
+dpkg-buildpackage: error: debian/rules build gave error exit status 2
+────────────────────────────────────────────────────────────────────────────────
+Build finished at 20101107-1821
+FAILED [dpkg-buildpackage died]
+────────────────────────────────────────────────────────────────────────────────
+Purging /var/lib/schroot/mount/sid-sparc64-sbuild-048dc450-8991-4418-9d76-d1c039fcc785/build/buildd-samtools_0.1.9-1-sparc64-WdElZc
+(Reading database ... 12673 files and directories currently installed.)
+Removing libncurses5-dev ...
+Removing zlib1g-dev ...
+Removing cdbs ...
+Removing debhelper ...
+Removing po-debconf ...
+Removing intltool-debian ...
+Removing gettext ...
+Removing file ...
+Removing html2text ...
+Purging configuration files for html2text ...
+Removing gettext-base ...
+Removing libunistring0 ...
+Purging configuration files for libunistring0 ...
+Removing libcroco3 ...
+Purging configuration files for libcroco3 ...
+Removing libmagic1 ...
+Purging configuration files for libmagic1 ...
+Removing libxml2 ...
+Purging configuration files for libxml2 ...
+Removing libglib2.0-0 ...
+Purging configuration files for libglib2.0-0 ...
+Processing triggers for man-db ...
+────────────────────────────────────────────────────────────────────────────────
+Finished at 20101107-1821
+Build needed 00:02:58, 6104k disc space
+
+</pre>
+<p>
+
+<!-- Footer menu bar -->
+
+<table width="100%">
+<tr valign=top>
+  <td align=left>
+    <address>
+
+      These scripts were derived from the buildd.debian.org, thanks to Ryan Murray.<br>
+      Contact address: &lt;<a href="mailto:admin@debian-ports.org">admin@debian-ports.org</a>&gt;
+    </address>
+  </td>
+  <td align=right>
+    <font size=-1>(
+      <a href="index.php">index</a> |
+      <a href="build.php">build logs</a>
+    )</font>
+  </td>
+</tr>
+</table>
+<br>
+</body>
