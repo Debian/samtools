@@ -1,0 +1,237 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc -i -I
+dpkg-buildpackage: export CFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export CPPFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: source package samtools
+dpkg-buildpackage: source version 0.1.9-1
+dpkg-buildpackage: source changed by Charles Plessy <plessy@debian.org>
+ dpkg-source -i -I --before-build samtools
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+test -x debian/rules
+dh_testroot
+rm -f debian/stamp-makefile-build debian/stamp-makefile-install
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -k clean
+make[1]: Entering directory `/home/charles/debian/debian-med/samtools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools'
+rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/bcftools'
+rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/bcftools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/misc'
+rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim *~ *.a
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/misc'
+make[1]: Leaving directory `/home/charles/debian/debian-med/samtools'
+rm -f debian/stamp-makefile-check
+dh_clean 
+rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
+ dpkg-source -i -I -b samtools
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building samtools using existing ./samtools_0.1.9.orig.tar.bz2
+dpkg-source: info: building samtools in samtools_0.1.9-1.debian.tar.gz
+dpkg-source: info: building samtools in samtools_0.1.9-1.dsc
+ debian/rules build
+test -x debian/rules
+mkdir -p "."
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  all all-recur razip lib
+make[1]: Entering directory `/home/charles/debian/debian-med/samtools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kstring.c -o kstring.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_aux.c -o bam_aux.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam.c -o bam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_import.c -o bam_import.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam.c -o sam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_index.c -o bam_index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_pileup.c -o bam_pileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_lpileup.c -o bam_lpileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_md.c -o bam_md.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. glf.c -o glf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razf.c -o razf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. faidx.c -o faidx.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. knetfile.c -o knetfile.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_sort.c -o bam_sort.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_header.c -o sam_header.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_reheader.c -o bam_reheader.o
+ar -cru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. prob1.c -o prob1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. ld.c -o ld.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kfunc.c -o kfunc.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. index.c -o index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
+ar -cru libbcf.a bcf.o vcf.o bcfutils.o prob1.o ld.o kfunc.o index.o fet.o bcf2qcall.o
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/bcftools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/misc'
+make[2]: Nothing to be done for `lib'.
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_maqcns.c -o bam_maqcns.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdup.c -o bam_rmdup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdupse.c -o bam_rmdupse.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_mate.c -o bam_mate.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_stat.c -o bam_stat.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_color.c -o bam_color.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bamtk.c -o bamtk.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kaln.c -o kaln.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf.c -o bam2bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. errmod.c -o errmod.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sample.c -o sample.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools'
+make[3]: Entering directory `/home/charles/debian/debian-med/samtools'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/home/charles/debian/debian-med/samtools'
+make[3]: Entering directory `/home/charles/debian/debian-med/samtools/bcftools'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/home/charles/debian/debian-med/samtools/bcftools'
+make[3]: Entering directory `/home/charles/debian/debian-med/samtools/misc'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/home/charles/debian/debian-med/samtools/misc'
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o -lm  -lz -L. -lbcf
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/bcftools'
+make[2]: Entering directory `/home/charles/debian/debian-med/samtools/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5sum-lite md5sum-lite.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
+gcc -g -O2 -g -Wall -O2 -fPIC -c -I.. -o md5fa.o md5fa.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5fa md5.o md5fa.o -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -o maq2sam-short maq2sam.c -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. wgsim.c -o wgsim.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o wgsim wgsim.o -lm
+make[2]: Leaving directory `/home/charles/debian/debian-med/samtools/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o razip razf.o razip.o knetfile.o -lz
+make[1]: Nothing to be done for `lib'.
+make[1]: Leaving directory `/home/charles/debian/debian-med/samtools'
+touch debian/stamp-makefile-build
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -C examples all
+make[1]: Entering directory `/home/charles/debian/debian-med/samtools/examples'
+../samtools faidx ex1.fa
+../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
+[sam_header_read2] 2 sequences loaded.
+../samtools pileup -gf ex1.fa ex1.bam > ex1.glf
+../samtools pileup -cf ex1.fa ex1.bam | gzip > ex1.pileup.gz
+../samtools index ex1.bam
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"a";print}}' | ../samtools view -bS - > ex1a.bam
+[samopen] SAM header is present: 2 sequences.
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"b";print}}' | ../samtools view -bS - > ex1b.bam
+[samopen] SAM header is present: 2 sequences.
+(echo "@RG	ID:ex1	LB:ex1	SM:ex1"; echo "@RG	ID:ex1a	LB:ex1	SM:ex1"; echo "@RG	ID:ex1b	LB:ex1b	SM:ex1b") > ex1f.rg
+../samtools merge -rh ex1f.rg ex1f.bam ex1.bam ex1a.bam ex1b.bam
+../samtools rmdup ex1f.bam ex1f-rmduppe.bam
+[bam_rmdup_core] processing reference seq1...
+[bam_rmdup_core] processing reference seq2...
+[bam_rmdup_core] 1572 / 3144 = 0.5000 in library 'ex1'
+[bam_rmdup_core] 0 / 1572 = 0.0000 in library 'ex1b'
+../samtools rmdup -S ex1f.bam ex1f-rmdupse.bam
+[bam_rmdupse_core] 4145 / 6542 = 0.6336 in library 'ex1'
+[bam_rmdupse_core] 874 / 3271 = 0.2672 in library 'ex1b'
+../samtools glfview ex1.glf | gzip > ex1.glfview.gz
+../samtools mpileup -gf ex1.fa ex1.bam > ex1.bcf
+[mpileup] 1 samples in 1 input files
+gcc -g -Wall -O2 -I.. calDepth.c -o calDepth -lm -lz -L.. -lbam
+
+# You can now launch the viewer with: 'samtools tview ex1.bam ex1.fa'
+
+make[1]: Leaving directory `/home/charles/debian/debian-med/samtools/examples'
+touch debian/stamp-makefile-check
+ fakeroot debian/rules binary
+test -x debian/rules
+dh_testroot
+dh_prep 
+dh_installdirs -A 
+mkdir -p "."
+DEB_MAKE_INSTALL_TARGET unset, skipping default makefile.mk common-install target
+Adding cdbs dependencies to debian/samtools.substvars
+dh_installdirs -psamtools 
+Adding cdbs dependencies to debian/libbam-dev.substvars
+dh_installdirs -plibbam-dev 
+dh_installdocs -psamtools ./NEWS ./AUTHORS 
+dh_installexamples -psamtools 
+dh_installman -psamtools  
+dh_installinfo -psamtools  
+dh_installmenu -psamtools 
+dh_installcron -psamtools 
+dh_installinit -psamtools  
+dh_installdebconf -psamtools 
+dh_installemacsen -psamtools   
+dh_installcatalogs -psamtools 
+dh_installpam -psamtools 
+dh_installlogrotate -psamtools 
+dh_installlogcheck -psamtools 
+dh_installchangelogs -psamtools  ./ChangeLog 
+dh_installudev -psamtools 
+dh_lintian -psamtools 
+dh_install -psamtools  
+dh_link -psamtools  
+dh_installmime -psamtools 
+install -m 644 bcftools/README /home/charles/debian/debian-med/samtools/debian/samtools/usr/share/doc/samtools/README.bcftools
+ln -s samtools.1.gz /home/charles/debian/debian-med/samtools/debian/samtools/usr/share/man/man1/bcftools.1.gz
+dh_installdocs -plibbam-dev ./NEWS ./AUTHORS 
+dh_installexamples -plibbam-dev 
+dh_installman -plibbam-dev  
+dh_installinfo -plibbam-dev  
+dh_installmenu -plibbam-dev 
+dh_installcron -plibbam-dev 
+dh_installinit -plibbam-dev  
+dh_installdebconf -plibbam-dev 
+dh_installemacsen -plibbam-dev   
+dh_installcatalogs -plibbam-dev 
+dh_installpam -plibbam-dev 
+dh_installlogrotate -plibbam-dev 
+dh_installlogcheck -plibbam-dev 
+dh_installchangelogs -plibbam-dev  ./ChangeLog 
+dh_installudev -plibbam-dev 
+dh_lintian -plibbam-dev 
+dh_install -plibbam-dev  
+dh_link -plibbam-dev  
+dh_installmime -plibbam-dev 
+dh_strip -psamtools  
+dh_compress -psamtools  
+dh_fixperms -psamtools  
+dh_makeshlibs -psamtools  
+sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /home/charles/debian/debian-med/samtools/debian/samtools/usr/share/samtools/varfilter.py
+dh_strip -plibbam-dev  
+dh_compress -plibbam-dev  
+dh_fixperms -plibbam-dev  
+dh_makeshlibs -plibbam-dev  
+dh_installdeb -psamtools 
+dh_perl -psamtools 
+dh_shlibdeps -psamtools    
+dh_installdeb -plibbam-dev 
+dh_perl -plibbam-dev 
+dh_shlibdeps -plibbam-dev    
+dh_gencontrol -psamtools  
+dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
+dh_md5sums -psamtools 
+dh_builddeb -psamtools 
+dpkg-deb: building package `samtools' in `../samtools_0.1.9-1_amd64.deb'.
+dh_gencontrol -plibbam-dev  
+dpkg-gencontrol: warning: Depends field of package libbam-dev: unknown substitution variable ${shlibs:Depends}
+dh_md5sums -plibbam-dev 
+dh_builddeb -plibbam-dev 
+dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.9-1_amd64.deb'.
+ dpkg-genchanges  >../samtools_0.1.9-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source -i -I --after-build samtools
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+W: samtools: manpage-has-errors-from-man usr/share/man/man1/samtools.1.gz  around line 492: table wider than line width
+Finished running lintian.
