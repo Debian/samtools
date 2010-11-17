@@ -13,7 +13,9 @@ bcf_t *bcf_open(const char *fn, const char *mode)
 	} else {
 		b->fp = strcmp(fn, "-")? bgzf_open(fn, mode) : bgzf_fdopen(fileno(stdin), mode);
 	}
+#ifndef BCF_LITE
 	b->fp->owned_file = 1;
+#endif
 	return b;
 }
 
@@ -134,7 +136,9 @@ int bcf_sync(bcf1_t *b)
 			b->gi[i].len = b->n_alleles * (b->n_alleles + 1) / 2;
 		} else if (b->gi[i].fmt == bcf_str2int("DP", 2) || b->gi[i].fmt == bcf_str2int("HQ", 2)) {
 			b->gi[i].len = 2;
-		} else if (b->gi[i].fmt == bcf_str2int("GQ", 2) || b->gi[i].fmt == bcf_str2int("GT", 2)) {
+		} else if (b->gi[i].fmt == bcf_str2int("GQ", 2) || b->gi[i].fmt == bcf_str2int("GT", 2)
+				   || b->gi[i].fmt == bcf_str2int("SP", 2))
+		{
 			b->gi[i].len = 1;
 		} else if (b->gi[i].fmt == bcf_str2int("GL", 2)) {
 			b->gi[i].len = b->n_alleles * (b->n_alleles + 1) / 2 * 4;
@@ -236,7 +240,7 @@ void bcf_fmt_core(const bcf_hdr_t *h, bcf1_t *b, kstring_t *s)
 				}
 			} else if (b->gi[i].fmt == bcf_str2int("DP", 2)) {
 				kputw(((uint16_t*)b->gi[i].data)[j], s);
-			} else if (b->gi[i].fmt == bcf_str2int("GQ", 2)) {
+			} else if (b->gi[i].fmt == bcf_str2int("GQ", 2) || b->gi[i].fmt == bcf_str2int("SP", 2)) {
 				kputw(((uint8_t*)b->gi[i].data)[j], s);
 			} else if (b->gi[i].fmt == bcf_str2int("GT", 2)) {
 				int y = ((uint8_t*)b->gi[i].data)[j];
@@ -302,5 +306,15 @@ int bcf_cpy(bcf1_t *r, const bcf1_t *b)
 	bcf_sync(r); // calling bcf_sync() is simple but inefficient
 	for (i = 0; i < r->n_gi; ++i)
 		memcpy(r->gi[i].data, b->gi[i].data, r->n_smpl * r->gi[i].len);
+	return 0;
+}
+
+int bcf_is_indel(const bcf1_t *b)
+{
+	char *p;
+	if (strlen(b->ref) > 1) return 1;
+	for (p = b->alt; *p; ++p)
+		if (*p != ',' && p[1] != ',' && p[1] != '\0')
+			return 1;
 	return 0;
 }

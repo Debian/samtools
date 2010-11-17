@@ -25,11 +25,12 @@ KSTREAM_INIT(gzFile, gzread, 16384)
 #define VC_QCALL   1024
 #define VC_CALL_GT 2048
 #define VC_ADJLD   4096
+#define VC_NO_INDEL 8192
 
 typedef struct {
 	int flag, prior_type, n1;
 	char *fn_list, *prior_file;
-	double theta, pref;
+	double theta, pref, indel_frac;
 } viewconf_t;
 
 khash_t(set64) *bcf_load_pos(const char *fn, bcf_hdr_t *_h)
@@ -161,7 +162,8 @@ static int update_bcf1(int n_smpl, bcf1_t *b, const bcf_p1aux_t *pa, const bcf_p
 	kputs(b->alt, &s); kputc('\0', &s); kputc('\0', &s);
 	kputs(b->info, &s);
 	if (b->info[0]) kputc(';', &s);
-	ksprintf(&s, "AF1=%.3lf;AFE=%.3lf", 1.-pr->f_em, 1.-pr->f_exp);
+//	ksprintf(&s, "AF1=%.4lg;AFE=%.4lg;CI95=%.4lg,%.4lg", 1.-pr->f_em, 1.-pr->f_exp, pr->cil, pr->cih);
+	ksprintf(&s, "AF1=%.4lg;CI95=%.4lg,%.4lg", 1.-pr->f_em, pr->cil, pr->cih);
 	ksprintf(&s, ";DP4=%d,%d,%d,%d;MQ=%d", a.d[0], a.d[1], a.d[2], a.d[3], a.mq);
 	if (a.is_tested) {
 		if (pr->pc[0] >= 0.) ksprintf(&s, ";PC4=%lg,%lg,%lg,%lg", pr->pc[0], pr->pc[1], pr->pc[2], pr->pc[3]);
@@ -199,6 +201,7 @@ double bcf_ld_freq(const bcf1_t *b0, const bcf1_t *b1, double f[4]);
 int bcfview(int argc, char *argv[])
 {
 	extern int bcf_2qcall(bcf_hdr_t *h, bcf1_t *b);
+	extern void bcf_p1_indel_prior(bcf_p1aux_t *ma, double x);
 	bcf_t *bp, *bout = 0;
 	bcf1_t *b, *blast;
 	int c;
@@ -212,8 +215,8 @@ int bcfview(int argc, char *argv[])
 
 	tid = begin = end = -1;
 	memset(&vc, 0, sizeof(viewconf_t));
-	vc.prior_type = vc.n1 = -1; vc.theta = 1e-3; vc.pref = 0.5;
-	while ((c = getopt(argc, argv, "N1:l:cHAGvbSuP:t:p:QgL")) >= 0) {
+	vc.prior_type = vc.n1 = -1; vc.theta = 1e-3; vc.pref = 0.5; vc.indel_frac = -1.;
+	while ((c = getopt(argc, argv, "N1:l:cHAGvbSuP:t:p:QgLi:I")) >= 0) {
 		switch (c) {
 		case '1': vc.n1 = atoi(optarg); break;
 		case 'l': vc.fn_list = strdup(optarg); break;
@@ -227,8 +230,10 @@ int bcfview(int argc, char *argv[])
 		case 'u': vc.flag |= VC_UNCOMP | VC_BCFOUT; break;
 		case 'H': vc.flag |= VC_HWE; break;
 		case 'g': vc.flag |= VC_CALL_GT | VC_CALL; break;
+		case 'I': vc.flag |= VC_NO_INDEL; break;
 		case 't': vc.theta = atof(optarg); break;
 		case 'p': vc.pref = atof(optarg); break;
+		case 'i': vc.indel_frac = atof(optarg); break;
 		case 'Q': vc.flag |= VC_QCALL; break;
 		case 'L': vc.flag |= VC_ADJLD; break;
 		case 'P':
@@ -254,9 +259,11 @@ int bcfview(int argc, char *argv[])
 		fprintf(stderr, "         -N        skip sites where REF is not A/C/G/T\n");
 		fprintf(stderr, "         -Q        output the QCALL likelihood format\n");
 		fprintf(stderr, "         -L        calculate LD for adjacent sites\n");
+		fprintf(stderr, "         -I        skip indels\n");
 		fprintf(stderr, "         -1 INT    number of group-1 samples [0]\n");
 		fprintf(stderr, "         -l FILE   list of sites to output [all sites]\n");
-		fprintf(stderr, "         -t FLOAT  scaled mutation rate [%.4lg]\n", vc.theta);
+		fprintf(stderr, "         -t FLOAT  scaled substitution mutation rate [%.4lg]\n", vc.theta);
+		fprintf(stderr, "         -i FLOAT  indel-to-substitution ratio [%.4lg]\n", vc.indel_frac);
 		fprintf(stderr, "         -p FLOAT  variant if P(ref|D)<FLOAT [%.3lg]\n", vc.pref);
 		fprintf(stderr, "         -P STR    type of prior: full, cond2, flat [full]\n");
 		fprintf(stderr, "\n");
@@ -286,6 +293,7 @@ int bcfview(int argc, char *argv[])
 			bcf_p1_set_n1(p1, vc.n1);
 			bcf_p1_init_subprior(p1, vc.prior_type, vc.theta);
 		}
+		if (vc.indel_frac > 0.) bcf_p1_indel_prior(p1, vc.indel_frac);
 	}
 	if (vc.fn_list) hash = bcf_load_pos(vc.fn_list, h);
 	if (optind + 1 < argc && !(vc.flag&VC_VCFIN)) {
@@ -306,7 +314,9 @@ int bcfview(int argc, char *argv[])
 		}
 	}
 	while (vcf_read(bp, h, b) > 0) {
-		if (vc.flag & VC_ACGT_ONLY) {
+		int is_indel = bcf_is_indel(b);
+		if ((vc.flag & VC_NO_INDEL) && is_indel) continue;
+		if ((vc.flag & VC_ACGT_ONLY) && !is_indel) {
 			int x;
 			if (b->ref[0] == 0 || b->ref[1] != 0) continue;
 			x = toupper(b->ref[0]);

@@ -7,6 +7,7 @@
 #include "sam.h"
 #include "kstring.h"
 #include "kaln.h"
+#include "kprobaln.h"
 
 void bam_fillmd1_core(bam1_t *b, char *ref, int is_equal, int max_nm)
 {
@@ -161,14 +162,35 @@ int bam_cap_mapQ(bam1_t *b, char *ref, int thres)
 	return (int)(t + .499);
 }
 
-int bam_prob_realn(bam1_t *b, const char *ref)
+int bam_prob_realn_core(bam1_t *b, const char *ref, int apply_baq)
 {
 	int k, i, bw, x, y, yb, ye, xb, xe;
 	uint32_t *cigar = bam1_cigar(b);
 	bam1_core_t *c = &b->core;
-	ka_probpar_t conf = ka_probpar_def;
-	// find the start and end of the alignment
-	if (c->flag & BAM_FUNMAP) return -1;
+	kpa_par_t conf = kpa_par_def;
+	uint8_t *bq = 0, *zq = 0, *qual = bam1_qual(b);
+	if (c->flag & BAM_FUNMAP) return -1; // do nothing
+	// test if BQ or ZQ is present
+	if ((bq = bam_aux_get(b, "BQ")) != 0) ++bq;
+	if ((zq = bam_aux_get(b, "ZQ")) != 0 && *zq == 'Z') ++zq;
+	if (bq && zq) { // remove the ZQ tag
+		bam_aux_del(b, zq-1);
+		zq = 0;
+	}
+	if (bq || zq) {
+		if ((apply_baq && zq) || (!apply_baq && bq)) return -3; // in both cases, do nothing
+		if (bq && apply_baq) { // then convert BQ to ZQ
+			for (i = 0; i < c->l_qseq; ++i)
+				qual[i] = qual[i] + 64 < bq[i]? 0 : qual[i] - ((int)bq[i] - 64);
+			*(bq - 3) = 'Z';
+		} else if (zq && !apply_baq) { // then convert ZQ to BQ
+			for (i = 0; i < c->l_qseq; ++i)
+				qual[i] += (int)zq[i] - 64;
+			*(zq - 3) = 'B';
+		}
+		return 0;
+	}
+	// find the start and end of the alignment	
 	x = c->pos, y = 0, yb = ye = xb = xe = -1;
 	for (k = 0; k < c->n_cigar; ++k) {
 		int op, l;
@@ -180,7 +202,7 @@ int bam_prob_realn(bam1_t *b, const char *ref)
 			x += l; y += l;
 		} else if (op == BAM_CSOFT_CLIP || op == BAM_CINS) y += l;
 		else if (op == BAM_CDEL) x += l;
-		else if (op == BAM_CREF_SKIP) return -1;
+		else if (op == BAM_CREF_SKIP) return -1; // do nothing if there is a reference skip
 	}
 	// set bandwidth and the start and the end
 	bw = 7;
@@ -192,8 +214,10 @@ int bam_prob_realn(bam1_t *b, const char *ref)
 	if (xe - xb - c->l_qseq > bw)
 		xb += (xe - xb - c->l_qseq - bw) / 2, xe -= (xe - xb - c->l_qseq - bw) / 2;
 	{ // glocal
-		uint8_t *s, *r, *q, *seq = bam1_seq(b), *qual = bam1_qual(b);
+		uint8_t *s, *r, *q, *seq = bam1_seq(b), *bq;
 		int *state;
+		bq = calloc(c->l_qseq + 1, 1);
+		memcpy(bq, qual, c->l_qseq);
 		s = calloc(c->l_qseq, 1);
 		for (i = 0; i < c->l_qseq; ++i) s[i] = bam_nt16_nt4_table[bam1_seqi(seq, i)];
 		r = calloc(xe - xb, 1);
@@ -201,35 +225,45 @@ int bam_prob_realn(bam1_t *b, const char *ref)
 			r[i-xb] = bam_nt16_nt4_table[bam_nt16_table[(int)ref[i]]];
 		state = calloc(c->l_qseq, sizeof(int));
 		q = calloc(c->l_qseq, 1);
-		ka_prob_glocal(r, xe-xb, s, c->l_qseq, qual, &conf, state, q);
+		kpa_glocal(r, xe-xb, s, c->l_qseq, qual, &conf, state, q);
 		for (k = 0, x = c->pos, y = 0; k < c->n_cigar; ++k) {
 			int op = cigar[k]&0xf, l = cigar[k]>>4;
 			if (op == BAM_CMATCH) {
 				for (i = y; i < y + l; ++i) {
-					if ((state[i]&3) != 0 || state[i]>>2 != x - xb + (i - y)) qual[i] = 0;
-					else qual[i] = qual[i] < q[i]? qual[i] : q[i];
+					if ((state[i]&3) != 0 || state[i]>>2 != x - xb + (i - y)) bq[i] = 0;
+					else bq[i] = bq[i] < q[i]? bq[i] : q[i];
 				}
 				x += l; y += l;
 			} else if (op == BAM_CSOFT_CLIP || op == BAM_CINS) y += l;
 			else if (op == BAM_CDEL) x += l;
 		}
-		free(s); free(r); free(q); free(state);
+		for (i = 0; i < c->l_qseq; ++i) bq[i] = qual[i] - bq[i] + 64; // finalize BQ
+		if (apply_baq) {
+			for (i = 0; i < c->l_qseq; ++i) qual[i] -= bq[i] - 64; // modify qual
+			bam_aux_append(b, "ZQ", 'Z', c->l_qseq + 1, bq);
+		} else bam_aux_append(b, "BQ", 'Z', c->l_qseq + 1, bq);
+		free(bq); free(s); free(r); free(q); free(state);
 	}
 	return 0;
 }
 
+int bam_prob_realn(bam1_t *b, const char *ref)
+{
+	return bam_prob_realn_core(b, ref, 1);
+}
+
 int bam_fillmd(int argc, char *argv[])
 {
-	int c, is_equal = 0, tid = -2, ret, len, is_bam_out, is_sam_in, is_uncompressed, max_nm = 0, is_realn, capQ = 0;
+	int c, is_equal, tid = -2, ret, len, is_bam_out, is_sam_in, is_uncompressed, max_nm, is_realn, capQ, apply_baq;
 	samfile_t *fp, *fpout = 0;
 	faidx_t *fai;
 	char *ref = 0, mode_w[8], mode_r[8];
 	bam1_t *b;
 
-	is_bam_out = is_sam_in = is_uncompressed = is_realn = 0;
+	is_equal = is_bam_out = is_sam_in = is_uncompressed = is_realn = max_nm = apply_baq = capQ = 0;
 	mode_w[0] = mode_r[0] = 0;
 	strcpy(mode_r, "r"); strcpy(mode_w, "w");
-	while ((c = getopt(argc, argv, "reubSC:n:")) >= 0) {
+	while ((c = getopt(argc, argv, "reubSC:n:A")) >= 0) {
 		switch (c) {
 		case 'r': is_realn = 1; break;
 		case 'e': is_equal = 1; break;
@@ -238,6 +272,7 @@ int bam_fillmd(int argc, char *argv[])
 		case 'S': is_sam_in = 1; break;
 		case 'n': max_nm = atoi(optarg); break;
 		case 'C': capQ = atoi(optarg); break;
+		case 'A': apply_baq = 1; break;
 		default: fprintf(stderr, "[bam_fillmd] unrecognized option '-%c'\n", c); return 1;
 		}
 	}
@@ -252,6 +287,7 @@ int bam_fillmd(int argc, char *argv[])
 		fprintf(stderr, "         -u       uncompressed BAM output (for piping)\n");
 		fprintf(stderr, "         -b       compressed BAM output\n");
 		fprintf(stderr, "         -S       the input is SAM with header\n");
+		fprintf(stderr, "         -A       modify the quality string\n");
 		fprintf(stderr, "         -r       read-independent local realignment\n\n");
 		return 1;
 	}
@@ -275,8 +311,7 @@ int bam_fillmd(int argc, char *argv[])
 					fprintf(stderr, "[bam_fillmd] fail to find sequence '%s' in the reference.\n",
 							fp->header->target_name[tid]);
 			}
-//			if (is_realn) bam_realn(b, ref);
-			if (is_realn) bam_prob_realn(b, ref);
+			if (is_realn) bam_prob_realn_core(b, ref, apply_baq);
 			if (capQ > 10) {
 				int q = bam_cap_mapQ(b, ref, capQ);
 				if (b->core.qual > q) b->core.qual = q;
