@@ -556,4 +556,4 @@ SEE ALSO
 
 
 
-samtools-0.1.11                21 November 2010                    samtools(1)
+samtools-0.1.12                 2 December 2010                    samtools(1)
