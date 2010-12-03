@@ -1,3 +1,12 @@
+samtools (0.1.12a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use bzip2 compression for the binary packages (debian/rules).
+  * Incremented debhelper compatibility level to 8, in case ‘--‘ is not
+    available in earlier versions (debian/compat, debian/control).
+
+ -- Charles Plessy <plessy@debian.org>  Fri, 03 Dec 2010 13:32:21 +0900
+
 samtools (0.1.10-1) unstable; urgency=low
 
   * New upstream release.
