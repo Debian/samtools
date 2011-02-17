@@ -1,13 +1,13 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA1
 
 Format: 1.8
-Date: Fri, 03 Dec 2010 13:32:21 +0900
+Date: Thu, 17 Feb 2011 13:13:09 +0900
 Source: samtools
 Binary: samtools libbam-dev
 Architecture: source amd64
-Version: 0.1.12a-1
-Distribution: unstable
+Version: 0.1.12a-1~bpo60+1
+Distribution: squeeze-backports
 Urgency: low
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
@@ -15,45 +15,53 @@ Description:
  libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
  samtools   - processing sequence alignments in SAM and BAM formats
 Changes: 
+ samtools (0.1.12a-1~bpo60+1) squeeze-backports; urgency=low
+ .
+   * Backported for Squeeze (no changes needed).
+ .
  samtools (0.1.12a-1) unstable; urgency=low
  .
    * New upstream release.
    * Use bzip2 compression for the binary packages (debian/rules).
    * Incremented debhelper compatibility level to 8, in case ‘--‘ is not
      available in earlier versions (debian/compat, debian/control).
+ .
+ samtools (0.1.10-1) unstable; urgency=low
+ .
+   * New upstream release.
+ .
+ samtools (0.1.9-1) unstable; urgency=low
+ .
+   * New upstream release, and new program: bcftools.
+   * debian/rules, debian/samtools.install: install bcftools, its manpage,
+     and bcf-fix.pl and vcfutils.pl.
+   * debian/samtools.examples, debian/rules: install and clean new examples.
+   * Incremented Standards-Version to reflect conformance with Policy 3.9.1
+     (debian/control, no changes needed).
+   * Updated and reformatted debian/copyright according to latest DEP-5 draft.
 Checksums-Sha1: 
- e6a106c2c243707081ba068bac70a26eb68c0a25 1946 samtools_0.1.12a-1.dsc
+ d2cb0e379451f310b85513f17fc3f0c53195eb8b 1338 samtools_0.1.12a-1~bpo60+1.dsc
  d517cd189aa714251a0e43cb83dea3ae0f29bffa 355633 samtools_0.1.12a.orig.tar.bz2
- 1714e415bbfb7f6c2141205ef2ca24e04cb64104 6337 samtools_0.1.12a-1.debian.tar.gz
- 6eb40ab90ecb10e909dfd60554c2026ba85e09e2 553878 samtools_0.1.12a-1_amd64.deb
- 27451e1b4da49f60d3a8332bdcf728bf5b70db44 155576 libbam-dev_0.1.12a-1_amd64.deb
+ ba418a8abe405d6dd6559a2d7cd88aa909faa971 6406 samtools_0.1.12a-1~bpo60+1.debian.tar.gz
+ cf79948a513248f2bbcce4b60ea0c15320e11dad 553940 samtools_0.1.12a-1~bpo60+1_amd64.deb
+ 647989770fa1277d47e2707c26f1d78c9d2fd152 155660 libbam-dev_0.1.12a-1~bpo60+1_amd64.deb
 Checksums-Sha256: 
- a470e421395fb21451143bf237ad7eb333d4876d5cebb505b7c6379c45db3aac 1946 samtools_0.1.12a-1.dsc
+ f4a54d27cad331a4763cbbf1a64131afc1628cc23d636226ff13784a282f243a 1338 samtools_0.1.12a-1~bpo60+1.dsc
  377ed5cd2a4bb2b1ad572ca6fcafdd8ed644b67f01ab00fa020618fac11e59ac 355633 samtools_0.1.12a.orig.tar.bz2
- 28e9888d37009876fb4cfa86d64402617688513ae6fafe596b0ca7c02a33c983 6337 samtools_0.1.12a-1.debian.tar.gz
- 97af218314a6febe86b1754c25b594c2b5380eda00ad321e5f6b509eb298dbc9 553878 samtools_0.1.12a-1_amd64.deb
- dcb266f7a1a40b8ec8cb437f0e6dede7f0bce9d026d9f61a873fb59dc760b7fc 155576 libbam-dev_0.1.12a-1_amd64.deb
+ c6379f9a1068ef09039cb891d1ca21b84e4e7bf97a974934841f06ee021e521f 6406 samtools_0.1.12a-1~bpo60+1.debian.tar.gz
+ 186fc5d5c67af72e8679d02576e42b87795280b0d46320abd3a64e9499b5c245 553940 samtools_0.1.12a-1~bpo60+1_amd64.deb
+ eb63f79ecf900497a3ae1c57776aadbb33a8899989926cc297eae00b4393afbf 155660 libbam-dev_0.1.12a-1~bpo60+1_amd64.deb
 Files: 
- 4a86a813ee587939bf0e31eef9445299 1946 science optional samtools_0.1.12a-1.dsc
+ 6e559eca5c59936a62d175eb73657c8f 1338 science optional samtools_0.1.12a-1~bpo60+1.dsc
  500ae32fb431de3940e0e955744b9b36 355633 science optional samtools_0.1.12a.orig.tar.bz2
- 0a8fee2b3be6402a6031b41723480c93 6337 science optional samtools_0.1.12a-1.debian.tar.gz
- 8ac71647603e1b924e0ccde3284df567 553878 science optional samtools_0.1.12a-1_amd64.deb
- 40d878a2a6a6afa9970ba8d66d02e072 155576 libdevel optional libbam-dev_0.1.12a-1_amd64.deb
+ 6cce62dbda0bc6aed196c1f1d9b98099 6406 science optional samtools_0.1.12a-1~bpo60+1.debian.tar.gz
+ 308a0ab5631f760f2b82879dc70796a9 553940 science optional samtools_0.1.12a-1~bpo60+1_amd64.deb
+ 11e8ea591c8ae864b038ec6d5907f334 155660 libdevel optional libbam-dev_0.1.12a-1~bpo60+1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQIcBAEBCAAGBQJM+JAjAAoJEMW9bI8ildUC/44P/0Ttz2gM94F0qZQStfqvMkhT
-JDDCkFLryItbtNPZKly9ThLhLfUm3t+5mHWRpqg7gGDiaZMCwV5L6OfcrpBnV6Fb
-ol8pOi/F5xXC1MBq8UOqZ4c2+w0rxiLsRWm2Xu6lCG/mw0ArZJhv+9Qe8PbMrhx3
-2rtpC+eKicFn6LPDKCfTffGrIfEJlrV3WiDvEbPV7bvOEvAS8hDaw4l6HGJUVleb
-LnNUykdTJV4BwiwJJYmR8yLB5OkFsZuBGzv0NTxWqYWJdOfxbW57Yaegw46fZYh9
-UQGnVwp/bHP0kU+fdvxaOc49dHsggEriqRfZ61miOg4YcsH6drlEQAwPK8DxslJ0
-Bf+toD59PXRNrmtb4Z9q3q8R7PmpNluHbbDwXTx6tP48IEuTmGkEy28uSksdkwSF
-66CS9UqtGCrkUXv8HBAr4qoe1nZoInw7QM0+9hHw2VLtCNuN3AImR1pfsZD1KxSS
-yIImJcGI4VhuebvMK4DGn0pS11H1zXqYJC0sKwpq03VlfIwWBVxCDH6ORC2Tnz/z
-NvCwGdkUQAiiGt6yBfEpBriyA1jzjBXOuKuKXCaIO5tFmcZ6djNs+XDuFz5Yy3rE
-8ZH61sa3b3+iDDv/KTthdeeyETsQhc8Q04fntt+9DRhFllynBRNn/Epm8mWw4Sdt
-nO8h4EYjNQXnWJNGlGxl
-=uHPm
+iEYEARECAAYFAk1c3wAACgkQdYl1krr+x/JJdACfYs+HbbZ+80Vy3DedK3pcPo1O
+OFIAnR7FNCH9zjV5IoyV4YC6g+CU8Ii9
+=DYNL
 -----END PGP SIGNATURE-----
