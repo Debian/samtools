@@ -1,3 +1,9 @@
+samtools (0.1.12a-1~bpo60+1) squeeze-backports; urgency=low
+
+  * Backported for Squeeze (no changes needed).
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 17 Feb 2011 13:13:09 +0900
+
 samtools (0.1.12a-1) unstable; urgency=low
 
   * New upstream release.
