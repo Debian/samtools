@@ -37,6 +37,14 @@ Files: bgzf.*, bgzip.c
 Copyright: © 2008 Broad Institute / Massachusetts Institute of Technology
 License: MIT
 
+Files: khash.h
+Copyright: © 2008, 2009, 2011 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: knetfile.c
+Copyright: © 2008 by Genome Research Ltd (GRL).
+             2010 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
 
 Files: razf.*
 Name: RAZF : Random Access compressed(Z) File
