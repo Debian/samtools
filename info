@@ -1,0 +1,14 @@
+s390~1299043371~sid~successful
+i386~1299043417~sid~successful
+powerpc~1299043539~sid~successful
+sparc~1299043573~sid~failed
+armel~1299043663~sid~failed
+ia64~1299043739~sid~successful
+kfreebsd-i386~1299043749~sid~successful
+mipsel~1299044792~sid~successful
+alpha~1299047331~sid~successful
+mips~1299054657~sid~successful
+hppa~1299058650~sid~successful
+kfreebsd-amd64~1299139939~sid~successful
+hurd-i386~1299391211~sid~failed
+hurd-i386~1299671012~sid~successful
