@@ -1,0 +1,10 @@
+i386~1298046650~squeeze-backports~successful
+sparc~1298051223~squeeze-backports~failed
+s390~1298575078~squeeze-backports~successful
+powerpc~1300116722~squeeze-backports~successful
+ia64~1300145955~squeeze-backports~successful
+armel~1300168559~squeeze-backports~failed
+kfreebsd-i386~1300239669~squeeze-backports~successful
+kfreebsd-amd64~1300247943~squeeze-backports~successful
+mipsel~1300307176~squeeze-backports~successful
+mips~1300662528~squeeze-backports~successful

@@ -1,41 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html><head><title>buildd.debian.org: log of samtools_0.1.12a-1/mips received Sat Dec  4 07:50:05 2010</title><link rel="stylesheet" type="text/css" href="pkg.css"></head>
-<body><a href="build.cgi">Search</a> &gt;&gt; <a href="pkg.cgi?pkg=samtools">samtools</a> (<a href="http://bugs.debian.org/src:samtools">Bugs</a>/<a href="http://packages.qa.debian.org/samtools">PTS</a>/<a href="http://packages.debian.org/samtools">Packages</a>) &gt;&gt; <a href="build.cgi?pkg=samtools;ver=0.1.12a-1">0.1.12a-1</a> &gt;&gt; <a href="build.cgi?pkg=samtools;ver=0.1.12a-1;arch=mips">mips</a> &gt;&gt; Sat Dec  4 07:50:05 2010<pre>
-sbuild (Debian sbuild) 0.60.0 (23 Feb 2010) on ball.debian.org
+From buildd@corelli.debian.org Sun Mar 20 23:08:47 2011
+Return-path: <buildd@corelli.debian.org>
+Received: from kokkonen.debian.org ([2001:41b8:202:deb:216:35ff:fec4:6340])
+	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+	CN=kokkonen.debian.org,
+	EMAIL=hostmaster@kokkonen.debian.org (verified)
+	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.69) (envelope-from <buildd@corelli.debian.org>)
+	id 1Q1Rjr-0006Oy-Ah
+	for logs@buildd.debian.org; Sun, 20 Mar 2011 23:08:47 +0000
+Received: from corelli.debian.org ([2607:f8f0:610:4000:2e0:98ff:fe00:4489])
+	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+	CN=corelli.debian.org, EMAIL=hostmaster@corelli.debian.org (verified)
+	by kokkonen.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.69) (envelope-from <buildd@corelli.debian.org>)
+	id 1Q1Rjo-0002Jj-TY; Sun, 20 Mar 2011 23:08:45 +0000
+Received: from buildd by corelli.debian.org with local (Exim 4.69)
+	(envelope-from <buildd@corelli.debian.org>)
+	id 1Q1Rjk-0006i2-ON; Sun, 20 Mar 2011 23:08:40 +0000
+From: buildd on corelli <buildd@corelli.debian.org>
+To: aba@debian.org,logs@buildd.debian.org
+Subject: Log for successful build of samtools_0.1.12a-1~bpo60+1 on mips
+	(dist=squeeze-backports)
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Message-Id: <E1Q1Rjk-0006i2-ON@corelli.debian.org>
+Date: Sun, 20 Mar 2011 23:08:40 +0000
+Delivered-To: logs@buildd.debian.org
+
+sbuild (Debian sbuild) 0.60.5 (14 Nov 2010) on corelli.debian.org
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 0.1.12a-1 (mips)                                  04 Dec 2010 07:42 ║
+║ samtools 0.1.12a-1~bpo60+1 (mips)                          20 Mar 2011 22:25 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 0.1.12a-1
+Version: 0.1.12a-1~bpo60+1
 Architecture: mips
-Chroot Build Dir: /var/lib/schroot/mount/sid-mips-sbuild-f75c9a7d-199d-45ad-ba56-a30973cbabf2/build/buildd-samtools_0.1.12a-1-mips-QwKHhy
-Start Time: 20101204-0742
-Get:1 http://debian.netcologne.de unstable Release.gpg [835B]
-Ign http://debian.netcologne.de/debian/ unstable/contrib Translation-en
-Ign http://debian.netcologne.de/debian/ unstable/main Translation-en
-Get:2 http://debian.netcologne.de unstable Release [104kB]
-Get:3 http://incoming.debian.org unstable Release.gpg [835B]
-Ign http://incoming.debian.org/debian/ unstable/contrib Translation-en
-Ign http://incoming.debian.org/debian/ unstable/main Translation-en
-Get:4 http://incoming.debian.org  Release.gpg [835B]
-Ign http://incoming.debian.org/buildd-unstable/  Translation-en
-Get:5 http://incoming.debian.org unstable Release [104kB]
-Get:6 http://debian.netcologne.de unstable/main Sources [4073kB]
-Get:7 http://incoming.debian.org  Release [1604B]
-Get:8 http://incoming.debian.org unstable/main Sources [4071kB]
-Get:9 http://debian.netcologne.de unstable/contrib Sources [38.7kB]
-Get:10 http://debian.netcologne.de unstable/non-free Sources [83.8kB]
-Get:11 http://debian.netcologne.de unstable/main mips Packages [6730kB]
-Get:12 http://debian.netcologne.de unstable/contrib mips Packages [51.5kB]
-Get:13 http://incoming.debian.org unstable/contrib Sources [38.7kB]
-Get:14 http://incoming.debian.org unstable/non-free Sources [83.8kB]
-Get:15 http://incoming.debian.org unstable/main mips Packages [6731kB]
-Get:16 http://incoming.debian.org unstable/contrib mips Packages [51.5kB]
-Get:17 http://incoming.debian.org  Sources [10.0kB]
-Get:18 http://incoming.debian.org  Packages [110kB]
-Fetched 22.3MB in 46s (478kB/s)
+Chroot Build Dir: /var/lib/schroot/mount/squeeze-backports-mips-sbuild-76513a66-5133-4980-8d50-d5e46cdaa7e3/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2
+Start Time: 20110320-2225
+Get:1 http://mirror-ubc.debian.org squeeze Release.gpg [1671 B]
+Get:2 http://backports-master.debian.org squeeze-backports Release.gpg [835 B]
+Ign http://mirror-ubc.debian.org/debian/ squeeze/contrib Translation-en
+Ign http://mirror-ubc.debian.org/debian/ squeeze/main Translation-en
+Get:3 http://mirror-ubc.debian.org squeeze-proposed-updates Release.gpg [836 B]
+Ign http://mirror-ubc.debian.org/debian/ squeeze-proposed-updates/contrib Translation-en
+Ign http://backports-master.debian.org/debian-backports/ squeeze-backports/contrib Translation-en
+Ign http://backports-master.debian.org/debian-backports/ squeeze-backports/main Translation-en
+Ign http://mirror-ubc.debian.org/debian/ squeeze-proposed-updates/main Translation-en
+Get:4 http://backports-master.debian.org  Release.gpg [835 B]
+Ign http://backports-master.debian.org/buildd/squeeze-backports/  Translation-en
+Get:5 http://mirror-ubc.debian.org squeeze Release [79.8 kB]
+Get:6 http://backports-master.debian.org squeeze-backports Release [61.2 kB]
+Get:7 http://backports-master.debian.org  Release [1644 B]
+Get:8 http://mirror-ubc.debian.org squeeze-proposed-updates Release [59.0 kB]
+Get:9 http://backports-master.debian.org squeeze-backports/main Sources [9674 B]
+Get:10 http://backports-master.debian.org squeeze-backports/contrib Sources [14 B]
+Get:11 http://backports-master.debian.org squeeze-backports/non-free Sources [14 B]
+Get:12 http://backports-master.debian.org squeeze-backports/main mips Packages [11.4 kB]
+Get:13 http://backports-master.debian.org squeeze-backports/contrib mips Packages [14 B]
+Get:14 http://backports-master.debian.org  Sources [747 B]
+Get:15 http://backports-master.debian.org  Packages [3328 B]
+Get:16 http://mirror-ubc.debian.org squeeze/main Sources [3721 kB]
+Get:17 http://ftp.debian.org squeeze Release.gpg [1671 B]
+Ign http://ftp.debian.org/debian/ squeeze/contrib Translation-en
+Ign http://ftp.debian.org/debian/ squeeze/main Translation-en
+Get:18 http://ftp.debian.org squeeze-proposed-updates Release.gpg [836 B]
+Ign http://ftp.debian.org/debian/ squeeze-proposed-updates/contrib Translation-en
+Ign http://ftp.debian.org/debian/ squeeze-proposed-updates/main Translation-en
+Get:19 http://ftp.debian.org squeeze Release [79.8 kB]
+Get:20 http://mirror-ubc.debian.org squeeze/contrib Sources [33.9 kB]
+Get:21 http://mirror-ubc.debian.org squeeze/non-free Sources [61.7 kB]
+Get:22 http://mirror-ubc.debian.org squeeze/main mips Packages [6407 kB]
+Get:23 http://ftp.debian.org squeeze-proposed-updates Release [59.0 kB]
+Get:24 http://ftp.debian.org squeeze/main Sources [3721 kB]
+Get:25 http://mirror-ubc.debian.org squeeze/contrib mips Packages [45.1 kB]
+Get:26 http://mirror-ubc.debian.org squeeze-proposed-updates/main Sources [14 B]
+Get:27 http://mirror-ubc.debian.org squeeze-proposed-updates/contrib Sources [14 B]
+Get:28 http://mirror-ubc.debian.org squeeze-proposed-updates/non-free Sources [14 B]
+Get:29 http://mirror-ubc.debian.org squeeze-proposed-updates/main mips Packages [14 B]
+Get:30 http://mirror-ubc.debian.org squeeze-proposed-updates/contrib mips Packages [14 B]
+Get:31 http://ftp.debian.org squeeze/contrib Sources [33.9 kB]
+Get:32 http://ftp.debian.org squeeze/non-free Sources [61.7 kB]
+Get:33 http://ftp.debian.org squeeze/main mips Packages [6407 kB]
+Get:34 http://ftp.debian.org squeeze/contrib mips Packages [45.1 kB]
+Get:35 http://ftp.debian.org squeeze-proposed-updates/main Sources [14 B]
+Get:36 http://ftp.debian.org squeeze-proposed-updates/contrib Sources [14 B]
+Get:37 http://ftp.debian.org squeeze-proposed-updates/non-free Sources [14 B]
+Get:38 http://ftp.debian.org squeeze-proposed-updates/main mips Packages [14 B]
+Get:39 http://ftp.debian.org squeeze-proposed-updates/contrib mips Packages [14 B]
+Fetched 20.9 MB in 48s (435 kB/s)
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -53,151 +106,210 @@ Download source files with APT
 
 Reading package lists...
 Building dependency tree...
-NOTICE: &#39;samtools&#39; packaging is maintained in the &#39;Git&#39; version control system at:
+Reading state information...
+NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
 git://git.debian.org/debian-med/samtools.git
-Need to get 364kB of source archives.
-Get:1 http://debian.netcologne.de/debian/ unstable/main samtools 0.1.12a-1 (dsc) [1946B]
-Get:2 http://debian.netcologne.de/debian/ unstable/main samtools 0.1.12a-1 (tar) [356kB]
-Get:3 http://debian.netcologne.de/debian/ unstable/main samtools 0.1.12a-1 (diff) [6337B]
-Fetched 364kB in 0s (1758kB/s)
+Need to get 363 kB of source archives.
+Get:1 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (dsc) [1338 B]
+Get:2 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (tar) [356 kB]
+Get:3 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (diff) [6406 B]
+Fetched 363 kB in 0s (3446 kB/s)
 Download complete and in download only mode
 
 Check arch
 ──────────
 
 ** Using build dependencies supplied by package:
-Build-Depends: debhelper (&gt;= 8), cdbs, libncurses5-dev, zlib1g-dev
+Build-Depends: debhelper (>= 8), cdbs, libncurses5-dev, zlib1g-dev
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ Install build dependencies (internal resolver)                               │
+│ Install build dependencies (aptitude-based resolver)                         │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Checking for already installed source dependencies...
-debhelper: missing
-Using default version 8.0.0
-cdbs: missing
-libncurses5-dev: missing
-zlib1g-dev: missing
-Checking for source dependency conflicts...
-Installing positive dependencies: debhelper cdbs libncurses5-dev zlib1g-dev
 Reading package lists...
 Building dependency tree...
+Reading state information...
 The following extra packages will be installed:
-  bsdmainutils file gettext gettext-base groff-base html2text intltool-debian
-  libcroco3 libglib2.0-0 libmagic1 libncurses5 libpcre3 libunistring0 libxml2
-  man-db ncurses-bin po-debconf
+  libboost-iostreams1.42.0 libcwidget3 libept1 libncursesw5 libsigc++-2.0-0c2a
+  libsqlite3-0 libxapian22
 Suggested packages:
-  wamerican wordlist whois vacation devscripts doc-base dh-make gettext-doc
-  groff less www-browser libmail-box-perl
+  tasksel debtags libcwidget-dev xapian-tools
 Recommended packages:
-  autotools-dev curl wget lynx-cur autopoint libglib2.0-data shared-mime-info
-  libgpm2 xml-core libmail-sendmail-perl
+  aptitude-doc-en aptitude-doc apt-xapian-index libparse-debianchangelog-perl
+  libgpm2
 The following NEW packages will be installed:
-  bsdmainutils cdbs debhelper file gettext gettext-base groff-base html2text
-  intltool-debian libcroco3 libglib2.0-0 libmagic1 libncurses5-dev libpcre3
-  libunistring0 libxml2 man-db po-debconf zlib1g-dev
-The following packages will be upgraded:
-  libncurses5 ncurses-bin
-2 upgraded, 19 newly installed, 0 to remove and 54 not upgraded.
-Need to get 12.3MB of archives.
-After this operation, 37.2MB of additional disk space will be used.
-Get:1 http://debian.netcologne.de/debian/ unstable/main ncurses-bin mips 5.7+20100313-4 [317kB]
-Get:2 http://debian.netcologne.de/debian/ unstable/main libncurses5 mips 5.7+20100313-4 [349kB]
-Get:3 http://debian.netcologne.de/debian/ unstable/main bsdmainutils mips 8.0.17 [208kB]
-Get:4 http://debian.netcologne.de/debian/ unstable/main groff-base mips 1.20.1-10 [1190kB]
-Get:5 http://debian.netcologne.de/debian/ unstable/main man-db mips 2.5.7-6 [1251kB]
-Get:6 http://debian.netcologne.de/debian/ unstable/main libmagic1 mips 5.04-5 [239kB]
-Get:7 http://debian.netcologne.de/debian/ unstable/main file mips 5.04-5 [49.7kB]
-Get:8 http://debian.netcologne.de/debian/ unstable/main gettext-base mips 0.18.1.1-3 [153kB]
-Get:9 http://debian.netcologne.de/debian/ unstable/main libpcre3 mips 8.02-1.1 [232kB]
-Get:10 http://debian.netcologne.de/debian/ unstable/main libxml2 mips 2.7.8.dfsg-1 [836kB]
-Get:11 http://debian.netcologne.de/debian/ unstable/main html2text mips 1.3.2a-15 [103kB]
-Get:12 http://debian.netcologne.de/debian/ unstable/main libglib2.0-0 mips 2.24.2-1 [1043kB]
-Get:13 http://debian.netcologne.de/debian/ unstable/main libcroco3 mips 0.6.2-1 [110kB]
-Get:14 http://debian.netcologne.de/debian/ unstable/main libunistring0 mips 0.9.3-3 [415kB]
-Get:15 http://debian.netcologne.de/debian/ unstable/main gettext mips 0.18.1.1-3 [2037kB]
-Get:16 http://debian.netcologne.de/debian/ unstable/main intltool-debian all 0.35.0+20060710.1 [30.8kB]
-Get:17 http://debian.netcologne.de/debian/ unstable/main po-debconf all 1.0.16+nmu1 [223kB]
-Get:18 http://debian.netcologne.de/debian/ unstable/main debhelper all 8.0.0 [454kB]
-Get:19 http://debian.netcologne.de/debian/ unstable/main cdbs all 0.4.89 [1240kB]
-Get:20 http://debian.netcologne.de/debian/ unstable/main libncurses5-dev mips 5.7+20100313-4 [1643kB]
-Get:21 http://debian.netcologne.de/debian/ unstable/main zlib1g-dev mips 1:1.2.3.4.dfsg-3 [191kB]
+  aptitude libboost-iostreams1.42.0 libcwidget3 libept1 libncursesw5
+  libsigc++-2.0-0c2a libsqlite3-0 libxapian22
+0 upgraded, 8 newly installed, 0 to remove and 3 not upgraded.
+Need to get 6274 kB of archives.
+After this operation, 20.5 MB of additional disk space will be used.
+Get:1 http://mirror-ubc.debian.org/debian/ squeeze/main libboost-iostreams1.42.0 mips 1.42.0-4 [55.3 kB]
+Get:2 http://mirror-ubc.debian.org/debian/ squeeze/main libncursesw5 mips 5.7+20100313-5 [374 kB]
+Get:3 http://mirror-ubc.debian.org/debian/ squeeze/main libsigc++-2.0-0c2a mips 2.2.4.2-1 [39.2 kB]
+Get:4 http://mirror-ubc.debian.org/debian/ squeeze/main libcwidget3 mips 0.5.16-3 [273 kB]
+Get:5 http://mirror-ubc.debian.org/debian/ squeeze/main libxapian22 mips 1.2.3-2 [1098 kB]
+Get:6 http://mirror-ubc.debian.org/debian/ squeeze/main libept1 mips 1.0.4 [137 kB]
+Get:7 http://mirror-ubc.debian.org/debian/ squeeze/main libsqlite3-0 mips 3.7.3-1 [415 kB]
+Get:8 http://mirror-ubc.debian.org/debian/ squeeze/main aptitude mips 0.6.3-3.2 [3882 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 12.3MB in 2s (4710kB/s)
-(Reading database ... 10123 files and directories currently installed.)
-Preparing to replace ncurses-bin 5.7+20100313-3 (using .../ncurses-bin_5.7+20100313-4_mips.deb) ...
-Unpacking replacement ncurses-bin ...
-Setting up ncurses-bin (5.7+20100313-4) ...
-(Reading database ... 10123 files and directories currently installed.)
-Preparing to replace libncurses5 5.7+20100313-3 (using .../libncurses5_5.7+20100313-4_mips.deb) ...
-Unpacking replacement libncurses5 ...
-Setting up libncurses5 (5.7+20100313-4) ...
-Selecting previously deselected package bsdmainutils.
-(Reading database ... 10123 files and directories currently installed.)
-Unpacking bsdmainutils (from .../bsdmainutils_8.0.17_mips.deb) ...
-Selecting previously deselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.20.1-10_mips.deb) ...
-Selecting previously deselected package man-db.
-Unpacking man-db (from .../man-db_2.5.7-6_mips.deb) ...
+Fetched 6274 kB in 1s (5211 kB/s)
+Selecting previously deselected package libboost-iostreams1.42.0.
+(Reading database ... 10147 files and directories currently installed.)
+Unpacking libboost-iostreams1.42.0 (from .../libboost-iostreams1.42.0_1.42.0-4_mips.deb) ...
+Selecting previously deselected package libncursesw5.
+Unpacking libncursesw5 (from .../libncursesw5_5.7+20100313-5_mips.deb) ...
+Selecting previously deselected package libsigc++-2.0-0c2a.
+Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.2.4.2-1_mips.deb) ...
+Selecting previously deselected package libcwidget3.
+Unpacking libcwidget3 (from .../libcwidget3_0.5.16-3_mips.deb) ...
+Selecting previously deselected package libxapian22.
+Unpacking libxapian22 (from .../libxapian22_1.2.3-2_mips.deb) ...
+Selecting previously deselected package libept1.
+Unpacking libept1 (from .../libept1_1.0.4_mips.deb) ...
+Selecting previously deselected package libsqlite3-0.
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.7.3-1_mips.deb) ...
+Selecting previously deselected package aptitude.
+Unpacking aptitude (from .../aptitude_0.6.3-3.2_mips.deb) ...
+Setting up libboost-iostreams1.42.0 (1.42.0-4) ...
+Setting up libncursesw5 (5.7+20100313-5) ...
+Setting up libsigc++-2.0-0c2a (2.2.4.2-1) ...
+Setting up libcwidget3 (0.5.16-3) ...
+Setting up libxapian22 (1.2.3-2) ...
+Setting up libept1 (1.0.4) ...
+Setting up libsqlite3-0 (3.7.3-1) ...
+Setting up aptitude (0.6.3-3.2) ...
+update-alternatives: using /usr/bin/aptitude-curses to provide /usr/bin/aptitude (aptitude) in auto mode.
+dpkg-deb: building package `sbuild-build-depends-samtools-dummy' in `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/buildd-samtools-mips-dZoSz8/sbuild-build-depends-samtools-dummy.deb'.
+Selecting previously deselected package sbuild-build-depends-samtools-dummy.
+(Reading database ... 10355 files and directories currently installed.)
+Unpacking sbuild-build-depends-samtools-dummy (from .../sbuild-build-depends-samtools-dummy.deb) ...
+dpkg: dependency problems prevent configuration of sbuild-build-depends-samtools-dummy:
+ sbuild-build-depends-samtools-dummy depends on debhelper (>= 8); however:
+  Package debhelper is not installed.
+ sbuild-build-depends-samtools-dummy depends on cdbs; however:
+  Package cdbs is not installed.
+ sbuild-build-depends-samtools-dummy depends on libncurses5-dev; however:
+  Package libncurses5-dev is not installed.
+ sbuild-build-depends-samtools-dummy depends on zlib1g-dev; however:
+  Package zlib1g-dev is not installed.
+dpkg: error processing sbuild-build-depends-samtools-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ sbuild-build-depends-samtools-dummy
+aptitude -y --without-recommends -o APT::Install-Recommends=false -o Aptitude::ProblemResolver::StepScore=100 -o Aptitude::ProblemResolver::Hints::KeepDummy=reject sbuild-build-depends-samtools-dummy :UNINST -o Aptitude::ProblemResolver::Keep-All-Tier=55000 -o Aptitude::ProblemResolver::Remove-Essential-Tier=maximum install sbuild-build-depends-samtools-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Initializing package states...
+Writing extended state information...
+The following NEW packages will be installed:
+  bsdmainutils{a} cdbs{a} debhelper{a} file{a} gettext{a} gettext-base{a} 
+  groff-base{a} html2text{a} intltool-debian{a} libcroco3{a} 
+  libglib2.0-0{a} libmagic1{a} libncurses5-dev{a} libpcre3{a} 
+  libunistring0{a} libxml2{a} man-db{a} po-debconf{a} zlib1g-dev{a} 
+The following partially installed packages will be configured:
+  sbuild-build-depends-samtools-dummy 
+0 packages upgraded, 19 newly installed, 0 to remove and 3 not upgraded.
+Need to get 11.7 MB of archives. After unpacking 37.2 MB will be used.
+Writing extended state information...
+Get:1 http://mirror-ubc.debian.org/debian/ squeeze/main libmagic1 mips 5.04-5 [239 kB]
+Get:2 http://mirror-ubc.debian.org/debian/ squeeze/main file mips 5.04-5 [49.7 kB]
+Get:3 http://mirror-ubc.debian.org/debian/ squeeze/main html2text mips 1.3.2a-15 [103 kB]
+Get:4 http://mirror-ubc.debian.org/debian/ squeeze/main libpcre3 mips 8.02-1.1 [232 kB]
+Get:5 http://mirror-ubc.debian.org/debian/ squeeze/main libglib2.0-0 mips 2.24.2-1 [1043 kB]
+Get:6 http://mirror-ubc.debian.org/debian/ squeeze/main libxml2 mips 2.7.8.dfsg-2 [837 kB]
+Get:7 http://mirror-ubc.debian.org/debian/ squeeze/main libcroco3 mips 0.6.2-1 [110 kB]
+Get:8 http://mirror-ubc.debian.org/debian/ squeeze/main libunistring0 mips 0.9.3-3 [415 kB]
+Get:9 http://mirror-ubc.debian.org/debian/ squeeze/main gettext-base mips 0.18.1.1-3 [153 kB]
+Get:10 http://mirror-ubc.debian.org/debian/ squeeze/main gettext mips 0.18.1.1-3 [2037 kB]
+Get:11 http://mirror-ubc.debian.org/debian/ squeeze/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
+Get:12 http://mirror-ubc.debian.org/debian/ squeeze/main po-debconf all 1.0.16+nmu1 [223 kB]
+Get:13 http://mirror-ubc.debian.org/debian/ squeeze/main groff-base mips 1.20.1-10 [1190 kB]
+Get:14 http://mirror-ubc.debian.org/debian/ squeeze/main bsdmainutils mips 8.0.13 [207 kB]
+Get:15 http://mirror-ubc.debian.org/debian/ squeeze/main man-db mips 2.5.7-8 [1251 kB]
+Get:16 http://mirror-ubc.debian.org/debian/ squeeze/main debhelper all 8.0.0 [454 kB]
+Get:17 http://mirror-ubc.debian.org/debian/ squeeze/main cdbs all 0.4.89 [1240 kB]
+Get:18 http://mirror-ubc.debian.org/debian/ squeeze/main libncurses5-dev mips 5.7+20100313-5 [1643 kB]
+Get:19 http://mirror-ubc.debian.org/debian/ squeeze/main zlib1g-dev mips 1:1.2.3.4.dfsg-3 [191 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 11.7 MB in 2s (5248 kB/s)
 Selecting previously deselected package libmagic1.
+(Reading database ... 10355 files and directories currently installed.)
 Unpacking libmagic1 (from .../libmagic1_5.04-5_mips.deb) ...
 Selecting previously deselected package file.
 Unpacking file (from .../archives/file_5.04-5_mips.deb) ...
-Selecting previously deselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.18.1.1-3_mips.deb) ...
-Selecting previously deselected package libpcre3.
-Unpacking libpcre3 (from .../libpcre3_8.02-1.1_mips.deb) ...
-Selecting previously deselected package libxml2.
-Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-1_mips.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-15_mips.deb) ...
+Selecting previously deselected package libpcre3.
+Unpacking libpcre3 (from .../libpcre3_8.02-1.1_mips.deb) ...
 Selecting previously deselected package libglib2.0-0.
 Unpacking libglib2.0-0 (from .../libglib2.0-0_2.24.2-1_mips.deb) ...
+Selecting previously deselected package libxml2.
+Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-2_mips.deb) ...
 Selecting previously deselected package libcroco3.
 Unpacking libcroco3 (from .../libcroco3_0.6.2-1_mips.deb) ...
 Selecting previously deselected package libunistring0.
 Unpacking libunistring0 (from .../libunistring0_0.9.3-3_mips.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.18.1.1-3_mips.deb) ...
 Selecting previously deselected package gettext.
 Unpacking gettext (from .../gettext_0.18.1.1-3_mips.deb) ...
 Selecting previously deselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16+nmu1_all.deb) ...
+Selecting previously deselected package groff-base.
+Unpacking groff-base (from .../groff-base_1.20.1-10_mips.deb) ...
+Selecting previously deselected package bsdmainutils.
+Unpacking bsdmainutils (from .../bsdmainutils_8.0.13_mips.deb) ...
+Selecting previously deselected package man-db.
+Unpacking man-db (from .../man-db_2.5.7-8_mips.deb) ...
 Selecting previously deselected package debhelper.
 Unpacking debhelper (from .../debhelper_8.0.0_all.deb) ...
 Selecting previously deselected package cdbs.
 Unpacking cdbs (from .../archives/cdbs_0.4.89_all.deb) ...
 Selecting previously deselected package libncurses5-dev.
-Unpacking libncurses5-dev (from .../libncurses5-dev_5.7+20100313-4_mips.deb) ...
+Unpacking libncurses5-dev (from .../libncurses5-dev_5.7+20100313-5_mips.deb) ...
 Selecting previously deselected package zlib1g-dev.
 Unpacking zlib1g-dev (from .../zlib1g-dev_1%3a1.2.3.4.dfsg-3_mips.deb) ...
-Setting up bsdmainutils (8.0.17) ...
-update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
-update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode.
-Setting up groff-base (1.20.1-10) ...
-Setting up man-db (2.5.7-6) ...
-Building database of manual pages ...
 Setting up libmagic1 (5.04-5) ...
 Setting up file (5.04-5) ...
-Setting up gettext-base (0.18.1.1-3) ...
-Setting up libpcre3 (8.02-1.1) ...
-Setting up libxml2 (2.7.8.dfsg-1) ...
 Setting up html2text (1.3.2a-15) ...
+Setting up libpcre3 (8.02-1.1) ...
 Setting up libglib2.0-0 (2.24.2-1) ...
+Setting up libxml2 (2.7.8.dfsg-2) ...
 Setting up libcroco3 (0.6.2-1) ...
 Setting up libunistring0 (0.9.3-3) ...
+Setting up gettext-base (0.18.1.1-3) ...
 Setting up gettext (0.18.1.1-3) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16+nmu1) ...
+Setting up groff-base (1.20.1-10) ...
+Setting up bsdmainutils (8.0.13) ...
+update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
+update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode.
+Setting up man-db (2.5.7-8) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 75.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Building database of manual pages ...
 Setting up debhelper (8.0.0) ...
 Setting up cdbs (0.4.89) ...
-Setting up libncurses5-dev (5.7+20100313-4) ...
+Setting up libncurses5-dev (5.7+20100313-5) ...
 Setting up zlib1g-dev (1:1.2.3.4.dfsg-3) ...
-Removing negative dependencies: 
-Checking correctness of source dependencies...
-Kernel: Linux 2.6.32.2-dsa-mips-swarm mips (mips64)
-Toolchain package versions: libc6-dev_2.11.2-6 dpkg-dev_1.15.8.5 linux-libc-dev_2.6.32-23 gcc-4.4_4.4.4-15 g++-4.4_4.4.4-15 binutils_2.20.1-15 libstdc++6-4.4-dev_4.4.4-15 libstdc++6_4.4.4-15
-Package versions: apt_0.8.5 base-files_5.9 base-passwd_3.5.22 bash_4.1-3 binutils_2.20.1-15 bsdmainutils_8.0.17 bsdutils_1:2.17.2-3.2 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.89 coreutils_8.5-1 cpp_4:4.4.4-2 cpp-4.4_4.4.4-15 dash_0.5.5.1-7 debconf_1.5.35 debconf-i18n_1.5.35 debfoster_2.7-1.1 debhelper_8.0.0 debian-archive-keyring_2010.08.28 debianutils_3.4.1 diffutils_1:3.0-1 dpkg_1.15.8.5 dpkg-dev_1.15.8.5 e2fslibs_1.41.12-2 e2fsprogs_1.41.12-2 fakeroot_1.14.4-1 file_5.04-5 findutils_4.4.2-1 g++_4:4.4.4-2 g++-4.4_4.4.4-15 gcc_4:4.4.4-2 gcc-4.4_4.4.4-15 gcc-4.4-base_4.4.4-15 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.10-4 gpgv_1.4.10-4 grep_2.6.3-3 groff-base_1.20.1-10 gzip_1.3.12-9 hostname_3.04 html2text_1.3.2a-15 initscripts_2.88dsf-12 insserv_1.14.0-2 intltool-debian_0.35.0+20060710.1 libacl1_2.2.49-4 libattr1_1:2.4.44-2 libblkid1_2.17.2-3.2 libbz2-1.0_1.0.5-6 libc-bin_2.11.2-6 libc-dev-bin_2.11.2-6 libc6_2.11.2-6 libc6-dev_2.11.2-6 libcomerr2_1.41.12-2 libcroco3_0.6.2-1 libdb4.7_4.7.25-9 libdb4.8_4.8.30-2 libdpkg-perl_1.15.8.5 libgc1c2_1:6.8-1.2 libgcc1_1:4.4.4-15 libgdbm3_1.8.3-9 libglib2.0-0_2.24.2-1 libgmp3c2_2:4.3.2+dfsg-1 libgomp1_4.4.4-15 liblocale-gettext-perl_1.05-6 liblzma2_4.999.9beta+20100810-1 libmagic1_5.04-5 libmpfr4_3.0.0-2 libncurses5_5.7+20100313-4 libncurses5-dev_5.7+20100313-4 libpam-modules_1.1.1-6 libpam-runtime_1.1.1-6 libpam0g_1.1.1-6 libpcre3_8.02-1.1 libreadline6_6.1-3 libselinux1_2.0.96-1 libsepol1_2.0.41-1 libslang2_2.2.2-4 libss2_1.41.12-2 libstdc++6_4.4.4-15 libstdc++6-4.4-dev_4.4.4-15 libtext-charwidth-perl_0.04-6 libtext-iconv-perl_1.7-2 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libunistring0_0.9.3-3 libusb-0.1-4_2:0.1.12-16 libuuid1_2.17.2-3.2 libxml2_2.7.8.dfsg-1 linux-libc-dev_2.6.32-23 login_1:4.1.4.2+svn3283-1 lsb-base_3.2-24 make_3.81-8 man-db_2.5.7-6 mawk_1.3.3-15 mount_2.17.2-3.2 ncurses-base_5.7+20100313-3 ncurses-bin_5.7+20100313-4 passwd_1:4.1.4.2+svn3283-1 patch_2.6-3 perl_5.10.1-14 perl-base_5.10.1-14 perl-modules_5.10.1-14 po-debconf_1.0.16+nmu1 readline-common_6.1-3 sed_4.2.1-7 sensible-utils_0.0.4 sudo_1.7.4p4-2 sysv-rc_2.88dsf-12 sysvinit_2.88dsf-12 sysvinit-utils_2.88dsf-12 tar_1.23-3 tzdata_2010l-1 util-linux_2.17.2-3.2 xz-utils_4.999.9beta+20100810-1 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
+Setting up sbuild-build-depends-samtools-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+Kernel: Linux 2.6.35.4-dsa-octeon mips (mips64)
+Toolchain package versions: libc6-dev_2.11.2-10 dpkg-dev_1.15.8.10 linux-libc-dev_2.6.32-31 gcc-4.4_4.4.5-8 g++-4.4_4.4.5-8 binutils_2.20.1-16 libstdc++6-4.4-dev_4.4.5-8 libstdc++6_4.4.5-8
+Package versions: apt_0.8.10.3 aptitude_0.6.3-3.2 base-files_6.0 base-passwd_3.5.22 bash_4.1-3 binutils_2.20.1-16 bsdmainutils_8.0.13 bsdutils_1:2.17.2-9 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.89 coreutils_8.5-1 cpp_4:4.4.5-1 cpp-4.4_4.4.5-8 dash_0.5.5.1-7.4 debconf_1.5.36.1 debconf-i18n_1.5.36.1 debfoster_2.7-1.1 debhelper_8.0.0 debian-archive-keyring_2010.08.28 debianutils_3.4 diffutils_1:3.0-1 dpkg_1.15.8.10 dpkg-dev_1.15.8.10 e2fslibs_1.41.12-2 e2fsprogs_1.41.12-2 fakeroot_1.14.4-1 file_5.04-5 findutils_4.4.2-1+b1 g++_4:4.4.5-1 g++-4.4_4.4.5-8 gcc_4:4.4.5-1 gcc-4.4_4.4.5-8 gcc-4.4-base_4.4.5-8 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.10-4 gpgv_1.4.10-4 grep_2.6.3-3 groff-base_1.20.1-10 gzip_1.3.12-9 hostname_3.04 html2text_1.3.2a-15 initscripts_2.88dsf-13.1 insserv_1.14.0-2 intltool-debian_0.35.0+20060710.1 libacl1_2.2.49-4 libattr1_1:2.4.44-2 libblkid1_2.17.2-9 libboost-iostreams1.42.0_1.42.0-4 libbz2-1.0_1.0.5-6 libc-bin_2.11.2-10 libc-dev-bin_2.11.2-10 libc6_2.11.2-10 libc6-dev_2.11.2-10 libcomerr2_1.41.12-2 libcroco3_0.6.2-1 libcwidget3_0.5.16-3 libdb4.7_4.7.25-9 libdb4.8_4.8.30-2 libdpkg-perl_1.15.8.10 libept1_1.0.4 libgc1c2_1:6.8-1.2 libgcc1_1:4.4.5-8 libgdbm3_1.8.3-9 libglib2.0-0_2.24.2-1 libgmp3c2_2:4.3.2+dfsg-1 libgomp1_4.4.5-8 liblocale-gettext-perl_1.05-6 liblzma2_5.0.0-2 libmagic1_5.04-5 libmpfr1ldbl_2.4.2-3 libmpfr4_3.0.0-2 libncurses5_5.7+20100313-5 libncurses5-dev_5.7+20100313-5 libncursesw5_5.7+20100313-5 libpam-modules_1.1.1-6.1 libpam-runtime_1.1.1-6.1 libpam0g_1.1.1-6.1 libpcre3_8.02-1.1 libreadline6_6.1-3 libselinux1_2.0.96-1 libsepol1_2.0.41-1 libsigc++-2.0-0c2a_2.2.4.2-1 libslang2_2.2.2-4 libsqlite3-0_3.7.3-1 libss2_1.41.12-2 libstdc++6_4.4.5-8 libstdc++6-4.4-dev_4.4.5-8 libtext-charwidth-perl_0.04-6 libtext-iconv-perl_1.7-2 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libunistring0_0.9.3-3 libusb-0.1-4_2:0.1.12-16 libuuid1_2.17.2-9 libxapian22_1.2.3-2 libxml2_2.7.8.dfsg-2 linux-libc-dev_2.6.32-31 login_1:4.1.4.2+svn3283-2+squeeze1 lsb-base_3.2-23.2squeeze1 make_3.81-8 man-db_2.5.7-8 mawk_1.3.3-15 mount_2.17.2-9 ncurses-base_5.7+20100313-5 ncurses-bin_5.7+20100313-5 passwd_1:4.1.4.2+svn3283-2+squeeze1 patch_2.6-2 perl_5.10.1-17 perl-base_5.10.1-17 perl-modules_5.10.1-17 po-debconf_1.0.16+nmu1 readline-common_6.1-3 sbuild-build-depends-samtools-dummy_0.invalid.0 sed_4.2.1-7 sensible-utils_0.0.4 sudo_1.7.4p4-2.squeeze.1 sysv-rc_2.88dsf-13.1 sysvinit_2.88dsf-13.1 sysvinit-utils_2.88dsf-13.1 tar_1.23-3 tzdata_2010o-1 util-linux_2.17.2-9 xz-utils_5.0.0-2 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -208,13 +320,13 @@ Unpack source
 ─────────────
 
 dpkg-source: warning: -sn is not a valid option for Dpkg::Source::Package::V3::quilt
-gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg&#39;: file open error
-gpgv: Signature made Fri Dec  3 06:37:23 2010 UTC using RSA key ID 2295D502
-gpgv: Can&#39;t check signature: public key not found
-dpkg-source: warning: failed to verify signature on ./samtools_0.1.12a-1.dsc
+gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
+gpgv: Signature made Thu Feb 17 08:40:32 2011 UTC using DSA key ID BAFEC7F2
+gpgv: Can't check signature: public key not found
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.12a-1~bpo60+1.dsc
 dpkg-source: info: extracting samtools in samtools-0.1.12a
 dpkg-source: info: unpacking samtools_0.1.12a.orig.tar.bz2
-dpkg-source: info: unpacking samtools_0.1.12a-1.debian.tar.gz
+dpkg-source: info: unpacking samtools_0.1.12a-1~bpo60+1.debian.tar.gz
 
 Check disc space
 ────────────────
@@ -229,46 +341,46 @@ dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
 dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
 dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 0.1.12a-1
+dpkg-buildpackage: source version 0.1.12a-1~bpo60+1
  dpkg-source --before-build samtools-0.1.12a
 dpkg-buildpackage: host architecture mips
  /usr/bin/fakeroot debian/rules clean
 test -x debian/rules
 dh_testroot
 rm -f debian/stamp-makefile-build debian/stamp-makefile-install
-/usr/bin/make  -C . CFLAGS=&quot;-g -O2 -g -Wall -O2 -fPIC&quot; CXXFLAGS=&quot;-g -O2 -g -Wall -O2&quot; CPPFLAGS=&quot;&quot; LDFLAGS=&quot;&quot;  -k clean
-make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -k clean
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
 rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
 rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
 rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim *~ *.a
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
-make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
 rm -f debian/stamp-makefile-check
 dh_clean 
 rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
  debian/rules build
 test -x debian/rules
-mkdir -p &quot;.&quot;
+mkdir -p "."
 /usr/share/cdbs/1/rules/buildcore.mk:104: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
-/usr/bin/make  -C . CFLAGS=&quot;-g -O2 -g -Wall -O2 -fPIC&quot; CXXFLAGS=&quot;-g -O2 -g -Wall -O2&quot; CPPFLAGS=&quot;&quot; LDFLAGS=&quot;&quot;  all all-recur razip lib
-make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  all all-recur razip lib
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kstring.c -o kstring.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_aux.c -o bam_aux.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam.c -o bam.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_import.c -o bam_import.o
-bam_import.c: In function &#39;append_text&#39;:
-bam_import.c:179: warning: format &#39;%ld&#39; expects type &#39;long int&#39;, but argument 3 has type &#39;size_t&#39;
-bam_import.c:186: warning: format &#39;%ld&#39; expects type &#39;long int&#39;, but argument 3 has type &#39;size_t&#39;
-bam_import.c:186: warning: format &#39;%ld&#39; expects type &#39;long int&#39;, but argument 4 has type &#39;size_t&#39;
-bam_import.c:186: warning: format &#39;%ld&#39; expects type &#39;long int&#39;, but argument 5 has type &#39;size_t&#39;
-bam_import.c:186: warning: format &#39;%ld&#39; expects type &#39;long int&#39;, but argument 6 has type &#39;size_t&#39;
+bam_import.c: In function 'append_text':
+bam_import.c:179: warning: format '%ld' expects type 'long int', but argument 3 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 3 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 4 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 5 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 6 has type 'size_t'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam.c -o sam.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_index.c -o bam_index.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_pileup.c -o bam_pileup.o
@@ -283,8 +395,8 @@ gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSE
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_reheader.c -o bam_reheader.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kprobaln.c -o kprobaln.o
 ar -cru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
@@ -295,10 +407,10 @@ gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSE
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
 ar -cru libbcf.a bcf.o vcf.o bcfutils.o prob1.o ld.o kfunc.o index.o fet.o bcf2qcall.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
-make[2]: Nothing to be done for `lib&#39;.
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
+make[2]: Nothing to be done for `lib'.
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_maqcns.c -o bam_maqcns.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
@@ -315,24 +427,24 @@ gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSE
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. errmod.c -o errmod.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sample.c -o sample.o
 gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[3]: Nothing to be done for `lib&#39;.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
-make[3]: Nothing to be done for `lib&#39;.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
-make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
-make[3]: Nothing to be done for `lib&#39;.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
 gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
 gcc -g -O2 -g -Wall -O2 -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o -lm  -lz -L. -lbcf
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/bcftools&#39;
-make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
 gcc -g -O2 -g -Wall -O2 -fPIC -o md5sum-lite md5sum-lite.o
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
@@ -342,50 +454,50 @@ gcc -g -O2 -g -Wall -O2 -fPIC -o maq2sam-short maq2sam.c -lz
 gcc -g -O2 -g -Wall -O2 -fPIC -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. wgsim.c -o wgsim.o
 gcc -g -O2 -g -Wall -O2 -fPIC -o wgsim wgsim.o -lm
-make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/misc&#39;
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/misc'
 gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
 gcc -g -O2 -g -Wall -O2 -fPIC -o razip razf.o razip.o knetfile.o -lz
-make[1]: Nothing to be done for `lib&#39;.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a&#39;
+make[1]: Nothing to be done for `lib'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a'
 touch debian/stamp-makefile-build
-/usr/bin/make  -C . CFLAGS=&quot;-g -O2 -g -Wall -O2 -fPIC&quot; CXXFLAGS=&quot;-g -O2 -g -Wall -O2&quot; CPPFLAGS=&quot;&quot; LDFLAGS=&quot;&quot;  -C examples all
-make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/examples&#39;
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -C examples all
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/examples'
 ../samtools faidx ex1.fa
 ../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
 [sam_header_read2] 2 sequences loaded.
-../samtools pileup -gf ex1.fa ex1.bam &gt; ex1.glf
-../samtools pileup -cf ex1.fa ex1.bam | gzip &gt; ex1.pileup.gz
+../samtools pileup -gf ex1.fa ex1.bam > ex1.glf
+../samtools pileup -cf ex1.fa ex1.bam | gzip > ex1.pileup.gz
 ../samtools index ex1.bam
-../samtools view -h ex1.bam | awk &#39;BEGIN{FS=OFS=&quot;\t&quot;}{if(/^@/)print;else{$1=$1&quot;a&quot;;print}}&#39; | ../samtools view -bS - &gt; ex1a.bam
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"a";print}}' | ../samtools view -bS - > ex1a.bam
 [samopen] SAM header is present: 2 sequences.
-../samtools view -h ex1.bam | awk &#39;BEGIN{FS=OFS=&quot;\t&quot;}{if(/^@/)print;else{$1=$1&quot;b&quot;;print}}&#39; | ../samtools view -bS - &gt; ex1b.bam
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"b";print}}' | ../samtools view -bS - > ex1b.bam
 [samopen] SAM header is present: 2 sequences.
-(echo &quot;@RG	ID:ex1	LB:ex1	SM:ex1&quot;; echo &quot;@RG	ID:ex1a	LB:ex1	SM:ex1&quot;; echo &quot;@RG	ID:ex1b	LB:ex1b	SM:ex1b&quot;) &gt; ex1f.rg
+(echo "@RG	ID:ex1	LB:ex1	SM:ex1"; echo "@RG	ID:ex1a	LB:ex1	SM:ex1"; echo "@RG	ID:ex1b	LB:ex1b	SM:ex1b") > ex1f.rg
 ../samtools merge -rh ex1f.rg ex1f.bam ex1.bam ex1a.bam ex1b.bam
 ../samtools rmdup ex1f.bam ex1f-rmduppe.bam
 [bam_rmdup_core] processing reference seq1...
 [bam_rmdup_core] processing reference seq2...
-[bam_rmdup_core] 1572 / 3144 = 0.5000 in library &#39;ex1&#39;
-[bam_rmdup_core] 0 / 1572 = 0.0000 in library &#39;ex1b&#39;
+[bam_rmdup_core] 1572 / 3144 = 0.5000 in library 'ex1'
+[bam_rmdup_core] 0 / 1572 = 0.0000 in library 'ex1b'
 ../samtools rmdup -S ex1f.bam ex1f-rmdupse.bam
-[bam_rmdupse_core] 4145 / 6542 = 0.6336 in library &#39;ex1&#39;
-[bam_rmdupse_core] 874 / 3271 = 0.2672 in library &#39;ex1b&#39;
-../samtools glfview ex1.glf | gzip &gt; ex1.glfview.gz
-../samtools mpileup -gf ex1.fa ex1.bam &gt; ex1.bcf
+[bam_rmdupse_core] 4145 / 6542 = 0.6336 in library 'ex1'
+[bam_rmdupse_core] 874 / 3271 = 0.2672 in library 'ex1b'
+../samtools glfview ex1.glf | gzip > ex1.glfview.gz
+../samtools mpileup -gf ex1.fa ex1.bam > ex1.bcf
 [mpileup] 1 samples in 1 input files
-&lt;mpileup&gt; Set max per-sample depth to 8000
+<mpileup> Set max per-sample depth to 8000
 gcc -g -Wall -O2 -I.. calDepth.c -o calDepth -lm -lz -L.. -lbam
 
-# You can now launch the viewer with: &#39;samtools tview ex1.bam ex1.fa&#39;
+# You can now launch the viewer with: 'samtools tview ex1.bam ex1.fa'
 
-make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/examples&#39;
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/examples'
 touch debian/stamp-makefile-check
  /usr/bin/fakeroot debian/rules binary-arch
 test -x debian/rules
 dh_testroot
 dh_prep 
 dh_installdirs -A 
-mkdir -p &quot;.&quot;
+mkdir -p "."
 /usr/share/cdbs/1/rules/buildcore.mk:104: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
 DEB_MAKE_INSTALL_TARGET unset, skipping default makefile.mk common-install target
 Adding cdbs dependencies to debian/samtools.substvars
@@ -411,8 +523,8 @@ dh_lintian -psamtools
 dh_install -psamtools  
 dh_link -psamtools  
 dh_installmime -psamtools 
-install -m 644 bcftools/README /build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/debian/samtools/usr/share/doc/samtools/README.bcftools
-ln -s samtools.1.gz /build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/debian/samtools/usr/share/man/man1/bcftools.1.gz
+install -m 644 bcftools/README /build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/debian/samtools/usr/share/doc/samtools/README.bcftools
+ln -s samtools.1.gz /build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/debian/samtools/usr/share/man/man1/bcftools.1.gz
 dh_installdocs -plibbam-dev ./NEWS ./AUTHORS 
 dh_installexamples -plibbam-dev 
 dh_installman -plibbam-dev  
@@ -436,7 +548,7 @@ dh_strip -psamtools
 dh_compress -psamtools  
 dh_fixperms -psamtools  
 dh_makeshlibs -psamtools  
-sed -i &#39;s|^#!/software/bin/python|#!/usr/bin/python|&#39; /build/buildd-samtools_0.1.12a-1-mips-QwKHhy/samtools-0.1.12a/debian/samtools/usr/share/samtools/varfilter.py
+sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2/samtools-0.1.12a/debian/samtools/usr/share/samtools/varfilter.py
 dh_strip -plibbam-dev  
 dh_compress -plibbam-dev  
 dh_fixperms -plibbam-dev  
@@ -451,69 +563,66 @@ dh_gencontrol -psamtools
 dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
 dh_md5sums -psamtools 
 dh_builddeb -psamtools -- -Z=bzip2
-dpkg-deb: building package `samtools&#39; in `../samtools_0.1.12a-1_mips.deb&#39;.
+dpkg-deb: building package `samtools' in `../samtools_0.1.12a-1~bpo60+1_mips.deb'.
 dh_gencontrol -plibbam-dev  
 dpkg-gencontrol: warning: Depends field of package libbam-dev: unknown substitution variable ${shlibs:Depends}
 dh_md5sums -plibbam-dev 
 dh_builddeb -plibbam-dev -- -Z=bzip2
-dpkg-deb: building package `libbam-dev&#39; in `../libbam-dev_0.1.12a-1_mips.deb&#39;.
-dpkg-genchanges -B
+dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.12a-1~bpo60+1_mips.deb'.
+ dpkg-genchanges -B -mmips Build Daemon (corelli) <buildd_mips-corelli@buildd.debian.org> >../samtools_0.1.12a-1~bpo60+1_mips.changes
 dpkg-genchanges: arch-specific upload - not including arch-independent packages
 dpkg-genchanges: binary-only upload - not including any source code
  dpkg-source --after-build samtools-0.1.12a
 dpkg-buildpackage: binary only upload (no source included)
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20101204-0749
+Build finished at 20110320-2308
 
-samtools_0.1.12a-1_mips.changes:
+samtools_0.1.12a-1~bpo60+1_mips.changes:
 Format: 1.8
-Date: Fri, 03 Dec 2010 13:32:21 +0900
+Date: Thu, 17 Feb 2011 13:13:09 +0900
 Source: samtools
 Binary: samtools libbam-dev
 Architecture: mips
-Version: 0.1.12a-1
-Distribution: unstable
+Version: 0.1.12a-1~bpo60+1
+Distribution: squeeze-backports
 Urgency: low
-Maintainer: Debian Build Daemon &lt;buildd_mips-ball@buildd...&gt;
-Changed-By: Charles Plessy &lt;plessy@debian...&gt;
+Maintainer: mips Build Daemon (corelli) <buildd_mips-corelli@buildd.debian.org>
+Changed-By: Charles Plessy <plessy@debian.org>
 Description: 
  libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
  samtools   - processing sequence alignments in SAM and BAM formats
 Changes: 
- samtools (0.1.12a-1) unstable; urgency=low
+ samtools (0.1.12a-1~bpo60+1) squeeze-backports; urgency=low
  .
-   * New upstream release.
-   * Use bzip2 compression for the binary packages (debian/rules).
-   * Incremented debhelper compatibility level to 8, in case ‘--‘ is not
-     available in earlier versions (debian/compat, debian/control).
+   * Backported for Squeeze (no changes needed).
 Checksums-Sha1: 
- 819ca6a39882f43c04698bc7aaaa06631ed10e0b 574528 samtools_0.1.12a-1_mips.deb
- 67683aff48ff5b969fe894fb62879a6a270e2a1d 172934 libbam-dev_0.1.12a-1_mips.deb
+ 32a91265b620fb2b14145c3c719779e909d4504c 579034 samtools_0.1.12a-1~bpo60+1_mips.deb
+ 9ca7e61bb352b19fe1e300b5cee43bd1c05dfba7 172916 libbam-dev_0.1.12a-1~bpo60+1_mips.deb
 Checksums-Sha256: 
- 0558c06b947bd330216871469e3921cc71144f216eba89a26325ff9e62e8efdb 574528 samtools_0.1.12a-1_mips.deb
- 2fff24c10a6abce81214d6eb3c3973b8a01659ce2a4cbba55edb565f84f96049 172934 libbam-dev_0.1.12a-1_mips.deb
+ a45e557cff5a7f3af0b782f43d13938f152aad14bf9a2f2e8c6bd524c26b7d9e 579034 samtools_0.1.12a-1~bpo60+1_mips.deb
+ 30233e46a20ed9d3484f505000894c9c9d951624ae20107741b6cffc9339e78e 172916 libbam-dev_0.1.12a-1~bpo60+1_mips.deb
 Files: 
- ad86bf07ab4b83c8e247ce25aa58ce23 574528 science optional samtools_0.1.12a-1_mips.deb
- 713b2da1c6a306a68ca29dd52f92c7b8 172934 libdevel optional libbam-dev_0.1.12a-1_mips.deb
+ e1b83287f4cff9404bd195a0ae85260d 579034 science optional samtools_0.1.12a-1~bpo60+1_mips.deb
+ 6581a533c254f192399e8c9e4f4fc5f5 172916 libdevel optional libbam-dev_0.1.12a-1~bpo60+1_mips.deb
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Package contents                                                             │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-samtools_0.1.12a-1_mips.deb
-───────────────────────────
+samtools_0.1.12a-1~bpo60+1_mips.deb
+───────────────────────────────────
 
  new debian package, version 2.0.
- size 574528 bytes: control archive= 1790 bytes.
-     792 bytes,    16 lines      control              
+ size 579034 bytes: control archive= 1803 bytes.
+     800 bytes,    16 lines      control              
     2517 bytes,    38 lines      md5sums              
  Package: samtools
- Version: 0.1.12a-1
+ Version: 0.1.12a-1~bpo60+1
  Architecture: mips
- Maintainer: Debian Med Packaging Team &lt;debian-med-packaging@lists...&gt;
+ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
  Installed-Size: 1116
- Depends: libc6 (&gt;= 2.7), libncurses5 (&gt;= 5.7+20100313), zlib1g (&gt;= 1:1.2.3.3.dfsg)
+ Depends: libc6 (>= 2.7), libncurses5 (>= 5.7+20100313), zlib1g (>= 1:1.2.3.3.dfsg)
  Suggests: python
  Section: science
  Priority: optional
@@ -525,72 +634,72 @@ samtools_0.1.12a-1_mips.deb
   to retrieve reads in any regions swiftly. It is designed to work on a stream,
   and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
 
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/doc/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/doc/samtools/
--rw-r--r-- root/root      4927 2010-12-03 05:06 ./usr/share/doc/samtools/copyright
--rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/samtools/changelog.gz
--rw-r--r-- root/root      1966 2010-12-04 07:49 ./usr/share/doc/samtools/README.bcftools
--rw-r--r-- root/root      1031 2010-12-03 05:06 ./usr/share/doc/samtools/README.Debian
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/samtools/
+-rwxr-xr-x root/root      2696 2010-11-17 04:16 ./usr/share/samtools/soap2sam.pl
+-rwxr-xr-x root/root      7881 2010-11-17 04:16 ./usr/share/samtools/sam2vcf.pl
+-rwxr-xr-x root/root      5989 2010-11-17 04:16 ./usr/share/samtools/novo2sam.pl
+-rwxr-xr-x root/root     12567 2010-12-02 16:41 ./usr/share/samtools/vcfutils.pl
+-rwxr-xr-x root/root      2729 2010-11-17 04:16 ./usr/share/samtools/wgsim_eval.pl
+-rwxr-xr-x root/root      5778 2011-03-20 23:07 ./usr/share/samtools/varfilter.py
+-rwxr-xr-x root/root      2415 2010-11-17 04:16 ./usr/share/samtools/blast2sam.pl
+-rwxr-xr-x root/root      2397 2010-11-17 04:16 ./usr/share/samtools/zoom2sam.pl
+-rwxr-xr-x root/root     14299 2010-11-17 04:16 ./usr/share/samtools/samtools.pl
+-rwxr-xr-x root/root      2112 2010-11-17 04:16 ./usr/share/samtools/bowtie2sam.pl
+-rwxr-xr-x root/root      4996 2010-11-17 04:16 ./usr/share/samtools/interpolate_sam.pl
+-rwxr-xr-x root/root     15255 2010-11-17 04:16 ./usr/share/samtools/export2sam.pl
+-rwxr-xr-x root/root      2022 2010-11-17 04:16 ./usr/share/samtools/psl2sam.pl
+-rwxr-xr-x root/root      3224 2010-11-17 04:16 ./usr/share/samtools/bcf-fix.pl
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/man/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/man/man1/
+-rw-r--r-- root/root       430 2011-03-20 23:07 ./usr/share/man/man1/razip.1.gz
+-rw-r--r-- root/root      7546 2011-03-20 23:07 ./usr/share/man/man1/samtools.1.gz
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/doc/samtools/
 -rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/samtools/AUTHORS
--rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/samtools/NEWS.gz
--rw-r--r-- root/root      1128 2010-12-03 05:07 ./usr/share/doc/samtools/changelog.Debian.gz
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/doc/samtools/examples/
--rw-r--r-- root/root    114565 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.sam.gz
--rw-r--r-- root/root    126609 2010-12-04 07:48 ./usr/share/doc/samtools/examples/ex1.bam.gz
--rw-r--r-- root/root       764 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.sam
+-rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/samtools/changelog.gz
+-rw-r--r-- root/root      1179 2011-02-17 04:14 ./usr/share/doc/samtools/changelog.Debian.gz
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/doc/samtools/examples/
+-rw-r--r-- root/root        98 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.fa
 -rw-r--r-- root/root      3225 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.fa
 -rw-r--r-- root/root       886 2010-11-17 04:16 ./usr/share/doc/samtools/examples/00README.txt
--rw-r--r-- root/root        98 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.fa
--rw-r--r-- root/root       592 2010-12-03 05:06 ./usr/share/doc/samtools/reference
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/man/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/man/man1/
--rw-r--r-- root/root      7546 2010-12-04 07:49 ./usr/share/man/man1/samtools.1.gz
--rw-r--r-- root/root       430 2010-12-04 07:49 ./usr/share/man/man1/razip.1.gz
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/samtools/
--rwxr-xr-x root/root      2415 2010-11-17 04:16 ./usr/share/samtools/blast2sam.pl
--rwxr-xr-x root/root      2112 2010-11-17 04:16 ./usr/share/samtools/bowtie2sam.pl
--rwxr-xr-x root/root      5989 2010-11-17 04:16 ./usr/share/samtools/novo2sam.pl
--rwxr-xr-x root/root      4996 2010-11-17 04:16 ./usr/share/samtools/interpolate_sam.pl
--rwxr-xr-x root/root      2696 2010-11-17 04:16 ./usr/share/samtools/soap2sam.pl
--rwxr-xr-x root/root      2022 2010-11-17 04:16 ./usr/share/samtools/psl2sam.pl
--rwxr-xr-x root/root     14299 2010-11-17 04:16 ./usr/share/samtools/samtools.pl
--rwxr-xr-x root/root      5778 2010-12-04 07:49 ./usr/share/samtools/varfilter.py
--rwxr-xr-x root/root     15255 2010-11-17 04:16 ./usr/share/samtools/export2sam.pl
--rwxr-xr-x root/root     12567 2010-12-02 16:41 ./usr/share/samtools/vcfutils.pl
--rwxr-xr-x root/root      7881 2010-11-17 04:16 ./usr/share/samtools/sam2vcf.pl
--rwxr-xr-x root/root      3224 2010-11-17 04:16 ./usr/share/samtools/bcf-fix.pl
--rwxr-xr-x root/root      2397 2010-11-17 04:16 ./usr/share/samtools/zoom2sam.pl
--rwxr-xr-x root/root      2729 2010-11-17 04:16 ./usr/share/samtools/wgsim_eval.pl
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/bin/
--rwxr-xr-x root/root     30712 2010-12-04 07:49 ./usr/bin/razip
--rwxr-xr-x root/root    410760 2010-12-04 07:49 ./usr/bin/samtools
--rwxr-xr-x root/root    108704 2010-12-04 07:49 ./usr/bin/bcftools
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/lib/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/lib/samtools/
--rwxr-xr-x root/root     19928 2010-12-04 07:49 ./usr/lib/samtools/wgsim
--rwxr-xr-x root/root      9768 2010-12-04 07:49 ./usr/lib/samtools/md5sum-lite
--rwxr-xr-x root/root      7764 2010-12-04 07:49 ./usr/lib/samtools/maq2sam-long
--rwxr-xr-x root/root     13268 2010-12-04 07:49 ./usr/lib/samtools/md5fa
--rwxr-xr-x root/root      7764 2010-12-04 07:49 ./usr/lib/samtools/maq2sam-short
-lrwxrwxrwx root/root         0 2010-12-04 07:49 ./usr/share/man/man1/bcftools.1.gz -&gt; samtools.1.gz
+-rw-r--r-- root/root    126609 2011-03-20 22:33 ./usr/share/doc/samtools/examples/ex1.bam.gz
+-rw-r--r-- root/root       764 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.sam
+-rw-r--r-- root/root    114565 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.sam.gz
+-rw-r--r-- root/root       592 2011-02-15 05:37 ./usr/share/doc/samtools/reference
+-rw-r--r-- root/root      1031 2011-02-15 05:37 ./usr/share/doc/samtools/README.Debian
+-rw-r--r-- root/root      4927 2011-02-15 05:37 ./usr/share/doc/samtools/copyright
+-rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/samtools/NEWS.gz
+-rw-r--r-- root/root      1966 2011-03-20 23:07 ./usr/share/doc/samtools/README.bcftools
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/lib/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/lib/samtools/
+-rwxr-xr-x root/root     13268 2011-03-20 23:07 ./usr/lib/samtools/md5fa
+-rwxr-xr-x root/root      7764 2011-03-20 23:07 ./usr/lib/samtools/maq2sam-long
+-rwxr-xr-x root/root      7764 2011-03-20 23:07 ./usr/lib/samtools/maq2sam-short
+-rwxr-xr-x root/root      9768 2011-03-20 23:07 ./usr/lib/samtools/md5sum-lite
+-rwxr-xr-x root/root     19928 2011-03-20 23:07 ./usr/lib/samtools/wgsim
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/bin/
+-rwxr-xr-x root/root    108704 2011-03-20 23:07 ./usr/bin/bcftools
+-rwxr-xr-x root/root    410760 2011-03-20 23:07 ./usr/bin/samtools
+-rwxr-xr-x root/root     30712 2011-03-20 23:07 ./usr/bin/razip
+lrwxrwxrwx root/root         0 2011-03-20 23:07 ./usr/share/man/man1/bcftools.1.gz -> samtools.1.gz
 
 
-libbam-dev_0.1.12a-1_mips.deb
-─────────────────────────────
+libbam-dev_0.1.12a-1~bpo60+1_mips.deb
+─────────────────────────────────────
 
  new debian package, version 2.0.
- size 172934 bytes: control archive= 900 bytes.
-     674 bytes,    15 lines      control              
+ size 172916 bytes: control archive= 910 bytes.
+     682 bytes,    15 lines      control              
      618 bytes,    10 lines      md5sums              
  Package: libbam-dev
  Source: samtools
- Version: 0.1.12a-1
+ Version: 0.1.12a-1~bpo60+1
  Architecture: mips
- Maintainer: Debian Med Packaging Team &lt;debian-med-packaging@lists...&gt;
- Installed-Size: 448
+ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+ Installed-Size: 444
  Section: libdevel
  Priority: optional
  Homepage: http://samtools.sourceforge.net
@@ -601,23 +710,23 @@ libbam-dev_0.1.12a-1_mips.deb
   sorting, merging, generating pileup, and quickly retrieval of reads overlapped
   with a specified region.
 
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/doc/
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/share/doc/libbam-dev/
--rw-r--r-- root/root      4927 2010-12-03 05:06 ./usr/share/doc/libbam-dev/copyright
--rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/libbam-dev/changelog.gz
--rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/libbam-dev/AUTHORS
--rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/libbam-dev/NEWS.gz
--rw-r--r-- root/root      1128 2010-12-03 05:07 ./usr/share/doc/libbam-dev/changelog.Debian.gz
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/include/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/include/
 -rw-r--r-- root/root      4599 2010-11-17 04:16 ./usr/include/bgzf.h
 -rw-r--r-- root/root      3188 2010-11-17 04:16 ./usr/include/faidx.h
 -rw-r--r-- root/root     16522 2010-11-17 04:16 ./usr/include/khash.h
 -rw-r--r-- root/root     24124 2010-11-17 04:16 ./usr/include/bam.h
-drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/lib/
--rw-r--r-- root/root    303238 2010-12-04 07:49 ./usr/lib/libbam.a
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/share/doc/libbam-dev/
+-rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/libbam-dev/AUTHORS
+-rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/libbam-dev/changelog.gz
+-rw-r--r-- root/root      1179 2011-02-17 04:14 ./usr/share/doc/libbam-dev/changelog.Debian.gz
+-rw-r--r-- root/root      4927 2011-02-15 05:37 ./usr/share/doc/libbam-dev/copyright
+-rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/libbam-dev/NEWS.gz
+drwxr-xr-x root/root         0 2011-03-20 23:07 ./usr/lib/
+-rw-r--r-- root/root    302830 2011-03-20 23:07 ./usr/lib/libbam.a
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -626,10 +735,750 @@ drwxr-xr-x root/root         0 2010-12-04 07:49 ./usr/lib/
 
 Built successfully
 ────────────────────────────────────────────────────────────────────────────────
-Purging /var/lib/schroot/mount/sid-mips-sbuild-f75c9a7d-199d-45ad-ba56-a30973cbabf2/build/buildd-samtools_0.1.12a-1-mips-QwKHhy
+Purging /var/lib/schroot/mount/squeeze-backports-mips-sbuild-76513a66-5133-4980-8d50-d5e46cdaa7e3/build/buildd-samtools_0.1.12a-1~bpo60+1-mips-XYoEw2
 Not removing build depends: cloned chroot in use
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20101204-0749
-Build needed 00:06:58, 9308k disc space
+Finished at 20110320-2308
+Build needed 00:43:32, 9300k disc space
 
-</pre><address><a href="http://trac.cyberhqz.com/wanna-peruse/">wanna-peruse 2.0</a></address></body></html>
+From buildd@rem.debian.org Wed Mar 16 20:26:16 2011
+Return-path: <buildd@rem.debian.org>
+Received: from merikanto.debian.org ([2001:858:2:2:216:35ff:fec4:a49a])
+	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+	CN=merikanto.debian.org,
+	EMAIL=hostmaster@merikanto.debian.org (verified)
+	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.69) (envelope-from <buildd@rem.debian.org>)
+	id 1PzxIN-0000HL-6x
+	for logs@buildd.debian.org; Wed, 16 Mar 2011 20:26:16 +0000
+Received: from rem.debian.org ([2001:41b8:202:deb:202:4cff:fefe:d06])
+	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+	CN=rem.debian.org, EMAIL=hostmaster@rem.debian.org (verified)
+	by merikanto.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.69) (envelope-from <buildd@rem.debian.org>)
+	id 1PzxIJ-0003jK-ES; Wed, 16 Mar 2011 20:26:11 +0000
+Received: from buildd by rem.debian.org with local (Exim 4.72)
+	(envelope-from <buildd@rem.debian.org>)
+	id 1PzxII-0000s9-N8; Wed, 16 Mar 2011 20:26:10 +0000
+Date: Wed, 16 Mar 2011 20:26:10 +0000
+Message-Id: <E1PzxII-0000s9-N8@rem.debian.org>
+From: buildd on rem <buildd@rem.debian.org>
+To: aba+buildd_rem@not.so.argh.org,logs@buildd.debian.org
+Subject: Log for successful build of samtools_0.1.12a-1~bpo60+1 on mipsel
+	(dist=squeeze-backports)
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+Delivered-To: logs@buildd.debian.org
+
+sbuild (Debian sbuild) 0.60.0 (23 Feb 2010) on rem.debian.org
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║ samtools 0.1.12a-1~bpo60+1 (mipsel)                        16 Mar 2011 20:20 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Package: samtools
+Version: 0.1.12a-1~bpo60+1
+Architecture: mipsel
+Chroot Build Dir: /var/lib/schroot/mount/squeeze-backports-mipsel-sbuild-77b0bd91-ef4d-4509-a448-0e69ab4a6cf7/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB
+Start Time: 20110316-2020
+Get:1 http://ftp.debian.org squeeze Release.gpg [1671 B]
+Ign http://ftp.debian.org/debian/ squeeze/contrib Translation-en
+Ign http://ftp.debian.org/debian/ squeeze/main Translation-en
+Get:2 http://ftp.debian.org squeeze-proposed-updates Release.gpg [835 B]
+Ign http://ftp.debian.org/debian/ squeeze-proposed-updates/contrib Translation-en
+Ign http://ftp.debian.org/debian/ squeeze-proposed-updates/main Translation-en
+Get:3 http://ftp.debian.org squeeze Release [69.3 kB]
+Get:4 http://ftp.debian.org squeeze-proposed-updates Release [65.4 kB]
+Get:5 http://ftp.debian.org squeeze/main Sources [3720 kB]
+Hit http://mirror.ayous.org squeeze Release.gpg
+Ign http://mirror.ayous.org/debian/ squeeze/contrib Translation-en
+Ign http://mirror.ayous.org/debian/ squeeze/main Translation-en
+Get:6 http://mirror.ayous.org squeeze-proposed-updates Release.gpg [835 B]
+Ign http://mirror.ayous.org/debian/ squeeze-proposed-updates/contrib Translation-en
+Ign http://mirror.ayous.org/debian/ squeeze-proposed-updates/main Translation-en
+Hit http://mirror.ayous.org squeeze Release
+Get:7 http://mirror.ayous.org squeeze-proposed-updates Release [65.4 kB]
+Get:8 http://backports-master.debian.org squeeze-backports Release.gpg [835 B]
+Ign http://backports-master.debian.org/debian-backports/ squeeze-backports/contrib Translation-en
+Hit http://mirror.ayous.org squeeze/main Sources
+Hit http://mirror.ayous.org squeeze/contrib Sources
+Get:9 http://mirror.ayous.org squeeze/non-free Sources [61.7 kB]
+Hit http://mirror.ayous.org squeeze/main mipsel Packages
+Hit http://mirror.ayous.org squeeze/contrib mipsel Packages
+Get:10 http://mirror.ayous.org squeeze-proposed-updates/main Sources [38.0 kB]
+Get:11 http://mirror.ayous.org squeeze-proposed-updates/contrib Sources [14 B]
+Get:12 http://mirror.ayous.org squeeze-proposed-updates/non-free Sources [926 B]
+Get:13 http://mirror.ayous.org squeeze-proposed-updates/main mipsel Packages [105 kB]
+Ign http://backports-master.debian.org/debian-backports/ squeeze-backports/main Translation-en
+Get:14 http://backports-master.debian.org  Release.gpg [835 B]
+Ign http://backports-master.debian.org/buildd/squeeze-backports/  Translation-en
+Get:15 http://mirror.ayous.org squeeze-proposed-updates/contrib mipsel Packages [14 B]
+Get:16 http://backports-master.debian.org squeeze-backports Release [61.2 kB]
+Get:17 http://backports-master.debian.org  Release [1644 B]
+Get:18 http://backports-master.debian.org squeeze-backports/main Sources [9340 B]
+Get:19 http://backports-master.debian.org squeeze-backports/contrib Sources [14 B]
+Get:20 http://backports-master.debian.org squeeze-backports/non-free Sources [14 B]
+Get:21 http://backports-master.debian.org squeeze-backports/main mipsel Packages [18.1 kB]
+Get:22 http://backports-master.debian.org squeeze-backports/contrib mipsel Packages [14 B]
+Get:23 http://backports-master.debian.org  Sources [14 B]
+Get:24 http://backports-master.debian.org  Packages [24.4 kB]
+Get:25 http://ftp.debian.org squeeze/contrib Sources [33.9 kB]
+Get:26 http://ftp.debian.org squeeze/non-free Sources [61.7 kB]
+Get:27 http://ftp.debian.org squeeze/main mipsel Packages [6417 kB]
+Get:28 http://ftp.debian.org squeeze/contrib mipsel Packages [45.4 kB]
+Get:29 http://ftp.debian.org squeeze-proposed-updates/main Sources [38.0 kB]
+Get:30 http://ftp.debian.org squeeze-proposed-updates/contrib Sources [14 B]
+Get:31 http://ftp.debian.org squeeze-proposed-updates/non-free Sources [926 B]
+Get:32 http://ftp.debian.org squeeze-proposed-updates/main mipsel Packages [105 kB]
+Get:33 http://ftp.debian.org squeeze-proposed-updates/contrib mipsel Packages [14 B]
+Fetched 10.9 MB in 21s (501 kB/s)
+Reading package lists...
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Fetch source files                                                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+Check APT
+─────────
+
+Checking available source versions...
+
+Download source files with APT
+──────────────────────────────
+
+Reading package lists...
+Building dependency tree...
+NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
+git://git.debian.org/debian-med/samtools.git
+Need to get 363 kB of source archives.
+Get:1 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (dsc) [1338 B]
+Get:2 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (tar) [356 kB]
+Get:3 http://backports-master.debian.org/debian-backports/ squeeze-backports/main samtools 0.1.12a-1~bpo60+1 (diff) [6406 B]
+Fetched 363 kB in 2s (167 kB/s)
+Download complete and in download only mode
+
+Check arch
+──────────
+
+** Using build dependencies supplied by package:
+Build-Depends: debhelper (>= 8), cdbs, libncurses5-dev, zlib1g-dev
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Install build dependencies (aptitude-based resolver)                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Reading package lists...
+Building dependency tree...
+The following extra packages will be installed:
+  libboost-iostreams1.42.0 libcwidget3 libept1 libncursesw5 libsigc++-2.0-0c2a
+  libsqlite3-0 libxapian22
+Suggested packages:
+  tasksel debtags libcwidget-dev xapian-tools
+Recommended packages:
+  aptitude-doc-en aptitude-doc apt-xapian-index libparse-debianchangelog-perl
+  libgpm2
+The following NEW packages will be installed:
+  aptitude libboost-iostreams1.42.0 libcwidget3 libept1 libncursesw5
+  libsigc++-2.0-0c2a libsqlite3-0 libxapian22
+0 upgraded, 8 newly installed, 0 to remove and 6 not upgraded.
+Need to get 6230 kB of archives.
+After this operation, 20.5 MB of additional disk space will be used.
+Get:1 http://mirror.ayous.org/debian/ squeeze/main libboost-iostreams1.42.0 mipsel 1.42.0-4 [55.2 kB]
+Get:2 http://mirror.ayous.org/debian/ squeeze/main libncursesw5 mipsel 5.7+20100313-5 [371 kB]
+Get:3 http://mirror.ayous.org/debian/ squeeze/main libsigc++-2.0-0c2a mipsel 2.2.4.2-1 [39.2 kB]
+Get:4 http://mirror.ayous.org/debian/ squeeze/main libcwidget3 mipsel 0.5.16-3 [270 kB]
+Get:5 http://mirror.ayous.org/debian/ squeeze/main libxapian22 mipsel 1.2.3-2 [1089 kB]
+Get:6 http://mirror.ayous.org/debian/ squeeze/main libept1 mipsel 1.0.4 [135 kB]
+Get:7 http://mirror.ayous.org/debian/ squeeze/main libsqlite3-0 mipsel 3.7.3-1 [414 kB]
+Get:8 http://mirror.ayous.org/debian/ squeeze/main aptitude mipsel 0.6.3-3.2 [3856 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 6230 kB in 0s (7539 kB/s)
+Selecting previously deselected package libboost-iostreams1.42.0.
+(Reading database ... 10135 files and directories currently installed.)
+Unpacking libboost-iostreams1.42.0 (from .../libboost-iostreams1.42.0_1.42.0-4_mipsel.deb) ...
+Selecting previously deselected package libncursesw5.
+Unpacking libncursesw5 (from .../libncursesw5_5.7+20100313-5_mipsel.deb) ...
+Selecting previously deselected package libsigc++-2.0-0c2a.
+Unpacking libsigc++-2.0-0c2a (from .../libsigc++-2.0-0c2a_2.2.4.2-1_mipsel.deb) ...
+Selecting previously deselected package libcwidget3.
+Unpacking libcwidget3 (from .../libcwidget3_0.5.16-3_mipsel.deb) ...
+Selecting previously deselected package libxapian22.
+Unpacking libxapian22 (from .../libxapian22_1.2.3-2_mipsel.deb) ...
+Selecting previously deselected package libept1.
+Unpacking libept1 (from .../libept1_1.0.4_mipsel.deb) ...
+Selecting previously deselected package libsqlite3-0.
+Unpacking libsqlite3-0 (from .../libsqlite3-0_3.7.3-1_mipsel.deb) ...
+Selecting previously deselected package aptitude.
+Unpacking aptitude (from .../aptitude_0.6.3-3.2_mipsel.deb) ...
+Setting up libboost-iostreams1.42.0 (1.42.0-4) ...
+Setting up libncursesw5 (5.7+20100313-5) ...
+Setting up libsigc++-2.0-0c2a (2.2.4.2-1) ...
+Setting up libcwidget3 (0.5.16-3) ...
+Setting up libxapian22 (1.2.3-2) ...
+Setting up libept1 (1.0.4) ...
+Setting up libsqlite3-0 (3.7.3-1) ...
+Setting up aptitude (0.6.3-3.2) ...
+update-alternatives: using /usr/bin/aptitude-curses to provide /usr/bin/aptitude (aptitude) in auto mode.
+dpkg-deb: building package `sbuild-build-depends-samtools-dummy' in `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/buildd-samtools-mipsel-Imn2IT/sbuild-build-depends-samtools-dummy.deb'.
+Selecting previously deselected package sbuild-build-depends-samtools-dummy.
+(Reading database ... 10343 files and directories currently installed.)
+Unpacking sbuild-build-depends-samtools-dummy (from .../sbuild-build-depends-samtools-dummy.deb) ...
+dpkg: dependency problems prevent configuration of sbuild-build-depends-samtools-dummy:
+ sbuild-build-depends-samtools-dummy depends on debhelper (>= 8); however:
+  Package debhelper is not installed.
+ sbuild-build-depends-samtools-dummy depends on cdbs; however:
+  Package cdbs is not installed.
+ sbuild-build-depends-samtools-dummy depends on libncurses5-dev; however:
+  Package libncurses5-dev is not installed.
+ sbuild-build-depends-samtools-dummy depends on zlib1g-dev; however:
+  Package zlib1g-dev is not installed.
+dpkg: error processing sbuild-build-depends-samtools-dummy (--install):
+ dependency problems - leaving unconfigured
+Errors were encountered while processing:
+ sbuild-build-depends-samtools-dummy
+aptitude -y --without-recommends -o APT::Install-Recommends=false -o Aptitude::ProblemResolver::StepScore=100 -o Aptitude::ProblemResolver::Hints::KeepDummy=reject sbuild-build-depends-samtools-dummy :UNINST -o Aptitude::ProblemResolver::Keep-All-Tier=55000 -o Aptitude::ProblemResolver::Remove-Essential-Tier=maximum install sbuild-build-depends-samtools-dummy
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Initializing package states...
+Writing extended state information...
+The following NEW packages will be installed:
+  bsdmainutils{a} cdbs{a} debhelper{a} file{a} gettext{a} gettext-base{a} 
+  groff-base{a} html2text{a} intltool-debian{a} libcroco3{a} 
+  libglib2.0-0{a} libmagic1{a} libncurses5-dev{a} libpcre3{a} 
+  libunistring0{a} libxml2{a} man-db{a} po-debconf{a} zlib1g-dev{a} 
+The following partially installed packages will be configured:
+  sbuild-build-depends-samtools-dummy 
+0 packages upgraded, 19 newly installed, 0 to remove and 6 not upgraded.
+Need to get 11.6 MB of archives. After unpacking 37.2 MB will be used.
+Writing extended state information...
+Get:1 http://mirror.ayous.org/debian/ squeeze/main libmagic1 mipsel 5.04-5 [238 kB]
+Get:2 http://mirror.ayous.org/debian/ squeeze/main file mipsel 5.04-5 [49.5 kB]
+Get:3 http://mirror.ayous.org/debian/ squeeze/main html2text mipsel 1.3.2a-15 [103 kB]
+Get:4 http://mirror.ayous.org/debian/ squeeze/main libpcre3 mipsel 8.02-1.1 [233 kB]
+Get:5 http://mirror.ayous.org/debian/ squeeze/main libglib2.0-0 mipsel 2.24.2-1 [1039 kB]
+Get:6 http://mirror.ayous.org/debian/ squeeze/main libxml2 mipsel 2.7.8.dfsg-2 [833 kB]
+Get:7 http://mirror.ayous.org/debian/ squeeze/main libcroco3 mipsel 0.6.2-1 [110 kB]
+Get:8 http://mirror.ayous.org/debian/ squeeze/main libunistring0 mipsel 0.9.3-3 [411 kB]
+Get:9 http://mirror.ayous.org/debian/ squeeze/main gettext-base mipsel 0.18.1.1-3 [152 kB]
+Get:10 http://mirror.ayous.org/debian/ squeeze/main gettext mipsel 0.18.1.1-3 [2023 kB]
+Get:11 http://mirror.ayous.org/debian/ squeeze/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
+Get:12 http://mirror.ayous.org/debian/ squeeze/main po-debconf all 1.0.16+nmu1 [223 kB]
+Get:13 http://mirror.ayous.org/debian/ squeeze/main groff-base mipsel 1.20.1-10 [1188 kB]
+Get:14 http://mirror.ayous.org/debian/ squeeze/main bsdmainutils mipsel 8.0.13 [205 kB]
+Get:15 http://mirror.ayous.org/debian/ squeeze/main man-db mipsel 2.5.7-8 [1248 kB]
+Get:16 http://mirror.ayous.org/debian/ squeeze/main debhelper all 8.0.0 [454 kB]
+Get:17 http://mirror.ayous.org/debian/ squeeze/main cdbs all 0.4.89 [1240 kB]
+Get:18 http://mirror.ayous.org/debian/ squeeze/main libncurses5-dev mipsel 5.7+20100313-5 [1639 kB]
+Get:19 http://mirror.ayous.org/debian/ squeeze/main zlib1g-dev mipsel 1:1.2.3.4.dfsg-3 [192 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 11.6 MB in 1s (7840 kB/s)
+Selecting previously deselected package libmagic1.
+(Reading database ... 10343 files and directories currently installed.)
+Unpacking libmagic1 (from .../libmagic1_5.04-5_mipsel.deb) ...
+Selecting previously deselected package file.
+Unpacking file (from .../file_5.04-5_mipsel.deb) ...
+Selecting previously deselected package html2text.
+Unpacking html2text (from .../html2text_1.3.2a-15_mipsel.deb) ...
+Selecting previously deselected package libpcre3.
+Unpacking libpcre3 (from .../libpcre3_8.02-1.1_mipsel.deb) ...
+Selecting previously deselected package libglib2.0-0.
+Unpacking libglib2.0-0 (from .../libglib2.0-0_2.24.2-1_mipsel.deb) ...
+Selecting previously deselected package libxml2.
+Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-2_mipsel.deb) ...
+Selecting previously deselected package libcroco3.
+Unpacking libcroco3 (from .../libcroco3_0.6.2-1_mipsel.deb) ...
+Selecting previously deselected package libunistring0.
+Unpacking libunistring0 (from .../libunistring0_0.9.3-3_mipsel.deb) ...
+Selecting previously deselected package gettext-base.
+Unpacking gettext-base (from .../gettext-base_0.18.1.1-3_mipsel.deb) ...
+Selecting previously deselected package gettext.
+Unpacking gettext (from .../gettext_0.18.1.1-3_mipsel.deb) ...
+Selecting previously deselected package intltool-debian.
+Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
+Selecting previously deselected package po-debconf.
+Unpacking po-debconf (from .../po-debconf_1.0.16+nmu1_all.deb) ...
+Selecting previously deselected package groff-base.
+Unpacking groff-base (from .../groff-base_1.20.1-10_mipsel.deb) ...
+Selecting previously deselected package bsdmainutils.
+Unpacking bsdmainutils (from .../bsdmainutils_8.0.13_mipsel.deb) ...
+Selecting previously deselected package man-db.
+Unpacking man-db (from .../man-db_2.5.7-8_mipsel.deb) ...
+Selecting previously deselected package debhelper.
+Unpacking debhelper (from .../debhelper_8.0.0_all.deb) ...
+Selecting previously deselected package cdbs.
+Unpacking cdbs (from .../archives/cdbs_0.4.89_all.deb) ...
+Selecting previously deselected package libncurses5-dev.
+Unpacking libncurses5-dev (from .../libncurses5-dev_5.7+20100313-5_mipsel.deb) ...
+Selecting previously deselected package zlib1g-dev.
+Unpacking zlib1g-dev (from .../zlib1g-dev_1%3a1.2.3.4.dfsg-3_mipsel.deb) ...
+Setting up libmagic1 (5.04-5) ...
+Setting up file (5.04-5) ...
+Setting up html2text (1.3.2a-15) ...
+Setting up libpcre3 (8.02-1.1) ...
+Setting up libglib2.0-0 (2.24.2-1) ...
+Setting up libxml2 (2.7.8.dfsg-2) ...
+Setting up libcroco3 (0.6.2-1) ...
+Setting up libunistring0 (0.9.3-3) ...
+Setting up gettext-base (0.18.1.1-3) ...
+Setting up gettext (0.18.1.1-3) ...
+Setting up intltool-debian (0.35.0+20060710.1) ...
+Setting up po-debconf (1.0.16+nmu1) ...
+Setting up groff-base (1.20.1-10) ...
+Setting up bsdmainutils (8.0.13) ...
+update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode.
+update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode.
+Setting up man-db (2.5.7-8) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Building database of manual pages ...
+Setting up debhelper (8.0.0) ...
+Setting up cdbs (0.4.89) ...
+Setting up libncurses5-dev (5.7+20100313-5) ...
+Setting up zlib1g-dev (1:1.2.3.4.dfsg-3) ...
+Setting up sbuild-build-depends-samtools-dummy (0.invalid.0) ...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Reading extended state information...
+Initializing package states...
+Writing extended state information...
+Kernel: Linux 2.6.32-5-sb1-bcm91250a mipsel (mips64)
+Toolchain package versions: libc6-dev_2.11.2-10 dpkg-dev_1.15.8.10 linux-libc-dev_2.6.32-30 gcc-4.4_4.4.5-8 g++-4.4_4.4.5-8 binutils_2.20.1-16 libstdc++6-4.4-dev_4.4.5-8 libstdc++6_4.4.5-8
+Package versions: apt_0.8.10.3 aptitude_0.6.3-3.2 base-files_6.0 base-passwd_3.5.22 bash_4.1-3 binutils_2.20.1-16 bsdmainutils_8.0.13 bsdutils_1:2.17.2-9 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.89 coreutils_8.5-1 cpp_4:4.4.5-1 cpp-4.4_4.4.5-8 dash_0.5.5.1-7.4 debconf_1.5.36.1 debconf-i18n_1.5.36.1 debfoster_2.7-1.1 debhelper_8.0.0 debian-archive-keyring_2010.08.28 debianutils_3.4 diffutils_1:3.0-1 dpkg_1.15.8.10 dpkg-dev_1.15.8.10 e2fslibs_1.41.12-2 e2fsprogs_1.41.12-2 fakeroot_1.14.4-1 file_5.04-5 findutils_4.4.2-1+b1 g++_4:4.4.5-1 g++-4.4_4.4.5-8 gcc_4:4.4.5-1 gcc-4.4_4.4.5-8 gcc-4.4-base_4.4.5-8 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.10-4 gpgv_1.4.10-4 grep_2.6.3-3 groff-base_1.20.1-10 gzip_1.3.12-9 hostname_3.04 html2text_1.3.2a-15 initscripts_2.88dsf-13.1 insserv_1.14.0-2 intltool-debian_0.35.0+20060710.1 libacl1_2.2.49-4 libattr1_1:2.4.44-2 libblkid1_2.17.2-9 libboost-iostreams1.42.0_1.42.0-4 libbz2-1.0_1.0.5-6 libc-bin_2.11.2-10 libc-dev-bin_2.11.2-10 libc6_2.11.2-10 libc6-dev_2.11.2-10 libcomerr2_1.41.12-2 libcroco3_0.6.2-1 libcwidget3_0.5.16-3 libdb4.7_4.7.25-9 libdb4.8_4.8.30-2 libdpkg-perl_1.15.8.10 libept1_1.0.4 libgc1c2_1:6.8-1.2 libgcc1_1:4.4.5-8 libgdbm3_1.8.3-9 libglib2.0-0_2.24.2-1 libgmp3c2_2:4.3.2+dfsg-1 libgomp1_4.4.5-8 liblocale-gettext-perl_1.05-6 liblzma2_5.0.0-2 libmagic1_5.04-5 libmpfr4_3.0.0-2 libncurses5_5.7+20100313-5 libncurses5-dev_5.7+20100313-5 libncursesw5_5.7+20100313-5 libpam-modules_1.1.1-6.1 libpam-runtime_1.1.1-6.1 libpam0g_1.1.1-6.1 libpcre3_8.02-1.1 libreadline6_6.1-3 libselinux1_2.0.96-1 libsepol1_2.0.41-1 libsigc++-2.0-0c2a_2.2.4.2-1 libslang2_2.2.2-4 libsqlite3-0_3.7.3-1 libss2_1.41.12-2 libstdc++6_4.4.5-8 libstdc++6-4.4-dev_4.4.5-8 libtext-charwidth-perl_0.04-6 libtext-iconv-perl_1.7-2 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libunistring0_0.9.3-3 libusb-0.1-4_2:0.1.12-16 libuuid1_2.17.2-9 libxapian22_1.2.3-2 libxml2_2.7.8.dfsg-2 linux-libc-dev_2.6.32-30 login_1:4.1.4.2+svn3283-2 lsb-base_3.2-23.2squeeze1 make_3.81-8 man-db_2.5.7-8 mawk_1.3.3-15 mount_2.17.2-9 ncurses-base_5.7+20100313-5 ncurses-bin_5.7+20100313-5 passwd_1:4.1.4.2+svn3283-2 patch_2.6-2 perl_5.10.1-17 perl-base_5.10.1-17 perl-modules_5.10.1-17 po-debconf_1.0.16+nmu1 readline-common_6.1-3 sbuild-build-depends-samtools-dummy_0.invalid.0 sed_4.2.1-7 sensible-utils_0.0.4 sudo_1.7.4p4-2.squeeze.1 sysv-rc_2.88dsf-13.1 sysvinit_2.88dsf-13.1 sysvinit-utils_2.88dsf-13.1 tar_1.23-3 tzdata_2010o-1 util-linux_2.17.2-9 xz-utils_5.0.0-2 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Build                                                                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+Unpack source
+─────────────
+
+dpkg-source: warning: -sn is not a valid option for Dpkg::Source::Package::V3::quilt
+gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
+gpgv: Signature made Thu Feb 17 08:40:32 2011 UTC using DSA key ID BAFEC7F2
+gpgv: Can't check signature: public key not found
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.12a-1~bpo60+1.dsc
+dpkg-source: info: extracting samtools in samtools-0.1.12a
+dpkg-source: info: unpacking samtools_0.1.12a.orig.tar.bz2
+dpkg-source: info: unpacking samtools_0.1.12a-1~bpo60+1.debian.tar.gz
+
+Check disc space
+────────────────
+
+
+dpkg-buildpackage
+─────────────────
+
+dpkg-buildpackage: export CFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export CPPFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
+dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
+dpkg-buildpackage: source package samtools
+dpkg-buildpackage: source version 0.1.12a-1~bpo60+1
+ dpkg-source --before-build samtools-0.1.12a
+dpkg-buildpackage: host architecture mipsel
+ /usr/bin/fakeroot debian/rules clean
+test -x debian/rules
+dh_testroot
+rm -f debian/stamp-makefile-build debian/stamp-makefile-install
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -k clean
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim *~ *.a
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+rm -f debian/stamp-makefile-check
+dh_clean 
+rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
+ debian/rules build
+test -x debian/rules
+mkdir -p "."
+/usr/share/cdbs/1/rules/buildcore.mk:104: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  all all-recur razip lib
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kstring.c -o kstring.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_aux.c -o bam_aux.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam.c -o bam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_import.c -o bam_import.o
+bam_import.c: In function 'append_text':
+bam_import.c:179: warning: format '%ld' expects type 'long int', but argument 3 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 3 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 4 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 5 has type 'size_t'
+bam_import.c:186: warning: format '%ld' expects type 'long int', but argument 6 has type 'size_t'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam.c -o sam.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_index.c -o bam_index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_pileup.c -o bam_pileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_lpileup.c -o bam_lpileup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_md.c -o bam_md.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. glf.c -o glf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razf.c -o razf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. faidx.c -o faidx.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. knetfile.c -o knetfile.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_sort.c -o bam_sort.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_header.c -o sam_header.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_reheader.c -o bam_reheader.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kprobaln.c -o kprobaln.o
+ar -cru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. prob1.c -o prob1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. ld.c -o ld.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kfunc.c -o kfunc.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. index.c -o index.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
+ar -cru libbcf.a bcf.o vcf.o bcfutils.o prob1.o ld.o kfunc.o index.o fet.o bcf2qcall.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+make[2]: Nothing to be done for `lib'.
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_maqcns.c -o bam_maqcns.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdup.c -o bam_rmdup.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdupse.c -o bam_rmdupse.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_mate.c -o bam_mate.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_stat.c -o bam_stat.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_color.c -o bam_color.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bamtk.c -o bamtk.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kaln.c -o kaln.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf.c -o bam2bcf.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf_indel.c -o bam2bcf_indel.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. errmod.c -o errmod.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sample.c -o sample.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+make[3]: Nothing to be done for `lib'.
+make[3]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+gcc -g -O2 -g -Wall -O2 -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o libbam.a -lm  -lcurses  -lz -Lbcftools -lbcf
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o -lm  -lz -L. -lbcf
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5sum-lite md5sum-lite.o
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
+gcc -g -O2 -g -Wall -O2 -fPIC -c -I.. -o md5fa.o md5fa.c
+gcc -g -O2 -g -Wall -O2 -fPIC -o md5fa md5.o md5fa.o -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -o maq2sam-short maq2sam.c -lz
+gcc -g -O2 -g -Wall -O2 -fPIC -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. wgsim.c -o wgsim.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o wgsim wgsim.o -lm
+make[2]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/misc'
+gcc -c -g -O2 -g -Wall -O2 -fPIC -D_FILE_OFFSET_BITS=64 -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
+gcc -g -O2 -g -Wall -O2 -fPIC -o razip razf.o razip.o knetfile.o -lz
+make[1]: Nothing to be done for `lib'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a'
+touch debian/stamp-makefile-build
+/usr/bin/make  -C . CFLAGS="-g -O2 -g -Wall -O2 -fPIC" CXXFLAGS="-g -O2 -g -Wall -O2" CPPFLAGS="" LDFLAGS=""  -C examples all
+make[1]: Entering directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/examples'
+../samtools faidx ex1.fa
+../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
+[sam_header_read2] 2 sequences loaded.
+../samtools pileup -gf ex1.fa ex1.bam > ex1.glf
+../samtools pileup -cf ex1.fa ex1.bam | gzip > ex1.pileup.gz
+../samtools index ex1.bam
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"a";print}}' | ../samtools view -bS - > ex1a.bam
+[samopen] SAM header is present: 2 sequences.
+../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"b";print}}' | ../samtools view -bS - > ex1b.bam
+[samopen] SAM header is present: 2 sequences.
+(echo "@RG	ID:ex1	LB:ex1	SM:ex1"; echo "@RG	ID:ex1a	LB:ex1	SM:ex1"; echo "@RG	ID:ex1b	LB:ex1b	SM:ex1b") > ex1f.rg
+../samtools merge -rh ex1f.rg ex1f.bam ex1.bam ex1a.bam ex1b.bam
+../samtools rmdup ex1f.bam ex1f-rmduppe.bam
+[bam_rmdup_core] processing reference seq1...
+[bam_rmdup_core] processing reference seq2...
+[bam_rmdup_core] 1572 / 3144 = 0.5000 in library 'ex1'
+[bam_rmdup_core] 0 / 1572 = 0.0000 in library 'ex1b'
+../samtools rmdup -S ex1f.bam ex1f-rmdupse.bam
+[bam_rmdupse_core] 4145 / 6542 = 0.6336 in library 'ex1'
+[bam_rmdupse_core] 874 / 3271 = 0.2672 in library 'ex1b'
+../samtools glfview ex1.glf | gzip > ex1.glfview.gz
+../samtools mpileup -gf ex1.fa ex1.bam > ex1.bcf
+[mpileup] 1 samples in 1 input files
+<mpileup> Set max per-sample depth to 8000
+gcc -g -Wall -O2 -I.. calDepth.c -o calDepth -lm -lz -L.. -lbam
+
+# You can now launch the viewer with: 'samtools tview ex1.bam ex1.fa'
+
+make[1]: Leaving directory `/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/examples'
+touch debian/stamp-makefile-check
+ /usr/bin/fakeroot debian/rules binary-arch
+test -x debian/rules
+dh_testroot
+dh_prep 
+dh_installdirs -A 
+mkdir -p "."
+/usr/share/cdbs/1/rules/buildcore.mk:104: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
+DEB_MAKE_INSTALL_TARGET unset, skipping default makefile.mk common-install target
+Adding cdbs dependencies to debian/samtools.substvars
+dh_installdirs -psamtools 
+Adding cdbs dependencies to debian/libbam-dev.substvars
+dh_installdirs -plibbam-dev 
+dh_installdocs -psamtools ./NEWS ./AUTHORS 
+dh_installexamples -psamtools 
+dh_installman -psamtools  
+dh_installinfo -psamtools  
+dh_installmenu -psamtools 
+dh_installcron -psamtools 
+dh_installinit -psamtools  
+dh_installdebconf -psamtools 
+dh_installemacsen -psamtools   
+dh_installcatalogs -psamtools 
+dh_installpam -psamtools 
+dh_installlogrotate -psamtools 
+dh_installlogcheck -psamtools 
+dh_installchangelogs -psamtools  ./ChangeLog 
+dh_installudev -psamtools 
+dh_lintian -psamtools 
+dh_install -psamtools  
+dh_link -psamtools  
+dh_installmime -psamtools 
+install -m 644 bcftools/README /build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/debian/samtools/usr/share/doc/samtools/README.bcftools
+ln -s samtools.1.gz /build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/debian/samtools/usr/share/man/man1/bcftools.1.gz
+dh_installdocs -plibbam-dev ./NEWS ./AUTHORS 
+dh_installexamples -plibbam-dev 
+dh_installman -plibbam-dev  
+dh_installinfo -plibbam-dev  
+dh_installmenu -plibbam-dev 
+dh_installcron -plibbam-dev 
+dh_installinit -plibbam-dev  
+dh_installdebconf -plibbam-dev 
+dh_installemacsen -plibbam-dev   
+dh_installcatalogs -plibbam-dev 
+dh_installpam -plibbam-dev 
+dh_installlogrotate -plibbam-dev 
+dh_installlogcheck -plibbam-dev 
+dh_installchangelogs -plibbam-dev  ./ChangeLog 
+dh_installudev -plibbam-dev 
+dh_lintian -plibbam-dev 
+dh_install -plibbam-dev  
+dh_link -plibbam-dev  
+dh_installmime -plibbam-dev 
+dh_strip -psamtools  
+dh_compress -psamtools  
+dh_fixperms -psamtools  
+dh_makeshlibs -psamtools  
+sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB/samtools-0.1.12a/debian/samtools/usr/share/samtools/varfilter.py
+dh_strip -plibbam-dev  
+dh_compress -plibbam-dev  
+dh_fixperms -plibbam-dev  
+dh_makeshlibs -plibbam-dev  
+dh_installdeb -psamtools 
+dh_perl -psamtools 
+dh_shlibdeps -psamtools    
+dh_installdeb -plibbam-dev 
+dh_perl -plibbam-dev 
+dh_shlibdeps -plibbam-dev    
+dh_gencontrol -psamtools  
+dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
+dh_md5sums -psamtools 
+dh_builddeb -psamtools -- -Z=bzip2
+dpkg-deb: building package `samtools' in `../samtools_0.1.12a-1~bpo60+1_mipsel.deb'.
+dh_gencontrol -plibbam-dev  
+dpkg-gencontrol: warning: Depends field of package libbam-dev: unknown substitution variable ${shlibs:Depends}
+dh_md5sums -plibbam-dev 
+dh_builddeb -plibbam-dev -- -Z=bzip2
+dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.12a-1~bpo60+1_mipsel.deb'.
+ dpkg-genchanges -B -mmipsel Build Daemon (rem) <buildd_mipsel-rem@buildd.debian.org> >../samtools_0.1.12a-1~bpo60+1_mipsel.changes
+dpkg-genchanges: arch-specific upload - not including arch-independent packages
+dpkg-genchanges: binary-only upload - not including any source code
+ dpkg-source --after-build samtools-0.1.12a
+dpkg-buildpackage: binary only upload (no source included)
+────────────────────────────────────────────────────────────────────────────────
+Build finished at 20110316-2026
+
+samtools_0.1.12a-1~bpo60+1_mipsel.changes:
+Format: 1.8
+Date: Thu, 17 Feb 2011 13:13:09 +0900
+Source: samtools
+Binary: samtools libbam-dev
+Architecture: mipsel
+Version: 0.1.12a-1~bpo60+1
+Distribution: squeeze-backports
+Urgency: low
+Maintainer: mipsel Build Daemon (rem) <buildd_mipsel-rem@buildd.debian.org>
+Changed-By: Charles Plessy <plessy@debian.org>
+Description: 
+ libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
+ samtools   - processing sequence alignments in SAM and BAM formats
+Changes: 
+ samtools (0.1.12a-1~bpo60+1) squeeze-backports; urgency=low
+ .
+   * Backported for Squeeze (no changes needed).
+Checksums-Sha1: 
+ fb157f1c2cbbc3c87eb7d18a4ca77e117375ac29 585356 samtools_0.1.12a-1~bpo60+1_mipsel.deb
+ 3a28366d265189407847a4854caab3b0895c6fe1 173480 libbam-dev_0.1.12a-1~bpo60+1_mipsel.deb
+Checksums-Sha256: 
+ 02a944fcf0b6acd99546da280ce9cda8e79aacf7f550a9fedc0a4e41b56df588 585356 samtools_0.1.12a-1~bpo60+1_mipsel.deb
+ fb4394147b7d2675fc42b2e8119c4660600353f5816eef8a87883be026f23bd4 173480 libbam-dev_0.1.12a-1~bpo60+1_mipsel.deb
+Files: 
+ 2321126a2cff3b76b441207220a5b629 585356 science optional samtools_0.1.12a-1~bpo60+1_mipsel.deb
+ 8051e75b663456e6cf7cf47017d70a3a 173480 libdevel optional libbam-dev_0.1.12a-1~bpo60+1_mipsel.deb
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Package contents                                                             │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+samtools_0.1.12a-1~bpo60+1_mipsel.deb
+─────────────────────────────────────
+
+ new debian package, version 2.0.
+ size 585356 bytes: control archive= 1806 bytes.
+     802 bytes,    16 lines      control              
+    2517 bytes,    38 lines      md5sums              
+ Package: samtools
+ Version: 0.1.12a-1~bpo60+1
+ Architecture: mipsel
+ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+ Installed-Size: 1116
+ Depends: libc6 (>= 2.7), libncurses5 (>= 5.7+20100313), zlib1g (>= 1:1.2.3.3.dfsg)
+ Suggests: python
+ Section: science
+ Priority: optional
+ Homepage: http://samtools.sourceforge.net
+ Description: processing sequence alignments in SAM and BAM formats
+  Samtools is a set of utilities that manipulate nucleotide sequence alignments
+  in the binary BAM format. It imports from and exports to the ascii SAM
+  (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
+  to retrieve reads in any regions swiftly. It is designed to work on a stream,
+  and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
+
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/lib/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/lib/samtools/
+-rwxr-xr-x root/root      9768 2011-03-16 20:25 ./usr/lib/samtools/md5sum-lite
+-rwxr-xr-x root/root      7764 2011-03-16 20:25 ./usr/lib/samtools/maq2sam-short
+-rwxr-xr-x root/root     19944 2011-03-16 20:25 ./usr/lib/samtools/wgsim
+-rwxr-xr-x root/root     13268 2011-03-16 20:25 ./usr/lib/samtools/md5fa
+-rwxr-xr-x root/root      7764 2011-03-16 20:25 ./usr/lib/samtools/maq2sam-long
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/man/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/man/man1/
+-rw-r--r-- root/root       430 2011-03-16 20:25 ./usr/share/man/man1/razip.1.gz
+-rw-r--r-- root/root      7546 2011-03-16 20:25 ./usr/share/man/man1/samtools.1.gz
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/samtools/
+-rwxr-xr-x root/root      5778 2011-03-16 20:25 ./usr/share/samtools/varfilter.py
+-rwxr-xr-x root/root      4996 2010-11-17 04:16 ./usr/share/samtools/interpolate_sam.pl
+-rwxr-xr-x root/root      2022 2010-11-17 04:16 ./usr/share/samtools/psl2sam.pl
+-rwxr-xr-x root/root      2729 2010-11-17 04:16 ./usr/share/samtools/wgsim_eval.pl
+-rwxr-xr-x root/root      2696 2010-11-17 04:16 ./usr/share/samtools/soap2sam.pl
+-rwxr-xr-x root/root      2112 2010-11-17 04:16 ./usr/share/samtools/bowtie2sam.pl
+-rwxr-xr-x root/root      5989 2010-11-17 04:16 ./usr/share/samtools/novo2sam.pl
+-rwxr-xr-x root/root      7881 2010-11-17 04:16 ./usr/share/samtools/sam2vcf.pl
+-rwxr-xr-x root/root      3224 2010-11-17 04:16 ./usr/share/samtools/bcf-fix.pl
+-rwxr-xr-x root/root     15255 2010-11-17 04:16 ./usr/share/samtools/export2sam.pl
+-rwxr-xr-x root/root     12567 2010-12-02 16:41 ./usr/share/samtools/vcfutils.pl
+-rwxr-xr-x root/root     14299 2010-11-17 04:16 ./usr/share/samtools/samtools.pl
+-rwxr-xr-x root/root      2415 2010-11-17 04:16 ./usr/share/samtools/blast2sam.pl
+-rwxr-xr-x root/root      2397 2010-11-17 04:16 ./usr/share/samtools/zoom2sam.pl
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/doc/samtools/
+-rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/samtools/AUTHORS
+-rw-r--r-- root/root      1031 2011-02-15 05:37 ./usr/share/doc/samtools/README.Debian
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/doc/samtools/examples/
+-rw-r--r-- root/root    114565 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.sam.gz
+-rw-r--r-- root/root       886 2010-11-17 04:16 ./usr/share/doc/samtools/examples/00README.txt
+-rw-r--r-- root/root       764 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.sam
+-rw-r--r-- root/root        98 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.fa
+-rw-r--r-- root/root      3225 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.fa
+-rw-r--r-- root/root    126609 2011-03-16 20:25 ./usr/share/doc/samtools/examples/ex1.bam.gz
+-rw-r--r-- root/root      1966 2011-03-16 20:25 ./usr/share/doc/samtools/README.bcftools
+-rw-r--r-- root/root      4927 2011-02-15 05:37 ./usr/share/doc/samtools/copyright
+-rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/samtools/changelog.gz
+-rw-r--r-- root/root      1179 2011-02-17 04:14 ./usr/share/doc/samtools/changelog.Debian.gz
+-rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/samtools/NEWS.gz
+-rw-r--r-- root/root       592 2011-02-15 05:37 ./usr/share/doc/samtools/reference
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/bin/
+-rwxr-xr-x root/root    410760 2011-03-16 20:25 ./usr/bin/samtools
+-rwxr-xr-x root/root    108704 2011-03-16 20:25 ./usr/bin/bcftools
+-rwxr-xr-x root/root     30584 2011-03-16 20:25 ./usr/bin/razip
+lrwxrwxrwx root/root         0 2011-03-16 20:25 ./usr/share/man/man1/bcftools.1.gz -> samtools.1.gz
+
+
+libbam-dev_0.1.12a-1~bpo60+1_mipsel.deb
+───────────────────────────────────────
+
+ new debian package, version 2.0.
+ size 173480 bytes: control archive= 909 bytes.
+     684 bytes,    15 lines      control              
+     618 bytes,    10 lines      md5sums              
+ Package: libbam-dev
+ Source: samtools
+ Version: 0.1.12a-1~bpo60+1
+ Architecture: mipsel
+ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+ Installed-Size: 444
+ Section: libdevel
+ Priority: optional
+ Homepage: http://samtools.sourceforge.net
+ Description: manipulates nucleotide sequence alignments in BAM or SAM format
+  The BAM library provides I/O and various operations on manipulating nucleotide
+  sequence alignments in the BAM (Binary Alignment/Mapping) or SAM (Sequence
+  Alignment/Map) format. It now supports importing from or exporting to SAM,
+  sorting, merging, generating pileup, and quickly retrieval of reads overlapped
+  with a specified region.
+
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/include/
+-rw-r--r-- root/root      4599 2010-11-17 04:16 ./usr/include/bgzf.h
+-rw-r--r-- root/root      3188 2010-11-17 04:16 ./usr/include/faidx.h
+-rw-r--r-- root/root     24124 2010-11-17 04:16 ./usr/include/bam.h
+-rw-r--r-- root/root     16522 2010-11-17 04:16 ./usr/include/khash.h
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/lib/
+-rw-r--r-- root/root    302950 2011-03-16 20:25 ./usr/lib/libbam.a
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-03-16 20:25 ./usr/share/doc/libbam-dev/
+-rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/libbam-dev/AUTHORS
+-rw-r--r-- root/root      4927 2011-02-15 05:37 ./usr/share/doc/libbam-dev/copyright
+-rw-r--r-- root/root     30752 2010-11-22 03:17 ./usr/share/doc/libbam-dev/changelog.gz
+-rw-r--r-- root/root      1179 2011-02-17 04:14 ./usr/share/doc/libbam-dev/changelog.Debian.gz
+-rw-r--r-- root/root      6692 2010-12-02 21:16 ./usr/share/doc/libbam-dev/NEWS.gz
+
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Finished                                                                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Built successfully
+────────────────────────────────────────────────────────────────────────────────
+Purging /var/lib/schroot/mount/squeeze-backports-mipsel-sbuild-77b0bd91-ef4d-4509-a448-0e69ab4a6cf7/build/buildd-samtools_0.1.12a-1~bpo60+1-mipsel-tXBHmB
+Not removing build depends: cloned chroot in use
+────────────────────────────────────────────────────────────────────────────────
+Finished at 20110316-2026
+Build needed 00:05:31, 9304k disc space
+
