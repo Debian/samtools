@@ -1,8 +1,8 @@
-samtools (0.1.14-1) UNRELEASED; urgency=low
+samtools (0.1.14-1) unstable; urgency=low
 
   * New upstream release.
 
- -- Charles Plessy <plessy@debian.org>  Tue, 29 Mar 2011 13:06:24 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 29 Mar 2011 13:13:54 +0900
 
 samtools (0.1.13-1) unstable; urgency=low
 
