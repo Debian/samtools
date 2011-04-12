@@ -437,6 +437,7 @@ int bam_pileup(int argc, char *argv[])
 		fprintf(stderr, "        -G FLOAT  prior of an indel between two haplotypes (for -c) [%.4g]\n", d->ido->r_indel);
 		fprintf(stderr, "        -I INT    phred prob. of an indel in sequencing/prep. (for -c) [%d]\n", d->ido->q_indel);
 		fprintf(stderr, "\n");
+		fprintf(stderr, "Warning: Please use the `mpileup' command instead `pileup'. `Pileup' is deprecated!\n\n");
 		free(fn_list); free(fn_fa); free(d);
 		return 1;
 	}
@@ -536,19 +537,23 @@ int bam_pileup(int argc, char *argv[])
 #define MPLP_EXT_BAQ 0x800
 #define MPLP_ILLUMINA13 0x1000
 
+void *bed_read(const char *fn);
+void bed_destroy(void *_h);
+int bed_overlap(const void *_h, const char *chr, int beg, int end);
+
 typedef struct {
 	int max_mq, min_mq, flag, min_baseQ, capQ_thres, max_depth, max_indel_depth;
 	int openQ, extQ, tandemQ, min_support; // for indels
 	double min_frac; // for indels
-	char *reg, *fn_pos, *pl_list;
+	char *reg, *pl_list;
 	faidx_t *fai;
-	kh_64_t *hash;
-	void *rghash;
+	void *bed, *rghash;
 } mplp_conf_t;
 
 typedef struct {
 	bamFile fp;
 	bam_iter_t iter;
+	bam_header_t *h;
 	int ref_id;
 	char *ref;
 	const mplp_conf_t *conf;
@@ -571,6 +576,14 @@ static int mplp_func(void *data, bam1_t *b)
 		int has_ref;
 		ret = ma->iter? bam_iter_read(ma->fp, ma->iter, b) : bam_read1(ma->fp, b);
 		if (ret < 0) break;
+		if (b->core.tid < 0 || (b->core.flag&BAM_FUNMAP)) { // exclude unmapped reads
+			skip = 1;
+			continue;
+		}
+		if (ma->conf->bed) { // test overlap
+			skip = !bed_overlap(ma->conf->bed, ma->h->target_name[b->core.tid], b->core.pos, bam_calend(&b->core, bam1_cigar(b)));
+			if (skip) continue;
+		}
 		if (ma->conf->rghash) { // exclude read groups
 			uint8_t *rg = bam_aux_get(b, "RG");
 			skip = (rg && bcf_str2id(ma->conf->rghash, (const char*)(rg+1)) >= 0);
@@ -589,7 +602,7 @@ static int mplp_func(void *data, bam1_t *b)
 			int q = bam_cap_mapQ(b, ma->ref, ma->conf->capQ_thres);
 			if (q < 0) skip = 1;
 			else if (b->core.qual > q) b->core.qual = q;
-		} else if (b->core.flag&BAM_FUNMAP) skip = 1;
+		}
 		else if (b->core.qual < ma->conf->min_mq) skip = 1; 
 		else if ((ma->conf->flag&MPLP_NO_ORPHAN) && (b->core.flag&1) && !(b->core.flag&2)) skip = 1;
 	} while (skip);
@@ -609,7 +622,11 @@ static void group_smpl(mplp_pileup_t *m, bam_sample_t *sm, kstring_t *buf,
 			q = bam_aux_get(p->b, "RG");
 			if (q) id = bam_smpl_rg2smid(sm, fn[i], (char*)q+1, buf);
 			if (id < 0) id = bam_smpl_rg2smid(sm, fn[i], 0, buf);
-			assert(id >= 0 && id < m->n);
+			if (id < 0 || id >= m->n) {
+				assert(q); // otherwise a bug
+				fprintf(stderr, "[%s] Read group %s used in file %s but absent from the header or an alignment missing read group.\n", __func__, (char*)q+1, fn[i]);
+				exit(1);
+			}
 			if (m->n_plp[id] == m->m_plp[id]) {
 				m->m_plp[id] = m->m_plp[id]? m->m_plp[id]<<1 : 8;
 				m->plp[id] = realloc(m->plp[id], sizeof(bam_pileup1_t) * m->m_plp[id]);
@@ -629,7 +646,6 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn)
 	bam_mplp_t iter;
 	bam_header_t *h = 0;
 	char *ref;
-	khash_t(64) *hash = 0;
 	void *rghash = 0;
 
 	bcf_callaux_t *bca = 0;
@@ -657,6 +673,7 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn)
 		data[i]->fp = strcmp(fn[i], "-") == 0? bam_dopen(fileno(stdin), "r") : bam_open(fn[i], "r");
 		data[i]->conf = conf;
 		h_tmp = bam_header_read(data[i]->fp);
+		data[i]->h = i? h : h_tmp; // for i==0, "h" has not been set yet
 		bam_smpl_add(sm, fn[i], h_tmp->text);
 		rghash = bcf_call_add_rg(rghash, h_tmp->text, conf->pl_list);
 		if (conf->reg) {
@@ -687,7 +704,6 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn)
 	gplp.plp = calloc(sm->n, sizeof(void*));
 
 	fprintf(stderr, "[%s] %d samples in %d input files\n", __func__, sm->n, n);
-	if (conf->fn_pos) hash = load_pos(conf->fn_pos, h);
 	// write the VCF header
 	if (conf->flag & MPLP_GLF) {
 		kstring_t s;
@@ -727,17 +743,13 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn)
 		fprintf(stderr, "(%s) Max depth is above 1M. Potential memory hog!\n", __func__);
 	if (max_depth * sm->n < 8000) {
 		max_depth = 8000 / sm->n;
-		fprintf(stderr, "<%s> Set max per-sample depth to %d\n", __func__, max_depth);
+		fprintf(stderr, "<%s> Set max per-file depth to %d\n", __func__, max_depth);
 	}
 	max_indel_depth = conf->max_indel_depth * sm->n;
 	bam_mplp_set_maxcnt(iter, max_depth);
 	while (bam_mplp_auto(iter, &tid, &pos, n_plp, plp) > 0) {
 		if (conf->reg && (pos < beg0 || pos >= end0)) continue; // out of the region requested
-		if (hash) {
-			khint_t k;
-			k = kh_get(64, hash, (uint64_t)tid<<32 | pos);
-			if (k == kh_end(hash)) continue;
-		}
+		if (conf->bed && tid >= 0 && !bed_overlap(conf->bed, h->target_name[tid], pos, pos+1)) continue;
 		if (tid != ref_tid) {
 			free(ref); ref = 0;
 			if (conf->fai) ref = fai_fetch(conf->fai, h->target_name[tid], &ref_len);
@@ -797,12 +809,6 @@ static int mpileup(mplp_conf_t *conf, int n, char **fn)
 	for (i = 0; i < gplp.n; ++i) free(gplp.plp[i]);
 	free(gplp.plp); free(gplp.n_plp); free(gplp.m_plp);
 	bcf_call_del_rghash(rghash);
-	if (hash) { // free the hash table
-		khint_t k;
-		for (k = kh_begin(hash); k < kh_end(hash); ++k)
-			if (kh_exist(hash, k)) free(kh_val(hash, k));
-		kh_destroy(64, hash);
-	}
 	bcf_hdr_destroy(bh); bcf_call_destroy(bca); free(bc.PL); free(bcr);
 	bam_mplp_destroy(iter);
 	bam_header_destroy(h);
@@ -887,7 +893,7 @@ int bam_mpileup(int argc, char *argv[])
 			break;
 		case 'd': mplp.max_depth = atoi(optarg); break;
 		case 'r': mplp.reg = strdup(optarg); break;
-		case 'l': mplp.fn_pos = strdup(optarg); break;
+		case 'l': mplp.bed = bed_read(optarg); break;
 		case 'P': mplp.pl_list = strdup(optarg); break;
 		case 'g': mplp.flag |= MPLP_GLF; break;
 		case 'u': mplp.flag |= MPLP_NO_COMP | MPLP_GLF; break;
@@ -927,32 +933,35 @@ int bam_mpileup(int argc, char *argv[])
 	if (use_orphan) mplp.flag &= ~MPLP_NO_ORPHAN;
 	if (argc == 1) {
 		fprintf(stderr, "\n");
-		fprintf(stderr, "Usage:   samtools mpileup [options] in1.bam [in2.bam [...]]\n\n");
-		fprintf(stderr, "Options: -f FILE     reference sequence file [null]\n");
-		fprintf(stderr, "         -r STR      region in which pileup is generated [null]\n");
-		fprintf(stderr, "         -l FILE     list of positions (format: chr pos) [null]\n");
-		fprintf(stderr, "         -b FILE     list of input BAM files [null]\n");
-		fprintf(stderr, "         -M INT      cap mapping quality at INT [%d]\n", mplp.max_mq);
-		fprintf(stderr, "         -Q INT      min base quality [%d]\n", mplp.min_baseQ);
-		fprintf(stderr, "         -q INT      filter out alignment with MQ smaller than INT [%d]\n", mplp.min_mq);
-		fprintf(stderr, "         -d INT      max per-BAM depth [%d]\n", mplp.max_depth);
-		fprintf(stderr, "         -L INT      max per-sample depth for INDEL calling [%d]\n", mplp.max_indel_depth);
-		fprintf(stderr, "         -P STR      comma separated list of platforms for indels [all]\n");
-		fprintf(stderr, "         -o INT      Phred-scaled gap open sequencing error probability [%d]\n", mplp.openQ);
-		fprintf(stderr, "         -e INT      Phred-scaled gap extension seq error probability [%d]\n", mplp.extQ);
-		fprintf(stderr, "         -h INT      coefficient for homopolyer errors [%d]\n", mplp.tandemQ);
-		fprintf(stderr, "         -m INT      minimum gapped reads for indel candidates [%d]\n", mplp.min_support);
-		fprintf(stderr, "         -F FLOAT    minimum fraction of gapped reads for candidates [%g]\n", mplp.min_frac);
-		fprintf(stderr, "         -G FILE     exclude read groups listed in FILE [null]\n");
-		fprintf(stderr, "         -6          quality is in the Illumina-1.3+ encoding\n");
-		fprintf(stderr, "         -A          use anomalous read pairs in SNP/INDEL calling\n");
-		fprintf(stderr, "         -g          generate BCF output\n");
-		fprintf(stderr, "         -u          do not compress BCF output\n");
-		fprintf(stderr, "         -E          extended BAQ for higher sensitivity but lower specificity\n");
-		fprintf(stderr, "         -B          disable BAQ computation\n");
-		fprintf(stderr, "         -D          output per-sample DP\n");
-		fprintf(stderr, "         -S          output per-sample SP (strand bias P-value, slow)\n");
-		fprintf(stderr, "         -I          do not perform indel calling\n");
+		fprintf(stderr, "Usage: samtools mpileup [options] in1.bam [in2.bam [...]]\n\n");
+		fprintf(stderr, "Input options:\n\n");
+		fprintf(stderr, "       -6           assume the quality is in the Illumina-1.3+ encoding\n");
+		fprintf(stderr, "       -A           count anomalous read pairs\n");
+		fprintf(stderr, "       -B           disable BAQ computation\n");
+		fprintf(stderr, "       -b FILE      list of input BAM files [null]\n");
+		fprintf(stderr, "       -d INT       max per-BAM depth to avoid excessive memory usage [%d]\n", mplp.max_depth);
+		fprintf(stderr, "       -E           extended BAQ for higher sensitivity but lower specificity\n");
+		fprintf(stderr, "       -f FILE      faidx indexed reference sequence file [null]\n");
+		fprintf(stderr, "       -G FILE      exclude read groups listed in FILE [null]\n");
+		fprintf(stderr, "       -l FILE      list of positions (chr pos) or regions (BED) [null]\n");
+		fprintf(stderr, "       -M INT       cap mapping quality at INT [%d]\n", mplp.max_mq);
+		fprintf(stderr, "       -r STR       region in which pileup is generated [null]\n");
+		fprintf(stderr, "       -q INT       skip alignments with mapQ smaller than INT [%d]\n", mplp.min_mq);
+		fprintf(stderr, "       -Q INT       skip bases with baseQ/BAQ smaller than INT [%d]\n", mplp.min_baseQ);
+		fprintf(stderr, "\nOutput options:\n\n");
+		fprintf(stderr, "       -D           output per-sample DP in BCF (require -g/-u)\n");
+		fprintf(stderr, "       -g           generate BCF output (genotype likelihoods)\n");
+		fprintf(stderr, "       -S           output per-sample strand bias P-value in BCF (require -g/-u)\n");
+		fprintf(stderr, "       -u           generate uncompress BCF output\n");
+		fprintf(stderr, "\nSNP/INDEL genotype likelihoods options (effective with `-g' or `-u'):\n\n");
+		fprintf(stderr, "       -e INT       Phred-scaled gap extension seq error probability [%d]\n", mplp.extQ);
+		fprintf(stderr, "       -F FLOAT     minimum fraction of gapped reads for candidates [%g]\n", mplp.min_frac);
+		fprintf(stderr, "       -h INT       coefficient for homopolymer errors [%d]\n", mplp.tandemQ);
+		fprintf(stderr, "       -I           do not perform indel calling\n");
+		fprintf(stderr, "       -L INT       max per-sample depth for INDEL calling [%d]\n", mplp.max_indel_depth);
+		fprintf(stderr, "       -m INT       minimum gapped reads for indel candidates [%d]\n", mplp.min_support);
+		fprintf(stderr, "       -o INT       Phred-scaled gap open sequencing error probability [%d]\n", mplp.openQ);
+		fprintf(stderr, "       -P STR       comma separated list of platforms for indels [all]\n");
 		fprintf(stderr, "\n");
 		fprintf(stderr, "Notes: Assuming diploid individuals.\n\n");
 		return 1;
@@ -966,5 +975,6 @@ int bam_mpileup(int argc, char *argv[])
 	if (mplp.rghash) bcf_str2id_thorough_destroy(mplp.rghash);
 	free(mplp.reg); free(mplp.pl_list);
 	if (mplp.fai) fai_destroy(mplp.fai);
+	if (mplp.bed) bed_destroy(mplp.bed);
 	return 0;
 }
