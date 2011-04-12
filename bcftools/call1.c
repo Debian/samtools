@@ -8,9 +8,6 @@
 #include "kstring.h"
 #include "time.h"
 
-#include "khash.h"
-KHASH_SET_INIT_INT64(set64)
-
 #include "kseq.h"
 KSTREAM_INIT(gzFile, gzread, 16384)
 
@@ -31,42 +28,31 @@ KSTREAM_INIT(gzFile, gzread, 16384)
 
 typedef struct {
 	int flag, prior_type, n1, n_sub, *sublist, n_perm;
-	char *fn_list, *prior_file, **subsam, *fn_dict;
+	char *prior_file, **subsam, *fn_dict;
 	uint8_t *ploidy;
 	double theta, pref, indel_frac, min_perm_p, min_smpl_frac;
+	void *bed;
 } viewconf_t;
 
-khash_t(set64) *bcf_load_pos(const char *fn, bcf_hdr_t *_h)
-{
-	void *str2id;
-	gzFile fp;
-	kstream_t *ks;
-	int ret, dret, lineno = 1;
-	kstring_t *str;
-	khash_t(set64) *hash = 0;
+void *bed_read(const char *fn);
+void bed_destroy(void *_h);
+int bed_overlap(const void *_h, const char *chr, int beg, int end);
 
-	hash = kh_init(set64);
-	str2id = bcf_build_refhash(_h);
-	str = calloc(1, sizeof(kstring_t));
-	fp = strcmp(fn, "-")? gzopen(fn, "r") : gzdopen(fileno(stdin), "r");
-	ks = ks_init(fp);
-	while (ks_getuntil(ks, 0, str, &dret) >= 0) {
-		int tid = bcf_str2id(str2id, str->s);
-		if (tid >= 0 && dret != '\n') {
-			if (ks_getuntil(ks, 0, str, &dret) >= 0) {
-				uint64_t x = (uint64_t)tid<<32 | (atoi(str->s) - 1);
-				kh_put(set64, hash, x, &ret);
-			} else break;
-		} else fprintf(stderr, "[%s] %s is not a reference name (line %d).\n", __func__, str->s, lineno);
-		if (dret != '\n') while ((dret = ks_getc(ks)) > 0 && dret != '\n');
-		if (dret < 0) break;
-		++lineno;
-	}
-	bcf_str2id_destroy(str2id);
-	ks_destroy(ks);
-	gzclose(fp);
-	free(str->s); free(str);
-	return hash;
+static double test_hwe(const double g[3])
+{
+	extern double kf_gammaq(double p, double x);
+	double fexp, chi2, f[3], n;
+	int i;
+	n = g[0] + g[1] + g[2];
+	fexp = (2. * g[2] + g[1]) / (2. * n);
+	if (fexp > 1. - 1e-10) fexp = 1. - 1e-10;
+	if (fexp < 1e-10) fexp = 1e-10;
+	f[0] = n * (1. - fexp) * (1. - fexp);
+	f[1] = n * 2. * fexp * (1. - fexp);
+	f[2] = n * fexp * fexp;
+	for (i = 0, chi2 = 0.; i < 3; ++i)
+		chi2 += (g[i] - f[i]) * (g[i] - f[i]) / f[i];
+	return kf_gammaq(.5, chi2 / 2.);
 }
 
 typedef struct {
@@ -148,13 +134,17 @@ static int update_bcf1(int n_smpl, bcf1_t *b, const bcf_p1aux_t *pa, const bcf_p
 	kputs(b->info, &s);
 	if (b->info[0]) kputc(';', &s);
 //	ksprintf(&s, "AF1=%.4lg;AFE=%.4lg;CI95=%.4lg,%.4lg", 1.-pr->f_em, 1.-pr->f_exp, pr->cil, pr->cih);
-	ksprintf(&s, "AF1=%.4g;CI95=%.4g,%.4g", 1.-pr->f_em, pr->cil, pr->cih);
+	ksprintf(&s, "AF1=%.4g;CI95=%.4g,%.4g;G3=%.4g,%.4g,%.4g", 1.-pr->f_em, pr->cil, pr->cih, pr->g[2], pr->g[1], pr->g[0]);
+	if (n_smpl > 5) {
+		double hwe = test_hwe(pr->g);
+		if (hwe < 0.1) ksprintf(&s, ";HWE=%.4g", hwe);
+	}
 	if (has_I16) ksprintf(&s, ";DP4=%d,%d,%d,%d;MQ=%d", a.d[0], a.d[1], a.d[2], a.d[3], a.mq);
 	fq = pr->p_ref_folded < 0.5? -4.343 * log(pr->p_ref_folded) : 4.343 * log(pr->p_var_folded);
 	if (fq < -999) fq = -999;
 	if (fq > 999) fq = 999;
 	ksprintf(&s, ";FQ=%.3g", fq);
-	if (pr->cmp[0] >= 0.) {
+	if (pr->cmp[0] >= 0.) { // two sample groups
 		int i, q[3], pq;
 		for (i = 1; i < 3; ++i) {
 			double x = pr->cmp[i] + pr->cmp[0]/2.;
@@ -164,6 +154,7 @@ static int update_bcf1(int n_smpl, bcf1_t *b, const bcf_p1aux_t *pa, const bcf_p
 		pq = (int)(-4.343 * log(pr->p_chi2) + .499);
 		if (pr->perm_rank >= 0) ksprintf(&s, ";PR=%d", pr->perm_rank);
 		ksprintf(&s, ";QCHI2=%d;PCHI2=%.3g;PC2=%d,%d", pq, q[1], q[2], pr->p_chi2);
+		ksprintf(&s, ";AF2=%.4g,%.4g", 1.-pr->f_em2[0], 1.-pr->f_em2[1]);
 //		ksprintf(&s, ",%g,%g,%g", pr->cmp[0], pr->cmp[1], pr->cmp[2]);
 	}
 	if (has_I16 && a.is_tested) ksprintf(&s, ";PV4=%.2g,%.2g,%.2g,%.2g", a.p[0], a.p[1], a.p[2], a.p[3]);
@@ -246,6 +237,10 @@ static void write_header(bcf_hdr_t *h)
 		kputs("##INFO=<ID=FQ,Number=1,Type=Float,Description=\"Phred probability of all samples being the same\">\n", &str);
 	if (!strstr(str.s, "##INFO=<ID=AF1,"))
 		kputs("##INFO=<ID=AF1,Number=1,Type=Float,Description=\"Max-likelihood estimate of the site allele frequency of the first ALT allele\">\n", &str);
+	if (!strstr(str.s, "##INFO=<ID=G3,"))
+		kputs("##INFO=<ID=G3,Number=3,Type=Float,Description=\"ML estimate of genotype frequencies\">\n", &str);
+	if (!strstr(str.s, "##INFO=<ID=HWE,"))
+		kputs("##INFO=<ID=HWE,Number=1,Type=Float,Description=\"Chi^2 based HWE test P-value based on G3\">\n", &str);
 	if (!strstr(str.s, "##INFO=<ID=CI95,"))
 		kputs("##INFO=<ID=CI95,Number=2,Type=Float,Description=\"Equal-tail Bayesian credible interval of the site allele frequency at the 95% level\">\n", &str);
 	if (!strstr(str.s, "##INFO=<ID=PV4,"))
@@ -259,7 +254,7 @@ static void write_header(bcf_hdr_t *h)
     if (!strstr(str.s, "##INFO=<ID=QCHI2,"))
         kputs("##INFO=<ID=QCHI2,Number=1,Type=Integer,Description=\"Phred scaled PCHI2.\">\n", &str);
     if (!strstr(str.s, "##INFO=<ID=RP,"))
-        kputs("##INFO=<ID=RP,Number=1,Type=Integer,Description=\"# permutations yielding a smaller PCHI2.\">\n", &str);
+        kputs("##INFO=<ID=PR,Number=1,Type=Integer,Description=\"# permutations yielding a smaller PCHI2.\">\n", &str);
     if (!strstr(str.s, "##FORMAT=<ID=GT,"))
         kputs("##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">\n", &str);
     if (!strstr(str.s, "##FORMAT=<ID=GQ,"))
@@ -293,7 +288,6 @@ int bcfview(int argc, char *argv[])
 	bcf_hdr_t *hin, *hout;
 	int tid, begin, end;
 	char moder[4], modew[4];
-	khash_t(set64) *hash = 0;
 
 	tid = begin = end = -1;
 	memset(&vc, 0, sizeof(viewconf_t));
@@ -301,7 +295,7 @@ int bcfview(int argc, char *argv[])
 	while ((c = getopt(argc, argv, "FN1:l:cHAGvbSuP:t:p:QgLi:IMs:D:U:X:d:")) >= 0) {
 		switch (c) {
 		case '1': vc.n1 = atoi(optarg); break;
-		case 'l': vc.fn_list = strdup(optarg); break;
+		case 'l': vc.bed = bed_read(optarg); break;
 		case 'D': vc.fn_dict = strdup(optarg); break;
 		case 'F': vc.flag |= VC_FIX_PL; break;
 		case 'N': vc.flag |= VC_ACGT_ONLY; break;
@@ -338,31 +332,34 @@ int bcfview(int argc, char *argv[])
 	}
 	if (argc == optind) {
 		fprintf(stderr, "\n");
-		fprintf(stderr, "Usage:   bcftools view [options] <in.bcf> [reg]\n\n");
-		fprintf(stderr, "Options: -c        SNP calling\n");
-		fprintf(stderr, "         -v        output potential variant sites only (force -c)\n");
-		fprintf(stderr, "         -g        call genotypes at variant sites (force -c)\n");
-		fprintf(stderr, "         -b        output BCF instead of VCF\n");
-		fprintf(stderr, "         -u        uncompressed BCF output (force -b)\n");
-		fprintf(stderr, "         -S        input is VCF\n");
-		fprintf(stderr, "         -A        keep all possible alternate alleles at variant sites\n");
-		fprintf(stderr, "         -G        suppress all individual genotype information\n");
-		fprintf(stderr, "         -N        skip sites where REF is not A/C/G/T\n");
-		fprintf(stderr, "         -Q        output the QCALL likelihood format\n");
-		fprintf(stderr, "         -L        calculate LD for adjacent sites\n");
-		fprintf(stderr, "         -I        skip indels\n");
-		fprintf(stderr, "         -F        PL generated by r921 or before\n");
-		fprintf(stderr, "         -d FLOAT  skip loci where less than FLOAT fraction of samples covered [0]\n");
-		fprintf(stderr, "         -D FILE   sequence dictionary for VCF->BCF conversion [null]\n");
-		fprintf(stderr, "         -l FILE   list of sites to output [all sites]\n");
-		fprintf(stderr, "         -t FLOAT  scaled substitution mutation rate [%.4g]\n", vc.theta);
-		fprintf(stderr, "         -i FLOAT  indel-to-substitution ratio [%.4g]\n", vc.indel_frac);
-		fprintf(stderr, "         -p FLOAT  variant if P(ref|D)<FLOAT [%.3g]\n", vc.pref);
-		fprintf(stderr, "         -P STR    type of prior: full, cond2, flat [full]\n");
-		fprintf(stderr, "         -s FILE   list of samples to use [all samples]\n");
-		fprintf(stderr, "         -1 INT    number of group-1 samples [0]\n");
-		fprintf(stderr, "         -U INT    number of permutations for association testing (effective with -1) [0]\n");
-		fprintf(stderr, "         -X FLOAT  only perform permutations for P(chi^2)<FLOAT [%g]\n", vc.min_perm_p);
+		fprintf(stderr, "Usage: bcftools view [options] <in.bcf> [reg]\n\n");
+		fprintf(stderr, "Input/output options:\n\n");
+		fprintf(stderr, "       -A        keep all possible alternate alleles at variant sites\n");
+		fprintf(stderr, "       -b        output BCF instead of VCF\n");
+		fprintf(stderr, "       -D FILE   sequence dictionary for VCF->BCF conversion [null]\n");
+		fprintf(stderr, "       -F        PL generated by r921 or before (which generate old ordering)\n");
+		fprintf(stderr, "       -G        suppress all individual genotype information\n");
+		fprintf(stderr, "       -l FILE   list of sites (chr pos) or regions (BED) to output [all sites]\n");
+		fprintf(stderr, "       -L        calculate LD for adjacent sites\n");
+		fprintf(stderr, "       -N        skip sites where REF is not A/C/G/T\n");
+		fprintf(stderr, "       -Q        output the QCALL likelihood format\n");
+		fprintf(stderr, "       -s FILE   list of samples to use [all samples]\n");
+		fprintf(stderr, "       -S        input is VCF\n");
+		fprintf(stderr, "       -u        uncompressed BCF output (force -b)\n");
+		fprintf(stderr, "\nConsensus/variant calling options:\n\n");
+		fprintf(stderr, "       -c        SNP calling\n");
+		fprintf(stderr, "       -d FLOAT  skip loci where less than FLOAT fraction of samples covered [0]\n");
+		fprintf(stderr, "       -g        call genotypes at variant sites (force -c)\n");
+		fprintf(stderr, "       -i FLOAT  indel-to-substitution ratio [%.4g]\n", vc.indel_frac);
+		fprintf(stderr, "       -I        skip indels\n");
+		fprintf(stderr, "       -p FLOAT  variant if P(ref|D)<FLOAT [%.3g]\n", vc.pref);
+		fprintf(stderr, "       -P STR    type of prior: full, cond2, flat [full]\n");
+		fprintf(stderr, "       -t FLOAT  scaled substitution mutation rate [%.4g]\n", vc.theta);
+		fprintf(stderr, "       -v        output potential variant sites only (force -c)\n");
+		fprintf(stderr, "\nContrast calling and association test options:\n\n");
+		fprintf(stderr, "       -1 INT    number of group-1 samples [0]\n");
+		fprintf(stderr, "       -U INT    number of permutations for association testing (effective with -1) [0]\n");
+		fprintf(stderr, "       -X FLOAT  only perform permutations for P(chi^2)<FLOAT [%g]\n", vc.min_perm_p);
 		fprintf(stderr, "\n");
 		return 1;
 	}
@@ -411,7 +408,6 @@ int bcfview(int argc, char *argv[])
 		}
 		if (vc.indel_frac > 0.) bcf_p1_indel_prior(p1, vc.indel_frac); // otherwise use the default indel_frac
 	}
-	if (vc.fn_list) hash = bcf_load_pos(vc.fn_list, hin);
 	if (optind + 1 < argc && !(vc.flag&VC_VCFIN)) {
 		void *str2id = bcf_build_refhash(hout);
 		if (bcf_parse_region(str2id, argv[optind+1], &tid, &begin, &end) >= 0) {
@@ -447,13 +443,7 @@ int bcfview(int argc, char *argv[])
 			x = toupper(b->ref[0]);
 			if (x != 'A' && x != 'C' && x != 'G' && x != 'T') continue;
 		}
-		if (hash) {
-			uint64_t x = (uint64_t)b->tid<<32 | b->pos;
-			khint_t k = kh_get(set64, hash, x);
-			if (kh_size(hash) == 0) break;
-			if (k == kh_end(hash)) continue;
-			kh_del(set64, hash, k);
-		}
+		if (vc.bed && !bed_overlap(vc.bed, hin->ns[b->tid], b->pos, b->pos + strlen(b->ref))) continue;
 		if (tid >= 0) {
 			int l = strlen(b->ref);
 			l = b->pos + (l > 0? l : 1);
@@ -492,7 +482,7 @@ int bcfview(int argc, char *argv[])
 				kstring_t s;
 				s.m = s.l = 0; s.s = 0;
 				if (*b->info) kputc(';', &s);
-				ksprintf(&s, "NEIR=%.3f;NEIF=%.3f,%.3f", r2, f[0]+f[2], f[0]+f[1]);
+				ksprintf(&s, "NEIR=%.3f;NEIF4=%.3f,%.3f,%.3f,%.3f", r2, f[0], f[1], f[2], f[3]);
 				bcf_append_info(b, s.s, s.l);
 				free(s.s);
 			}
@@ -512,8 +502,6 @@ int bcfview(int argc, char *argv[])
 	bcf_hdr_destroy(hin);
 	bcf_destroy(b); bcf_destroy(blast);
 	vcf_close(bp); vcf_close(bout);
-	if (hash) kh_destroy(set64, hash);
-	if (vc.fn_list) free(vc.fn_list);
 	if (vc.fn_dict) free(vc.fn_dict);
 	if (vc.ploidy) free(vc.ploidy);
 	if (vc.n_sub) {
@@ -521,6 +509,7 @@ int bcfview(int argc, char *argv[])
 		for (i = 0; i < vc.n_sub; ++i) free(vc.subsam[i]);
 		free(vc.subsam); free(vc.sublist);
 	}
+	if (vc.bed) bed_destroy(vc.bed);
 	if (seeds) free(seeds);
 	if (p1) bcf_p1_destroy(p1);
 	return 0;

@@ -5,6 +5,7 @@
 
 int bcfview(int argc, char *argv[]);
 int bcf_main_index(int argc, char *argv[]);
+int bcf_main_pwld(int argc, char *argv[]);
 
 #define BUF_SIZE 0x10000
 
@@ -50,12 +51,14 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Command: view      print, extract, convert and call SNPs from BCF\n");
 		fprintf(stderr, "         index     index BCF\n");
 		fprintf(stderr, "         cat       concatenate BCFs\n");
+		fprintf(stderr, "         ld        compute all-pair r^2\n");
 		fprintf(stderr, "\n");
 		return 1;
 	}
 	if (strcmp(argv[1], "view") == 0) return bcfview(argc-1, argv+1);
 	else if (strcmp(argv[1], "index") == 0) return bcf_main_index(argc-1, argv+1);
-	else if (strcmp(argv[1], "cat") == 0) return bcf_cat(argc-2, argv+2);
+	else if (strcmp(argv[1], "ld") == 0) return bcf_main_pwld(argc-1, argv+1);
+	else if (strcmp(argv[1], "cat") == 0) return bcf_cat(argc-2, argv+2); // cat is different ...
 	else {
 		fprintf(stderr, "[main] Unrecognized command.\n");
 		return 1;
