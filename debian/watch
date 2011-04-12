@@ -1,3 +1,4 @@
 version=3
-opts=dversionmangle=s/~dfsg// \
-  http://sf.net/samtools/samtools-([\d\.]*)\.tar\.bz2
+opts=downloadurlmangle=s|/download||,filenamemangle=s|http://sourceforge.net/projects/samtools/files/samtools/.+?/||;s|.download|| \
+  http://sourceforge.net/projects/samtools/files/samtools/ \
+  http://sourceforge.net/projects/samtools/files/samtools/.+?/samtools-(.*).tar.bz2/download

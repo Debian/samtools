@@ -1,8 +1,11 @@
-samtools (0.1.15-1) UNRELEASED; urgency=low
+samtools (0.1.15-1) unstable; urgency=low
 
   * New upstream release.
+  * Incremented Standards-Version to reflect conformance with Policy 3.9.2
+    (debian/control, no changes needed).
+  * debian/watch directly interrogates and downloads froms SourceForge.
 
- -- Charles Plessy <plessy@debian.org>  Tue, 12 Apr 2011 19:43:55 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 12 Apr 2011 19:44:41 +0900
 
 samtools (0.1.14-1) unstable; urgency=low
 
