@@ -2,11 +2,11 @@
 Hash: SHA256
 
 Format: 1.8
-Date: Tue, 29 Mar 2011 13:13:54 +0900
+Date: Tue, 12 Apr 2011 19:44:41 +0900
 Source: samtools
 Binary: samtools libbam-dev
 Architecture: source amd64
-Version: 0.1.14-1
+Version: 0.1.15-1
 Distribution: unstable
 Urgency: low
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
@@ -15,42 +15,45 @@ Description:
  libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
  samtools   - processing sequence alignments in SAM and BAM formats
 Changes: 
- samtools (0.1.14-1) unstable; urgency=low
+ samtools (0.1.15-1) unstable; urgency=low
  .
    * New upstream release.
+   * Incremented Standards-Version to reflect conformance with Policy 3.9.2
+     (debian/control, no changes needed).
+   * debian/watch directly interrogates and downloads froms SourceForge.
 Checksums-Sha1: 
- 62df6b20afe456dd9367aa2214b1691cde28d020 1939 samtools_0.1.14-1.dsc
- 03d537ae69afa1607ba3f88a45aaff27d3ba4bd1 370287 samtools_0.1.14.orig.tar.bz2
- 3363682d767cc5aad089f40c49e3c70484da5be2 6869 samtools_0.1.14-1.debian.tar.gz
- cd07ae55e6c70a148ec68e60de7d32ae58adb733 593618 samtools_0.1.14-1_amd64.deb
- 1ad8d4c64330f90a6d3b60cd2a06dce44fa1ef41 165312 libbam-dev_0.1.14-1_amd64.deb
+ 90e920f4a021ecb320f82f7ea748686563096ed1 1939 samtools_0.1.15-1.dsc
+ 0a0f05928ba40ce95d4feda0cd0742ccd1b69e76 374429 samtools_0.1.15.orig.tar.bz2
+ bc8b3ec45fc1bd706858596b68661a654678b46e 7005 samtools_0.1.15-1.debian.tar.gz
+ 4f5a23bdbaa730c3c5e11e4e5792a00c9c0e5d3b 599104 samtools_0.1.15-1_amd64.deb
+ 473799f45bf22dde0d9d89b1a84a3529d1c85840 169002 libbam-dev_0.1.15-1_amd64.deb
 Checksums-Sha256: 
- bb4e109187e11c57e13237a8d491d108499038d1d9d4dab79e38a86c95b523d2 1939 samtools_0.1.14-1.dsc
- 8bbe8fe4240fe98868891a27093e86ffb3149b716d9659db28c84df0c91d5975 370287 samtools_0.1.14.orig.tar.bz2
- 048f6988bbc21acd19f54e2f42ed105834981220f35a32397c6c202c53443265 6869 samtools_0.1.14-1.debian.tar.gz
- d7aa1cc47b6eeb4bac688ebb8ebd11108feda8f0d37471850a6d20609020d2c2 593618 samtools_0.1.14-1_amd64.deb
- 9722646d951eb7f65799b5838eeffadb170ed01e6348047e7ec97c403f68d09a 165312 libbam-dev_0.1.14-1_amd64.deb
+ dfabb3bac8229dfbd26e852cf9aebd90445512eee8891dfeec0bb56340ed9122 1939 samtools_0.1.15-1.dsc
+ 59cdd41c9697b5a2c8c57f1867266f8262058d280460d22cdd74606aa7d7047f 374429 samtools_0.1.15.orig.tar.bz2
+ f7f94edc5b59dd11e1dee11346cc11f25b15dae8869074d840b89535ea1a2b53 7005 samtools_0.1.15-1.debian.tar.gz
+ 5ab78897e9238eef643f4334cfc4cafd42531763fc97e619242cdbdcf5e42d3f 599104 samtools_0.1.15-1_amd64.deb
+ 303f88901a79909ed1b5bcefb3ccdd99b0c39e4a0f8fdf5b6d2010dff585a443 169002 libbam-dev_0.1.15-1_amd64.deb
 Files: 
- e17f770090ed9c540e9cf0e5a0100704 1939 science optional samtools_0.1.14-1.dsc
- aa2bed7b3d96e64cbeb3726f1fb6d880 370287 science optional samtools_0.1.14.orig.tar.bz2
- b3c31d72685018d26682d460667a77a8 6869 science optional samtools_0.1.14-1.debian.tar.gz
- d4018bd1b0f86e2caa76be65d162629c 593618 science optional samtools_0.1.14-1_amd64.deb
- 0c35b980860354f363a1011ea11bafe8 165312 libdevel optional libbam-dev_0.1.14-1_amd64.deb
+ 6b88fd8c962a8143d54b718dcfc5a01c 1939 science optional samtools_0.1.15-1.dsc
+ caf1cac191fdabd57a309e36f359c047 374429 science optional samtools_0.1.15.orig.tar.bz2
+ 8f3586257c58ea4371d4e83ebcb7a74e 7005 science optional samtools_0.1.15-1.debian.tar.gz
+ f11a7ccf86ab2a9b39be07d1191e3586 599104 science optional samtools_0.1.15-1_amd64.deb
+ 302c9810d2f9384ab504313a66e8beb8 169002 libdevel optional libbam-dev_0.1.15-1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQIcBAEBCAAGBQJNkWG2AAoJEMW9bI8ildUCz9MP/3iQc/lYS6tr6a6e6exdWvta
-X92Zh9eY5SY2VaHIfbXCy85ccPjWNzTg7kJZVcGuQK0lyVK9clUjbMN+aKQ2ID9S
-MDzLrDlpm5bG3nPocwGLWEC8FRBDwTpkRJ4LC1lMKxakf0ghC6Q1mfodg856wGi8
-Qona7MLkGkqqf9iJ1k9OrW2ORO48JVxqjJtscLcYb38KOP7S4klTdhXWnZA9LEDf
-6ZHynGm3dwyZ4JhNQCSDz447Jehcxwdd1cPrO1hmBjnhMrZs8xP4g5K+ytmsYbG6
-PvgTMsKSUOxDYX0tZ5bKODYeFPH2ngW9wbRrUX89X9asCSYPbfWGp6W7Het/tdtV
-2tDviYs6YeshrFhI+blT/BLqm/IuXbfLcCF/EWfpIlSg++6UMEj0L/NnEBk0GNRk
-wfaBXOuFnIfqfHOtprcbTLCjmAC+tdSVsAnP3gBJPwoy16hCjsueUL6Wf0lypso+
-2JleDCBfAMnL5jReNqjnXaLknWVcr01YvXf7XqOzo08nBUSQ8q6SM7FXu0PozTmu
-CXRwp7fDuQYmojRRvj6DK97vY6rww5E5HDYVr3Wd2/MF75TcqbOPGiRh6299CJhM
-E8kLQhsWBzuhXMNDGar4akVO+PiUseUB3QvGH16IXOJtUzgVU7SW5+zXqvPSSYSq
-rIP63kfEkIWK/utW/zfP
-=Bxte
+iQIcBAEBCAAGBQJNpC/xAAoJEMW9bI8ildUCMwwQAK9hTC9Xj7HjbLY/XTzVhwOk
+t871XahVC4IwlKzsRETWRPNW4SpxK6Lgl2531ciA6uYy+kJsBtJnogJxcqMK4QxK
+rU9AGGNkwMmj7Mbx0tSxi8UHJ6VSrP0mTNH/K068vt6b8N51kwguYLjy/dUhptWo
+5+PWTNAFpENWsuyW3DgrKXKXClrJSWznlTWNxsr+ne20aIbrCQLnehWhbYHGRmIK
+6rBQI2i6zvD9BQNqK+m7xypfQ7zi6/XL6oNx5AcEt0fC7RgfJmd6IIxskJh1eIww
+UXlqDcWffstOVJf9EJPeFixNbdyhytpMCbDauI7YZ+EIhB3vsUmVwusCLGvuCLDH
+hwrBqXCNlDVCNcR2S9rjQJvQuXB/+XNBCcoMmpzl68l5JCLEb+VPzORDynHmPotc
+FFW2emz5Uw0IbKHymjdFGM1NxFkF8R9SjfE67WtCBVJNTgjLxU3tLxQv2qwSUaoL
+REK4aQLdt/FolBALPWXL1dDS1nN0/fKBjtfJDPerbzDmxLBFZc/7jlO9rjb/W62x
+RSHwsff/77R4eK+33TjGSz44l6uuaQgoCO9EYEuqgCCZF2ZH5At2vPWi5ouQgTgK
+FnIGdyU7tJISQS0sikwRgJAaW2TcBjGibPRtTuR+iWGoz6TwkdRvpKce+7gh0zt9
+OODOMZvw6Y6Q2A97/hM2
+=TXmq
 -----END PGP SIGNATURE-----
