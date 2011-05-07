@@ -1,5 +1,5 @@
 Format: http://dep.debian.net/deps/dep5/
-Source: http://qa.debian.org/watch/sf.php/samtools/samtools-0.1.15.tar.bz2
+Source: http://qa.debian.org/watch/sf.php/samtools/samtools-0.1.16.tar.bz2
 
 Files: *
 Copyright:  © 2008–2010, Genome Research Ltd. (GRL)
@@ -43,6 +43,10 @@ License: MIT
 
 Files: khash.h
 Copyright: © 2008, 2009, 2011 by Attractive Chaos <attractor@live.co.uk>
+License: MIT
+
+Files: bcftools/kmin.?
+Copyright: © 2008, 2010 by Attractive Chaos <attractor@live.co.uk>
 License: MIT
 
 Files: knetfile.c
