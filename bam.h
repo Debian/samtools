@@ -40,7 +40,7 @@
   @copyright Genome Research Ltd.
  */
 
-#define BAM_VERSION "0.1.15 (r949:203)"
+#define BAM_VERSION "0.1.16 (r963:234)"
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -745,5 +745,14 @@ static inline bam1_t *bam_dup1(const bam1_t *src)
 	memcpy(b->data, src->data, b->data_len);
 	return b;
 }
+
+static inline int bam_aux_type2size(int x)
+{
+	if (x == 'C' || x == 'c' || x == 'A') return 1;
+	else if (x == 'S' || x == 's') return 2;
+	else if (x == 'I' || x == 'i' || x == 'f') return 4;
+	else return 0;
+}
+
 
 #endif
