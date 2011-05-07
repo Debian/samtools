@@ -1,8 +1,10 @@
 samtools (0.1.16-1) UNRELEASED; urgency=low
 
   * New upstream release, implementing SAM Spec v1.4.
+  * Distribute transiently sam.h in /usr/include. It will be moved later
+    with the other headers to /usr/include/samtools. Closes:#625622 LP:#690997.
 
- -- Charles Plessy <plessy@debian.org>  Sat, 07 May 2011 17:57:57 +0900
+ -- Charles Plessy <plessy@debian.org>  Sun, 08 May 2011 17:55:01 +0900
 
 samtools (0.1.15-1) unstable; urgency=low
 

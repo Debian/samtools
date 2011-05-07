@@ -3,3 +3,4 @@ bam.h		usr/include
 bgzf.h		usr/include
 khash.h		usr/include
 faidx.h		usr/include
+sam.h		usr/include
