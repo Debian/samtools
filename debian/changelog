@@ -1,3 +1,11 @@
+samtools (0.1.16-1~lucid1) lucid; urgency=low
+
+  * 0.1.16-1 built for Lucid on Debian Med's PPA, after reverting the move
+    of the headers to /usr/include/samtools, in order to not break the
+    buildability of libbio-samtools-perl from Lucid.
+
+ -- Charles Plessy <plessy@debian.org>  Fri, 20 May 2011 18:55:31 +0900
+
 samtools (0.1.16-1) unstable; urgency=low
 
   * New upstream release, implementing SAM Spec v1.4.
