@@ -1,4 +1,4 @@
-samtools (0.1.17-1) UNRELEASED; urgency=low
+samtools (0.1.17-1) unstable; urgency=low
 
   * New upstream release 0.1.17 (6 July, 2011).
   * bcftools.1 and samtools.1 merged (debian/rules, debian/samtools.manpages).
@@ -6,7 +6,7 @@ samtools (0.1.17-1) UNRELEASED; urgency=low
     (debian/control, debian/rules, debian/patches/series,
     debian/patches/no-pileup-tests.patch)
 
- -- Charles Plessy <plessy@debian.org>  Mon, 11 Jul 2011 20:22:01 +0900
+ -- Charles Plessy <plessy@debian.org>  Mon, 11 Jul 2011 21:04:30 +0900
 
 samtools (0.1.16-1) unstable; urgency=low
 
