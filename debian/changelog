@@ -1,3 +1,10 @@
+samtools (0.1.17-1~lucid1) lucid; urgency=low
+
+  * 0.1.17-1 built for Lucid on Debian Med's PPA.
+    (headers still in /usr/include/)
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 11 Jul 2011 21:26:27 +0900
+
 samtools (0.1.17-1) unstable; urgency=low
 
   * New upstream release 0.1.17 (6 July, 2011).
