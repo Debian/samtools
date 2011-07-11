@@ -1,3 +1,9 @@
+samtools (0.1.17-1) UNRELEASED; urgency=low
+
+  * New upstream release 0.1.17 (6 July, 2011).
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 11 Jul 2011 20:22:01 +0900
+
 samtools (0.1.16-1) unstable; urgency=low
 
   * New upstream release, implementing SAM Spec v1.4.
