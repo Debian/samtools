@@ -1,6 +1,7 @@
 samtools (0.1.17-1) UNRELEASED; urgency=low
 
   * New upstream release 0.1.17 (6 July, 2011).
+  * bcftools.1 and samtools.1 merged (debian/rules, debian/samtools.manpages).
 
  -- Charles Plessy <plessy@debian.org>  Mon, 11 Jul 2011 20:22:01 +0900
 
