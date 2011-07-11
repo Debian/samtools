@@ -1,61 +1,48 @@
 Format: http://dep.debian.net/deps/dep5/
-Source: http://qa.debian.org/watch/sf.php/samtools/samtools-0.1.16.tar.bz2
+Source: http://sourceforge.net/projects/samtools/files/samtools/0.1.17/samtools-0.1.17.tar.bz2
 
 Files: *
-Copyright:  © 2008–2010, Genome Research Ltd. (GRL)
+Copyright: © 2008–2010, Genome Research Ltd. (GRL)
 License: MIT
 
-License: MIT
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- . 
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- .
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
 
-Files: kprobaln.h, kprobaln.c
+Files: kprobaln.h kprobaln.c
 Copyright: © 2003-2006, 2008-2010, by Heng Li <lh3lh3@live.co.uk>
 License: MIT
+
 
 Files: bcftools/bcf.h
 Copyright: © 2010 Broad Institute
 License: MIT
 
-Files: misc/export2sam.pl, bam_cat.c
-Copyright: © 2008–2009, Genome Research Ltd.
+
+Files: misc/export2sam.pl bam_cat.c
 Copyright: © 2010 Illumina, Inc.
 License: MIT
 
-Files: bgzf.*, bgzip.c
+
+Files: bgzf.* bgzip.c
 Copyright: © 2008 Broad Institute / Massachusetts Institute of Technology
 License: MIT
+
 
 Files: khash.h
 Copyright: © 2008, 2009, 2011 by Attractive Chaos <attractor@live.co.uk>
 License: MIT
 
+
 Files: bcftools/kmin.?
 Copyright: © 2008, 2010 by Attractive Chaos <attractor@live.co.uk>
 License: MIT
 
+
 Files: knetfile.c
 Copyright: © 2008 by Genome Research Ltd (GRL).
-             2010 by Attractive Chaos <attractor@live.co.uk>
+           2010 by Attractive Chaos <attractor@live.co.uk>
 License: MIT
 
+
 Files: razf.*
-Name: RAZF : Random Access compressed(Z) File
 Copyright: 2008, Jue Ruan <ruanjue@gmail.com>, Heng Li <lh3@sanger.ac.uk>
 License: NetBSD-similar
  Redistribution and use in source and binary forms, with or without
@@ -78,6 +65,8 @@ License: NetBSD-similar
  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  SUCH DAMAGE.
+Name: RAZF : Random Access compressed(Z) File
+
 
 Files: misc/md5.*
 Copyright: no copyright is claimed
@@ -97,11 +86,13 @@ License: MD5-fourmilab
  needed on buffers full of bytes, and then call MD5Final, which
  will fill a supplied 16-byte array with the digest.
 
+
 Files: win32/xcurses.h
 Copyright: Public Domain
 License: public-domain
  This file is part of PDCurses (http://pdcurses.sourceforge.net/),
  which is in the public domain.
+
 
 Files: win32/z*.h 
 Copyright: © 1995-2005 Jean-loup Gailly and Mark Adler
@@ -124,3 +115,24 @@ License: zlib
  .
   Jean-loup Gailly        Mark Adler
   jloup@gzip.org          madler@alumni.caltech.edu
+
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ . 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
