@@ -1,85 +1,81 @@
-From buildd@fano.debian.org Thu May 19 04:49:08 2011
-Return-path: <buildd@fano.debian.org>
+From buildd@fasch.debian.org Mon Jul 11 14:46:46 2011
+Return-path: <buildd@fasch.debian.org>
 Received: from merikanto.debian.org ([2001:858:2:2:216:35ff:fec4:a49a])
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
 	CN=merikanto.debian.org,
 	EMAIL=hostmaster@merikanto.debian.org (verified)
 	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@fano.debian.org>)
-	id 1QMvAa-0007sT-EP
-	for logs@buildd.debian.org; Thu, 19 May 2011 04:49:08 +0000
-Received: from fano.debian.org ([206.12.19.110])
+	(Exim 4.72) (envelope-from <buildd@fasch.debian.org>)
+	id 1QgHl0-0007Jz-7N
+	for logs@buildd.debian.org; Mon, 11 Jul 2011 14:46:46 +0000
+Received: from fasch.debian.org ([194.177.211.201])
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=fano.debian.org, EMAIL=hostmaster@fano.debian.org (verified)
+	CN=fasch.debian.org, EMAIL=hostmaster@fasch.debian.org (verified)
 	by merikanto.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@fano.debian.org>)
-	id 1QMvAY-0003Xp-FX; Thu, 19 May 2011 04:49:07 +0000
-Received: from buildd by fano.debian.org with local (Exim 4.72)
-	(envelope-from <buildd@fano.debian.org>)
-	id 1QMvAV-000B4m-PJ; Thu, 19 May 2011 04:49:03 +0000
-Message-Id: <E1QMvAV-000B4m-PJ@fano.debian.org>
+	(Exim 4.72) (envelope-from <buildd@fasch.debian.org>)
+	id 1QgHky-0002td-Os; Mon, 11 Jul 2011 14:46:45 +0000
+Received: from buildd by fasch.debian.org with local (Exim 4.72)
+	(envelope-from <buildd@fasch.debian.org>)
+	id 1QgHkx-0004bK-Mx; Mon, 11 Jul 2011 14:46:43 +0000
+Message-Id: <E1QgHkx-0004bK-Mx@fasch.debian.org>
 MIME-Version: 1.0
 Content-Transfer-Encoding: binary
 X-Mailer: MIME::Lite 3.027 (F2.77; B3.08; Q3.08)
-Date: Thu, 19 May 2011 04:49:03 +0000
-From: buildd on fano <buildd@fano.debian.org>
+Date: Mon, 11 Jul 2011 14:46:43 +0000
+From: buildd on fasch <buildd@fasch.debian.org>
 To: logs@buildd.debian.org,aurelien@aurel32.net,christoph@debian.org
-Subject: Log for successful build of samtools_0.1.16-1 on kfreebsd-amd64
+Subject: Log for successful build of samtools_0.1.17-1 on kfreebsd-amd64
 	(dist=sid)
-Key-Id: 91116966
+Key-Id: 516A3A7B
 Delivered-To: logs@buildd.debian.org
 
-sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on fano.debian.org
+sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on fasch.debian.org
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 0.1.16-1 (kfreebsd-amd64)                         19 May 2011 04:46 ║
+║ samtools 0.1.17-1 (kfreebsd-amd64)                         11 Jul 2011 14:43 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 0.1.16-1
-Source Version: 0.1.16-1
+Version: 0.1.17-1
+Source Version: 0.1.17-1
 Architecture: kfreebsd-amd64
+Hit http://ftp.gr.debian.org sid InRelease
+Hit http://ftp.gr.debian.org sid/main Sources/DiffIndex
 Get:1 http://incoming.debian.org sid InRelease [146 kB]
-Get:2 http://mirror-ubc.debian.org sid InRelease [146 kB]
-Get:3 http://mirror-ubc.debian.org sid/main Sources/DiffIndex [2038 B]
+Hit http://ftp.gr.debian.org sid/contrib Sources/DiffIndex
+Hit http://ftp.gr.debian.org sid/non-free Sources/DiffIndex
+Hit http://ftp.gr.debian.org sid/main kfreebsd-amd64 Packages/DiffIndex
+Hit http://ftp.gr.debian.org sid/contrib kfreebsd-amd64 Packages/DiffIndex
+Hit http://ftp.gr.debian.org sid/non-free kfreebsd-amd64 Packages/DiffIndex
+Ign http://ftp.gr.debian.org sid/contrib TranslationIndex
+Hit http://ftp.gr.debian.org sid/main TranslationIndex
+Ign http://ftp.gr.debian.org sid/non-free TranslationIndex
+Hit http://ftp.gr.debian.org sid/non-free kfreebsd-amd64 Packages
+Ign http://ftp.gr.debian.org sid/contrib Translation-en
+Ign http://ftp.gr.debian.org sid/non-free Translation-en
 Ign http://incoming.debian.org  InRelease
-Hit http://mirror-ubc.debian.org sid/contrib Sources/DiffIndex
-Hit http://mirror-ubc.debian.org sid/non-free Sources/DiffIndex
-Get:4 http://mirror-ubc.debian.org sid/main kfreebsd-amd64 Packages/DiffIndex [2038 B]
-Hit http://mirror-ubc.debian.org sid/contrib kfreebsd-amd64 Packages/DiffIndex
-Hit http://mirror-ubc.debian.org sid/non-free kfreebsd-amd64 Packages/DiffIndex
-Ign http://mirror-ubc.debian.org sid/contrib TranslationIndex
-Get:5 http://mirror-ubc.debian.org sid/main TranslationIndex [2264 B]
-Ign http://mirror-ubc.debian.org sid/non-free TranslationIndex
-Get:6 http://incoming.debian.org  Release.gpg [836 B]
-Get:7 http://mirror-ubc.debian.org sid/main 2011-05-19-0211.17.pdiff [5075 B]
-Get:8 http://mirror-ubc.debian.org sid/main kfreebsd-amd64 2011-05-19-0211.17.pdiff [9758 B]
-Get:9 http://mirror-ubc.debian.org sid/non-free kfreebsd-amd64 Packages [81.2 kB]
-Get:10 http://mirror-ubc.debian.org sid/main 2011-05-19-0211.17.pdiff [5075 B]
-Ign http://mirror-ubc.debian.org sid/contrib Translation-en
-Ign http://mirror-ubc.debian.org sid/non-free Translation-en
-Get:11 http://incoming.debian.org  Release [1604 B]
-Get:12 http://incoming.debian.org sid/main Sources/DiffIndex [2038 B]
+Get:2 http://incoming.debian.org  Release.gpg [836 B]
+Get:3 http://incoming.debian.org sid/main Sources/DiffIndex [2038 B]
 Hit http://incoming.debian.org sid/contrib Sources/DiffIndex
 Hit http://incoming.debian.org sid/non-free Sources/DiffIndex
-Get:13 http://incoming.debian.org sid/main kfreebsd-amd64 Packages/DiffIndex [2038 B]
+Get:4 http://incoming.debian.org sid/main kfreebsd-amd64 Packages/DiffIndex [2038 B]
 Hit http://incoming.debian.org sid/contrib kfreebsd-amd64 Packages/DiffIndex
 Hit http://incoming.debian.org sid/non-free kfreebsd-amd64 Packages/DiffIndex
 Ign http://incoming.debian.org sid/contrib TranslationIndex
-Get:14 http://incoming.debian.org sid/main TranslationIndex [2264 B]
+Get:5 http://incoming.debian.org sid/main TranslationIndex [2045 B]
 Ign http://incoming.debian.org sid/non-free TranslationIndex
-Get:15 http://mirror-ubc.debian.org sid/main kfreebsd-amd64 2011-05-19-0211.17.pdiff [9758 B]
-Get:16 http://incoming.debian.org  Sources [26.8 kB]
-Get:17 http://incoming.debian.org  Packages [270 kB]
-Get:18 http://incoming.debian.org sid/main 2011-05-19-0211.17.pdiff [5075 B]
-Get:19 http://incoming.debian.org sid/main kfreebsd-amd64 2011-05-19-0211.17.pdiff [9758 B]
-Get:20 http://incoming.debian.org sid/non-free kfreebsd-amd64 Packages [81.2 kB]
-Get:21 http://incoming.debian.org sid/main 2011-05-19-0211.17.pdiff [5075 B]
-Ign http://incoming.debian.org  Translation-en
+Get:6 http://incoming.debian.org  Release [1604 B]
+Get:7 http://incoming.debian.org sid/main 2011-07-11-1412.48.pdiff [8897 B]
+Get:8 http://incoming.debian.org sid/main kfreebsd-amd64 2011-07-11-1412.48.pdiff [14.6 kB]
+Get:9 http://incoming.debian.org sid/main 2011-07-11-1412.48.pdiff [8897 B]
+Get:10 http://incoming.debian.org sid/non-free kfreebsd-amd64 Packages [82.8 kB]
+Hit http://incoming.debian.org  Sources
+Get:11 http://incoming.debian.org  Packages [435 kB]
+Get:12 http://incoming.debian.org sid/main kfreebsd-amd64 2011-07-11-1412.48.pdiff [14.6 kB]
 Ign http://incoming.debian.org sid/contrib Translation-en
 Ign http://incoming.debian.org sid/non-free Translation-en
-Get:22 http://incoming.debian.org sid/main kfreebsd-amd64 2011-05-19-0211.17.pdiff [9758 B]
-Fetched 796 kB in 13s (57.1 kB/s)
+Ign http://incoming.debian.org  Translation-en
+Fetched 696 kB in 5s (121 kB/s)
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -100,11 +96,11 @@ Building dependency tree...
 Reading state information...
 NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
 git://git.debian.org/debian-med/samtools.git
-Need to get 389 kB of source archives.
-Get:1 http://incoming.debian.org/buildd-unstable/  samtools 0.1.16-1 (dsc) [1939 B]
-Get:2 http://incoming.debian.org/buildd-unstable/  samtools 0.1.16-1 (tar) [380 kB]
-Get:3 http://incoming.debian.org/buildd-unstable/  samtools 0.1.16-1 (diff) [7161 B]
-Fetched 389 kB in 1s (291 kB/s)
+Need to get 384 kB of source archives.
+Get:1 http://incoming.debian.org/debian/ sid/main samtools 0.1.17-1 (dsc) [1946 B]
+Get:2 http://incoming.debian.org/debian/ sid/main samtools 0.1.17-1 (tar) [374 kB]
+Get:3 http://incoming.debian.org/debian/ sid/main samtools 0.1.17-1 (diff) [7643 B]
+Fetched 384 kB in 2s (187 kB/s)
 Download complete and in download only mode
 
 Check arch
@@ -118,88 +114,89 @@ Check arch
 Build-Depends: build-essential, fakeroot
 Checking for already installed dependencies...
 build-essential: already installed (11.5)
-fakeroot: already installed (1.15.1-1)
+fakeroot: already installed (1.16-1)
 Checking for dependency conflicts...
 Installing positive dependencies: 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Removing negative dependencies: 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Checking correctness of dependencies...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Install samtools build dependencies (internal resolver)                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Build-Depends: base-files, base-passwd, bash, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, freebsd-utils, grep, gzip, hostname, ncurses-base, ncurses-bin, perl-base, sed, login, sysvinit-utils, sysvinit, tar, bsdutils, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), debhelper (>= 8), cdbs, libncurses5-dev, zlib1g-dev
+Build-Depends: base-files, base-passwd, bash, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, freebsd-utils, grep, gzip, hostname, ncurses-base, ncurses-bin, perl-base, sed, login, sysvinit-utils, sysvinit, tar, bsdutils, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), debhelper (>= 8), cdbs, quilt, libncurses5-dev, zlib1g-dev
 Checking for already installed dependencies...
-base-files: already installed (6.3)
+base-files: already installed (6.4)
 base-passwd: already installed (3.5.22)
 bash: already installed (4.1-3)
 coreutils: already installed (8.5-1)
 dash: already installed (0.5.5.1-7.4)
-debianutils: already installed (3.4.5)
+debianutils: already installed (4.0.2)
 diffutils: already installed (1:3.0-1)
 dpkg: already installed (1.16.0.3)
-e2fsprogs: already installed (1.41.12-4)
+e2fsprogs: already installed (1.42~WIP-2011-07-02-1)
 findutils: already installed (4.4.2-1)
-freebsd-utils: already installed (8.1-4+b1)
-grep: already installed (2.6.3-3)
+freebsd-utils: already installed (8.2+ds2-1)
+grep: already installed (2.8-2)
 gzip: already installed (1.3.12-9)
 hostname: already installed (3.06)
 ncurses-base: already installed (5.9-1)
 ncurses-bin: already installed (5.9-1)
-perl-base: already installed (5.12.3-6)
+perl-base: already installed (5.12.4-1)
 sed: already installed (4.2.1-9)
 login: already installed (1:4.1.4.2+svn3283-3)
-sysvinit-utils: already installed (2.88dsf-13.2)
-sysvinit: already installed (2.88dsf-13.2)
+sysvinit-utils: already installed (2.88dsf-13.10)
+sysvinit: already installed (2.88dsf-13.10)
 tar: already installed (1.25-3)
 bsdutils: already installed (1:2.17.2-9.1)
 util-linux: already installed (2.17.2-9.1)
 libc6-dev: already installed (~*=PROVIDED=*=)
-gcc: already installed (4:4.6.0-5 >= 4:4.4.3 is satisfied)
-g++: already installed (4:4.6.0-5 >= 4:4.4.3 is satisfied)
+gcc: already installed (4:4.6.1-1 >= 4:4.4.3 is satisfied)
+g++: already installed (4:4.6.1-1 >= 4:4.4.3 is satisfied)
 make: already installed (3.81-8.1)
 dpkg-dev: already installed (1.16.0.3 >= 1.13.5 is satisfied)
 debhelper: missing
-Using default version 8.1.6
+Using default version 8.9.0
 cdbs: missing
+quilt: missing
 libncurses5-dev: missing
 zlib1g-dev: missing
 Checking for dependency conflicts...
-Installing positive dependencies: debhelper cdbs libncurses5-dev zlib1g-dev
+Installing positive dependencies: debhelper cdbs quilt libncurses5-dev zlib1g-dev
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following extra packages will be installed:
-  file gettext gettext-base groff-base html2text intltool-debian libcroco3
-  libglib2.0-0 libmagic1 libpcre3 libpipeline1 libunistring0 libxml2 man-db
-  po-debconf
+  diffstat file gettext gettext-base groff-base html2text intltool-debian
+  libcroco3 libglib2.0-0 libmagic1 libpcre3 libpipeline1 libunistring0 libxml2
+  man-db po-debconf
 Suggested packages:
   devscripts dh-make gettext-doc groff ncurses-doc less www-browser
-  libmail-box-perl
+  libmail-box-perl procmail graphviz
 Recommended packages:
   autotools-dev curl wget lynx-cur autopoint libglib2.0-data shared-mime-info
   xml-core libmail-sendmail-perl
 The following NEW packages will be installed:
-  cdbs debhelper file gettext gettext-base groff-base html2text
+  cdbs debhelper diffstat file gettext gettext-base groff-base html2text
   intltool-debian libcroco3 libglib2.0-0 libmagic1 libncurses5-dev libpcre3
-  libpipeline1 libunistring0 libxml2 man-db po-debconf zlib1g-dev
+  libpipeline1 libunistring0 libxml2 man-db po-debconf quilt zlib1g-dev
 debconf: delaying package configuration, since apt-utils is not installed
-0 upgraded, 19 newly installed, 0 to remove and 7 not upgraded.
-Need to get 0 B/9714 kB of archives.
-After this operation, 27.5 MB of additional disk space will be used.
-Selecting previously deselected package groff-base.
-(Reading database ... 12278 files and directories currently installed.)
-Unpacking groff-base (from .../groff-base_1.21-5_kfreebsd-amd64.deb) ...
+0 upgraded, 21 newly installed, 0 to remove and 0 not upgraded.
+Need to get 0 B/10.1 MB of archives.
+After this operation, 28.4 MB of additional disk space will be used.
 Selecting previously deselected package libpipeline1.
-Unpacking libpipeline1 (from .../libpipeline1_1.2.0-1_kfreebsd-amd64.deb) ...
+(Reading database ... 12157 files and directories currently installed.)
+Unpacking libpipeline1 (from .../libpipeline1_1.2.0-3_kfreebsd-amd64.deb) ...
+Selecting previously deselected package groff-base.
+Unpacking groff-base (from .../groff-base_1.21-6_kfreebsd-amd64.deb) ...
 Selecting previously deselected package man-db.
 Unpacking man-db (from .../man-db_2.6.0.2-1_kfreebsd-amd64.deb) ...
 Selecting previously deselected package libmagic1.
@@ -211,7 +208,7 @@ Unpacking gettext-base (from .../gettext-base_0.18.1.1-3_kfreebsd-amd64.deb) ...
 Selecting previously deselected package libpcre3.
 Unpacking libpcre3 (from .../libpcre3_8.12-3_kfreebsd-amd64.deb) ...
 Selecting previously deselected package libxml2.
-Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-2+b1_kfreebsd-amd64.deb) ...
+Unpacking libxml2 (from .../libxml2_2.7.8.dfsg-3_kfreebsd-amd64.deb) ...
 Selecting previously deselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-15_kfreebsd-amd64.deb) ...
 Selecting previously deselected package libglib2.0-0.
@@ -227,22 +224,26 @@ Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) .
 Selecting previously deselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16+nmu1_all.deb) ...
 Selecting previously deselected package debhelper.
-Unpacking debhelper (from .../debhelper_8.1.6_all.deb) ...
+Unpacking debhelper (from .../debhelper_8.9.0_all.deb) ...
 Selecting previously deselected package cdbs.
-Unpacking cdbs (from .../archives/cdbs_0.4.93_all.deb) ...
+Unpacking cdbs (from .../archives/cdbs_0.4.94_all.deb) ...
+Selecting previously deselected package diffstat.
+Unpacking diffstat (from .../diffstat_1.54-1_kfreebsd-amd64.deb) ...
 Selecting previously deselected package libncurses5-dev.
 Unpacking libncurses5-dev (from .../libncurses5-dev_5.9-1_kfreebsd-amd64.deb) ...
+Selecting previously deselected package quilt.
+Unpacking quilt (from .../archives/quilt_0.48-7_all.deb) ...
 Selecting previously deselected package zlib1g-dev.
 Unpacking zlib1g-dev (from .../zlib1g-dev_1%3a1.2.3.4.dfsg-3_kfreebsd-amd64.deb) ...
-Setting up groff-base (1.21-5) ...
-Setting up libpipeline1 (1.2.0-1) ...
+Setting up libpipeline1 (1.2.0-3) ...
+Setting up groff-base (1.21-6) ...
 Setting up man-db (2.6.0.2-1) ...
 Building database of manual pages ...
 Setting up libmagic1 (5.04-5+b1) ...
 Setting up file (5.04-5+b1) ...
 Setting up gettext-base (0.18.1.1-3) ...
 Setting up libpcre3 (8.12-3) ...
-Setting up libxml2 (2.7.8.dfsg-2+b1) ...
+Setting up libxml2 (2.7.8.dfsg-3) ...
 Setting up html2text (1.3.2a-15) ...
 Setting up libglib2.0-0 (2.28.6-1) ...
 No schema files found: doing nothing.
@@ -251,19 +252,21 @@ Setting up libunistring0 (0.9.3-4) ...
 Setting up gettext (0.18.1.1-3) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16+nmu1) ...
-Setting up debhelper (8.1.6) ...
-Setting up cdbs (0.4.93) ...
+Setting up debhelper (8.9.0) ...
+Setting up cdbs (0.4.94) ...
+Setting up diffstat (1.54-1) ...
 Setting up libncurses5-dev (5.9-1) ...
+Setting up quilt (0.48-7) ...
 Setting up zlib1g-dev (1:1.2.3.4.dfsg-3) ...
 Removing negative dependencies: 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Checking correctness of dependencies...
 Kernel: GNU/kFreeBSD 8.1-1-amd64 kfreebsd-amd64 (x86_64)
-Toolchain package versions: binutils_2.21.51.20110421-4 dpkg-dev_1.16.0.3 g++-4.6_4.6.0-7 gcc-4.6_4.6.0-7 kfreebsd-kernel-headers_0.53 libc0.1-dev_2.13-4 libstdc++6_4.6.0-7 libstdc++6-4.6-dev_4.6.0-7
-Package versions: apt_0.8.14.1 base-files_6.3 base-passwd_3.5.22 bash_4.1-3 binutils_2.21.51.20110421-4 bsdmainutils_8.2.2 bsdutils_1:2.17.2-9.1 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.93 coreutils_8.5-1 cpio_2.11-7 cpp_4:4.6.0-5 cpp-4.6_4.6.0-7 dash_0.5.5.1-7.4 debconf_1.5.39 debfoster_2.7-1.1 debhelper_8.1.6 debian-archive-keyring_2010.08.28 debianutils_3.4.5 diffutils_1:3.0-1 dpkg_1.16.0.3 dpkg-dev_1.16.0.3 e2fslibs_1.41.12-4 e2fsprogs_1.41.12-4 fakeroot_1.15.1-1 file_5.04-5+b1 findutils_4.4.2-1 freebsd-utils_8.1-4+b1 g++_4:4.6.0-5 g++-4.6_4.6.0-7 gcc_4:4.6.0-5 gcc-4.2-base_4.2.4-6 gcc-4.4-base_4.4.6-3 gcc-4.5-base_4.5.3-1 gcc-4.6_4.6.0-7 gcc-4.6-base_4.6.0-7 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.11-3 gpgv_1.4.11-3 grep_2.6.3-3 groff-base_1.21-5 gzip_1.3.12-9 hostname_3.06 html2text_1.3.2a-15 initscripts_2.88dsf-13.2 insserv_1.14.0-2.1 intltool-debian_0.35.0+20060710.1 kfreebsd-kernel-headers_0.53 libacl1_2.2.49-4 libattr1_1:2.4.44-2 libblkid1_2.17.2-9.1 libbsd0_0.2.0-1 libbz2-1.0_1.0.5-6 libc-bin_2.13-4 libc-dev-bin_2.13-4 libc0.1_2.13-4 libc0.1-dev_2.13-4 libcam0_8.1-5 libcloog-ppl0_0.15.9-3 libcomerr2_1.41.12-4 libcroco3_0.6.2-1 libdb4.8_4.8.30-8 libdb5.1_5.1.25-10 libdpkg-perl_1.16.0.3 libedit2_2.11-20080614-2 libexpat1_2.0.1-7 libgc1c2_1:7.1-7 libgcc1_1:4.6.0-7 libgcrypt11_1.4.6-5 libgdbm3_1.8.3-9 libgeom0_8.1-5 libglib2.0-0_2.28.6-1 libgmp10_2:5.0.1+dfsg-7 libgmpxx4ldbl_2:5.0.1+dfsg-7 libgnutls26_2.10.5-1+b1 libgomp1_4.6.0-7 libgpg-error0_1.10-0.3 libkiconv4_8.1-5 libkvm0_8.1-5 libldap-2.4-2_2.4.25-1+b1 liblzma2_5.0.0-2 libmagic1_5.04-5+b1 libmpc2_0.9-3 libmpfr4_3.0.1-3 libncurses5_5.9-1 libncurses5-dev_5.9-1 libncursesw5_5.9-1 libpam-modules_1.1.2-3 libpam-runtime_1.1.2-3 libpam0g_1.1.2-3 libpcre3_8.12-3 libpipeline1_1.2.0-1 libpng12-0_1.2.44-2 libppl-c4_0.11.2-3 libppl9_0.11.2-3 libpwl5_0.11.2-3 libquadmath0_4.6.0-7 libreadline6_6.2-2 libsasl2-2_2.1.23.dfsg1-8 libsbuf0_8.1-5 libslang2_2.2.4-2 libss2_1.41.12-4 libstdc++6_4.6.0-7 libstdc++6-4.6-dev_4.6.0-7 libtasn1-3_2.9-3 libtimedate-perl_1.2000-1 libunistring0_0.9.3-4 libusb-0.1-4_2:0.1.12-17 libuuid1_2.17.2-9.1 libxml2_2.7.8.dfsg-2+b1 login_1:4.1.4.2+svn3283-3 lsb-base_3.2-27 lzma_4.43-14 make_3.81-8.1 man-db_2.6.0.2-1 mawk_1.3.3-15 ncurses-base_5.9-1 ncurses-bin_5.9-1 passwd_1:4.1.4.2+svn3283-3 patch_2.6.1-1 perl_5.12.3-6 perl-base_5.12.3-6 perl-modules_5.12.3-6 po-debconf_1.0.16+nmu1 procps_1:3.2.8-10 psmisc_22.13-1 readline-common_6.1-3 sed_4.2.1-9 sensible-utils_0.0.6 sudo_1.7.4p6-1 sysv-rc_2.88dsf-13.2 sysvinit_2.88dsf-13.2 sysvinit-utils_2.88dsf-13.2 tar_1.25-3 type-handling_0.2.23 tzdata_2011g-1 ufsutils_7.3-1+b1 util-linux_2.17.2-9.1 xz-utils_5.0.0-2 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
+Toolchain package versions: binutils_2.21.52.20110707-1 dpkg-dev_1.16.0.3 g++-4.6_4.6.1-3 gcc-4.6_4.6.1-3 kfreebsd-kernel-headers_0.56 libc0.1-dev_2.13-10 libstdc++6_4.6.1-3 libstdc++6-4.6-dev_4.6.1-3
+Package versions: apt_0.8.15.1 base-files_6.4 base-passwd_3.5.22 bash_4.1-3 binutils_2.21.52.20110707-1 bsdmainutils_8.2.3 bsdutils_1:2.17.2-9.1 build-essential_11.5 bzip2_1.0.5-6 cdbs_0.4.94 coreutils_8.5-1 cpp_4:4.6.1-1 cpp-4.6_4.6.1-3 dash_0.5.5.1-7.4 debconf_1.5.40 debfoster_2.7-1.1 debhelper_8.9.0 debian-archive-keyring_2010.08.28 debianutils_4.0.2 diffstat_1.54-1 diffutils_1:3.0-1 dpkg_1.16.0.3 dpkg-dev_1.16.0.3 e2fslibs_1.42~WIP-2011-07-02-1 e2fsprogs_1.42~WIP-2011-07-02-1 fakeroot_1.16-1 file_5.04-5+b1 findutils_4.4.2-1 freebsd-utils_8.2+ds2-1 g++_4:4.6.1-1 g++-4.6_4.6.1-3 gcc_4:4.6.1-1 gcc-4.4-base_4.4.6-6 gcc-4.5-base_4.5.3-3 gcc-4.6_4.6.1-3 gcc-4.6-base_4.6.1-3 gettext_0.18.1.1-3 gettext-base_0.18.1.1-3 gnupg_1.4.11-3 gpgv_1.4.11-3 grep_2.8-2 groff-base_1.21-6 gzip_1.3.12-9 hostname_3.06 html2text_1.3.2a-15 initscripts_2.88dsf-13.10 insserv_1.14.0-2.1 intltool-debian_0.35.0+20060710.1 kfreebsd-kernel-headers_0.56 libacl1_2.2.51-2 libattr1_1:2.4.46-2 libblkid1_2.17.2-9.1 libbsd0_0.3.0-1 libbz2-1.0_1.0.5-6 libc-bin_2.13-10 libc-dev-bin_2.13-10 libc0.1_2.13-10 libc0.1-dev_2.13-10 libcam0_8.2+ds1-3 libcloog-ppl0_0.15.9-3 libcomerr2_1.42~WIP-2011-07-02-1 libcroco3_0.6.2-1 libdb5.1_5.1.25-11 libdpkg-perl_1.16.0.3 libexpat1_2.0.1-7 libgc1c2_1:7.1-8 libgcc1_1:4.6.1-3 libgcrypt11_1.4.6-7 libgdbm3_1.8.3-10 libgeom1_8.2+ds1-3 libglib2.0-0_2.28.6-1 libgmp10_2:5.0.1+dfsg-7 libgmpxx4ldbl_2:5.0.1+dfsg-7 libgnutls26_2.10.5-2 libgomp1_4.6.1-3 libgpg-error0_1.10-0.3 libkiconv4_8.2+ds1-3 libkvm0_8.2+ds1-3 libldap-2.4-2_2.4.25-1.1 liblzma2_5.0.0-2 libmagic1_5.04-5+b1 libmpc2_0.9-3 libmpfr4_3.0.1-4 libncurses5_5.9-1 libncurses5-dev_5.9-1 libncursesw5_5.9-1 libpam-modules_1.1.3-2 libpam-modules-bin_1.1.3-2 libpam-runtime_1.1.3-2 libpam0g_1.1.3-2 libpcre3_8.12-3 libpipeline1_1.2.0-3 libpng12-0_1.2.44-3 libppl-c4_0.11.2-3 libppl9_0.11.2-3 libpwl5_0.11.2-3 libquadmath0_4.6.1-3 libreadline6_6.2-2 libsasl2-2_2.1.24~rc1.dfsg1+cvs2011-05-23-4 libsbuf0_8.2+ds1-3 libslang2_2.2.4-2 libss2_1.42~WIP-2011-07-02-1 libstdc++6_4.6.1-3 libstdc++6-4.6-dev_4.6.1-3 libtasn1-3_2.9-4 libtimedate-perl_1.2000-1 libunistring0_0.9.3-4 libusb-0.1-4_2:0.1.12-17 libuuid1_2.17.2-9.1 libxml2_2.7.8.dfsg-3 login_1:4.1.4.2+svn3283-3 lsb-base_3.2-27 lzma_4.43-14 make_3.81-8.1 man-db_2.6.0.2-1 mawk_1.3.3-15 multiarch-support_2.13-10 ncurses-base_5.9-1 ncurses-bin_5.9-1 passwd_1:4.1.4.2+svn3283-3 patch_2.6.1-2 perl_5.12.4-1 perl-base_5.12.4-1 perl-modules_5.12.4-1 po-debconf_1.0.16+nmu1 procps_1:3.2.8-10 quilt_0.48-7 readline-common_6.2-2 sed_4.2.1-9 sensible-utils_0.0.6 sysv-rc_2.88dsf-13.10 sysvinit_2.88dsf-13.10 sysvinit-utils_2.88dsf-13.10 tar_1.25-3 type-handling_0.2.23 tzdata_2011h-3 util-linux_2.17.2-9.1 xz-utils_5.0.0-2 zlib1g_1:1.2.3.4.dfsg-3 zlib1g-dev_1:1.2.3.4.dfsg-3
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -274,12 +277,13 @@ Unpack source
 ─────────────
 
 gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
-gpgv: Signature made Thu May 19 04:26:30 2011 UTC using RSA key ID 2295D502
+gpgv: Signature made Mon Jul 11 12:10:24 2011 UTC using RSA key ID 2295D502
 gpgv: Can't check signature: public key not found
-dpkg-source: warning: failed to verify signature on ./samtools_0.1.16-1.dsc
-dpkg-source: info: extracting samtools in samtools-0.1.16
-dpkg-source: info: unpacking samtools_0.1.16.orig.tar.bz2
-dpkg-source: info: unpacking samtools_0.1.16-1.debian.tar.gz
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.17-1.dsc
+dpkg-source: info: extracting samtools in samtools-0.1.17
+dpkg-source: info: unpacking samtools_0.1.17.orig.tar.bz2
+dpkg-source: info: unpacking samtools_0.1.17-1.debian.tar.gz
+dpkg-source: info: applying no-pileup-tests.patch
 
 Check disc space
 ────────────────
@@ -294,35 +298,62 @@ dpkg-buildpackage: export CXXFLAGS from dpkg-buildflags (origin: vendor): -g -O2
 dpkg-buildpackage: export FFLAGS from dpkg-buildflags (origin: vendor): -g -O2
 dpkg-buildpackage: export LDFLAGS from dpkg-buildflags (origin: vendor): 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 0.1.16-1
- dpkg-source --before-build samtools-0.1.16
+dpkg-buildpackage: source version 0.1.17-1
+ dpkg-source --before-build samtools-0.1.17
 dpkg-buildpackage: host architecture kfreebsd-amd64
  fakeroot debian/rules clean
 test -x debian/rules
 dh_testroot
 rm -f debian/stamp-makefile-build debian/stamp-makefile-install
 /usr/bin/make  -C . CFLAGS="-g -O2 -g -O2 -Wall -fPIC" CXXFLAGS="-g -O2 -g -O2 -Wall" CPPFLAGS="" LDFLAGS=""  -k clean
-make[1]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
 rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim *~ *.a
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 rm -f debian/stamp-makefile-check
 dh_clean 
+/usr/bin/make -f debian/rules reverse-config
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[1]: Nothing to be done for `reverse-config'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+if [ -d "." ]; then \
+	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
+	fi
+Removing patch no-pileup-tests.patch
+Restoring examples/Makefile
+
+No patches applied
+rm -rf ./.pc
+rm -f debian/stamp-patch*
 rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
  debian/rules build
 test -x debian/rules
 mkdir -p "."
 /usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
+/usr/bin/make -f debian/rules reverse-config
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[1]: Nothing to be done for `reverse-config'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
+Applying patch no-pileup-tests.patch
+patching file examples/Makefile
+
+Now at patch no-pileup-tests.patch
+touch debian/stamp-patched
+/usr/bin/make -f debian/rules update-config
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[1]: Nothing to be done for `update-config'.
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 /usr/bin/make  -C . CFLAGS="-g -O2 -g -O2 -Wall -fPIC" CXXFLAGS="-g -O2 -g -O2 -Wall" CPPFLAGS="" LDFLAGS=""  all all-recur razip lib
-make[1]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
 bgzf.c: In function 'bgzf_close':
 bgzf.c:630:8: warning: variable 'count' set but not used [-Wunused-but-set-variable]
@@ -337,7 +368,6 @@ bam_pileup.c: In function 'resolve_cigar2':
 bam_pileup.c:75:9: warning: variable 'is_head' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_lpileup.c -o bam_lpileup.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_md.c -o bam_md.o
-gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. glf.c -o glf.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razf.c -o razf.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. faidx.c -o faidx.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bedidx.c -o bedidx.o
@@ -351,28 +381,28 @@ gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D
 kprobaln.c: In function 'kpa_glocal':
 kprobaln.c:78:21: warning: variable 'is_diff' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_cat.c -o bam_cat.o
-ar -cru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o glf.o razf.o faidx.o bedidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o bam_cat.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
+ar -csru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o razf.o faidx.o bedidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o bam_cat.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. prob1.c -o prob1.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. em.c -o em.o
 em.c: In function 'bcf_em1':
-em.c:174:12: warning: variable 'n2' set but not used [-Wunused-but-set-variable]
+em.c:175:12: warning: variable 'n2' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kfunc.c -o kfunc.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kmin.c -o kmin.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. index.c -o index.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
+gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. mut.c -o mut.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
-ar -cru libbcf.a bcf.o vcf.o bcfutils.o prob1.o em.o kfunc.o kmin.o index.o fet.o bcf2qcall.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+ar -csru libbcf.a bcf.o vcf.o bcfutils.o prob1.o em.o kfunc.o kmin.o index.o fet.o mut.o bcf2qcall.o
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 make[2]: Nothing to be done for `lib'.
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
-gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_maqcns.c -o bam_maqcns.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdup.c -o bam_rmdup.o
@@ -391,25 +421,25 @@ cut_target.c: In function 'main_cut_target':
 cut_target.c:137:36: warning: variable 'lastpos' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. phase.c -o phase.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2depth.c -o bam2depth.o
-gcc -g -O2 -g -O2 -Wall -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[3]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
+gcc -g -O2 -g -O2 -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[3]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[3]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[3]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
-make[3]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
-gcc -g -O2 -g -O2 -Wall -fPIC -o samtools bam_tview.o bam_maqcns.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
+gcc -g -O2 -g -O2 -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
 gcc -g -O2 -g -O2 -Wall -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o ../bedidx.o -L.  -lbcf -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
 gcc -g -O2 -g -O2 -Wall -fPIC -o md5sum-lite md5sum-lite.o
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
@@ -419,19 +449,17 @@ gcc -g -O2 -g -O2 -Wall -fPIC -o maq2sam-short maq2sam.c -lz
 gcc -g -O2 -g -O2 -Wall -fPIC -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. wgsim.c -o wgsim.o
 gcc -g -O2 -g -O2 -Wall -fPIC -o wgsim wgsim.o -lm
-make[2]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/misc'
 gcc -c -g -O2 -g -O2 -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
 gcc -g -O2 -g -O2 -Wall -fPIC -o razip razf.o razip.o knetfile.o -lz
 make[1]: Nothing to be done for `lib'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17'
 touch debian/stamp-makefile-build
 /usr/bin/make  -C . CFLAGS="-g -O2 -g -O2 -Wall -fPIC" CXXFLAGS="-g -O2 -g -O2 -Wall" CPPFLAGS="" LDFLAGS=""  -C examples all
-make[1]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/examples'
+make[1]: Entering directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/examples'
 ../samtools faidx ex1.fa
 ../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
 [sam_header_read2] 2 sequences loaded.
-../samtools pileup -gf ex1.fa ex1.bam > ex1.glf
-../samtools pileup -cf ex1.fa ex1.bam | gzip > ex1.pileup.gz
 ../samtools index ex1.bam
 ../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"a";print}}' | ../samtools view -bS - > ex1a.bam
 [samopen] SAM header is present: 2 sequences.
@@ -447,7 +475,6 @@ make[1]: Entering directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUy
 ../samtools rmdup -S ex1f.bam ex1f-rmdupse.bam
 [bam_rmdupse_core] 4145 / 6542 = 0.6336 in library 'ex1'
 [bam_rmdupse_core] 874 / 3271 = 0.2672 in library 'ex1b'
-../samtools glfview ex1.glf | gzip > ex1.glfview.gz
 ../samtools mpileup -gf ex1.fa ex1.bam > ex1.bcf
 [mpileup] 1 samples in 1 input files
 <mpileup> Set max per-file depth to 8000
@@ -455,7 +482,7 @@ gcc -g -Wall -O2 -I.. calDepth.c -o calDepth -L.. -lbam -lm -lz
 
 # You can now launch the viewer with: 'samtools tview ex1.bam ex1.fa'
 
-make[1]: Leaving directory `/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/examples'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/examples'
 touch debian/stamp-makefile-check
  fakeroot debian/rules binary-arch
 test -x debian/rules
@@ -482,7 +509,6 @@ dh_installcatalogs -psamtools
 dh_installpam -psamtools 
 dh_installlogrotate -psamtools 
 dh_installlogcheck -psamtools 
-dh_installgsettings -psamtools 
 dh_installchangelogs -psamtools  ./ChangeLog 
 dh_installudev -psamtools 
 dh_lintian -psamtools 
@@ -490,7 +516,9 @@ dh_bugfiles -psamtools
 dh_install -psamtools  
 dh_link -psamtools  
 dh_installmime -psamtools 
-install -m 644 bcftools/README /build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/debian/samtools/usr/share/doc/samtools/README.bcftools
+dh_installgsettings -psamtools 
+install -m 644 bcftools/README /build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/debian/samtools/usr/share/doc/samtools/README.bcftools
+ln -s samtools.1.gz /build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/debian/samtools/usr/share/man/man1/bcftools.1.gz
 dh_installdocs -plibbam-dev ./NEWS ./AUTHORS 
 dh_installexamples -plibbam-dev 
 dh_installman -plibbam-dev  
@@ -504,7 +532,6 @@ dh_installcatalogs -plibbam-dev
 dh_installpam -plibbam-dev 
 dh_installlogrotate -plibbam-dev 
 dh_installlogcheck -plibbam-dev 
-dh_installgsettings -plibbam-dev 
 dh_installchangelogs -plibbam-dev  ./ChangeLog 
 dh_installudev -plibbam-dev 
 dh_lintian -plibbam-dev 
@@ -512,11 +539,12 @@ dh_bugfiles -plibbam-dev
 dh_install -plibbam-dev  
 dh_link -plibbam-dev  
 dh_installmime -plibbam-dev 
+dh_installgsettings -plibbam-dev 
 dh_strip -psamtools  
 dh_compress -psamtools  
 dh_fixperms -psamtools  
 dh_makeshlibs -psamtools  
-sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA/samtools-0.1.16/debian/samtools/usr/share/samtools/varfilter.py
+sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd/samtools-0.1.17/debian/samtools/usr/share/samtools/varfilter.py
 dh_strip -plibbam-dev  
 dh_compress -plibbam-dev  
 dh_fixperms -plibbam-dev  
@@ -531,68 +559,69 @@ dh_gencontrol -psamtools
 dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
 dh_md5sums -psamtools 
 dh_builddeb -psamtools -- -Z=bzip2
-dpkg-deb: building package `samtools' in `../samtools_0.1.16-1_kfreebsd-amd64.deb'.
+dpkg-deb: building package `samtools' in `../samtools_0.1.17-1_kfreebsd-amd64.deb'.
 dh_gencontrol -plibbam-dev  
 dpkg-gencontrol: warning: Depends field of package libbam-dev: unknown substitution variable ${shlibs:Depends}
 dh_md5sums -plibbam-dev 
 dh_builddeb -plibbam-dev -- -Z=bzip2
-dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.16-1_kfreebsd-amd64.deb'.
- dpkg-genchanges -B -mkfreebsd-amd64 Build Daemon (fano) <buildd_kfreebsd-amd64-fano@buildd.debian.org> >../samtools_0.1.16-1_kfreebsd-amd64.changes
+dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.17-1_kfreebsd-amd64.deb'.
+ dpkg-genchanges -B -mkfreebsd-amd64 Build Daemon (fasch) <buildd_kfreebsd-amd64-fasch@buildd.debian.org> >../samtools_0.1.17-1_kfreebsd-amd64.changes
 dpkg-genchanges: arch-specific upload - not including arch-independent packages
 dpkg-genchanges: binary-only upload - not including any source code
- dpkg-source --after-build samtools-0.1.16
+ dpkg-source --after-build samtools-0.1.17
 dpkg-buildpackage: binary only upload (no source included)
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20110519-0448
+Build finished at 20110711-1445
 
-samtools_0.1.16-1_kfreebsd-amd64.changes:
+samtools_0.1.17-1_kfreebsd-amd64.changes:
 Format: 1.8
-Date: Thu, 19 May 2011 13:24:25 +0900
+Date: Mon, 11 Jul 2011 21:04:30 +0900
 Source: samtools
 Binary: samtools libbam-dev
 Architecture: kfreebsd-amd64
-Version: 0.1.16-1
+Version: 0.1.17-1
 Distribution: sid
 Urgency: low
-Maintainer: kfreebsd-amd64 Build Daemon (fano) <buildd_kfreebsd-amd64-fano@buildd.debian.org>
+Maintainer: kfreebsd-amd64 Build Daemon (fasch) <buildd_kfreebsd-amd64-fasch@buildd.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
 Description: 
  libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
  samtools   - processing sequence alignments in SAM and BAM formats
-Closes: 625622 626044
 Changes: 
- samtools (0.1.16-1) unstable; urgency=low
+ samtools (0.1.17-1) unstable; urgency=low
  .
-   * New upstream release, implementing SAM Spec v1.4.
-   * Distribute sam.h and the other headers in /usr/include/samtools.
-     Closes: #625622, #626044, LP: #690997.
+   * New upstream release 0.1.17 (6 July, 2011).
+   * bcftools.1 and samtools.1 merged (debian/rules, debian/samtools.manpages).
+   * Patched the example makefile to not use samtools pileup, deprecated.
+     (debian/control, debian/rules, debian/patches/series,
+     debian/patches/no-pileup-tests.patch)
 Checksums-Sha1: 
- dc4d27fdb1baf8a28e0158f1c06acc5492b10687 606552 samtools_0.1.16-1_kfreebsd-amd64.deb
- 5c0dff2ccbc0b725d6c34168482700e25f7b4b54 171268 libbam-dev_0.1.16-1_kfreebsd-amd64.deb
+ 0f8061d716d9b73d056557e924f44b11f4188b3f 594980 samtools_0.1.17-1_kfreebsd-amd64.deb
+ 928599643e76e0ceb2dada8d4b6609dbe19309e4 170180 libbam-dev_0.1.17-1_kfreebsd-amd64.deb
 Checksums-Sha256: 
- 981670e02108f5079d5b5ca5ef0d07a2d7312cf7f4ce3a0535e7d35cc2006c9c 606552 samtools_0.1.16-1_kfreebsd-amd64.deb
- 3e898dca30f23b4b26f5411f3f3a8644165aa19c92d99b19389f23921afea56d 171268 libbam-dev_0.1.16-1_kfreebsd-amd64.deb
+ 40b708b18d43aa4217b69c2355f074ea657aa953fdccbb453da134ba2ef9b350 594980 samtools_0.1.17-1_kfreebsd-amd64.deb
+ 5b3d670c56f99a8bdd5f1b246c846fae99ca16652f6a390eb7ca1a2a8dfb0736 170180 libbam-dev_0.1.17-1_kfreebsd-amd64.deb
 Files: 
- 7f2c8c1b5d563906c3e7c00057383137 606552 science optional samtools_0.1.16-1_kfreebsd-amd64.deb
- c0bbfd9d86e432571ce304d66a8e9f63 171268 libdevel optional libbam-dev_0.1.16-1_kfreebsd-amd64.deb
+ 7183a76d762a07a74723ea4061a87a6d 594980 science optional samtools_0.1.17-1_kfreebsd-amd64.deb
+ da8422ad9630e4d5abfaaeb0091bc0e0 170180 libdevel optional libbam-dev_0.1.17-1_kfreebsd-amd64.deb
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Package contents                                                             │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-samtools_0.1.16-1_kfreebsd-amd64.deb
+samtools_0.1.17-1_kfreebsd-amd64.deb
 ────────────────────────────────────
 
  new debian package, version 2.0.
- size 606552 bytes: control archive= 1789 bytes.
+ size 594980 bytes: control archive= 1764 bytes.
      797 bytes,    16 lines      control              
-    2520 bytes,    38 lines      md5sums              
+    2453 bytes,    37 lines      md5sums              
  Package: samtools
- Version: 0.1.16-1
+ Version: 0.1.17-1
  Architecture: kfreebsd-amd64
  Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 1052
+ Installed-Size: 1022
  Depends: libc0.1 (>= 2.7), libncurses5 (>= 5.5-5~), zlib1g (>= 1:1.2.3.3.dfsg)
  Suggests: python
  Section: science
@@ -605,33 +634,32 @@ samtools_0.1.16-1_kfreebsd-amd64.deb
   to retrieve reads in any regions swiftly. It is designed to work on a stream,
   and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
 
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/doc/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/doc/samtools/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/doc/samtools/
 -rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/samtools/AUTHORS
--rw-r--r-- root/root       592 2011-05-19 04:20 ./usr/share/doc/samtools/reference
--rw-r--r-- root/root      1031 2011-05-19 04:20 ./usr/share/doc/samtools/README.Debian
--rw-r--r-- root/root      5392 2011-05-19 04:20 ./usr/share/doc/samtools/copyright
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/doc/samtools/examples/
+-rw-r--r-- root/root       592 2011-05-20 09:55 ./usr/share/doc/samtools/reference
+-rw-r--r-- root/root      1031 2011-05-20 09:55 ./usr/share/doc/samtools/README.Debian
+-rw-r--r-- root/root      5371 2011-07-11 11:19 ./usr/share/doc/samtools/copyright
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/doc/samtools/examples/
 -rw-r--r-- root/root      3225 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.fa
 -rw-r--r-- root/root    114565 2010-11-17 04:16 ./usr/share/doc/samtools/examples/ex1.sam.gz
 -rw-r--r-- root/root       886 2010-11-17 04:16 ./usr/share/doc/samtools/examples/00README.txt
 -rw-r--r-- root/root        98 2010-11-17 04:16 ./usr/share/doc/samtools/examples/toy.fa
 -rw-r--r-- root/root       786 2011-04-22 03:16 ./usr/share/doc/samtools/examples/toy.sam
--rw-r--r-- root/root    126609 2011-05-19 04:48 ./usr/share/doc/samtools/examples/ex1.bam.gz
+-rw-r--r-- root/root    126609 2011-07-11 14:45 ./usr/share/doc/samtools/examples/ex1.bam.gz
 -rw-r--r-- root/root     33578 2011-03-01 19:50 ./usr/share/doc/samtools/changelog.gz
--rw-r--r-- root/root      1966 2011-05-19 04:48 ./usr/share/doc/samtools/README.bcftools
--rw-r--r-- root/root      9373 2011-04-22 03:16 ./usr/share/doc/samtools/NEWS.gz
--rw-r--r-- root/root      1462 2011-05-19 04:24 ./usr/share/doc/samtools/changelog.Debian.gz
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/man/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/man/man1/
--rw-r--r-- root/root       430 2011-05-19 04:48 ./usr/share/man/man1/razip.1.gz
--rw-r--r-- root/root      8438 2011-05-19 04:48 ./usr/share/man/man1/samtools.1.gz
--rw-r--r-- root/root      2101 2011-05-19 04:48 ./usr/share/man/man1/bcftools.1.gz
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/samtools/
--rwxr-xr-x root/root     15437 2011-03-01 19:50 ./usr/share/samtools/vcfutils.pl
+-rw-r--r-- root/root      1966 2011-07-11 14:45 ./usr/share/doc/samtools/README.bcftools
+-rw-r--r-- root/root      9930 2011-07-07 02:59 ./usr/share/doc/samtools/NEWS.gz
+-rw-r--r-- root/root      1573 2011-07-11 12:04 ./usr/share/doc/samtools/changelog.Debian.gz
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/man/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/man/man1/
+-rw-r--r-- root/root       430 2011-07-11 14:45 ./usr/share/man/man1/razip.1.gz
+-rw-r--r-- root/root      9890 2011-07-11 14:45 ./usr/share/man/man1/samtools.1.gz
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/samtools/
+-rwxr-xr-x root/root     15707 2011-07-07 02:59 ./usr/share/samtools/vcfutils.pl
 -rwxr-xr-x root/root      2415 2010-11-17 04:16 ./usr/share/samtools/blast2sam.pl
 -rwxr-xr-x root/root      2112 2010-11-17 04:16 ./usr/share/samtools/bowtie2sam.pl
 -rwxr-xr-x root/root     18572 2011-03-22 03:09 ./usr/share/samtools/export2sam.pl
@@ -643,33 +671,34 @@ drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/samtools/
 -rwxr-xr-x root/root      2696 2010-11-17 04:16 ./usr/share/samtools/soap2sam.pl
 -rwxr-xr-x root/root      2729 2010-11-17 04:16 ./usr/share/samtools/wgsim_eval.pl
 -rwxr-xr-x root/root      2397 2010-11-17 04:16 ./usr/share/samtools/zoom2sam.pl
--rwxr-xr-x root/root      5778 2011-05-19 04:48 ./usr/share/samtools/varfilter.py
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/bin/
--rwxr-xr-x root/root    126376 2011-05-19 04:48 ./usr/bin/bcftools
--rwxr-xr-x root/root     24544 2011-05-19 04:48 ./usr/bin/razip
--rwxr-xr-x root/root    384280 2011-05-19 04:48 ./usr/bin/samtools
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/lib/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/lib/samtools/
--rwxr-xr-x root/root     19272 2011-05-19 04:48 ./usr/lib/samtools/wgsim
--rwxr-xr-x root/root      8160 2011-05-19 04:48 ./usr/lib/samtools/maq2sam-long
--rwxr-xr-x root/root      8096 2011-05-19 04:48 ./usr/lib/samtools/maq2sam-short
--rwxr-xr-x root/root     11952 2011-05-19 04:48 ./usr/lib/samtools/md5fa
--rwxr-xr-x root/root      8696 2011-05-19 04:48 ./usr/lib/samtools/md5sum-lite
+-rwxr-xr-x root/root      5778 2011-07-11 14:45 ./usr/share/samtools/varfilter.py
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/bin/
+-rwxr-xr-x root/root    130528 2011-07-11 14:45 ./usr/bin/bcftools
+-rwxr-xr-x root/root     24448 2011-07-11 14:45 ./usr/bin/razip
+-rwxr-xr-x root/root    356920 2011-07-11 14:45 ./usr/bin/samtools
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/lib/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/lib/samtools/
+-rwxr-xr-x root/root     19288 2011-07-11 14:45 ./usr/lib/samtools/wgsim
+-rwxr-xr-x root/root      8208 2011-07-11 14:45 ./usr/lib/samtools/maq2sam-long
+-rwxr-xr-x root/root      8144 2011-07-11 14:45 ./usr/lib/samtools/maq2sam-short
+-rwxr-xr-x root/root     11992 2011-07-11 14:45 ./usr/lib/samtools/md5fa
+-rwxr-xr-x root/root      8736 2011-07-11 14:45 ./usr/lib/samtools/md5sum-lite
+lrwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/man/man1/bcftools.1.gz -> samtools.1.gz
 
 
-libbam-dev_0.1.16-1_kfreebsd-amd64.deb
+libbam-dev_0.1.17-1_kfreebsd-amd64.deb
 ──────────────────────────────────────
 
  new debian package, version 2.0.
- size 171268 bytes: control archive= 932 bytes.
+ size 170180 bytes: control archive= 932 bytes.
      683 bytes,    15 lines      control              
      715 bytes,    11 lines      md5sums              
  Package: libbam-dev
  Source: samtools
- Version: 0.1.16-1
+ Version: 0.1.17-1
  Architecture: kfreebsd-amd64
  Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 480
+ Installed-Size: 464
  Section: libdevel
  Priority: optional
  Homepage: http://samtools.sourceforge.net
@@ -680,21 +709,21 @@ libbam-dev_0.1.16-1_kfreebsd-amd64.deb
   sorting, merging, generating pileup, and quickly retrieval of reads overlapped
   with a specified region.
 
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/doc/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/share/doc/libbam-dev/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/doc/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/share/doc/libbam-dev/
 -rw-r--r-- root/root       916 2010-11-17 04:16 ./usr/share/doc/libbam-dev/AUTHORS
--rw-r--r-- root/root      5392 2011-05-19 04:20 ./usr/share/doc/libbam-dev/copyright
+-rw-r--r-- root/root      5371 2011-07-11 11:19 ./usr/share/doc/libbam-dev/copyright
 -rw-r--r-- root/root     33578 2011-03-01 19:50 ./usr/share/doc/libbam-dev/changelog.gz
--rw-r--r-- root/root      9373 2011-04-22 03:16 ./usr/share/doc/libbam-dev/NEWS.gz
--rw-r--r-- root/root      1462 2011-05-19 04:24 ./usr/share/doc/libbam-dev/changelog.Debian.gz
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/lib/
--rw-r--r-- root/root    328218 2011-05-19 04:48 ./usr/lib/libbam.a
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/include/
-drwxr-xr-x root/root         0 2011-05-19 04:48 ./usr/include/samtools/
--rw-r--r-- root/root     24548 2011-04-22 03:16 ./usr/include/samtools/bam.h
+-rw-r--r-- root/root      9930 2011-07-07 02:59 ./usr/share/doc/libbam-dev/NEWS.gz
+-rw-r--r-- root/root      1573 2011-07-11 12:04 ./usr/share/doc/libbam-dev/changelog.Debian.gz
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/lib/
+-rw-r--r-- root/root    320058 2011-07-11 14:45 ./usr/lib/libbam.a
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/include/
+drwxr-xr-x root/root         0 2011-07-11 14:45 ./usr/include/samtools/
+-rw-r--r-- root/root     24548 2011-07-07 02:59 ./usr/include/samtools/bam.h
 -rw-r--r-- root/root      4617 2011-04-10 22:33 ./usr/include/samtools/bgzf.h
 -rw-r--r-- root/root     17815 2011-03-01 19:50 ./usr/include/samtools/khash.h
 -rw-r--r-- root/root      3188 2010-11-17 04:16 ./usr/include/samtools/faidx.h
@@ -712,24 +741,27 @@ Built successfully
 │ Post Build                                                                   │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Purging /var/lib/schroot/mount/sid-ka-sbuild-1305780415-40848/build/buildd-samtools_0.1.16-1-kfreebsd-amd64-bSUyWA
+Purging /var/lib/schroot/mount/sid-ka-sbuild-1310395393-15518/build/buildd-samtools_0.1.17-1-kfreebsd-amd64-Jo8qZd
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 7 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following packages will be REMOVED:
-  cdbs* debhelper* file* gettext* gettext-base* groff-base* html2text*
-  intltool-debian* libcroco3* libglib2.0-0* libmagic1* libncurses5-dev*
-  libpcre3* libpipeline1* libunistring0* libxml2* man-db* po-debconf*
-  zlib1g-dev*
-0 upgraded, 0 newly installed, 19 to remove and 7 not upgraded.
-After this operation, 27.5 MB disk space will be freed.
-(Reading database ... 13603 files and directories currently installed.)
+  cdbs* debhelper* diffstat* file* gettext* gettext-base* groff-base*
+  html2text* intltool-debian* libcroco3* libglib2.0-0* libmagic1*
+  libncurses5-dev* libpcre3* libpipeline1* libunistring0* libxml2* man-db*
+  po-debconf* quilt* zlib1g-dev*
+0 upgraded, 0 newly installed, 21 to remove and 0 not upgraded.
+After this operation, 28.4 MB disk space will be freed.
+(Reading database ... 13567 files and directories currently installed.)
 Removing cdbs ...
 Removing debhelper ...
+Removing quilt ...
+Purging configuration files for quilt ...
+Removing diffstat ...
 Removing file ...
 Removing po-debconf ...
 Removing intltool-debian ...
@@ -763,18 +795,18 @@ Removing zlib1g-dev ...
 └──────────────────────────────────────────────────────────────────────────────┘
 
 Architecture: kfreebsd-amd64
-Build-Space: 12066
-Build-Time: 50
+Build-Space: 11694
+Build-Time: 57
 Distribution: sid
-Install-Time: 36
-Job: samtools_0.1.16-1
+Install-Time: 81
+Job: samtools_0.1.17-1
 Package: samtools
-Package-Time: 110
-Source-Version: 0.1.16-1
-Space: 12066
+Package-Time: 161
+Source-Version: 0.1.17-1
+Space: 11694
 Status: successful
-Version: 0.1.16-1
+Version: 0.1.17-1
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20110519-0448
-Build needed 00:01:50, 12066k disc space
-Signature with key '91116966' requested:
+Finished at 20110711-1445
+Build needed 00:02:41, 11694k disc space
+Signature with key '516A3A7B' requested:
