@@ -1,8 +1,11 @@
-samtools (0.1.18-1) UNRELEASED; urgency=low
+samtools (0.1.18-1) unstable; urgency=low
 
-  * New upstream release.
+  [b990d9d3] New upstream release.
+  [d59366b9] Updated copyright statements.
+  [aa08abe5] Compress binary packages with xz.
+  [9a36c994] Added a DEP 3 header to debian/patches/no-pileup-tests.patch.
 
- -- Charles Plessy <plessy@debian.org>  Tue, 06 Sep 2011 15:54:07 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 06 Sep 2011 16:52:04 +0900
 
 samtools (0.1.17-1) unstable; urgency=low
 
