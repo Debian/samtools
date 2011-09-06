@@ -1,3 +1,8 @@
+Description: disable samtools pileup commands in the example tests.
+ ‘samtools pileup’ has been dropped in version 0.1.17.
+Forwarded: samtools-devel@lists.sourceforge.net
+Origin: vendor
+
 --- a/examples/Makefile
 +++ b/examples/Makefile
 @@ -1,5 +1,5 @@
