@@ -1,3 +1,9 @@
+samtools (0.1.18-2) UNRELEASED; urgency=low
+
+  * Work in progress, see git commits.
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 15 Sep 2011 13:26:37 +0900
+
 samtools (0.1.18-1) unstable; urgency=low
 
   [b990d9d3] New upstream release.
