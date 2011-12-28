@@ -1,3 +1,10 @@
+samtools (0.1.18-1~oneiric1) oneiric; urgency=low
+
+  * 0.1.18-1 built for Oneiric on Debian Med's PPA.
+  * Add "Pre-Depends: dpkg (>= 1.15.6)" (debian/control)
+
+ -- Carlos Borroto <carlos.borroto@gmail.com>  Wed, 28 Dec 2011 16:53:47 -0500
+
 samtools (0.1.18-1) unstable; urgency=low
 
   [b990d9d3] New upstream release.

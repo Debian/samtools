@@ -12,6 +12,7 @@ Vcs-Git: git://git.debian.org/debian-med/samtools.git
 
 Package: samtools
 Architecture: any
+Pre-Depends: dpkg (>= 1.15.6)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Suggests: python
 Description: processing sequence alignments in SAM and BAM formats
@@ -24,6 +25,7 @@ Description: processing sequence alignments in SAM and BAM formats
 Package: libbam-dev
 Architecture: any
 Section: libdevel
+Pre-Depends: dpkg (>= 1.15.6)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: manipulates nucleotide sequence alignments in BAM or SAM format 
  The BAM library provides I/O and various operations on manipulating nucleotide
