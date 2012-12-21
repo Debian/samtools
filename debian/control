@@ -3,7 +3,7 @@ Section: science
 Priority: optional
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 DM-Upload-Allowed: yes
-Uploaders: Charles Plessy <plessy@debian.org>
+Uploaders: Charles Plessy <plessy@debian.org>, Dominique Belhachemi <domibel@debian.org>
 Build-Depends: debhelper (>= 9), bash-completion, cdbs, quilt, libncurses5-dev, zlib1g-dev
 Standards-Version: 3.9.2
 Homepage: http://samtools.sourceforge.net
@@ -32,4 +32,4 @@ Description: manipulates nucleotide sequence alignments in BAM or SAM format
  sorting, merging, generating pileup, and quickly retrieval of reads overlapped
  with a specified region.
  .
- This library is part SAMtools.
+ This library is part of SAMtools.
