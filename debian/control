@@ -1,18 +1,25 @@
 Source: samtools
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Uploaders: Charles Plessy <plessy@debian.org>,
+           Dominique Belhachemi <domibel@debian.org>
 Section: science
 Priority: optional
-Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-DM-Upload-Allowed: yes
-Uploaders: Charles Plessy <plessy@debian.org>, Dominique Belhachemi <domibel@debian.org>
-Build-Depends: debhelper (>= 9), bash-completion, cdbs, quilt, libncurses5-dev, zlib1g-dev
+Build-Depends: debhelper (>= 9),
+               bash-completion,
+               cdbs,
+               quilt,
+               libncurses5-dev,
+               zlib1g-dev
 Standards-Version: 3.9.2
-Homepage: http://samtools.sourceforge.net
 Vcs-Browser: http://git.debian.org/?p=debian-med/samtools.git
 Vcs-Git: git://git.debian.org/debian-med/samtools.git
+DM-Upload-Allowed: yes
+Homepage: http://samtools.sourceforge.net
 
 Package: samtools
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Suggests: python
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
@@ -24,7 +31,8 @@ Description: processing sequence alignments in SAM and BAM formats
 Package: libbam-dev
 Architecture: any
 Section: libdevel
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
 Description: manipulates nucleotide sequence alignments in BAM or SAM format 
  The BAM library provides I/O and various operations on manipulating nucleotide
  sequence alignments in the BAM (Binary Alignment/Mapping) or SAM (Sequence
@@ -33,3 +41,4 @@ Description: manipulates nucleotide sequence alignments in BAM or SAM format
  with a specified region.
  .
  This library is part of SAMtools.
+
