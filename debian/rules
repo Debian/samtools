@@ -11,7 +11,7 @@ DEB_MAKE_CHECK_TARGET = -C examples all
 
 DEB_COMPRESS_EXCLUDE = .bam
 DEB_DH_BUILDDEB_ARGS = -- -Z=xz
-
+DEB_INSTALL_CHANGELOGS_ALL = NEWS
 clean::
 	$(RM) examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
 
