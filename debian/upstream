@@ -1,4 +1,5 @@
 Archive: SourceForge
+Changelog: https://raw.github.com/samtools/samtools/HEAD/NEWS
 Homepage: http://samtools.sourceforge.net
 mr:
   checkout: debcheckout -a git://git.debian.org/debian-med/samtools.git
