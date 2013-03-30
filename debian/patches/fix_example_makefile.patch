@@ -3,8 +3,10 @@ Description: disable samtools pileup commands in the example tests.
 Forwarded: samtools-devel@lists.sourceforge.net
 Origin: vendor
 
---- a/examples/Makefile
-+++ b/examples/Makefile
+Index: samtools/examples/Makefile
+===================================================================
+--- samtools.orig/examples/Makefile
++++ samtools/examples/Makefile
 @@ -1,5 +1,5 @@
  all:../libbam.a ../samtools ../bcftools/bcftools \
 -	ex1.glf ex1.pileup.gz ex1.bam.bai ex1f-rmduppe.bam ex1f-rmdupse.bam ex1.glfview.gz ex1.bcf calDepth
@@ -25,3 +27,12 @@ Origin: vendor
  ex1a.bam:ex1.bam
  		../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$$1=$$1"a";print}}' | ../samtools view -bS - > $@
  ex1b.bam:ex1.bam
+@@ -40,7 +34,7 @@
+ 		(cd ..; make libbam.a)
+ 
+ calDepth:../libbam.a calDepth.c
+-		gcc -g -Wall -O2 -I.. calDepth.c -o $@ -L.. -lbam -lm -lz
++		gcc -g -Wall -O2 -I.. calDepth.c -o $@ -L.. -lbam -lm -lz -lpthread
+ 
+ clean:
+ 		rm -fr *.bam *.bai *.glf* *.fai *.pileup* *~ calDepth *.dSYM ex1*.rg ex1.bcf
