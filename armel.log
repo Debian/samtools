@@ -1,60 +1,61 @@
-From buildd@alain.debian.org Fri Jul 27 15:14:52 2012
-Return-path: <buildd@alain.debian.org>
+From buildd@antheil.debian.org Fri Jul 27 15:49:07 2012
+Return-path: <buildd@antheil.debian.org>
 Received: from kokkonen.debian.org ([2001:41b8:202:deb:1a1a:0:52c3:4b61])
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
 	CN=kokkonen.debian.org,
 	EMAIL=hostmaster@kokkonen.debian.org (verified)
 	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@alain.debian.org>)
-	id 1SumFg-0003ft-8A
-	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:14:52 +0000
-Received: from alain.islands.arm.com ([217.140.96.58] helo=alain.debian.org)
+	(Exim 4.72) (envelope-from <buildd@antheil.debian.org>)
+	id 1Summp-0006Sc-9E
+	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:49:07 +0000
+Received: from antheil.islands.arm.com ([217.140.96.60]
+	helo=antheil.debian.org)
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=alain.debian.org, EMAIL=hostmaster@alain.debian.org (verified)
+	CN=antheil.debian.org, EMAIL=hostmaster@antheil.debian.org (verified)
 	by kokkonen.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@alain.debian.org>)
-	id 1SumFf-0000R0-5F
-	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:14:51 +0000
-Received: from buildd by alain.debian.org with local (Exim 4.72)
-	(envelope-from <buildd@alain.debian.org>)
-	id 1SumFd-0002ve-L1; Fri, 27 Jul 2012 15:14:49 +0000
-Date: Fri, 27 Jul 2012 15:14:49 +0000
-Message-Id: <E1SumFd-0002ve-L1@alain.debian.org>
-From: buildd on alain <buildd@alain.debian.org>
-To: buildd-porters@alain.debian.org,logs@buildd.debian.org
-Subject: Log for attempted build of samtools_0.1.18-2 on armel (dist=sid)
+	(Exim 4.72) (envelope-from <buildd@antheil.debian.org>)
+	id 1Summo-00023e-78
+	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:49:06 +0000
+Received: from buildd by antheil.debian.org with local (Exim 4.72)
+	(envelope-from <buildd@antheil.debian.org>)
+	id 1Summn-0000j0-9W; Fri, 27 Jul 2012 15:49:05 +0000
+Date: Fri, 27 Jul 2012 15:49:05 +0000
+Message-Id: <E1Summn-0000j0-9W@antheil.debian.org>
+From: buildd on antheil <buildd@antheil.debian.org>
+To: buildd-porters@antheil.debian.org,logs@buildd.debian.org
+Subject: Log for attempted build of samtools_0.1.18-3 on armel (dist=sid)
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 Delivered-To: logs@buildd.debian.org
 
-sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on alain.debian.org
+sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on antheil.debian.org
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 0.1.18-2 (armel)                                  27 Jul 2012 15:05 ║
+║ samtools 0.1.18-3 (armel)                                  27 Jul 2012 15:39 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 0.1.18-2
-Source Version: 0.1.18-2
+Version: 0.1.18-3
+Source Version: 0.1.18-3
 Architecture: armel
 Get:1 http://incoming.debian.org unstable InRelease [249 kB]
 Get:2 http://ftp.uk.debian.org unstable InRelease [249 kB]
+Get:3 http://ftp.uk.debian.org unstable/main Sources [6315 kB]
 Ign http://incoming.debian.org  InRelease
-Get:3 http://incoming.debian.org  Release.gpg [836 B]
-Get:4 http://incoming.debian.org  Release [1601 B]
-Get:5 http://ftp.uk.debian.org unstable/main Sources [6315 kB]
-Get:6 http://incoming.debian.org unstable/main Sources [6315 kB]
-Get:7 http://ftp.uk.debian.org unstable/contrib Sources [53.9 kB]
-Get:8 http://ftp.uk.debian.org unstable/non-free Sources [98.1 kB]
-Get:9 http://ftp.uk.debian.org unstable/main armel Packages [5978 kB]
-Get:10 http://incoming.debian.org unstable/contrib Sources [53.9 kB]
-Get:11 http://incoming.debian.org unstable/non-free Sources [98.1 kB]
-Get:12 http://incoming.debian.org unstable/main armel Packages [5978 kB]
-Get:13 http://ftp.uk.debian.org unstable/contrib armel Packages [37.6 kB]
-Get:14 http://incoming.debian.org unstable/contrib armel Packages [37.6 kB]
-Get:15 http://incoming.debian.org  Sources [14.3 kB]
-Get:16 http://incoming.debian.org  Packages [113 kB]
-Fetched 25.6 MB in 1min 39s (256 kB/s)
+Get:4 http://incoming.debian.org  Release.gpg [836 B]
+Get:5 http://incoming.debian.org unstable/main Sources [6315 kB]
+Get:6 http://ftp.uk.debian.org unstable/contrib Sources [53.9 kB]
+Get:7 http://ftp.uk.debian.org unstable/non-free Sources [98.1 kB]
+Get:8 http://ftp.uk.debian.org unstable/main armel Packages [5978 kB]
+Get:9 http://incoming.debian.org unstable/contrib Sources [53.9 kB]
+Get:10 http://incoming.debian.org unstable/non-free Sources [98.1 kB]
+Get:11 http://incoming.debian.org unstable/main armel Packages [5978 kB]
+Get:12 http://ftp.uk.debian.org unstable/contrib armel Packages [37.6 kB]
+Get:13 http://incoming.debian.org unstable/contrib armel Packages [37.6 kB]
+Get:14 http://incoming.debian.org  Release [1601 B]
+Get:15 http://incoming.debian.org  Sources [14.5 kB]
+Get:16 http://incoming.debian.org  Packages [117 kB]
+Fetched 25.6 MB in 1min 41s (252 kB/s)
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -76,10 +77,10 @@ Reading state information...
 NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
 git://git.debian.org/debian-med/samtools.git
 Need to get 390 kB of source archives.
-Get:1 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-2 (dsc) [1429 B]
-Get:2 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-2 (tar) [379 kB]
-Get:3 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-2 (diff) [8901 B]
-Fetched 390 kB in 1s (335 kB/s)
+Get:1 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (dsc) [1429 B]
+Get:2 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (tar) [379 kB]
+Get:3 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (diff) [8884 B]
+Fetched 390 kB in 1s (298 kB/s)
 Download complete and in download only mode
 
 Check arch
@@ -200,7 +201,7 @@ Get:24 http://ftp.uk.debian.org/debian/ unstable/main libncurses5-dev armel 5.9-
 Get:25 http://ftp.uk.debian.org/debian/ unstable/main quilt all 0.60-2 [377 kB]
 Get:26 http://ftp.uk.debian.org/debian/ unstable/main zlib1g-dev armel 1:1.2.7.dfsg-13 [211 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 10.4 MB in 5s (1762 kB/s)
+Fetched 10.4 MB in 5s (1798 kB/s)
 Selecting previously unselected package libpipeline1:armel.
 (Reading database ... 10640 files and directories currently installed.)
 Unpacking libpipeline1:armel (from .../libpipeline1_1.2.1-1_armel.deb) ...
@@ -303,12 +304,12 @@ Unpack source
 ─────────────
 
 gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
-gpgv: Signature made Fri Jul 27 13:09:06 2012 UTC using DSA key ID B351A900
+gpgv: Signature made Fri Jul 27 15:21:02 2012 UTC using DSA key ID B351A900
 gpgv: Can't check signature: public key not found
-dpkg-source: warning: failed to verify signature on ./samtools_0.1.18-2.dsc
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.18-3.dsc
 dpkg-source: info: extracting samtools in samtools-0.1.18
 dpkg-source: info: unpacking samtools_0.1.18.orig.tar.bz2
-dpkg-source: info: unpacking samtools_0.1.18-2.debian.tar.gz
+dpkg-source: info: unpacking samtools_0.1.18-3.debian.tar.gz
 dpkg-source: info: applying no-pileup-tests.patch
 dpkg-source: info: applying fix_segfault_with_small_ref.patch
 dpkg-source: info: applying fix_coverage_cap.patch
@@ -321,7 +322,7 @@ dpkg-buildpackage
 ─────────────────
 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 0.1.18-2
+dpkg-buildpackage: source version 0.1.18-3
  dpkg-source --before-build samtools-0.1.18
 dpkg-buildpackage: host architecture armel
  fakeroot debian/rules clean
@@ -329,25 +330,25 @@ test -x debian/rules
 dh_testroot
 rm -f debian/stamp-makefile-build debian/stamp-makefile-install
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -k clean
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
 rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim seqtk *~ *.a
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 rm -f debian/stamp-makefile-check
 dh_clean 
 /usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 if [ -d "." ]; then \
-	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
+	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
 	fi
 Removing patch fix_coverage_cap.patch
 Restoring bam2depth.c
@@ -367,10 +368,10 @@ test -x debian/rules
 mkdir -p "."
 /usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
 /usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
 Applying patch no-pileup-tests.patch
 patching file examples/Makefile
 
@@ -383,12 +384,12 @@ patching file bam2depth.c
 Now at patch fix_coverage_cap.patch
 touch debian/stamp-patched
 /usr/bin/make -f debian/rules update-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 make[1]: Nothing to be done for `update-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  all all-recur razip lib
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
 bgzf.c: In function 'bgzf_close':
 bgzf.c:630:8: warning: variable 'count' set but not used [-Wunused-but-set-variable]
@@ -423,8 +424,8 @@ kprobaln.c: In function 'kpa_glocal':
 kprobaln.c:78:21: warning: variable 'is_diff' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_cat.c -o bam_cat.o
 ar -csru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o razf.o faidx.o bedidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o bam_cat.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
@@ -439,10 +440,10 @@ gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=forma
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. mut.c -o mut.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
 ar -csru libbcf.a bcf.o vcf.o bcfutils.o prob1.o em.o kfunc.o kmin.o index.o fet.o mut.o bcf2qcall.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 make[2]: Nothing to be done for `lib'.
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
@@ -463,24 +464,24 @@ cut_target.c:137:36: warning: variable 'lastpos' set but not used [-Wunused-but-
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. phase.c -o phase.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2depth.c -o bam2depth.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o ../bedidx.o -L.  -lbcf -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o md5sum-lite md5sum-lite.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
@@ -502,14 +503,14 @@ seqtk.c: In function 'stk_famask':
 seqtk.c:546:4: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'size_t' [-Wformat]
 seqtk.c:546:4: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'size_t' [-Wformat]
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o seqtk seqtk.o -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o razip razf.o razip.o knetfile.o -lz
 make[1]: Nothing to be done for `lib'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
 touch debian/stamp-makefile-build
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -C examples all
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/examples'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/examples'
 ../samtools faidx ex1.fa
 ../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
 [sam_header_read2] 2 sequences loaded.
@@ -517,14 +518,14 @@ Line 2, sequence length 35 vs 8960 from CIGAR
 Parse error at line 2: CIGAR and sequence length are inconsistent
 make[1]: *** [ex1.bam] Aborted
 make[1]: *** Deleting file `ex1.bam'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-2-armel-5narhz/samtools-0.1.18/examples'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/examples'
 make: *** [debian/stamp-makefile-check] Error 2
 dpkg-buildpackage: error: debian/rules build-arch gave error exit status 2
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20120727-1514
+Build finished at 20120727-1549
 FAILED [dpkg-buildpackage died]
 ────────────────────────────────────────────────────────────────────────────────
-Purging /var/lib/schroot/mount/sid-armel-sbuild-c8a6ce86-8609-468e-8b01-5d381ee6ae5e/build/buildd-samtools_0.1.18-2-armel-5narhz
+Purging /var/lib/schroot/mount/sid-armel-sbuild-6b9b83f9-bc18-46e0-945b-39cd8ecff13a/build/buildd-samtools_0.1.18-3-armel-zkuM87
 Not cleaning session: cloned chroot in use
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -536,15 +537,15 @@ Build-Space: 6464
 Build-Time: 318
 Distribution: sid
 Fail-Stage: build
-Install-Time: 101
-Job: samtools_0.1.18-2
+Install-Time: 103
+Job: samtools_0.1.18-3
 Package: samtools
-Package-Time: 554
-Source-Version: 0.1.18-2
+Package-Time: 560
+Source-Version: 0.1.18-3
 Space: 6464
 Status: attempted
-Version: 0.1.18-2
+Version: 0.1.18-3
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20120727-1514
-Build needed 00:09:14, 6464k disc space
+Finished at 20120727-1549
+Build needed 00:09:20, 6464k disc space
 
