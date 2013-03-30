@@ -1,61 +1,60 @@
-From buildd@antheil.debian.org Fri Jul 27 15:49:07 2012
-Return-path: <buildd@antheil.debian.org>
-Received: from kokkonen.debian.org ([2001:41b8:202:deb:1a1a:0:52c3:4b61])
+From buildd@alain.debian.org Sun Dec 23 05:02:49 2012
+Return-path: <buildd@alain.debian.org>
+Received: from merikanto.debian.org ([2001:858:2:2:216:35ff:fec4:a49a])
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=kokkonen.debian.org,
-	EMAIL=hostmaster@kokkonen.debian.org (verified)
+	CN=merikanto.debian.org,
+	EMAIL=hostmaster@merikanto.debian.org (verified)
 	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@antheil.debian.org>)
-	id 1Summp-0006Sc-9E
-	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:49:07 +0000
-Received: from antheil.islands.arm.com ([217.140.96.60]
-	helo=antheil.debian.org)
+	(Exim 4.72) (envelope-from <buildd@alain.debian.org>)
+	id 1Tmdi5-0008Km-In
+	for logs@buildd.debian.org; Sun, 23 Dec 2012 05:02:49 +0000
+Received: from alain.islands.arm.com ([217.140.96.58] helo=alain.debian.org)
 	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=antheil.debian.org, EMAIL=hostmaster@antheil.debian.org (verified)
-	by kokkonen.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@antheil.debian.org>)
-	id 1Summo-00023e-78
-	for logs@buildd.debian.org; Fri, 27 Jul 2012 15:49:06 +0000
-Received: from buildd by antheil.debian.org with local (Exim 4.72)
-	(envelope-from <buildd@antheil.debian.org>)
-	id 1Summn-0000j0-9W; Fri, 27 Jul 2012 15:49:05 +0000
-Date: Fri, 27 Jul 2012 15:49:05 +0000
-Message-Id: <E1Summn-0000j0-9W@antheil.debian.org>
-From: buildd on antheil <buildd@antheil.debian.org>
-To: buildd-porters@antheil.debian.org,logs@buildd.debian.org
-Subject: Log for attempted build of samtools_0.1.18-3 on armel (dist=sid)
+	CN=alain.debian.org, EMAIL=hostmaster@alain.debian.org (verified)
+	by merikanto.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+	(Exim 4.72) (envelope-from <buildd@alain.debian.org>)
+	id 1Tmdi4-0008Iu-F7
+	for logs@buildd.debian.org; Sun, 23 Dec 2012 05:02:48 +0000
+Received: from buildd by alain.debian.org with local (Exim 4.72)
+	(envelope-from <buildd@alain.debian.org>)
+	id 1Tmdi2-0001tj-Fb; Sun, 23 Dec 2012 05:02:46 +0000
+Date: Sun, 23 Dec 2012 05:02:46 +0000
+Message-Id: <E1Tmdi2-0001tj-Fb@alain.debian.org>
+From: buildd on alain <buildd@alain.debian.org>
+To: buildd-porters@alain.debian.org,logs@buildd.debian.org
+Subject: Log for attempted build of samtools_0.1.18-4 on armel (dist=sid)
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 Delivered-To: logs@buildd.debian.org
 
-sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on antheil.debian.org
+sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on alain.debian.org
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 0.1.18-3 (armel)                                  27 Jul 2012 15:39 ║
+║ samtools 0.1.18-4 (armel)                                  23 Dec 2012 04:53 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 0.1.18-3
-Source Version: 0.1.18-3
+Version: 0.1.18-4
+Source Version: 0.1.18-4
 Architecture: armel
-Get:1 http://incoming.debian.org unstable InRelease [249 kB]
-Get:2 http://ftp.uk.debian.org unstable InRelease [249 kB]
-Get:3 http://ftp.uk.debian.org unstable/main Sources [6315 kB]
+Get:1 http://incoming.debian.org unstable InRelease [227 kB]
+Get:2 http://ftp.uk.debian.org unstable InRelease [227 kB]
 Ign http://incoming.debian.org  InRelease
-Get:4 http://incoming.debian.org  Release.gpg [836 B]
-Get:5 http://incoming.debian.org unstable/main Sources [6315 kB]
-Get:6 http://ftp.uk.debian.org unstable/contrib Sources [53.9 kB]
-Get:7 http://ftp.uk.debian.org unstable/non-free Sources [98.1 kB]
-Get:8 http://ftp.uk.debian.org unstable/main armel Packages [5978 kB]
-Get:9 http://incoming.debian.org unstable/contrib Sources [53.9 kB]
-Get:10 http://incoming.debian.org unstable/non-free Sources [98.1 kB]
-Get:11 http://incoming.debian.org unstable/main armel Packages [5978 kB]
-Get:12 http://ftp.uk.debian.org unstable/contrib armel Packages [37.6 kB]
-Get:13 http://incoming.debian.org unstable/contrib armel Packages [37.6 kB]
-Get:14 http://incoming.debian.org  Release [1601 B]
-Get:15 http://incoming.debian.org  Sources [14.5 kB]
-Get:16 http://incoming.debian.org  Packages [117 kB]
-Fetched 25.6 MB in 1min 41s (252 kB/s)
+Get:3 http://incoming.debian.org  Release.gpg [836 B]
+Get:4 http://incoming.debian.org  Release [1141 B]
+Get:5 http://ftp.uk.debian.org unstable/main Sources [6458 kB]
+Get:6 http://incoming.debian.org unstable/main Sources [6458 kB]
+Get:7 http://ftp.uk.debian.org unstable/contrib Sources [53.0 kB]
+Get:8 http://ftp.uk.debian.org unstable/non-free Sources [101 kB]
+Get:9 http://ftp.uk.debian.org unstable/main armel Packages [6097 kB]
+Get:10 http://incoming.debian.org unstable/contrib Sources [53.0 kB]
+Get:11 http://incoming.debian.org unstable/non-free Sources [101 kB]
+Get:12 http://incoming.debian.org unstable/main armel Packages [6097 kB]
+Get:13 http://ftp.uk.debian.org unstable/contrib armel Packages [36.7 kB]
+Get:14 http://incoming.debian.org unstable/contrib armel Packages [36.7 kB]
+Get:15 http://incoming.debian.org  Sources [14.0 kB]
+Get:16 http://incoming.debian.org  Packages [118 kB]
+Fetched 26.1 MB in 1min 39s (261 kB/s)
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -76,11 +75,11 @@ Building dependency tree...
 Reading state information...
 NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
 git://git.debian.org/debian-med/samtools.git
-Need to get 390 kB of source archives.
-Get:1 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (dsc) [1429 B]
-Get:2 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (tar) [379 kB]
-Get:3 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-3 (diff) [8884 B]
-Fetched 390 kB in 1s (298 kB/s)
+Need to get 391 kB of source archives.
+Get:1 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-4 (dsc) [1446 B]
+Get:2 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-4 (tar) [379 kB]
+Get:3 http://incoming.debian.org/buildd-unstable/  samtools 0.1.18-4 (diff) [9920 B]
+Fetched 391 kB in 1s (311 kB/s)
 Download complete and in download only mode
 
 Check arch
@@ -100,65 +99,66 @@ Installing positive dependencies:
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 37 not upgraded.
 Removing negative dependencies: 
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 37 not upgraded.
 Checking correctness of dependencies...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Install samtools build dependencies (internal resolver)                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Build-Depends: base-files, base-passwd, bash, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, ncurses-base, ncurses-bin, perl-base, sed, login, sysvinit-utils, sysvinit, tar, bsdutils, mount, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), debhelper (>= 8), cdbs, quilt, libncurses5-dev, zlib1g-dev
+Build-Depends: base-files, base-passwd, bash, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, ncurses-base, ncurses-bin, perl-base, sed, login, sysvinit-utils, sysvinit, tar, bsdutils, mount, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), debhelper (>= 9), bash-completion, cdbs, quilt, libncurses5-dev, zlib1g-dev
 Checking for already installed dependencies...
-base-files: already installed (6.11)
+base-files: already installed (6.12)
 base-passwd: already installed (3.5.26)
-bash: already installed (4.2-4)
-coreutils: already installed (8.13-3.2)
+bash: already installed (4.2-5)
+coreutils: already installed (8.13-3.3)
 dash: already installed (0.5.7-3)
-debianutils: already installed (4.3.2)
-diffutils: already installed (1:3.2-6)
-dpkg: already installed (1.16.8)
-e2fsprogs: already installed (1.42.4-3)
-findutils: already installed (4.4.2-4)
+debianutils: already installed (4.3.4)
+diffutils: already installed (1:3.2-7)
+dpkg: already installed (1.16.9)
+e2fsprogs: already installed (1.42.5-1)
+findutils: already installed (4.4.2-5)
 grep: already installed (2.12-2)
 gzip: already installed (1.5-1.1)
 hostname: already installed (3.11)
 ncurses-base: already installed (5.9-10)
 ncurses-bin: already installed (5.9-10)
-perl-base: already installed (5.14.2-12)
+perl-base: already installed (5.14.2-15)
 sed: already installed (4.2.1-10)
 login: already installed (1:4.1.5.1-1)
-sysvinit-utils: already installed (2.88dsf-29)
-sysvinit: already installed (2.88dsf-29)
+sysvinit-utils: already installed (2.88dsf-32)
+sysvinit: already installed (2.88dsf-32)
 tar: already installed (1.26-4)
-bsdutils: already installed (1:2.20.1-5.1)
-mount: already installed (2.20.1-5.1)
-util-linux: already installed (2.20.1-5.1)
-libc6-dev: already installed (2.13-35)
-gcc: already installed (4:4.6.3-7 >= 4:4.4.3 is satisfied)
-g++: already installed (4:4.6.3-7 >= 4:4.4.3 is satisfied)
+bsdutils: already installed (1:2.20.1-5.2)
+mount: already installed (2.20.1-5.2)
+util-linux: already installed (2.20.1-5.2)
+libc6-dev: already installed (2.13-36)
+gcc: already installed (4:4.6.3-8 >= 4:4.4.3 is satisfied)
+g++: already installed (4:4.6.3-8 >= 4:4.4.3 is satisfied)
 make: already installed (3.81-8.2)
-dpkg-dev: already installed (1.16.8 >= 1.13.5 is satisfied)
+dpkg-dev: already installed (1.16.9 >= 1.13.5 is satisfied)
 debhelper: missing
-Using default version 9.20120608
+Using default version 9.20120909
+bash-completion: missing
 cdbs: missing
 quilt: missing
 libncurses5-dev: missing
 zlib1g-dev: missing
 Checking for dependency conflicts...
-Installing positive dependencies: debhelper cdbs quilt libncurses5-dev zlib1g-dev
+Installing positive dependencies: debhelper bash-completion cdbs quilt libncurses5-dev zlib1g-dev
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following extra packages will be installed:
   bsdmainutils diffstat file gettext gettext-base groff-base html2text
-  intltool-debian libasprintf0c2 libcroco3 libffi5 libgettextpo0 libglib2.0-0
-  libmagic1 libpcre3 libpipeline1 libtinfo-dev libunistring0 libxml2 man-db
-  po-debconf
+  intltool-debian libasprintf-dev libasprintf0c2 libcroco3 libffi5
+  libgettextpo-dev libgettextpo0 libglib2.0-0 libmagic1 libpcre3 libpipeline1
+  libtinfo-dev libunistring0 libxml2 man-db po-debconf
 Suggested packages:
   wamerican wordlist whois vacation devscripts dh-make gettext-doc groff
   ncurses-doc less www-browser libmail-box-perl procmail graphviz default-mta
@@ -167,84 +167,94 @@ Recommended packages:
   autotools-dev curl wget lynx-cur autopoint libglib2.0-data shared-mime-info
   xml-core libmail-sendmail-perl
 The following NEW packages will be installed:
-  bsdmainutils cdbs debhelper diffstat file gettext gettext-base groff-base
-  html2text intltool-debian libasprintf0c2 libcroco3 libffi5 libgettextpo0
-  libglib2.0-0 libmagic1 libncurses5-dev libpcre3 libpipeline1 libtinfo-dev
-  libunistring0 libxml2 man-db po-debconf quilt zlib1g-dev
-0 upgraded, 26 newly installed, 0 to remove and 1 not upgraded.
-Need to get 10.4 MB of archives.
-After this operation, 27.3 MB of additional disk space will be used.
-Get:1 http://ftp.uk.debian.org/debian/ unstable/main libpipeline1 armel 1.2.1-1 [34.9 kB]
-Get:2 http://ftp.uk.debian.org/debian/ unstable/main libasprintf0c2 armel 0.18.1.1-9 [26.4 kB]
-Get:3 http://ftp.uk.debian.org/debian/ unstable/main libmagic1 armel 5.11-2 [200 kB]
-Get:4 http://ftp.uk.debian.org/debian/ unstable/main libpcre3 armel 1:8.30-5 [241 kB]
-Get:5 http://ftp.uk.debian.org/debian/ unstable/main libxml2 armel 2.8.0+dfsg1-5 [825 kB]
-Get:6 http://ftp.uk.debian.org/debian/ unstable/main libffi5 armel 3.0.10-3 [22.8 kB]
-Get:7 http://ftp.uk.debian.org/debian/ unstable/main libglib2.0-0 armel 2.32.3-1 [1962 kB]
-Get:8 http://ftp.uk.debian.org/debian/ unstable/main libcroco3 armel 0.6.5-1 [142 kB]
-Get:9 http://ftp.uk.debian.org/debian/ unstable/main libunistring0 armel 0.9.3-5 [406 kB]
-Get:10 http://ftp.uk.debian.org/debian/ unstable/main libgettextpo0 armel 0.18.1.1-9 [132 kB]
-Get:11 http://ftp.uk.debian.org/debian/ unstable/main bsdmainutils armel 9.0.3 [208 kB]
-Get:12 http://ftp.uk.debian.org/debian/ unstable/main groff-base armel 1.21-9 [1079 kB]
-Get:13 http://ftp.uk.debian.org/debian/ unstable/main man-db armel 2.6.2-1 [1025 kB]
-Get:14 http://ftp.uk.debian.org/debian/ unstable/main file armel 5.11-2 [51.4 kB]
-Get:15 http://ftp.uk.debian.org/debian/ unstable/main gettext-base armel 0.18.1.1-9 [138 kB]
-Get:16 http://ftp.uk.debian.org/debian/ unstable/main cdbs all 0.4.116 [79.9 kB]
-Get:17 http://ftp.uk.debian.org/debian/ unstable/main html2text armel 1.3.2a-15 [97.0 kB]
-Get:18 http://ftp.uk.debian.org/debian/ unstable/main gettext armel 0.18.1.1-9 [1888 kB]
-Get:19 http://ftp.uk.debian.org/debian/ unstable/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
-Get:20 http://ftp.uk.debian.org/debian/ unstable/main po-debconf all 1.0.16+nmu2 [224 kB]
-Get:21 http://ftp.uk.debian.org/debian/ unstable/main debhelper all 9.20120608 [700 kB]
-Get:22 http://ftp.uk.debian.org/debian/ unstable/main diffstat armel 1.55-3 [28.6 kB]
-Get:23 http://ftp.uk.debian.org/debian/ unstable/main libtinfo-dev armel 5.9-10 [90.3 kB]
-Get:24 http://ftp.uk.debian.org/debian/ unstable/main libncurses5-dev armel 5.9-10 [205 kB]
-Get:25 http://ftp.uk.debian.org/debian/ unstable/main quilt all 0.60-2 [377 kB]
-Get:26 http://ftp.uk.debian.org/debian/ unstable/main zlib1g-dev armel 1:1.2.7.dfsg-13 [211 kB]
+  bash-completion bsdmainutils cdbs debhelper diffstat file gettext
+  gettext-base groff-base html2text intltool-debian libasprintf-dev
+  libasprintf0c2 libcroco3 libffi5 libgettextpo-dev libgettextpo0 libglib2.0-0
+  libmagic1 libncurses5-dev libpcre3 libpipeline1 libtinfo-dev libunistring0
+  libxml2 man-db po-debconf quilt zlib1g-dev
+0 upgraded, 29 newly installed, 0 to remove and 37 not upgraded.
+Need to get 10.2 MB of archives.
+After this operation, 28.2 MB of additional disk space will be used.
+Get:1 http://ftp.uk.debian.org/debian/ unstable/main libpipeline1 armel 1.2.2-1 [35.1 kB]
+Get:2 http://ftp.uk.debian.org/debian/ unstable/main groff-base armel 1.21-9 [1079 kB]
+Get:3 http://ftp.uk.debian.org/debian/ unstable/main bsdmainutils armel 9.0.3 [208 kB]
+Get:4 http://ftp.uk.debian.org/debian/ unstable/main man-db armel 2.6.3-3 [868 kB]
+Get:5 http://ftp.uk.debian.org/debian/ unstable/main bash-completion all 1:2.0-1 [193 kB]
+Get:6 http://ftp.uk.debian.org/debian/ unstable/main libasprintf0c2 armel 0.18.1.1-10 [26.6 kB]
+Get:7 http://ftp.uk.debian.org/debian/ unstable/main libmagic1 armel 5.11-2 [200 kB]
+Get:8 http://ftp.uk.debian.org/debian/ unstable/main libpcre3 armel 1:8.31-1 [247 kB]
+Get:9 http://ftp.uk.debian.org/debian/ unstable/main libxml2 armel 2.8.0+dfsg1-7 [825 kB]
+Get:10 http://ftp.uk.debian.org/debian/ unstable/main libffi5 armel 3.0.10-3 [22.8 kB]
+Get:11 http://ftp.uk.debian.org/debian/ unstable/main libglib2.0-0 armel 2.33.12+really2.32.4-3 [1694 kB]
+Get:12 http://ftp.uk.debian.org/debian/ unstable/main libcroco3 armel 0.6.6-2 [120 kB]
+Get:13 http://ftp.uk.debian.org/debian/ unstable/main libunistring0 armel 0.9.3-5 [406 kB]
+Get:14 http://ftp.uk.debian.org/debian/ unstable/main libgettextpo0 armel 0.18.1.1-10 [132 kB]
+Get:15 http://ftp.uk.debian.org/debian/ unstable/main file armel 5.11-2 [51.4 kB]
+Get:16 http://ftp.uk.debian.org/debian/ unstable/main gettext-base armel 0.18.1.1-10 [138 kB]
+Get:17 http://ftp.uk.debian.org/debian/ unstable/main cdbs all 0.4.119 [80.4 kB]
+Get:18 http://ftp.uk.debian.org/debian/ unstable/main html2text armel 1.3.2a-15 [97.0 kB]
+Get:19 http://ftp.uk.debian.org/debian/ unstable/main libasprintf-dev armel 0.18.1.1-10 [26.5 kB]
+Get:20 http://ftp.uk.debian.org/debian/ unstable/main libgettextpo-dev armel 0.18.1.1-10 [163 kB]
+Get:21 http://ftp.uk.debian.org/debian/ unstable/main gettext armel 0.18.1.1-10 [1749 kB]
+Get:22 http://ftp.uk.debian.org/debian/ unstable/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
+Get:23 http://ftp.uk.debian.org/debian/ unstable/main po-debconf all 1.0.16+nmu2 [224 kB]
+Get:24 http://ftp.uk.debian.org/debian/ unstable/main debhelper all 9.20120909 [705 kB]
+Get:25 http://ftp.uk.debian.org/debian/ unstable/main diffstat armel 1.55-3 [28.6 kB]
+Get:26 http://ftp.uk.debian.org/debian/ unstable/main libtinfo-dev armel 5.9-10 [90.3 kB]
+Get:27 http://ftp.uk.debian.org/debian/ unstable/main libncurses5-dev armel 5.9-10 [205 kB]
+Get:28 http://ftp.uk.debian.org/debian/ unstable/main quilt all 0.60-2 [377 kB]
+Get:29 http://ftp.uk.debian.org/debian/ unstable/main zlib1g-dev armel 1:1.2.7.dfsg-13 [211 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 10.4 MB in 5s (1798 kB/s)
+Fetched 10.2 MB in 5s (1995 kB/s)
 Selecting previously unselected package libpipeline1:armel.
-(Reading database ... 10640 files and directories currently installed.)
-Unpacking libpipeline1:armel (from .../libpipeline1_1.2.1-1_armel.deb) ...
+(Reading database ... 10693 files and directories currently installed.)
+Unpacking libpipeline1:armel (from .../libpipeline1_1.2.2-1_armel.deb) ...
+Selecting previously unselected package groff-base.
+Unpacking groff-base (from .../groff-base_1.21-9_armel.deb) ...
+Selecting previously unselected package bsdmainutils.
+Unpacking bsdmainutils (from .../bsdmainutils_9.0.3_armel.deb) ...
+Selecting previously unselected package man-db.
+Unpacking man-db (from .../man-db_2.6.3-3_armel.deb) ...
+Selecting previously unselected package bash-completion.
+Unpacking bash-completion (from .../bash-completion_1%3a2.0-1_all.deb) ...
 Selecting previously unselected package libasprintf0c2:armel.
-Unpacking libasprintf0c2:armel (from .../libasprintf0c2_0.18.1.1-9_armel.deb) ...
+Unpacking libasprintf0c2:armel (from .../libasprintf0c2_0.18.1.1-10_armel.deb) ...
 Selecting previously unselected package libmagic1:armel.
 Unpacking libmagic1:armel (from .../libmagic1_5.11-2_armel.deb) ...
 Selecting previously unselected package libpcre3:armel.
-Unpacking libpcre3:armel (from .../libpcre3_1%3a8.30-5_armel.deb) ...
+Unpacking libpcre3:armel (from .../libpcre3_1%3a8.31-1_armel.deb) ...
 Selecting previously unselected package libxml2:armel.
-Unpacking libxml2:armel (from .../libxml2_2.8.0+dfsg1-5_armel.deb) ...
+Unpacking libxml2:armel (from .../libxml2_2.8.0+dfsg1-7_armel.deb) ...
 Selecting previously unselected package libffi5:armel.
 Unpacking libffi5:armel (from .../libffi5_3.0.10-3_armel.deb) ...
 Selecting previously unselected package libglib2.0-0:armel.
-Unpacking libglib2.0-0:armel (from .../libglib2.0-0_2.32.3-1_armel.deb) ...
+Unpacking libglib2.0-0:armel (from .../libglib2.0-0_2.33.12+really2.32.4-3_armel.deb) ...
 Selecting previously unselected package libcroco3:armel.
-Unpacking libcroco3:armel (from .../libcroco3_0.6.5-1_armel.deb) ...
+Unpacking libcroco3:armel (from .../libcroco3_0.6.6-2_armel.deb) ...
 Selecting previously unselected package libunistring0:armel.
 Unpacking libunistring0:armel (from .../libunistring0_0.9.3-5_armel.deb) ...
 Selecting previously unselected package libgettextpo0:armel.
-Unpacking libgettextpo0:armel (from .../libgettextpo0_0.18.1.1-9_armel.deb) ...
-Selecting previously unselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_9.0.3_armel.deb) ...
-Selecting previously unselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.21-9_armel.deb) ...
-Selecting previously unselected package man-db.
-Unpacking man-db (from .../man-db_2.6.2-1_armel.deb) ...
+Unpacking libgettextpo0:armel (from .../libgettextpo0_0.18.1.1-10_armel.deb) ...
 Selecting previously unselected package file.
 Unpacking file (from .../archives/file_5.11-2_armel.deb) ...
 Selecting previously unselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.18.1.1-9_armel.deb) ...
+Unpacking gettext-base (from .../gettext-base_0.18.1.1-10_armel.deb) ...
 Selecting previously unselected package cdbs.
-Unpacking cdbs (from .../archives/cdbs_0.4.116_all.deb) ...
+Unpacking cdbs (from .../archives/cdbs_0.4.119_all.deb) ...
 Selecting previously unselected package html2text.
 Unpacking html2text (from .../html2text_1.3.2a-15_armel.deb) ...
+Selecting previously unselected package libasprintf-dev:armel.
+Unpacking libasprintf-dev:armel (from .../libasprintf-dev_0.18.1.1-10_armel.deb) ...
+Selecting previously unselected package libgettextpo-dev:armel.
+Unpacking libgettextpo-dev:armel (from .../libgettextpo-dev_0.18.1.1-10_armel.deb) ...
 Selecting previously unselected package gettext.
-Unpacking gettext (from .../gettext_0.18.1.1-9_armel.deb) ...
+Unpacking gettext (from .../gettext_0.18.1.1-10_armel.deb) ...
 Selecting previously unselected package intltool-debian.
 Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
 Selecting previously unselected package po-debconf.
 Unpacking po-debconf (from .../po-debconf_1.0.16+nmu2_all.deb) ...
 Selecting previously unselected package debhelper.
-Unpacking debhelper (from .../debhelper_9.20120608_all.deb) ...
+Unpacking debhelper (from .../debhelper_9.20120909_all.deb) ...
 Selecting previously unselected package diffstat.
 Unpacking diffstat (from .../diffstat_1.55-3_armel.deb) ...
 Selecting previously unselected package libtinfo-dev:armel.
@@ -255,31 +265,34 @@ Selecting previously unselected package quilt.
 Unpacking quilt (from .../archives/quilt_0.60-2_all.deb) ...
 Selecting previously unselected package zlib1g-dev:armel.
 Unpacking zlib1g-dev:armel (from .../zlib1g-dev_1%3a1.2.7.dfsg-13_armel.deb) ...
-Setting up libpipeline1:armel (1.2.1-1) ...
-Setting up libasprintf0c2:armel (0.18.1.1-9) ...
-Setting up libmagic1:armel (5.11-2) ...
-Setting up libpcre3:armel (1:8.30-5) ...
-Setting up libxml2:armel (2.8.0+dfsg1-5) ...
-Setting up libffi5:armel (3.0.10-3) ...
-Setting up libglib2.0-0:armel (2.32.3-1) ...
-No schema files found: doing nothing.
-Setting up libcroco3:armel (0.6.5-1) ...
-Setting up libunistring0:armel (0.9.3-5) ...
-Setting up libgettextpo0:armel (0.18.1.1-9) ...
+Setting up libpipeline1:armel (1.2.2-1) ...
+Setting up groff-base (1.21-9) ...
 Setting up bsdmainutils (9.0.3) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
 update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
-Setting up groff-base (1.21-9) ...
-Setting up man-db (2.6.2-1) ...
+Setting up man-db (2.6.3-3) ...
 Building database of manual pages ...
+Setting up bash-completion (1:2.0-1) ...
+Setting up libasprintf0c2:armel (0.18.1.1-10) ...
+Setting up libmagic1:armel (5.11-2) ...
+Setting up libpcre3:armel (1:8.31-1) ...
+Setting up libxml2:armel (2.8.0+dfsg1-7) ...
+Setting up libffi5:armel (3.0.10-3) ...
+Setting up libglib2.0-0:armel (2.33.12+really2.32.4-3) ...
+No schema files found: doing nothing.
+Setting up libcroco3:armel (0.6.6-2) ...
+Setting up libunistring0:armel (0.9.3-5) ...
+Setting up libgettextpo0:armel (0.18.1.1-10) ...
 Setting up file (5.11-2) ...
-Setting up gettext-base (0.18.1.1-9) ...
-Setting up cdbs (0.4.116) ...
+Setting up gettext-base (0.18.1.1-10) ...
+Setting up cdbs (0.4.119) ...
 Setting up html2text (1.3.2a-15) ...
-Setting up gettext (0.18.1.1-9) ...
+Setting up libasprintf-dev:armel (0.18.1.1-10) ...
+Setting up libgettextpo-dev:armel (0.18.1.1-10) ...
+Setting up gettext (0.18.1.1-10) ...
 Setting up intltool-debian (0.35.0+20060710.1) ...
 Setting up po-debconf (1.0.16+nmu2) ...
-Setting up debhelper (9.20120608) ...
+Setting up debhelper (9.20120909) ...
 Setting up diffstat (1.55-3) ...
 Setting up libtinfo-dev:armel (5.9-10) ...
 Setting up libncurses5-dev (5.9-10) ...
@@ -289,11 +302,11 @@ Removing negative dependencies:
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 37 not upgraded.
 Checking correctness of dependencies...
 Kernel: Linux 2.6.32 armel (armv5tel)
-Toolchain package versions: binutils_2.22-7.1 dpkg-dev_1.16.8 g++-4.6_4.6.3-8 gcc-4.6_4.6.3-8 libc6-dev_2.13-35 libstdc++6_4.7.1-5 libstdc++6-4.6-dev_4.6.3-8 linux-libc-dev_3.2.21-3
-Package versions: apt_0.9.7.2 base-files_6.11 base-passwd_3.5.26 bash_4.2-4 binutils_2.22-7.1 bsdmainutils_9.0.3 bsdutils_1:2.20.1-5.1 build-essential_11.5 bzip2_1.0.6-3 cdbs_0.4.116 coreutils_8.13-3.2 cpp_4:4.6.3-7 cpp-4.6_4.6.3-8 dash_0.5.7-3 debconf_1.5.45 debfoster_2.7-1.1 debhelper_9.20120608 debian-archive-keyring_2012.4 debianutils_4.3.2 diffstat_1.55-3 diffutils_1:3.2-6 dpkg_1.16.8 dpkg-dev_1.16.8 e2fslibs_1.42.4-3 e2fsprogs_1.42.4-3 fakeroot_1.18.4-2 file_5.11-2 findutils_4.4.2-4 g++_4:4.6.3-7 g++-4.6_4.6.3-8 gcc_4:4.6.3-7 gcc-4.4-base_4.4.7-1 gcc-4.6_4.6.3-8 gcc-4.6-base_4.6.3-8 gcc-4.7-base_4.7.1-5 gettext_0.18.1.1-9 gettext-base_0.18.1.1-9 gnupg_1.4.12-4+b1 gpgv_1.4.12-4+b1 grep_2.12-2 groff-base_1.21-9 gzip_1.5-1.1 hostname_3.11 html2text_1.3.2a-15 initscripts_2.88dsf-29 insserv_1.14.0-4 intltool-debian_0.35.0+20060710.1 libacl1_2.2.51-8 libapt-pkg4.12_0.9.7.2 libasprintf0c2_0.18.1.1-9 libattr1_1:2.4.46-8 libblkid1_2.20.1-5.1 libbz2-1.0_1.0.6-3 libc-bin_2.13-35 libc-dev-bin_2.13-35 libc6_2.13-35 libc6-dev_2.13-35 libclass-isa-perl_0.36-3 libcomerr2_1.42.4-3 libcroco3_0.6.5-1 libdb5.1_5.1.29-5 libdpkg-perl_1.16.8 libffi5_3.0.10-3 libfile-fcntllock-perl_0.14-2 libgc1c2_1:7.1-9 libgcc1_1:4.7.1-5 libgdbm3_1.8.3-11 libgettextpo0_0.18.1.1-9 libglib2.0-0_2.32.3-1 libgmp10_2:5.0.5+dfsg-2 libgomp1_4.7.1-5 liblzma2_5.1.1alpha+20110809-2 liblzma5_5.1.1alpha+20120614-1 libmagic1_5.11-2 libmount1_2.20.1-5.1 libmpc2_0.9-4 libmpfr4_3.1.0-5 libncurses5_5.9-10 libncurses5-dev_5.9-10 libpam-modules_1.1.3-7.1 libpam-modules-bin_1.1.3-7.1 libpam-runtime_1.1.3-7.1 libpam0g_1.1.3-7.1 libpcre3_1:8.30-5 libpipeline1_1.2.1-1 libreadline6_6.2-8 libselinux1_2.1.9-5 libsemanage-common_2.1.6-6 libsemanage1_2.1.6-6 libsepol1_2.1.4-3 libslang2_2.2.4-15 libss2_1.42.4-3 libstdc++6_4.7.1-5 libstdc++6-4.6-dev_4.6.3-8 libswitch-perl_2.16-2 libtimedate-perl_1.2000-1 libtinfo-dev_5.9-10 libtinfo5_5.9-10 libunistring0_0.9.3-5 libusb-0.1-4_2:0.1.12-23 libustr-1.0-1_1.0.4-3 libuuid1_2.20.1-5.1 libxml2_2.8.0+dfsg1-5 linux-libc-dev_3.2.21-3 login_1:4.1.5.1-1 lsb-base_4.1+Debian7 make_3.81-8.2 man-db_2.6.2-1 mawk_1.3.3-17 mount_2.20.1-5.1 multiarch-support_2.13-35 ncurses-base_5.9-10 ncurses-bin_5.9-10 passwd_1:4.1.5.1-1 patch_2.6.1-3 perl_5.14.2-12 perl-base_5.14.2-12 perl-modules_5.14.2-12 po-debconf_1.0.16+nmu2 quilt_0.60-2 readline-common_6.2-8 sed_4.2.1-10 sensible-utils_0.0.7 sudo_1.8.5p2-1 sysv-rc_2.88dsf-29 sysvinit_2.88dsf-29 sysvinit-utils_2.88dsf-29 tar_1.26-4 tzdata_2012d-1 util-linux_2.20.1-5.1 xz-utils_5.1.1alpha+20120614-1 zlib1g_1:1.2.7.dfsg-13 zlib1g-dev_1:1.2.7.dfsg-13
+Toolchain package versions: binutils_2.22-7.1 dpkg-dev_1.16.9 g++-4.6_4.6.3-12 gcc-4.6_4.6.3-12 libc6-dev_2.13-36 libstdc++6_4.7.2-4 libstdc++6-4.6-dev_4.6.3-12 linux-libc-dev_3.2.32-1
+Package versions: apt_0.9.7.6 base-files_6.12 base-passwd_3.5.26 bash_4.2-5 bash-completion_1:2.0-1 binutils_2.22-7.1 bsdmainutils_9.0.3 bsdutils_1:2.20.1-5.2 build-essential_11.5 bzip2_1.0.6-4 cdbs_0.4.119 coreutils_8.13-3.3 cpp_4:4.6.3-8 cpp-4.6_4.6.3-12 dash_0.5.7-3 debconf_1.5.46 debfoster_2.7-1.2 debhelper_9.20120909 debian-archive-keyring_2012.4 debianutils_4.3.4 diffstat_1.55-3 diffutils_1:3.2-7 dpkg_1.16.9 dpkg-dev_1.16.9 e2fslibs_1.42.5-1 e2fsprogs_1.42.5-1 fakeroot_1.18.4-2 file_5.11-2 findutils_4.4.2-5 g++_4:4.6.3-8 g++-4.6_4.6.3-12 gcc_4:4.6.3-8 gcc-4.6_4.6.3-12 gcc-4.6-base_4.6.3-12 gcc-4.7-base_4.7.2-4 gettext_0.18.1.1-10 gettext-base_0.18.1.1-10 gnupg_1.4.12-6 gpgv_1.4.12-6 grep_2.12-2 groff-base_1.21-9 gzip_1.5-1.1 hostname_3.11 html2text_1.3.2a-15 initscripts_2.88dsf-32 insserv_1.14.0-4 intltool-debian_0.35.0+20060710.1 libacl1_2.2.51-8 libapt-pkg4.12_0.9.7.6 libasprintf-dev_0.18.1.1-10 libasprintf0c2_0.18.1.1-10 libattr1_1:2.4.46-8 libblkid1_2.20.1-5.2 libbz2-1.0_1.0.6-4 libc-bin_2.13-36 libc-dev-bin_2.13-36 libc6_2.13-36 libc6-dev_2.13-36 libclass-isa-perl_0.36-4 libcomerr2_1.42.5-1 libcroco3_0.6.6-2 libdb5.1_5.1.29-5 libdpkg-perl_1.16.9 libffi5_3.0.10-3 libfile-fcntllock-perl_0.14-2 libgc1c2_1:7.1-9 libgcc1_1:4.7.2-4 libgdbm3_1.8.3-11 libgettextpo-dev_0.18.1.1-10 libgettextpo0_0.18.1.1-10 libglib2.0-0_2.33.12+really2.32.4-3 libgmp10_2:5.0.5+dfsg-2 libgomp1_4.7.2-4 liblzma2_5.1.1alpha+20110809-2 liblzma5_5.1.1alpha+20120614-1 libmagic1_5.11-2 libmount1_2.20.1-5.2 libmpc2_0.9-4 libmpfr4_3.1.0-5 libncurses5_5.9-10 libncurses5-dev_5.9-10 libpam-modules_1.1.3-7.1 libpam-modules-bin_1.1.3-7.1 libpam-runtime_1.1.3-7.1 libpam0g_1.1.3-7.1 libpcre3_1:8.31-1 libpipeline1_1.2.2-1 libreadline6_6.2-9 libselinux1_2.1.9-5 libsemanage-common_2.1.6-6 libsemanage1_2.1.6-6 libsepol1_2.1.4-3 libslang2_2.2.4-15 libss2_1.42.5-1 libstdc++6_4.7.2-4 libstdc++6-4.6-dev_4.6.3-12 libswitch-perl_2.16-2 libtimedate-perl_1.2000-1 libtinfo-dev_5.9-10 libtinfo5_5.9-10 libunistring0_0.9.3-5 libusb-0.1-4_2:0.1.12-23+nmu1 libustr-1.0-1_1.0.4-3 libuuid1_2.20.1-5.2 libxml2_2.8.0+dfsg1-7 linux-libc-dev_3.2.32-1 login_1:4.1.5.1-1 lsb-base_4.1+Debian8 make_3.81-8.2 man-db_2.6.3-3 mawk_1.3.3-17 mount_2.20.1-5.2 multiarch-support_2.13-36 ncurses-base_5.9-10 ncurses-bin_5.9-10 passwd_1:4.1.5.1-1 patch_2.6.1-3 perl_5.14.2-15 perl-base_5.14.2-15 perl-modules_5.14.2-15 po-debconf_1.0.16+nmu2 quilt_0.60-2 readline-common_6.2-9 sed_4.2.1-10 sensible-utils_0.0.7 sudo_1.8.5p2-1 sysv-rc_2.88dsf-32 sysvinit_2.88dsf-32 sysvinit-utils_2.88dsf-32 tar_1.26-4 tzdata_2012i-1 util-linux_2.20.1-5.2 xz-utils_5.1.1alpha+20120614-1 zlib1g_1:1.2.7.dfsg-13 zlib1g-dev_1:1.2.7.dfsg-13
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -304,15 +317,16 @@ Unpack source
 ─────────────
 
 gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
-gpgv: Signature made Fri Jul 27 15:21:02 2012 UTC using DSA key ID B351A900
+gpgv: Signature made Sun Dec 23 04:34:30 2012 UTC using DSA key ID B351A900
 gpgv: Can't check signature: public key not found
-dpkg-source: warning: failed to verify signature on ./samtools_0.1.18-3.dsc
+dpkg-source: warning: failed to verify signature on ./samtools_0.1.18-4.dsc
 dpkg-source: info: extracting samtools in samtools-0.1.18
 dpkg-source: info: unpacking samtools_0.1.18.orig.tar.bz2
-dpkg-source: info: unpacking samtools_0.1.18-3.debian.tar.gz
+dpkg-source: info: unpacking samtools_0.1.18-4.debian.tar.gz
 dpkg-source: info: applying no-pileup-tests.patch
 dpkg-source: info: applying fix_segfault_with_small_ref.patch
 dpkg-source: info: applying fix_coverage_cap.patch
+dpkg-source: info: applying fix_float_tag.patch
 
 Check disc space
 ────────────────
@@ -322,7 +336,7 @@ dpkg-buildpackage
 ─────────────────
 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 0.1.18-3
+dpkg-buildpackage: source version 0.1.18-4
  dpkg-source --before-build samtools-0.1.18
 dpkg-buildpackage: host architecture armel
  fakeroot debian/rules clean
@@ -330,26 +344,29 @@ test -x debian/rules
 dh_testroot
 rm -f debian/stamp-makefile-build debian/stamp-makefile-install
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -k clean
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
 rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long wgsim seqtk *~ *.a
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 rm -f debian/stamp-makefile-check
 dh_clean 
 /usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 if [ -d "." ]; then \
-	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
+	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
 	fi
+Removing patch fix_float_tag.patch
+Restoring bam.h
+
 Removing patch fix_coverage_cap.patch
 Restoring bam2depth.c
 
@@ -367,11 +384,12 @@ rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fa
 test -x debian/rules
 mkdir -p "."
 /usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
+/usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_COMPRESS_EXCLUDE is a deprecated variable
 /usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
 Applying patch no-pileup-tests.patch
 patching file examples/Makefile
 
@@ -381,15 +399,18 @@ patching file bam_plcmd.c
 Applying patch fix_coverage_cap.patch
 patching file bam2depth.c
 
-Now at patch fix_coverage_cap.patch
+Applying patch fix_float_tag.patch
+patching file bam.h
+
+Now at patch fix_float_tag.patch
 touch debian/stamp-patched
 /usr/bin/make -f debian/rules update-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 make[1]: Nothing to be done for `update-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  all all-recur razip lib
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bgzf.c -o bgzf.o
 bgzf.c: In function 'bgzf_close':
 bgzf.c:630:8: warning: variable 'count' set but not used [-Wunused-but-set-variable]
@@ -424,8 +445,8 @@ kprobaln.c: In function 'kpa_glocal':
 kprobaln.c:78:21: warning: variable 'is_diff' set but not used [-Wunused-but-set-variable]
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_cat.c -o bam_cat.o
 ar -csru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o razf.o faidx.o bedidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o bam_cat.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
@@ -440,10 +461,10 @@ gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=forma
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. mut.c -o mut.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
 ar -csru libbcf.a bcf.o vcf.o bcfutils.o prob1.o em.o kfunc.o kmin.o index.o fet.o mut.o bcf2qcall.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 make[2]: Nothing to be done for `lib'.
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
@@ -464,24 +485,24 @@ cut_target.c:137:36: warning: variable 'lastpos' set but not used [-Wunused-but-
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. phase.c -o phase.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2depth.c -o bam2depth.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
-make[3]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
+make[3]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[3]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o -Lbcftools  libbam.a -lbcf -lcurses  -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o ../bedidx.o -L.  -lbcf -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/bcftools'
+make[2]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -DMD5SUM_MAIN -o md5sum-lite.o md5.c
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o md5sum-lite md5sum-lite.o
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
@@ -503,14 +524,14 @@ seqtk.c: In function 'stk_famask':
 seqtk.c:546:4: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'size_t' [-Wformat]
 seqtk.c:546:4: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'size_t' [-Wformat]
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o seqtk seqtk.o -lm -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/misc'
+make[2]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/misc'
 gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
 gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -o razip razf.o razip.o knetfile.o -lz
 make[1]: Nothing to be done for `lib'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18'
 touch debian/stamp-makefile-build
 /usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -C examples all
-make[1]: Entering directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/examples'
+make[1]: Entering directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/examples'
 ../samtools faidx ex1.fa
 ../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
 [sam_header_read2] 2 sequences loaded.
@@ -518,14 +539,14 @@ Line 2, sequence length 35 vs 8960 from CIGAR
 Parse error at line 2: CIGAR and sequence length are inconsistent
 make[1]: *** [ex1.bam] Aborted
 make[1]: *** Deleting file `ex1.bam'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.18-3-armel-zkuM87/samtools-0.1.18/examples'
+make[1]: Leaving directory `/build/buildd-samtools_0.1.18-4-armel-E7vUyT/samtools-0.1.18/examples'
 make: *** [debian/stamp-makefile-check] Error 2
 dpkg-buildpackage: error: debian/rules build-arch gave error exit status 2
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20120727-1549
+Build finished at 20121223-0502
 FAILED [dpkg-buildpackage died]
 ────────────────────────────────────────────────────────────────────────────────
-Purging /var/lib/schroot/mount/sid-armel-sbuild-6b9b83f9-bc18-46e0-945b-39cd8ecff13a/build/buildd-samtools_0.1.18-3-armel-zkuM87
+Purging /var/lib/schroot/mount/sid-armel-sbuild-eb1bd0de-67fc-4971-b540-486b400c689e/build/buildd-samtools_0.1.18-4-armel-E7vUyT
 Not cleaning session: cloned chroot in use
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -533,19 +554,19 @@ Not cleaning session: cloned chroot in use
 └──────────────────────────────────────────────────────────────────────────────┘
 
 Architecture: armel
-Build-Space: 6464
-Build-Time: 318
+Build-Space: 6504
+Build-Time: 316
 Distribution: sid
 Fail-Stage: build
-Install-Time: 103
-Job: samtools_0.1.18-3
+Install-Time: 113
+Job: samtools_0.1.18-4
 Package: samtools
-Package-Time: 560
-Source-Version: 0.1.18-3
-Space: 6464
+Package-Time: 565
+Source-Version: 0.1.18-4
+Space: 6504
 Status: attempted
-Version: 0.1.18-3
+Version: 0.1.18-4
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20120727-1549
-Build needed 00:09:20, 6464k disc space
+Finished at 20121223-0502
+Build needed 00:09:25, 6504k disc space
 
