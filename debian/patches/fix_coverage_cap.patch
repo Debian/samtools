@@ -1,8 +1,10 @@
 Description: increases the coverage cap from 8.000 to 1.000.000
 
---- samtools-0.1.18.orig/bam2depth.c
-+++ samtools-0.1.18/bam2depth.c
-@@ -80,6 +80,7 @@ int main_depth(int argc, char *argv[])
+Index: samtools/bam2depth.c
+===================================================================
+--- samtools.orig/bam2depth.c
++++ samtools/bam2depth.c
+@@ -106,6 +106,7 @@
  
  	// the core multi-pileup loop
  	mplp = bam_mplp_init(n, read_bam, (void**)data); // initialization

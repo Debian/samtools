@@ -1,11 +1,11 @@
 Description: Fix segfault if position is outside of the reference sequence length
 Origin: Don Armstrong <don@donarmstrong.com>
 
-Index: samtools-0.1.18/bam_plcmd.c
+Index: samtools/bam_plcmd.c
 ===================================================================
---- samtools-0.1.18.orig/bam_plcmd.c	2011-07-06 20:41:26.000000000 -0700
-+++ samtools-0.1.18/bam_plcmd.c	2011-12-22 14:44:05.000000000 -0800
-@@ -93,6 +93,7 @@
+--- samtools.orig/bam_plcmd.c
++++ samtools/bam_plcmd.c
+@@ -96,6 +96,7 @@
  	bam_iter_t iter;
  	bam_header_t *h;
  	int ref_id;
@@ -13,7 +13,7 @@ Index: samtools-0.1.18/bam_plcmd.c
  	char *ref;
  	const mplp_conf_t *conf;
  } mplp_aux_t;
-@@ -134,6 +135,11 @@
+@@ -139,6 +140,11 @@
  				qual[i] = qual[i] > 31? qual[i] - 31 : 0;
  		}
  		has_ref = (ma->ref && ma->ref_id == b->core.tid)? 1 : 0;
@@ -23,9 +23,9 @@ Index: samtools-0.1.18/bam_plcmd.c
 +		  continue;
 +		}
  		skip = 0;
- 		if (has_ref && (ma->conf->flag&MPLP_REALN)) bam_prob_realn_core(b, ma->ref, (ma->conf->flag & MPLP_EXT_BAQ)? 3 : 1);
+ 		if (has_ref && (ma->conf->flag&MPLP_REALN)) bam_prob_realn_core(b, ma->ref, (ma->conf->flag & MPLP_REDO_BAQ)? 7 : 3);
  		if (has_ref && ma->conf->capQ_thres > 10) {
-@@ -277,7 +283,11 @@
+@@ -307,7 +313,11 @@
  	if (tid0 >= 0 && conf->fai) { // region is set
  		ref = faidx_fetch_seq(conf->fai, h->target_name[tid0], 0, 0x7fffffff, &ref_len);
  		ref_tid = tid0;
@@ -38,7 +38,7 @@ Index: samtools-0.1.18/bam_plcmd.c
  	} else ref_tid = -1, ref = 0;
  	iter = bam_mplp_init(n, mplp_func, (void**)data);
  	max_depth = conf->max_depth;
-@@ -295,7 +305,11 @@
+@@ -325,7 +335,11 @@
  		if (tid != ref_tid) {
  			free(ref); ref = 0;
  			if (conf->fai) ref = faidx_fetch_seq(conf->fai, h->target_name[tid], 0, 0x7fffffff, &ref_len);
