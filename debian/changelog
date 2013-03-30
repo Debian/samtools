@@ -1,19 +1,37 @@
+samtools (0.1.19-1) unstable; urgency=low
+
+  cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
+  1e6d442 new tools ace2sam, bamcheck, plot-bamcheck, r2plot.lua, vcfutils.lua.
+  2f2d5c5 debian/copyright: collapsed copyright notices from main holders.
+  e194f9e Removed fix_float_tag.patch, corrected upstream.
+  9c0e543 Refreshed patches.
+  3e7e0ec Renamed no-pileup-tests.patch fix_example_makefile.patch.
+  8d8550e example/Makefile: pass -lpthread when compiling calDepth.
+  fc32243 harden by concatenating Debian's LDFLAGS and CPPFLAGS in CFLAGS.
+  6f75b48 debian/control: normalised with cme.
+  e13bb5e debian/control: normalised VCS URLs.
+  a1b1b00 debian/control: deleted DM-Upload-Allowed field.
+  ddcd54e Use NEWS as upstream changelog.
+  81ad760 Conforms to Policy version 3.9.4.
+
+ -- Charles Plessy <plessy@debian.org>  Sat, 30 Mar 2013 17:31:47 +0900
+
 samtools (0.1.18-4) unstable; urgency=low
 
-    [Charles Plessy]
-    debian/copyright: Normalised with config-model
-    added bash completion
-    Build-depend on Debhelper 9
-    Pass build flaggs set by dpkg-buildflags via Debhelper
-    Moved DOI and PubMed to the Reference namespace
-    Do not compress the example binary alignment file
-    Mention ‘SAMtools’ in libbam-dev's description
+  [Charles Plessy]
+  * debian/copyright: Normalised with config-model
+  * added bash completion
+  * Build-depend on Debhelper 9
+  * Pass build flaggs set by dpkg-buildflags via Debhelper
+  * Moved DOI and PubMed to the Reference namespace
+  * Do not compress the example binary alignment file
+  * Mention ‘SAMtools’ in libbam-dev's description
 
-    [Andreas Tille]
-    debian/upstream: replaced BibTeX entry
+  [Andreas Tille]
+  * debian/upstream: replaced BibTeX entry
 
-    [Dominique Belhachemi]
-    added patch to fix float tag bug (upstream bug 71)
+  [Dominique Belhachemi]
+  * added patch to fix float tag bug (upstream bug 71)
 
  -- Dominique Belhachemi <domibel@debian.org>  Fri, 21 Dec 2012 12:09:18 -0500
 
