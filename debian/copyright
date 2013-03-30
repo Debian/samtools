@@ -82,13 +82,13 @@ License: MD5-fourmilab
  needed on buffers full of bytes, and then call MD5Final, which
  will fill a supplied 16-byte array with the digest.
 
-Files: win32/xcurses.h
+Files: win32/xcurses.h win32/libcurses.a
 Copyright: Public Domain
 License: public-domain
  This file is part of PDCurses (http://pdcurses.sourceforge.net/),
  which is in the public domain.
 
-Files: win32/z*.h 
+Files: win32/z*.h win32/libz.a
 Copyright: © 1995-2005 Jean-loup Gailly and Mark Adler
 License: zlib
  This software is provided 'as-is', without any express or implied
