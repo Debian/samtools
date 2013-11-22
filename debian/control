@@ -17,6 +17,8 @@ Package: samtools
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Breaks: tabix (<= 0.2.6-1)
+Replace: tabix (<= 0.2.6-1)
 Suggests: python
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
