@@ -24,18 +24,3 @@ Description: processing sequence alignments in SAM and BAM formats
  (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
  to retrieve reads in any regions swiftly. It is designed to work on a stream,
  and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
-
-Package: libbam-dev
-Architecture: any
-Section: libdevel
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Description: manipulates nucleotide sequence alignments in BAM or SAM format 
- The BAM library provides I/O and various operations on manipulating nucleotide
- sequence alignments in the BAM (Binary Alignment/Mapping) or SAM (Sequence
- Alignment/Map) format. It now supports importing from or exporting to SAM,
- sorting, merging, generating pileup, and quickly retrieval of reads overlapped
- with a specified region.
- .
- This library is part of SAMtools.
-
