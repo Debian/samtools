@@ -1,6 +1,6 @@
 /* 
     Author: petr.danecek@sanger
-    gcc -Wall -Winline -g -O2 -I ~/git/samtools bamcheck.c -o bamcheck -lm -lz -L ~/git/samtools -lbam -lpthread
+    This is the former bamcheck integrated into samtools/htslib
 
     Assumptions, approximations and other issues:
         - GC-depth graph does not split reads, the starting position determines which bin is incremented.
@@ -15,9 +15,6 @@
 
 */
 
-#define BAMCHECK_VERSION "2012-09-04"
-
-#define _ISOC99_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -27,11 +24,11 @@
 #include <getopt.h>
 #include <errno.h>
 #include <assert.h>
-#include "faidx.h"
-#include "khash.h"
-#include "sam.h"
-#include "sam_header.h"
-#include "razf.h"
+#include <htslib/faidx.h>
+#include "sam.h"            // have to keep local version because of sam header parsing. todo: migrate to htslib
+#include "sam_header.h"     //
+#include "khash_utils.h"
+#include "samtools.h"
 
 #define BWA_MIN_RDLEN 35
 #define IS_PAIRED(bam) ((bam)->core.flag&BAM_FPAIRED && !((bam)->core.flag&BAM_FUNMAP) && !((bam)->core.flag&BAM_FMUNMAP))
@@ -41,23 +38,6 @@
 #define IS_READ1(bam) ((bam)->core.flag&BAM_FREAD1)
 #define IS_READ2(bam) ((bam)->core.flag&BAM_FREAD2)
 #define IS_DUP(bam) ((bam)->core.flag&BAM_FDUP)
-
-typedef struct 
-{
-    int32_t line_len, line_blen;
-    int64_t len;
-    uint64_t offset;
-} 
-faidx1_t;
-KHASH_MAP_INIT_STR(kh_faidx, faidx1_t)
-KHASH_MAP_INIT_STR(kh_bam_tid, int)
-KHASH_MAP_INIT_STR(kh_rg, const char *)
-struct __faidx_t {
-    RAZF *rz;
-    int n, m;
-    char **name;
-    khash_t(kh_faidx) *hash;
-};
 
 typedef struct
 {
@@ -161,7 +141,7 @@ typedef struct
     int flag_require, flag_filter;
     double sum_qual;                // For calculating average quality value 
     samfile_t *sam;             
-    khash_t(kh_rg) *rg_hash;        // Read groups to include, the array is null-terminated
+    void *rg_hash;                  // Read groups to include, the array is null-terminated
     faidx_t *fai;                   // Reference sequence for GC-depth graph
     int argc;                       // Command line arguments to be printed on the output
     char **argv;
@@ -169,12 +149,11 @@ typedef struct
 stats_t;
 
 void error(const char *format, ...);
-void bam_init_header_hash(bam_header_t *header);
 int is_in_regions(bam1_t *bam_line, stats_t *stats);
 
 
 // Coverage distribution methods
-inline int coverage_idx(int min, int max, int n, int step, int depth)
+static inline int coverage_idx(int min, int max, int n, int step, int depth)
 {
     if ( depth < min )
         return 0;
@@ -185,7 +164,7 @@ inline int coverage_idx(int min, int max, int n, int step, int depth)
     return 1 + (depth - min) / step;
 }
 
-inline int round_buffer_lidx2ridx(int offset, int size, int64_t refpos, int64_t pos)
+static inline int round_buffer_lidx2ridx(int offset, int size, int64_t refpos, int64_t pos)
 {
     return (offset + (pos-refpos) % size) % size;
 }
@@ -357,7 +336,7 @@ void count_mismatches_per_cycle(stats_t *stats,bam1_t *bam_line)
         if ( cig==4 )
         {
             icycle += ncig;
-            // Soft-clips are present in the sequence, but the position of the read marks a start of non-clipped sequence
+            // Soft-clips are present in the sequence, but the position of the read marks a start of the sequence after clipping
             //   iref += ncig;
             iread  += ncig;
             continue;
@@ -417,63 +396,35 @@ void count_mismatches_per_cycle(stats_t *stats,bam1_t *bam_line)
     }
 }
 
-void read_ref_seq(stats_t *stats,int32_t tid,int32_t pos)
+void read_ref_seq(stats_t *stats, int32_t tid, int32_t pos)
 {
-    khash_t(kh_faidx) *h;
-    khiter_t iter;
-    faidx1_t val;
-    char *chr, c;
-    faidx_t *fai = stats->fai;
-
-    h = fai->hash;
-    chr = stats->sam->header->target_name[tid];
-
-    // ID of the sequence name
-    iter = kh_get(kh_faidx, h, chr);
-    if (iter == kh_end(h)) 
-        error("No such reference sequence [%s]?\n", chr);
-    val = kh_value(h, iter);
-
-    // Check the boundaries
-    if (pos >= val.len)
-        error("Was the bam file mapped with the reference sequence supplied?"
-              " A read mapped beyond the end of the chromosome (%s:%d, chromosome length %d).\n", chr,pos,val.len);
-    int size = stats->mrseq_buf;
-    // The buffer extends beyond the chromosome end. Later the rest will be filled with N's.
-    if (size+pos > val.len) size = val.len-pos;
-
-    // Position the razf reader
-    razf_seek(fai->rz, val.offset + pos / val.line_blen * val.line_len + pos % val.line_blen, SEEK_SET);
-
+    int i, fai_ref_len;
+    char *fai_ref = faidx_fetch_seq(stats->fai, stats->sam->header->target_name[tid], pos, pos+stats->mrseq_buf-1, &fai_ref_len);
+    
     uint8_t *ptr = stats->rseq_buf;
-    int nread = 0;
-    while ( nread<size && razf_read(fai->rz,&c,1) && !fai->rz->z_err )
+    for (i=0; i<fai_ref_len; i++)
     {
-        if ( !isgraph(c) )
-            continue;
-
         // Conversion between uint8_t coding and ACGT
         //      -12-4---8-------
         //      =ACMGRSVTWYHKDBN
-        if ( c=='A' || c=='a' )
-            *ptr = 1;
-        else if ( c=='C' || c=='c' )
-            *ptr = 2;
-        else if ( c=='G' || c=='g' )
-            *ptr = 4;
-        else if ( c=='T' || c=='t' )
-            *ptr = 8;
-        else
-            *ptr = 0;
+        switch (fai_ref[i])
+        {
+            case 'A':
+            case 'a': *ptr = 1; break;
+            case 'C':
+            case 'c': *ptr = 2; break;
+            case 'G':
+            case 'g': *ptr = 4; break;
+            case 'T':
+            case 't': *ptr = 8; break;
+            default:  *ptr = 0; break;
+        }
         ptr++;
-        nread++;
     }
-    if ( nread < stats->mrseq_buf )
-    {
-        memset(ptr,0, stats->mrseq_buf - nread);
-        nread = stats->mrseq_buf;
-    }
-    stats->nrseq_buf = nread;
+    free(fai_ref);
+
+    if ( fai_ref_len < stats->mrseq_buf ) memset(ptr,0, stats->mrseq_buf - fai_ref_len);
+    stats->nrseq_buf = fai_ref_len;
     stats->rseq_pos  = pos;
     stats->tid       = tid;
 }
@@ -482,7 +433,9 @@ float fai_gc_content(stats_t *stats, int pos, int len)
 {
     uint32_t gc,count,c;
     int i = pos - stats->rseq_pos, ito = i + len;
-    assert( i>=0 && ito<=stats->nrseq_buf );
+    assert( i>=0 );
+
+    if (  ito > stats->nrseq_buf ) ito = stats->nrseq_buf;
 
     // Count GC content
     gc = count = 0;
@@ -615,9 +568,8 @@ void collect_stats(bam1_t *bam_line, stats_t *stats)
     if ( stats->rg_hash )
     {
         const uint8_t *rg = bam_aux_get(bam_line, "RG");
-        if ( !rg ) return; 
-        khiter_t k = kh_get(kh_rg, stats->rg_hash, (const char*)(rg + 1));
-        if ( k == kh_end(stats->rg_hash) ) return;
+        if ( !rg ) return;  // certain read groups were requested but this record has none
+        if ( !khash_str2int_has_key(stats->rg_hash, (const char*)(rg + 1)) ) return;
     }
     if ( stats->flag_require && (bam_line->core.flag & stats->flag_require)!=stats->flag_require )
     {
@@ -940,7 +892,7 @@ void output_stats(stats_t *stats)
     sd_isize = sqrt(sd_isize);
 
 
-    printf("# This file was produced by bamcheck (%s)\n",BAMCHECK_VERSION);
+    printf("# This file was produced by samtools stats (%s:%s) and can be plotted using plot-bamstats\n", samtools_version(), hts_version());
     printf("# The command line was:  %s",stats->argv[0]);
     int i;
     for (i=1; i<stats->argc; i++)
@@ -963,8 +915,8 @@ void output_stats(stats_t *stats)
     printf("SN\treads QC failed:\t%ld\n", (long)stats->nreads_QCfailed);
     printf("SN\tnon-primary alignments:\t%ld\n", (long)stats->nreads_secondary);
     printf("SN\ttotal length:\t%ld\n", (long)stats->total_len);
-    printf("SN\tbases mapped:\t%ld\n", (long)stats->nbases_mapped);
-    printf("SN\tbases mapped (cigar):\t%ld\n", (long)stats->nbases_mapped_cigar);
+    printf("SN\tbases mapped:\t%ld\n", (long)stats->nbases_mapped);                 // the length of the whole read goes here, including soft-clips etc.
+    printf("SN\tbases mapped (cigar):\t%ld\n", (long)stats->nbases_mapped_cigar);   // only matched and inserted bases are counted here
     printf("SN\tbases trimmed:\t%ld\n", (long)stats->nbases_trimmed);
     printf("SN\tbases duplicated:\t%ld\n", (long)stats->total_len_dup);
     printf("SN\tmismatches:\t%ld\n", (long)stats->nmismatches);
@@ -1089,10 +1041,10 @@ void output_stats(stats_t *stats)
     for (igcd=0; igcd<stats->igcd; igcd++)
     {
         if ( stats->fai )
-            stats->gcd[igcd].gc = round(100. * stats->gcd[igcd].gc);
+            stats->gcd[igcd].gc = rint(100. * stats->gcd[igcd].gc);
         else
             if ( stats->gcd[igcd].depth ) 
-                stats->gcd[igcd].gc = round(100. * stats->gcd[igcd].gc / stats->gcd[igcd].depth);
+                stats->gcd[igcd].gc = rint(100. * stats->gcd[igcd].gc / stats->gcd[igcd].depth);
     }
     qsort(stats->gcd, stats->igcd+1, sizeof(gc_depth_t), gcd_cmp);
     igcd = 0;
@@ -1153,10 +1105,10 @@ size_t mygetline(char **line, size_t *n, FILE *fp)
 
 void init_regions(stats_t *stats, char *file)
 {
+#if 0
     khiter_t iter;
     khash_t(kh_bam_tid) *header_hash;
 
-    bam_init_header_hash(stats->sam->header);
     header_hash = (khash_t(kh_bam_tid)*)stats->sam->header->hash;
 
     FILE *fp = fopen(file,"r");
@@ -1217,6 +1169,10 @@ void init_regions(stats_t *stats, char *file)
     if (line) free(line);
     if ( !stats->regions ) error("Unable to map the -t sequences to the BAM sequences.\n");
     fclose(fp);
+#else
+	fprintf(stderr, "Samtools-htslib: init_regions() header parsing not yet implemented\n");
+	abort();
+#endif
 }
 
 void destroy_regions(stats_t *stats)
@@ -1268,12 +1224,13 @@ int is_in_regions(bam1_t *bam_line, stats_t *stats)
 
 void init_group_id(stats_t *stats, char *id)
 {
+#if 0
     if ( !stats->sam->header->dict )
         stats->sam->header->dict = sam_header_parse2(stats->sam->header->text);
     void *iter = stats->sam->header->dict;
     const char *key, *val;
     int n = 0;
-    stats->rg_hash = kh_init(kh_rg);
+    stats->rg_hash = khash_str2int_init();
     while ( (iter = sam_header2key_val(iter, "RG","ID","SM", &key, &val)) )
     {
         if ( !strcmp(id,key) || (val && !strcmp(id,val)) )
@@ -1289,6 +1246,10 @@ void init_group_id(stats_t *stats, char *id)
     }
     if ( !n )
         error("The sample or read group \"%s\" not present.\n", id);
+#else
+	fprintf(stderr, "Samtools-htslib: init_group_id() header parsing not yet implemented\n");
+	abort();
+#endif
 }
 
 
@@ -1296,10 +1257,9 @@ void error(const char *format, ...)
 {
     if ( !format )
     {
-        printf("Version: %s\n", BAMCHECK_VERSION);
-        printf("About: The program collects statistics from BAM files. The output can be visualized using plot-bamcheck.\n");
-        printf("Usage: bamcheck [OPTIONS] file.bam\n");
-        printf("       bamcheck [OPTIONS] file.bam chr:from-to\n");
+        printf("About: The program collects statistics from BAM files. The output can be visualized using plot-bamstats.\n");
+        printf("Usage: samtools stats [OPTIONS] file.bam\n");
+        printf("       samtools stats [OPTIONS] file.bam chr:from-to\n");
         printf("Options:\n");
         printf("    -c, --coverage <int>,<int>,<int>    Coverage distribution min,max,step [1,1000,1]\n");
         printf("    -d, --remove-dups                   Exlude from statistics reads marked as duplicates\n");
@@ -1312,7 +1272,7 @@ void error(const char *format, ...)
         printf("    -l, --read-length <int>             Include in the statistics only reads with the given read length []\n");
         printf("    -m, --most-inserts <float>          Report only the main part of inserts [0.99]\n");
         printf("    -q, --trim-quality <int>            The BWA trimming parameter [0]\n");
-        printf("    -r, --ref-seq <file>                Reference sequence (required for GC-depth calculation).\n");
+        printf("    -r, --ref-seq <file>                Reference sequence (required for GC-depth and mismatches-per-cycle calculation).\n");
         printf("    -t, --target-regions <file>         Do stats in these regions only. Tab-delimited file chr,from,to, 1-based, inclusive.\n");
         printf("    -s, --sam                           Input is SAM\n");
         printf("\n");
@@ -1327,7 +1287,7 @@ void error(const char *format, ...)
     exit(-1);
 }
 
-int main(int argc, char *argv[])
+int main_stats(int argc, char *argv[])
 {
     char *targets = NULL;
     char *bam_fname = NULL;
@@ -1491,7 +1451,6 @@ int main(int argc, char *argv[])
     round_buffer_flush(stats,-1);
 
     output_stats(stats);
-
     bam_destroy1(bam_line);
     samclose(stats->sam);
     if (stats->fai) fai_destroy(stats->fai);
@@ -1512,7 +1471,7 @@ int main(int argc, char *argv[])
     free(stats->del_cycles_2nd);
     destroy_regions(stats);
     free(stats);
-    if ( stats->rg_hash ) kh_destroy(kh_rg, stats->rg_hash);
+    if ( stats->rg_hash ) khash_str2int_destroy(stats->rg_hash);
 
     return 0;
 }

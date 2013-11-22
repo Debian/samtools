@@ -5,14 +5,16 @@
 #include "bam2bcf.h"
 #include "kaln.h"
 #include "kprobaln.h"
-#include "khash.h"
+#include "htslib/khash.h"
 KHASH_SET_INIT_STR(rg)
 
-#include "ksort.h"
+#include "htslib/ksort.h"
 KSORT_INIT_GENERIC(uint32_t)
 
 #define MINUS_CONST 0x10000000
 #define INDEL_WINDOW_SIZE 50
+
+extern const char bam_nt16_nt4_table[];
 
 void *bcf_call_add_rg(void *_hash, const char *hdtext, const char *list)
 {
@@ -110,7 +112,13 @@ static inline int est_indelreg(int pos, const char *ref, int l, char *ins4)
 }
 
 /*
- *  @n:  number of samples
+    notes:
+        - n .. number of samples
+        - the routine sets bam_pileup1_t.aux of each read as follows:
+            - 6: unused
+            - 6: the call; index to bcf_callaux_t.indel_types   .. (aux>>16)&0x3f
+            - 8: estimated sequence quality                     .. (aux>>8)&0xff
+            - 8: indel quality                                  .. aux&0xff
  */
 int bcf_call_gap_prep(int n, int *n_plp, bam_pileup1_t **plp, int pos, bcf_callaux_t *bca, const char *ref,
 					  const void *rghash)
@@ -175,7 +183,7 @@ int bcf_call_gap_prep(int n, int *n_plp, bam_pileup1_t **plp, int pos, bcf_calla
         // To prevent long stretches of N's to be mistaken for indels (sometimes thousands of bases),
         //  check the number of N's in the sequence and skip places where half or more reference bases are Ns.
         int nN=0; for (i=pos; i-pos<max_rd_len && ref[i]; i++) if ( ref[i]=='N' ) nN++;
-        if ( nN*2>i ) { free(aux); return -1; }
+        if ( nN*2>(i-pos) ) { free(aux); return -1; }
 
 		ks_introsort(uint32_t, m, aux);
 		// squeeze out identical types
@@ -485,7 +493,7 @@ int bcf_call_gap_prep(int n, int *n_plp, bam_pileup1_t **plp, int pos, bcf_calla
 					if (x == bca->indel_types[j]) break;
 				p->aux = j<<16 | (j == 4? 0 : (p->aux&0xffff));
 				if ((p->aux>>16&0x3f) > 0) ++n_alt;
-//				fprintf(stderr, "X pos=%d read=%d:%d name=%s call=%d type=%d q=%d seqQ=%d\n", pos, s, i, bam1_qname(p->b), p->aux>>16&63, bca->indel_types[p->aux>>16&63], p->aux&0xff, p->aux>>8&0xff);
+				//fprintf(stderr, "X pos=%d read=%d:%d name=%s call=%d type=%d seqQ=%d indelQ=%d\n", pos, s, i, bam1_qname(p->b), (p->aux>>16)&0x3f, bca->indel_types[(p->aux>>16)&0x3f], (p->aux>>8)&0xff, p->aux&0xff);
 			}
 		}		
 	}

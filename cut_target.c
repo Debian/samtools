@@ -3,9 +3,9 @@
 #include <string.h>
 #include "bam.h"
 #include "errmod.h"
-#include "faidx.h"
+#include "htslib/faidx.h"
 
-#define ERR_DEP 0.83f
+#define ERR_DEP 0.83
 
 typedef struct {
 	int e[2][3], p[2][2];
@@ -28,6 +28,7 @@ typedef struct {
 
 static uint16_t gencns(ct_t *g, int n, const bam_pileup1_t *plp)
 {
+	extern const char bam_nt16_nt4_table[];
 	int i, j, ret, tmp, k, sum[4], qual;
 	float q[16];
 	if (n > g->max_bases) { // enlarge g->bases
@@ -161,7 +162,7 @@ int main_cut_target(int argc, char *argv[])
 	l = max_l = 0; cns = 0;
 	g.fp = strcmp(argv[optind], "-")? bam_open(argv[optind], "r") : bam_dopen(fileno(stdin), "r");
 	g.h = bam_header_read(g.fp);
-	g.em = errmod_init(1 - ERR_DEP);
+	g.em = errmod_init(1. - ERR_DEP);
 	plp = bam_plp_init(read_aln, &g);
 	while ((p = bam_plp_auto(plp, &tid, &pos, &n)) != 0) {
 		if (tid < 0) break;
