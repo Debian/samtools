@@ -13,6 +13,7 @@ my $opts = parse_params();
 test_bgzip($opts);
 test_faidx($opts);
 test_mpileup($opts);
+test_usage($opts, cmd=>'samtools');
 
 print "\nNumber of tests:\n";
 printf "    total   .. %d\n", $$opts{nok}+$$opts{nfailed};
@@ -20,7 +21,7 @@ printf "    passed  .. %d\n", $$opts{nok};
 printf "    failed  .. %d\n", $$opts{nfailed};
 print "\n";
 
-exit;
+exit ($$opts{nfailed} > 0);
 
 #--------------------
 
@@ -36,7 +37,7 @@ sub error
         "   -t, --temp-dir <path>           When given, temporary files will not be removed.\n",
         "   -h, -?, --help                  This help message.\n",
         "\n";
-    exit -1;
+    exit 1;
 }
 sub parse_params
 {
@@ -329,5 +330,94 @@ sub test_mpileup
     # print "$$opts{bin}samtools mpileup -gb $$opts{tmp}/mpileup.list -f $$opts{tmp}/$args{ref}.gz > $$opts{tmp}/mpileup.bcf\n";
     test_cmd($opts,out=>'dat/mpileup.out.1',cmd=>"$$opts{bin}/samtools mpileup -b $$opts{tmp}/mpileup.list -f $$opts{tmp}/mpileup.ref.fa.gz -r17:100-150 2>/dev/null");
     test_cmd($opts,out=>'dat/mpileup.out.2',cmd=>"$$opts{bin}/samtools mpileup -uvDV -b $$opts{tmp}/mpileup.list -f $$opts{tmp}/mpileup.ref.fa.gz -r17:100-600 2>/dev/null| grep -v ^##samtools | grep -v ^##ref");
+    # test that filter mask replaces (not just adds to) default mask
+    test_cmd($opts,out=>'dat/mpileup.out.3',cmd=>"$$opts{bin}/samtools mpileup -B --ff 0x14 -f $$opts{tmp}/mpileup.ref.fa.gz -r17:1050-1060 $$opts{tmp}/mpileup.1.bam 2>/dev/null | grep -v mpileup");
 }
 
+sub test_usage
+{
+    my ($opts,%args) = @_;
+
+    my $test = "test_usage";
+    print "$test:\n";
+    print "\t$args{cmd}\n";
+    
+    my $command = $args{cmd};
+    my $commandpath = $$opts{bin}."/".$command;
+    my ($ret,$out) = _cmd("$commandpath 2>&1");
+    if ( $out =~ m/\/bin\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath: $out"); return; }
+
+    my @sections = ($out =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
+    
+    my $have_usage = 0;
+    my $have_version = 0;
+    my $have_subcommands = 0;
+    my $usage = "";
+    my @subcommands = ();
+    foreach my $section (@sections) {
+	if ( $section =~ m/^usage/i ) {
+	    $have_usage = 1;
+	    $section =~ s/^[[:word:]]+[[:punct:][:space:]]*//;
+	    $usage = $section;
+	} elsif ( $section =~ m/^version/i ) {
+	    $have_version = 1;
+	} elsif ( $section =~ m/^command/i ) {
+	    $have_subcommands = 1;
+	    $section =~ s/^[[:word:]]+[[:punct:]]?[[:space:]]*//;
+	    $section =~ s/^[[:space:]]+//mg;
+	    $section =~ s/^[[:punct:]]+.*?\n//msg;
+	    @subcommands = ($section =~ m/^([[:word:]]+)[[:space:]].*/mg);
+	}
+    }
+    
+    if ( !$have_usage ) { failed($opts,$test,"did not have Usage:"); return; }
+    if ( !$have_version ) { failed($opts,$test,"did not have Version:"); return; }
+    if ( !$have_subcommands ) { failed($opts,$test,"did not have Commands:"); return; }
+
+    if ( !($usage =~ m/$command/) ) { failed($opts,$test,"usage did not mention $command"); return; } 
+    
+    if ( scalar(@subcommands) < 1 ) { failed($opts,$test,"could not parse subcommands"); return; }
+    print "\t$command has subcommands: ".join(", ", @subcommands)."\n";
+
+    passed($opts,$test);
+    
+    # now test subcommand usage as well
+    foreach my $subcommand (@subcommands) {
+	test_usage_subcommand($opts,%args,subcmd=>$subcommand);
+    }
+}
+
+sub test_usage_subcommand
+{
+    my ($opts,%args) = @_;
+
+    my $test = "test_usage_subcommand";
+    print "$test:\n";
+    print "\t$args{cmd} $args{subcmd}\n";
+
+    my $command = $args{cmd};
+    my $subcommand = $args{subcmd};
+    my $commandpath = $$opts{bin}."/".$command;
+    my ($ret,$out) = _cmd("$commandpath $subcommand 2>&1");
+    if ( $out =~ m/\/bin\/bash.*no.*such/i ) { failed($opts,$test,"could not run $commandpath $subcommand: $out"); return; }
+
+    if ( $out =~ m/not.*implemented/is ) { passed($opts,$test,"subcommand indicates it is not implemented"); return; }
+
+    my @sections = ($out =~ m/(^[A-Za-z]+.*?)(?:(?=^[A-Za-z]+:)|\z)/msg);
+    
+    my $have_usage = 0;
+    my $usage = "";
+    foreach my $section (@sections) {
+	if ( $section =~ m/^usage/i ) {
+	    $have_usage = 1;
+	    $section =~ s/^[[:word:]]+[[:punct:]]?[[:space:]]*//;
+	    $usage = $section;
+	}
+    }
+    
+    if ( !$have_usage ) { failed($opts,$test,"did not have Usage:"); return; }
+
+    if ( !($usage =~ m/$command[[:space:]]+$subcommand/) ) { failed($opts,$test,"usage did not mention $command $subcommand"); return; } 
+    
+    passed($opts,$test);
+}

@@ -19,9 +19,16 @@ typedef struct {
 
 static int read_bam(void *data, bam1_t *b)
 {
-	aux_t *aux = (aux_t*)data;
-	int ret = bam_iter_read(aux->fp, aux->iter, b);
-	if ((int)b->core.qual < aux->min_mapQ) b->core.flag |= BAM_FUNMAP;
+	aux_t *aux = (aux_t*)data; // data in fact is a pointer to an auxiliary structure
+    int ret;
+    while (1)
+    {
+        ret = aux->iter? bam_iter_read(aux->fp, aux->iter, b) : bam_read1(aux->fp, b);
+        if ( ret<0 ) break;
+        if ( b->core.flag & (BAM_FUNMAP | BAM_FSECONDARY | BAM_FQCFAIL | BAM_FDUP) ) continue;
+        if ( (int)b->core.qual < aux->min_mapQ ) continue;
+        break;
+    }
 	return ret;
 }
 
@@ -48,8 +55,8 @@ int main_bedcov(int argc, char *argv[])
 	}
 	memset(&str, 0, sizeof(kstring_t));
 	n = argc - optind - 1;
-	aux = calloc(n, sizeof(void*));
-	idx = calloc(n, sizeof(void*));
+	aux = calloc(n, sizeof(aux_t*));
+	idx = calloc(n, sizeof(bam_index_t*));
 	for (i = 0; i < n; ++i) {
 		aux[i] = calloc(1, sizeof(aux_t));
 		aux[i]->min_mapQ = min_mapQ;
@@ -67,7 +74,7 @@ int main_bedcov(int argc, char *argv[])
 	fp = gzopen(argv[optind], "rb");
 	ks = ks_init(fp);
 	n_plp = calloc(n, sizeof(int));
-	plp = calloc(n, sizeof(void*));
+	plp = calloc(n, sizeof(bam_pileup1_t*));
 	while (ks_getuntil(ks, KS_SEP_LINE, &str, &dret) >= 0) {
 		char *p, *q;
 		int tid, beg, end, pos;

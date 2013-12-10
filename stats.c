@@ -27,7 +27,7 @@
 #include <htslib/faidx.h>
 #include "sam.h"            // have to keep local version because of sam header parsing. todo: migrate to htslib
 #include "sam_header.h"     //
-#include "khash_utils.h"
+#include <htslib/khash_str2int.h>
 #include "samtools.h"
 
 #define BWA_MIN_RDLEN 35
@@ -150,6 +150,7 @@ stats_t;
 
 void error(const char *format, ...);
 int is_in_regions(bam1_t *bam_line, stats_t *stats);
+void realloc_buffers(stats_t *stats, int seq_len);
 
 
 // Coverage distribution methods
@@ -306,12 +307,25 @@ void count_indels(stats_t *stats,bam1_t *bam_line)
     }
 }
 
+int unclipped_length(bam1_t *bam_line)
+{
+    int icig, read_len = bam_line->core.l_qseq;
+    for (icig=0; icig<bam_line->core.n_cigar; icig++)
+    {
+        int cig = bam1_cigar(bam_line)[icig] & BAM_CIGAR_MASK;
+        if ( cig==BAM_CHARD_CLIP )
+            read_len += bam1_cigar(bam_line)[icig] >> BAM_CIGAR_SHIFT;
+    }
+    return read_len;
+}
+
 void count_mismatches_per_cycle(stats_t *stats,bam1_t *bam_line) 
 {
+    int read_len = unclipped_length(bam_line); 
+    if ( read_len >= stats->nbases ) realloc_buffers(stats,read_len);
     int is_fwd = IS_REVERSE(bam_line) ? 0 : 1;
     int icig,iread=0,icycle=0;
     int iref = bam_line->core.pos - stats->rseq_pos;
-    int read_len   = bam_line->core.l_qseq;
     uint8_t *read  = bam1_seq(bam_line);
     uint8_t *quals = bam1_qual(bam_line);
     uint64_t *mpc_buf = stats->mpc_buf;
@@ -322,18 +336,18 @@ void count_mismatches_per_cycle(stats_t *stats,bam1_t *bam_line)
         //  MIDNSHP
         int cig  = bam1_cigar(bam_line)[icig] & BAM_CIGAR_MASK;
         int ncig = bam1_cigar(bam_line)[icig] >> BAM_CIGAR_SHIFT;
-        if ( cig==1 )
+        if ( cig==BAM_CINS )
         {
             iread  += ncig;
             icycle += ncig;
             continue;
         }
-        if ( cig==2 )
+        if ( cig==BAM_CDEL )
         {
             iref += ncig;
             continue;
         }
-        if ( cig==4 )
+        if ( cig==BAM_CSOFT_CLIP )
         {
             icycle += ncig;
             // Soft-clips are present in the sequence, but the position of the read marks a start of the sequence after clipping
@@ -341,15 +355,15 @@ void count_mismatches_per_cycle(stats_t *stats,bam1_t *bam_line)
             iread  += ncig;
             continue;
         }
-        if ( cig==5 )
+        if ( cig==BAM_CHARD_CLIP )
         {
             icycle += ncig;
             continue;
         }
         // Ignore H and N CIGARs. The letter are inserted e.g. by TopHat and often require very large
         //  chunk of refseq in memory. Not very frequent and not noticable in the stats.
-        if ( cig==3 || cig==5 ) continue;
-        if ( cig!=0 )
+        if ( cig==BAM_CREF_SKIP || cig==BAM_CHARD_CLIP ) continue;
+        if ( cig!=BAM_CMATCH )
             error("TODO: cigar %d, %s:%d %s\n", cig,stats->sam->header->target_name[bam_line->core.tid],bam_line->core.pos+1,bam1_qname(bam_line));
        
         if ( ncig+iref > stats->nrseq_buf )
@@ -599,7 +613,7 @@ void collect_stats(bam1_t *bam_line, stats_t *stats)
 
     stats->read_lengths[seq_len]++;
 
-    // Count GC and ACGT per cycle
+    // Count GC and ACGT per cycle. Note that cycle is approximate, clipping is ignored
     uint8_t base, *seq  = bam1_seq(bam_line);
     int gc_count  = 0;
     int i;
@@ -644,7 +658,7 @@ void collect_stats(bam1_t *bam_line, stats_t *stats)
     if ( stats->trim_qual>0 ) 
         stats->nbases_trimmed += bwa_trim_read(stats->trim_qual, bam_quals, seq_len, reverse);
 
-    // Quality histogram and average quality
+    // Quality histogram and average quality. Clipping is neglected.
     for (i=0; i<seq_len; i++)
     {
         uint8_t qual = bam_quals[ reverse ? seq_len-i-1 : i];
@@ -994,7 +1008,7 @@ void output_stats(stats_t *stats)
         uint64_t *ptr = &(stats->acgt_cycles[ibase*4]);
         uint64_t  sum = ptr[0]+ptr[1]+ptr[2]+ptr[3];
         if ( ! sum ) continue;
-        printf("GCC\t%d\t%.2f\t%.2f\t%.2f\t%.2f\n", ibase,100.*ptr[0]/sum,100.*ptr[1]/sum,100.*ptr[2]/sum,100.*ptr[3]/sum);
+        printf("GCC\t%d\t%.2f\t%.2f\t%.2f\t%.2f\n", ibase+1,100.*ptr[0]/sum,100.*ptr[1]/sum,100.*ptr[2]/sum,100.*ptr[3]/sum);
     }
     printf("# Insert sizes. Use `grep ^IS | cut -f 2-` to extract this part. The columns are: pairs total, inward oriented pairs, outward oriented pairs, other pairs\n");
     for (isize=0; isize<ibulk; isize++)
@@ -1470,8 +1484,8 @@ int main_stats(int argc, char *argv[])
     free(stats->del_cycles_1st);
     free(stats->del_cycles_2nd);
     destroy_regions(stats);
-    free(stats);
     if ( stats->rg_hash ) khash_str2int_destroy(stats->rg_hash);
+    free(stats);
 
     return 0;
 }
