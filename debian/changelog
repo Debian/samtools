@@ -1,8 +1,16 @@
-samtools (0.2.0~rc4-1) UNRELEASED; urgency=low
+samtools (0.2.0~rc5-1) UNRELEASED; urgency=low
 
+  [ Charles Plessy ]
   54ca0c1 Merge with upstream's develop branch.
   dc25b81 debian/watch: also track release candidates.
   07aaf71 Indicate repository layout in git-buildpackage conf. file.
+  2fac32c Disable patches for the moment.
+  8bc0fb7 Stop depending on CDBS and quilt.
+  b29cfc6 Use the single-debian-patch option.
+  e613142 Stop providing the static libbam, replaced by the dynamic libhts.
+  241a731 razip was removed from samtools.
+  b9aab90 Breaks and replace tabix for the bgzip program.
+  c930cbb Rely on the new upstream Makefile.
 
  -- Charles Plessy <plessy@debian.org>  Fri, 22 Nov 2013 14:42:29 +0900
 
@@ -45,7 +53,7 @@ samtools (0.1.18-4) unstable; urgency=low
 
 samtools (0.1.18-3) unstable; urgency=low
 
-  * upload 0.1.18-2 closed the wrong bug, correction: 
+  * upload 0.1.18-2 closed the wrong bug, correction:
   * added patch to fix segfault in mpileup (Closes: #653042)
   * added patch to fix coverage cap (Closes: #671524)
 
