@@ -1,3 +1,9 @@
+samtools (0.1.19-1~bpo70+1) wheezy-backports; urgency=medium
+
+  * Backport for Wheezy.
+
+ -- Charles Plessy <plessy@debian.org>  Wed, 16 Apr 2014 07:29:02 +0900
+
 samtools (0.1.19-1) unstable; urgency=low
 
   cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
