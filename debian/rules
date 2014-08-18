@@ -17,7 +17,8 @@ override_dh_auto_build:
 override_dh_auto_test:
 	dh_auto_test -- \
 	  HTSDIR="/usr/include" \
-	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}')
+	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}') \
+	  BGZIP=/usr/bin/bgzip
 
 override_dh_auto_install:
 	dh_auto_install -- \
