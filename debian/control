@@ -7,7 +7,9 @@ Priority: optional
 Build-Depends: debhelper (>= 9),
                bash-completion,
                libncurses5-dev,
-               zlib1g-dev
+               zlib1g-dev,
+               tabix (>= 1.0)
+# tabix is needed for the regression tests.
 Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-med/samtools.git
 Vcs-Git: git://anonscm.debian.org/debian-med/samtools.git
@@ -17,9 +19,6 @@ Package: samtools
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Breaks: tabix (<= 0.2.6-1)
-Replace: tabix (<= 0.2.6-1)
-Suggests: python
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
  in the binary BAM format. It imports from and exports to the ascii SAM
