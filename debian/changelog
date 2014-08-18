@@ -1,4 +1,4 @@
-samtools (0.2.0~rc5-1) UNRELEASED; urgency=low
+samtools (1.0-1) UNRELEASED; urgency=low
 
   [ Charles Plessy ]
   54ca0c1 Merge with upstream's develop branch.
@@ -9,10 +9,20 @@ samtools (0.2.0~rc5-1) UNRELEASED; urgency=low
   b29cfc6 Use the single-debian-patch option.
   e613142 Stop providing the static libbam, replaced by the dynamic libhts.
   241a731 razip was removed from samtools.
-  b9aab90 Breaks and replace tabix for the bgzip program.
   c930cbb Rely on the new upstream Makefile.
 
- -- Charles Plessy <plessy@debian.org>  Fri, 22 Nov 2013 14:42:29 +0900
+  * debian/control
+
+  b5f284c Build-depend on tabix for the regression tests, that use bgzip.
+  7293cca Create a test package for the test data.
+
+  * debian/rules
+
+  845581d Adjust for dynamic linking.
+  d859052 Indicate path to packaged bgzip.
+  cb23517 Mimick Makefile's CPPFLAGS.
+
+ -- Charles Plessy <plessy@debian.org>  Mon, 18 Aug 2014 14:08:44 +0900
 
 samtools (0.1.19-1) unstable; urgency=low
 
