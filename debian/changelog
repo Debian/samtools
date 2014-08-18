@@ -7,7 +7,7 @@ samtools (1.0-1) UNRELEASED; urgency=low
   2fac32c Disable patches for the moment.
   8bc0fb7 Stop depending on CDBS and quilt.
   b29cfc6 Use the single-debian-patch option.
-  e613142 Stop providing the static libbam, replaced by the dynamic libhts.
+  e613142 Drop static libbam, replaced by the dynamic libhts (Closes: #544976).
   241a731 razip was removed from samtools.
   c930cbb Rely on the new upstream Makefile.
 
