@@ -13,7 +13,6 @@ Build-Depends: debhelper (>= 9),
 Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-med/samtools.git
 Vcs-Git: git://anonscm.debian.org/debian-med/samtools.git
-Homepage: http://samtools.sourceforge.net
 
 Package: samtools
 Architecture: any
@@ -25,3 +24,13 @@ Description: processing sequence alignments in SAM and BAM formats
  (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
  to retrieve reads in any regions swiftly. It is designed to work on a stream,
  and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
+
+Package: samtools-test
+Architecture: all
+Depends: ${misc:Depends}
+Description: test files for the samtools package.
+ Samtools is a set of utilities that manipulate nucleotide sequence alignments
+ in the binary BAM format.
+ .
+ This package contains test files for the samtools package.
+Homepage: http://samtools.sourceforge.net
