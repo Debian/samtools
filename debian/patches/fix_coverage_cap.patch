@@ -1,4 +1,5 @@
 Description: increases the coverage cap from 8.000 to 1.000.000
+Forwarded: https://github.com/samtools/samtools/issues/284
 
 Index: samtools/bam2depth.c
 ===================================================================
