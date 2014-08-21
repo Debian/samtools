@@ -1,5 +1,6 @@
 Description: Fix segfault if position is outside of the reference sequence length
 Origin: Don Armstrong <don@donarmstrong.com>
+Forwarded: https://github.com/samtools/samtools/pull/286
 
 --- a/bam_plcmd.c
 +++ b/bam_plcmd.c
