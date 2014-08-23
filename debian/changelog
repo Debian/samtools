@@ -1,26 +1,39 @@
 samtools (1.0-1) UNRELEASED; urgency=low
 
-  [ Charles Plessy ]
   54ca0c1 Merge with upstream's develop branch.
+  241a731 razip was removed from samtools.
   dc25b81 debian/watch: also track release candidates.
   07aaf71 Indicate repository layout in git-buildpackage conf. file.
-  2fac32c Disable patches for the moment.
-  8bc0fb7 Stop depending on CDBS and quilt.
-  b29cfc6 Use the single-debian-patch option.
-  e613142 Drop static libbam, replaced by the dynamic libhts (Closes: #544976).
-  241a731 razip was removed from samtools.
-  c930cbb Rely on the new upstream Makefile.
 
   * debian/control
 
+  8bc0fb7 Stop depending on CDBS and quilt.
+  e613142 Drop static libbam, replaced by the dynamic libhts (Closes: #544976).
   b5f284c Build-depend on tabix for the regression tests, that use bgzip.
+  9febad6 Recommend python since samtools installs a python script in /usr/bin.
+  e6ad97f Conforms to Policy 3.9.5.
+
+  * New package samtools-test
+
   7293cca Create a test package for the test data.
+  6bd7b89 Adjust install file for two-package build.
+  caff5f5 Clean before installing test files (this removes compiled files).
 
   * debian/rules
 
+  c930cbb Use Debhelper instead of CDBS and rely on the new upstream Makefile.
   845581d Adjust for dynamic linking.
   d859052 Indicate path to packaged bgzip.
   cb23517 Mimick Makefile's CPPFLAGS.
+  aee1c6c Allow parallel building.
+
+  * debian/patches
+
+  f73d764 d062687 Refreshed patches.
+  2c52f6a 61ac2c5 Forwarded patches on GitHub.
+  b8eb378 Dropped fix_example_makefile.patch, obsolete.
+  66079b9 Correct path to python interpreter.
+  218c1c1 Modify Makefile to facilitate dynamic linking.
 
  -- Charles Plessy <plessy@debian.org>  Mon, 18 Aug 2014 14:08:44 +0900
 
