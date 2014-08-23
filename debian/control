@@ -19,6 +19,7 @@ Package: samtools
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Recommends: python
 Description: processing sequence alignments in SAM and BAM formats
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
  in the binary BAM format. It imports from and exports to the ascii SAM
