@@ -1,68 +1,90 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
 Format: 1.8
-Date: Sat, 30 Mar 2013 17:31:47 +0900
+Date: Sat, 23 Aug 2014 16:02:12 +0900
 Source: samtools
-Binary: samtools libbam-dev
-Architecture: source amd64
-Version: 0.1.19-1
-Distribution: unstable
+Binary: samtools samtools-test
+Architecture: source amd64 all
+Version: 1.0-1~experimental
+Distribution: experimental
 Urgency: low
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
-Description: 
- libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
+Description:
  samtools   - processing sequence alignments in SAM and BAM formats
-Changes: 
- samtools (0.1.19-1) unstable; urgency=low
+ samtools-test - test files for the samtools package.
+Closes: 544976
+Changes:
+ samtools (1.0-1~experimental) experimental; urgency=low
  .
-   cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
-   1e6d442 new tools ace2sam, bamcheck, plot-bamcheck, r2plot.lua, vcfutils.lua.
-   2f2d5c5 debian/copyright: collapsed copyright notices from main holders.
-   e194f9e Removed fix_float_tag.patch, corrected upstream.
-   9c0e543 Refreshed patches.
-   3e7e0ec Renamed no-pileup-tests.patch fix_example_makefile.patch.
-   8d8550e example/Makefile: pass -lpthread when compiling calDepth.
-   fc32243 harden by concatenating Debian's LDFLAGS and CPPFLAGS in CFLAGS.
-   6f75b48 debian/control: normalised with cme.
-   e13bb5e debian/control: normalised VCS URLs.
-   a1b1b00 debian/control: deleted DM-Upload-Allowed field.
-   ddcd54e Use NEWS as upstream changelog.
-   81ad760 Conforms to Policy version 3.9.4.
-Checksums-Sha1: 
- 30080ad74262043cb49474a3040a69b173e9afd4 2078 samtools_0.1.19-1.dsc
- 3a5880dd0940e98447caa70799b76a39091d3b38 557812 samtools_0.1.19.orig.tar.gz
- 4e18f7699ba4c4cf5ac9503b3bab1f017731414b 10215 samtools_0.1.19-1.debian.tar.gz
- d65798025fa3a03cc2366e0b6bf75a6fc35d48a4 562956 samtools_0.1.19-1_amd64.deb
- 8c400aca23a6ca41b36e6884665939abfd8f9352 123276 libbam-dev_0.1.19-1_amd64.deb
-Checksums-Sha256: 
- 3574ea9b873a28e1a15523bb336aea1572b4af2b0ad6000314377f5ca0a04d14 2078 samtools_0.1.19-1.dsc
- 180c120a040ec660ebecc30ebae664772c0fd503e028173ab2496379bc208c17 557812 samtools_0.1.19.orig.tar.gz
- 980683591cb084f5f825baeffb3c7f08acf01a1a13b8f41e3770b3ee731190a3 10215 samtools_0.1.19-1.debian.tar.gz
- 57c5fcabea54e62e2c666ee303568c4849921ddcd39c5be92530f1081387dc5c 562956 samtools_0.1.19-1_amd64.deb
- f1da7fbdc6956b7aa68dd9cad7435f1ccdc6f6601309761f3845e3a1327da77e 123276 libbam-dev_0.1.19-1_amd64.deb
-Files: 
- c239aee949f239c0cb7c9329039eb827 2078 science optional samtools_0.1.19-1.dsc
- 1229dc88487a49b03e69a5c0aa2f8a1e 557812 science optional samtools_0.1.19.orig.tar.gz
- 467846afb2de05547f0ffed136290f8d 10215 science optional samtools_0.1.19-1.debian.tar.gz
- 5195be37dd92ae9c7f2657eacdd40ba2 562956 science optional samtools_0.1.19-1_amd64.deb
- 20ba2fee341db9e3659bce6165aa6763 123276 libdevel optional libbam-dev_0.1.19-1_amd64.deb
+   54ca0c1 Merge with upstream's develop branch.
+   241a731 razip was removed from samtools.
+   dc25b81 debian/watch: also track release candidates.
+   07aaf71 Indicate repository layout in git-buildpackage conf. file.
+ .
+   * debian/control
+ .
+   8bc0fb7 Stop depending on CDBS and quilt.
+   e613142 Drop static libbam, replaced by the dynamic libhts (Closes: #544976).
+   b5f284c Build-depend on tabix for the regression tests, that use bgzip.
+   9febad6 Recommend python since samtools installs a python script in /usr/bin.
+   e6ad97f Conforms to Policy 3.9.5.
+ .
+   * New package samtools-test
+ .
+   7293cca Create a test package for the test data.
+   6bd7b89 Adjust install file for two-package build.
+   caff5f5 Clean before installing test files (this removes compiled files).
+ .
+   * debian/rules
+ .
+   c930cbb Use Debhelper instead of CDBS and rely on the new upstream Makefile.
+   845581d Adjust for dynamic linking.
+   d859052 Indicate path to packaged bgzip.
+   cb23517 Mimick Makefile's CPPFLAGS.
+   aee1c6c Allow parallel building.
+ .
+   * debian/patches
+ .
+   f73d764 d062687 Refreshed patches.
+   2c52f6a 61ac2c5 Forwarded patches on GitHub.
+   b8eb378 Dropped fix_example_makefile.patch, obsolete.
+   66079b9 Correct path to python interpreter.
+   218c1c1 Modify Makefile to facilitate dynamic linking.
+Checksums-Sha1:
+ 37ed138f9eb16173350c9567c072fe247d99c922 2109 samtools_1.0-1~experimental.dsc
+ 78bdac301a2a342a2cfac100b79fb5fa99808114 4291657 samtools_1.0.orig.tar.gz
+ 35c173f001cd8ebdfa9cc600592412ec57bf3147 9484 samtools_1.0-1~experimental.debian.tar.xz
+ 1eb70cece9bb1550cfd51b51b3fcc564056bd70b 375540 samtools_1.0-1~experimental_amd64.deb
+ 734565bfaffcb012b5bd509b933c890d628921aa 2635142 samtools-test_1.0-1~experimental_all.deb
+Checksums-Sha256:
+ 855d383d9b372aaa16b2c4f70a612b654657e11a376e7b24ff01463794e69a86 2109 samtools_1.0-1~experimental.dsc
+ c9be4ca074d9645f2782394c95366040f6d2e7334b513968fa8fb26460b626fe 4291657 samtools_1.0.orig.tar.gz
+ 6b6f16308a59e2ebb59c8456ccc6956e270517ed9d3a20c9b1dc74890676fff3 9484 samtools_1.0-1~experimental.debian.tar.xz
+ f11bab2f0743aa8d2ebdcaab7c26a1f3a5b326a590bd19acdbabab364a52728b 375540 samtools_1.0-1~experimental_amd64.deb
+ 8d2a982145410bac80b467a968df053e550759bdd7c85416bdb6e330cf707ace 2635142 samtools-test_1.0-1~experimental_all.deb
+Files:
+ 90edf7ceb77487205ee41c4fa415bbe0 375540 science optional samtools_1.0-1~experimental_amd64.deb
+ 7d0546cd0f64d1e6abc04f43aee689bb 2635142 science optional samtools-test_1.0-1~experimental_all.deb
+ 38f1b268f397062fef9628b66d61f02f 2109 science optional samtools_1.0-1~experimental.dsc
+ 7eff9d605f21b0910887424069bae72e 4291657 science optional samtools_1.0.orig.tar.gz
+ fd9650c920941de1547b02c62540aacd 9484 science optional samtools_1.0-1~experimental.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.12 (GNU/Linux)
+Version: GnuPG v1
 
-iQIcBAEBCAAGBQJRVqePAAoJEMW9bI8ildUC4dAP/0U67j2liBd4CaHWBaQBfQbE
-z2Vn92zWBoBU6o7WiTpDUYN+Qz9VecSKt9qIC/cAoqxxmuHLYV0Xf6DqIr6TegJM
-/sAr91q635FGrGAZC/QmAU6+9SdHLzF2M0pmgDZIjDEk9dclrMspEoeEKY5FSfVc
-qthjGSsyECSY4NnJuSJz39nY+mpBJryZhZQ4zy7OmfLMF/6rZ28GF85nHYpvuEZ2
-7hn1gMX4UWdYOzfscJyB4JGaMssQjIMJvqbEMwMyJn0/NHyOoe54o+rwff0C/5lb
-M9meWH+XKargo+qe3zh4ankIrRAl4kAWU6gnTBbxnIQ9cjKYJQRCCBIg9zZfTu95
-nN3bsUUoIubIzVv7TaEMZHfflg9uD33MLaYHB1+iWspVD/Mh7n3XVUBXAaVDWrXS
-xVGYQjXM9JLa2qyL6UDbhoyfwZ39mNLv/aHQNARTze7FHS/JdSf9kLJwaYhoYaQj
-V2c3VMRY7fKk5kN7ctO0I6IfqbMjBfuhRk29q++meJqQt47vS7F1X0+ll/hdDALY
-eN0QgaPmNvDW1GIo41vlBNJokB4IucdfiMJRsXk1G7hGA7Fq/h77Lv2ONAW+z9Se
-HYb5iSJE2XnitEIgtX0cZUQNMEmNEi1QaNTX7k7vJb+giZwipNKqNTcaVcVCcZvn
-Sikj87IM56tiCj5DYC1T
-=b8si
+iQIcBAEBCgAGBQJT+EBZAAoJEMW9bI8ildUCBNkP/1SGWZgrEaopUYh/z22dkK5H
+ecmlP3l6dzZ8Z5/JKZo/PWJWxmczdOaKV6Cj5CDT6acqU+duRjcF3vu6e5pTh3qw
+nmmcWmIwLAqor9IFbwEp/+4jMRNeE85kZG/M3SBxURlEje6hg3k7f169DVEv7sf9
+uJSxf8gTFzxJ6YpUABFgwk3TjBJQK65q2De6Xt4fJg8mbtV0DWf34e4QjXXKjZFa
+L2K/DSEF5LKJGznhJy3DGFXW57KSPQiB/y/w3iZdmD1+XjydhlcR83pqsl4l9Fab
+PmyWGx07Z7JVRGJVFE2kAZarp9A2yLnqSD+df/pWaCqdRRDJsRhxtyXYmXbJcWLO
+dMdp4A006wnoFsTxATJKpApb89wllZ4y9nPo6Wulmipt1PYFsmAoG7X//QjeQOjd
+t2LiHUHxJQNkXEQz1ZJHIcH7Ia4wBICXkRMi7kyba/5k1Ur0bMFLWbL094W2H6+f
+dCVwrakNMT3T+o/CBjzmlrkzbcPTsC+qNevL5SAUaXkLQld9+N4rYYJcAr3bl75S
+Cn/2Qd4dftzD1oJvEo0zxnJnaK6TJ99yhk6I/dWzGTIE5bLU9C4GEL0cJl53farr
+GCK03dsxl1wFcgRe35HQ8fn5IlAacGnmxPgus62YPpx9TCJ0fxAWctU3aNj5LEjE
+//bhOLUDc5tPop9eoIuh
+=6zQX
 -----END PGP SIGNATURE-----
