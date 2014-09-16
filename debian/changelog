@@ -1,8 +1,8 @@
-samtools-legacy (0.1.19-2) UNRELEASED; urgency=medium
+samtools-legacy (0.1.19-2) unstable; urgency=medium
 
-  * 
+  1bb181e Build libbam-dev from version 0.1.19 in a “legacy” source package.
 
- -- Charles Plessy <plessy@debian.org>  Tue, 16 Sep 2014 19:45:49 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 16 Sep 2014 20:03:23 +0900
 
 samtools (0.1.19-1) unstable; urgency=low
 
