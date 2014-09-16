@@ -1,4 +1,4 @@
-samtools (1.0-1) UNRELEASED; urgency=low
+samtools (1.0-1~experimental) experimental; urgency=low
 
   54ca0c1 Merge with upstream's develop branch.
   241a731 razip was removed from samtools.
@@ -35,7 +35,7 @@ samtools (1.0-1) UNRELEASED; urgency=low
   66079b9 Correct path to python interpreter.
   218c1c1 Modify Makefile to facilitate dynamic linking.
 
- -- Charles Plessy <plessy@debian.org>  Mon, 18 Aug 2014 14:08:44 +0900
+ -- Charles Plessy <plessy@debian.org>  Sat, 23 Aug 2014 16:02:12 +0900
 
 samtools (0.1.19-1) unstable; urgency=low
 
