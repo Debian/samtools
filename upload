@@ -1,7 +1,6 @@
-u samtools_0.1.19-1.dsc ftp.upload.debian.org Sat Mar 30 17:51:46 2013
-u libbam-dev_0.1.19-1_amd64.deb ftp.upload.debian.org Sat Mar 30 17:51:49 2013
-u samtools_0.1.19-1.debian.tar.gz ftp.upload.debian.org Sat Mar 30 17:51:51 2013
-u samtools_0.1.19.orig.tar.gz ftp.upload.debian.org Sat Mar 30 17:51:57 2013
-u samtools_0.1.19-1_amd64.deb ftp.upload.debian.org Sat Mar 30 17:52:02 2013
-u samtools_0.1.19-1_amd64.changes ftp.upload.debian.org Sat Mar 30 17:52:03 2013
-s samtools_0.1.19-1_amd64.changes ftp.upload.debian.org Sat Mar 30 17:52:03 2013
+u samtools-legacy_0.1.19-2.dsc ftp.upload.debian.org Tue Sep 16 20:15:59 2014
+u samtools-legacy_0.1.19-2.debian.tar.xz ftp.upload.debian.org Tue Sep 16 20:16:00 2014
+u samtools-legacy_0.1.19.orig.tar.gz ftp.upload.debian.org Tue Sep 16 20:16:03 2014
+u libbam-dev_0.1.19-2_amd64.deb ftp.upload.debian.org Tue Sep 16 20:16:05 2014
+u samtools-legacy_0.1.19-2_amd64.changes ftp.upload.debian.org Tue Sep 16 20:16:06 2014
+s samtools-legacy_0.1.19-2_amd64.changes ftp.upload.debian.org Tue Sep 16 20:16:06 2014

@@ -1,68 +1,52 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
 Format: 1.8
-Date: Sat, 30 Mar 2013 17:31:47 +0900
-Source: samtools
-Binary: samtools libbam-dev
+Date: Tue, 16 Sep 2014 20:03:23 +0900
+Source: samtools-legacy
+Binary: libbam-dev
 Architecture: source amd64
-Version: 0.1.19-1
+Version: 0.1.19-2
 Distribution: unstable
-Urgency: low
+Urgency: medium
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
-Description: 
+Description:
  libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
- samtools   - processing sequence alignments in SAM and BAM formats
-Changes: 
- samtools (0.1.19-1) unstable; urgency=low
+Changes:
+ samtools-legacy (0.1.19-2) unstable; urgency=medium
  .
-   cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
-   1e6d442 new tools ace2sam, bamcheck, plot-bamcheck, r2plot.lua, vcfutils.lua.
-   2f2d5c5 debian/copyright: collapsed copyright notices from main holders.
-   e194f9e Removed fix_float_tag.patch, corrected upstream.
-   9c0e543 Refreshed patches.
-   3e7e0ec Renamed no-pileup-tests.patch fix_example_makefile.patch.
-   8d8550e example/Makefile: pass -lpthread when compiling calDepth.
-   fc32243 harden by concatenating Debian's LDFLAGS and CPPFLAGS in CFLAGS.
-   6f75b48 debian/control: normalised with cme.
-   e13bb5e debian/control: normalised VCS URLs.
-   a1b1b00 debian/control: deleted DM-Upload-Allowed field.
-   ddcd54e Use NEWS as upstream changelog.
-   81ad760 Conforms to Policy version 3.9.4.
-Checksums-Sha1: 
- 30080ad74262043cb49474a3040a69b173e9afd4 2078 samtools_0.1.19-1.dsc
- 3a5880dd0940e98447caa70799b76a39091d3b38 557812 samtools_0.1.19.orig.tar.gz
- 4e18f7699ba4c4cf5ac9503b3bab1f017731414b 10215 samtools_0.1.19-1.debian.tar.gz
- d65798025fa3a03cc2366e0b6bf75a6fc35d48a4 562956 samtools_0.1.19-1_amd64.deb
- 8c400aca23a6ca41b36e6884665939abfd8f9352 123276 libbam-dev_0.1.19-1_amd64.deb
-Checksums-Sha256: 
- 3574ea9b873a28e1a15523bb336aea1572b4af2b0ad6000314377f5ca0a04d14 2078 samtools_0.1.19-1.dsc
- 180c120a040ec660ebecc30ebae664772c0fd503e028173ab2496379bc208c17 557812 samtools_0.1.19.orig.tar.gz
- 980683591cb084f5f825baeffb3c7f08acf01a1a13b8f41e3770b3ee731190a3 10215 samtools_0.1.19-1.debian.tar.gz
- 57c5fcabea54e62e2c666ee303568c4849921ddcd39c5be92530f1081387dc5c 562956 samtools_0.1.19-1_amd64.deb
- f1da7fbdc6956b7aa68dd9cad7435f1ccdc6f6601309761f3845e3a1327da77e 123276 libbam-dev_0.1.19-1_amd64.deb
-Files: 
- c239aee949f239c0cb7c9329039eb827 2078 science optional samtools_0.1.19-1.dsc
- 1229dc88487a49b03e69a5c0aa2f8a1e 557812 science optional samtools_0.1.19.orig.tar.gz
- 467846afb2de05547f0ffed136290f8d 10215 science optional samtools_0.1.19-1.debian.tar.gz
- 5195be37dd92ae9c7f2657eacdd40ba2 562956 science optional samtools_0.1.19-1_amd64.deb
- 20ba2fee341db9e3659bce6165aa6763 123276 libdevel optional libbam-dev_0.1.19-1_amd64.deb
+   1bb181e Build libbam-dev from version 0.1.19 in a “legacy” source package.
+Checksums-Sha1:
+ 6da4ec9c5bcf8a3f011b59592ee6100f6a029098 2030 samtools-legacy_0.1.19-2.dsc
+ 3a5880dd0940e98447caa70799b76a39091d3b38 557812 samtools-legacy_0.1.19.orig.tar.gz
+ 27ebc3252989e10c3d485dbbaa67a554bbdae25b 8096 samtools-legacy_0.1.19-2.debian.tar.xz
+ 5e1f4f01f1b627febf4d158850ddfd9cce12deef 123358 libbam-dev_0.1.19-2_amd64.deb
+Checksums-Sha256:
+ b79d1bc6fc29bf69e2116b9645d86981175cfe37e4cae2251ebe538672cf6116 2030 samtools-legacy_0.1.19-2.dsc
+ 180c120a040ec660ebecc30ebae664772c0fd503e028173ab2496379bc208c17 557812 samtools-legacy_0.1.19.orig.tar.gz
+ 56e22291050cae00af234632dede806c9acfc38d569e8f9e75dd2ae325fb26aa 8096 samtools-legacy_0.1.19-2.debian.tar.xz
+ 698266afdc2424540a7f015834d757965d72d61dfb338df342d1062661c528de 123358 libbam-dev_0.1.19-2_amd64.deb
+Files:
+ a7d60e66a61c14b8b8819cb0e5d8a619 123358 libdevel optional libbam-dev_0.1.19-2_amd64.deb
+ acd06f79ddb353086e06cc00eeb6787b 2030 science optional samtools-legacy_0.1.19-2.dsc
+ 1229dc88487a49b03e69a5c0aa2f8a1e 557812 science optional samtools-legacy_0.1.19.orig.tar.gz
+ e225e4a3ec995da8e824653eb1692d72 8096 science optional samtools-legacy_0.1.19-2.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.12 (GNU/Linux)
+Version: GnuPG v1
 
-iQIcBAEBCAAGBQJRVqePAAoJEMW9bI8ildUC4dAP/0U67j2liBd4CaHWBaQBfQbE
-z2Vn92zWBoBU6o7WiTpDUYN+Qz9VecSKt9qIC/cAoqxxmuHLYV0Xf6DqIr6TegJM
-/sAr91q635FGrGAZC/QmAU6+9SdHLzF2M0pmgDZIjDEk9dclrMspEoeEKY5FSfVc
-qthjGSsyECSY4NnJuSJz39nY+mpBJryZhZQ4zy7OmfLMF/6rZ28GF85nHYpvuEZ2
-7hn1gMX4UWdYOzfscJyB4JGaMssQjIMJvqbEMwMyJn0/NHyOoe54o+rwff0C/5lb
-M9meWH+XKargo+qe3zh4ankIrRAl4kAWU6gnTBbxnIQ9cjKYJQRCCBIg9zZfTu95
-nN3bsUUoIubIzVv7TaEMZHfflg9uD33MLaYHB1+iWspVD/Mh7n3XVUBXAaVDWrXS
-xVGYQjXM9JLa2qyL6UDbhoyfwZ39mNLv/aHQNARTze7FHS/JdSf9kLJwaYhoYaQj
-V2c3VMRY7fKk5kN7ctO0I6IfqbMjBfuhRk29q++meJqQt47vS7F1X0+ll/hdDALY
-eN0QgaPmNvDW1GIo41vlBNJokB4IucdfiMJRsXk1G7hGA7Fq/h77Lv2ONAW+z9Se
-HYb5iSJE2XnitEIgtX0cZUQNMEmNEi1QaNTX7k7vJb+giZwipNKqNTcaVcVCcZvn
-Sikj87IM56tiCj5DYC1T
-=b8si
+iQIcBAEBCgAGBQJUGBvqAAoJEMW9bI8ildUCuaoP/0h1j9MdkltaNm86J6znFIcl
+hCrNDX4h5avMgzE5kwhwRWuvWvLu2eCYzMapBavLf+yBXFVhOJ1aiV+xdvKLyH8E
+aqqrKUkLo8LKK+HO89LpT4j9VdxvMm7MbsdNkIPu8mg+UnE5PUrsSU925gjkezzr
++gGRAYJTaIrhabQjAr1+pqQgQM60qpwVvudqPJFCx6AxUgZgI2yxAdEow/d19Wko
+1ddWk+DTGSJhkdR9JslhBsklXKWH1UjwDjCrJVFCgdJm8mXFnFTWaJsimCJgo2bB
+/nXuHkix1guQmfjT/Qb8h8GRsmFysFmMkXIOPZNK3JwcjozhZBWZANmrgabRnis3
+kw4b2udT6G9nrriUtBuejUbJ+tRDV6cN7SJZC6sj0Pa929DEpStRiPd2v1hdMICH
+Ob8Lwp1C+1yEwJzC4Ph2EGAEKrGW/VTPXZZoAwciCB6iRcjGuckSSW+OOjNJTWnX
+KiGfiQiQZWr6HxBDZcS064dxzgGR+te9ndsUYw0dF9at+CtFm/bToZom0ZL6jw+k
+sEBNYVLcfuBCgDHN1d1UvV/HsuRO6VdXVdkl1DglyxeMUlR9MsMwX8zO4NHnDD4S
+r/jmoTlnmOGV+mwjinqvWJ+RzC+HFkdhk1MNBDHoVk3TwBm65fTe+aWIFQOU/CKF
+a8o9WVR2564v0An7Alpf
+=DN6g
 -----END PGP SIGNATURE-----
