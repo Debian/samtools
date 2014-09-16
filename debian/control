@@ -1,31 +1,17 @@
-Source: samtools
+Source: samtools-legacy
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
-Uploaders: Charles Plessy <plessy@debian.org>,
-           Dominique Belhachemi <domibel@debian.org>
+Uploaders: Charles Plessy <plessy@debian.org>
 Section: science
 Priority: optional
 Build-Depends: debhelper (>= 9),
-               bash-completion,
                cdbs,
                quilt,
                libncurses5-dev,
                zlib1g-dev
-Standards-Version: 3.9.4
+Standards-Version: 3.9.5
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-med/samtools.git
-Vcs-Git: git://anonscm.debian.org/debian-med/samtools.git
+Vcs-Git: git://anonscm.debian.org/debian-med/samtools.git -b samtools-legacy
 Homepage: http://samtools.sourceforge.net
-
-Package: samtools
-Architecture: any
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Suggests: python
-Description: processing sequence alignments in SAM and BAM formats
- Samtools is a set of utilities that manipulate nucleotide sequence alignments
- in the binary BAM format. It imports from and exports to the ascii SAM
- (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
- to retrieve reads in any regions swiftly. It is designed to work on a stream,
- and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
 
 Package: libbam-dev
 Architecture: any
@@ -39,5 +25,6 @@ Description: manipulates nucleotide sequence alignments in BAM or SAM format
  sorting, merging, generating pileup, and quickly retrieval of reads overlapped
  with a specified region.
  .
- This library is part of SAMtools.
-
+ This library is part of SAMtools version 0.1.19.  It is obsolete and provided
+ only to build software that has not yet transitioned to the HTSlib, which
+ replaces this library.
