@@ -6,6 +6,7 @@ export DH_VERBOSE=1
 	dh $@ --parallel
 
 override_dh_auto_build:
+	sed -i '/include ..HTSDIR..htslib.mk/d' Makefile  # remove this later
 	dh_auto_build -- \
 	  HTSDIR="/usr/include" \
 	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}') \
