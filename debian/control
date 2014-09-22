@@ -7,7 +7,7 @@ Priority: optional
 Build-Depends: debhelper (>= 9),
                bash-completion,
                libncurses5-dev,
-               libhts-dev,
+               libhts-dev (>= 1.0),
                zlib1g-dev,
                tabix (>= 1.0)
 # tabix is needed for the regression tests.
