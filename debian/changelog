@@ -1,5 +1,6 @@
-samtools (1.0-1) UNRELEASED; urgency=low
+samtools (1.0-1) unstable; urgency=low
 
+  [ Charles Plessy ]
   54ca0c1 Merge with upstream's develop branch.
   241a731 razip was removed from samtools.
   dc25b81 debian/watch: also track release candidates.
@@ -11,7 +12,7 @@ samtools (1.0-1) UNRELEASED; urgency=low
   e613142 Drop static libbam, replaced by the dynamic libhts (Closes: #544976).
   b5f284c Build-depend on tabix for the regression tests, that use bgzip.
   9febad6 Recommend python since samtools installs a python script in /usr/bin.
-  e6ad97f Conforms to Policy 3.9.5.
+  0446ed7 Conforms with Policy 3.5.6.
 
   * New package samtools-test
 
@@ -36,7 +37,10 @@ samtools (1.0-1) UNRELEASED; urgency=low
   66079b9 Correct path to python interpreter.
   218c1c1 Modify Makefile to facilitate dynamic linking.
 
- -- Charles Plessy <plessy@debian.org>  Wed, 17 Sep 2014 08:12:35 +0900
+  [ Andreas Tille ]
+  f69f412 Versioned Build-Depends libhts-dev >= 1.0
+
+ -- Charles Plessy <plessy@debian.org>  Tue, 23 Sep 2014 09:36:27 +0900
 
 samtools (0.1.19-1) unstable; urgency=low
 
