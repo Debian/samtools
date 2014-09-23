@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+cd $ADTTMP
+cp -a /usr/share/samtools/test/ .
+ln -s /usr/bin/samtools .
+cd test
+./test.pl

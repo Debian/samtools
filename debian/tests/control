@@ -1,0 +1,2 @@
+Tests: samtools-test
+Restrictions: allow-stderr
