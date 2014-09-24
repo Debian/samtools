@@ -1,9 +1,0 @@
-Bug: https://github.com/samtools/samtools/issues/271
---- a/misc/varfilter.py
-+++ b/misc/varfilter.py
-@@ -1,4 +1,4 @@
--#!/software/bin/python
-+#!/usr/bin/python
- #
- #    Copyright (C) 2009, 2010 Genome Research Ltd.
- #
