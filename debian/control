@@ -6,6 +6,8 @@ Section: science
 Priority: optional
 Build-Depends: debhelper (>= 9),
                bash-completion,
+               # libio-pty-perl is needed by the regression test.
+               libio-pty-perl,
                libncurses5-dev,
                libhts-dev (>= 1.0),
                zlib1g-dev,
@@ -31,6 +33,7 @@ Description: processing sequence alignments in SAM and BAM formats
 Package: samtools-test
 Architecture: all
 Depends: ${misc:Depends}
+Recommends: libio-pty-perl
 Description: test files for the samtools package.
  Samtools is a set of utilities that manipulate nucleotide sequence alignments
  in the binary BAM format.
