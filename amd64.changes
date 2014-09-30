@@ -1,68 +1,62 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
+Hash: SHA512
 
 Format: 1.8
-Date: Sat, 30 Mar 2013 17:31:47 +0900
+Date: Thu, 25 Sep 2014 09:04:20 +0900
 Source: samtools
-Binary: samtools libbam-dev
-Architecture: source amd64
-Version: 0.1.19-1
+Binary: samtools samtools-test
+Architecture: source amd64 all
+Version: 1.1-1
 Distribution: unstable
-Urgency: low
+Urgency: medium
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
 Changed-By: Charles Plessy <plessy@debian.org>
-Description: 
- libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
+Description:
  samtools   - processing sequence alignments in SAM and BAM formats
-Changes: 
- samtools (0.1.19-1) unstable; urgency=low
+ samtools-test - test files for the samtools package.
+Changes:
+ samtools (1.1-1) unstable; urgency=medium
  .
-   cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
-   1e6d442 new tools ace2sam, bamcheck, plot-bamcheck, r2plot.lua, vcfutils.lua.
-   2f2d5c5 debian/copyright: collapsed copyright notices from main holders.
-   e194f9e Removed fix_float_tag.patch, corrected upstream.
-   9c0e543 Refreshed patches.
-   3e7e0ec Renamed no-pileup-tests.patch fix_example_makefile.patch.
-   8d8550e example/Makefile: pass -lpthread when compiling calDepth.
-   fc32243 harden by concatenating Debian's LDFLAGS and CPPFLAGS in CFLAGS.
-   6f75b48 debian/control: normalised with cme.
-   e13bb5e debian/control: normalised VCS URLs.
-   a1b1b00 debian/control: deleted DM-Upload-Allowed field.
-   ddcd54e Use NEWS as upstream changelog.
-   81ad760 Conforms to Policy version 3.9.4.
-Checksums-Sha1: 
- 30080ad74262043cb49474a3040a69b173e9afd4 2078 samtools_0.1.19-1.dsc
- 3a5880dd0940e98447caa70799b76a39091d3b38 557812 samtools_0.1.19.orig.tar.gz
- 4e18f7699ba4c4cf5ac9503b3bab1f017731414b 10215 samtools_0.1.19-1.debian.tar.gz
- d65798025fa3a03cc2366e0b6bf75a6fc35d48a4 562956 samtools_0.1.19-1_amd64.deb
- 8c400aca23a6ca41b36e6884665939abfd8f9352 123276 libbam-dev_0.1.19-1_amd64.deb
-Checksums-Sha256: 
- 3574ea9b873a28e1a15523bb336aea1572b4af2b0ad6000314377f5ca0a04d14 2078 samtools_0.1.19-1.dsc
- 180c120a040ec660ebecc30ebae664772c0fd503e028173ab2496379bc208c17 557812 samtools_0.1.19.orig.tar.gz
- 980683591cb084f5f825baeffb3c7f08acf01a1a13b8f41e3770b3ee731190a3 10215 samtools_0.1.19-1.debian.tar.gz
- 57c5fcabea54e62e2c666ee303568c4849921ddcd39c5be92530f1081387dc5c 562956 samtools_0.1.19-1_amd64.deb
- f1da7fbdc6956b7aa68dd9cad7435f1ccdc6f6601309761f3845e3a1327da77e 123276 libbam-dev_0.1.19-1_amd64.deb
-Files: 
- c239aee949f239c0cb7c9329039eb827 2078 science optional samtools_0.1.19-1.dsc
- 1229dc88487a49b03e69a5c0aa2f8a1e 557812 science optional samtools_0.1.19.orig.tar.gz
- 467846afb2de05547f0ffed136290f8d 10215 science optional samtools_0.1.19-1.debian.tar.gz
- 5195be37dd92ae9c7f2657eacdd40ba2 562956 science optional samtools_0.1.19-1_amd64.deb
- 20ba2fee341db9e3659bce6165aa6763 123276 libdevel optional libbam-dev_0.1.19-1_amd64.deb
+   c448d48 Merge tag '1.1' into debian/unstable
+   d12ab1e Merge branch 'develop' into debian/unstable to solve issue
+           with regression tests needing a pseudo-terminal.
+           See https://github.com/samtools/samtools/issues/300
+   c87f8ce Add autopkg tests.
+   7c50b7b Removed python-wrong-path-for-interpreter.patch
+           (issue solved upstream).
+Checksums-Sha1:
+ 388015e08bb5a845321b7658cc55cef2e5613d9e 2104 samtools_1.1-1.dsc
+ ca446ec24eabd2f71605dde55a787f182cb50f13 4320951 samtools_1.1.orig.tar.gz
+ 0e4de8be00fb4dd375048b1b1dc05e2f120e2ead 10164 samtools_1.1-1.debian.tar.xz
+ 3424183e6577c856a09f4f838c1a398c8e5744ba 378168 samtools_1.1-1_amd64.deb
+ f2542cc1d07aef31d216d43630c87c9edf38cabd 2644466 samtools-test_1.1-1_all.deb
+Checksums-Sha256:
+ ce8fe3ddb71817ba6d655ed6ac7d667c2d0b3a2664f78ae5fd0382da3fd307b1 2104 samtools_1.1-1.dsc
+ cee231e33b7290be8e07dea43a99b885d9df79d957625ac84879b47ff91cda69 4320951 samtools_1.1.orig.tar.gz
+ 50e5d2299c2d99ce53647fc0cb08eee53bc31d08bfa7d7cc981e6fae28ab231b 10164 samtools_1.1-1.debian.tar.xz
+ 55ca7fb40430ba8c17967568f5c48ee19379bdbae3cb218456dae7fed5ea107d 378168 samtools_1.1-1_amd64.deb
+ 5fb20f9d61452c8863e6ff42d2ea0d9ec72211fb9dd43cca3b55eeeb49985196 2644466 samtools-test_1.1-1_all.deb
+Files:
+ 1d7d68a126fe90d8366eb3fed809230c 378168 science optional samtools_1.1-1_amd64.deb
+ 9ffe69f7310c265243d2fd553c322435 2644466 science optional samtools-test_1.1-1_all.deb
+ 148939471e917dfe65acde2ec02d10e0 2104 science optional samtools_1.1-1.dsc
+ 5fda5c175d04bff39c56078aea7cd3b1 4320951 science optional samtools_1.1.orig.tar.gz
+ 40b3a1f31e22323c8d247e1bff1a9c52 10164 science optional samtools_1.1-1.debian.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.12 (GNU/Linux)
+Version: GnuPG v1
 
-iQIcBAEBCAAGBQJRVqePAAoJEMW9bI8ildUC4dAP/0U67j2liBd4CaHWBaQBfQbE
-z2Vn92zWBoBU6o7WiTpDUYN+Qz9VecSKt9qIC/cAoqxxmuHLYV0Xf6DqIr6TegJM
-/sAr91q635FGrGAZC/QmAU6+9SdHLzF2M0pmgDZIjDEk9dclrMspEoeEKY5FSfVc
-qthjGSsyECSY4NnJuSJz39nY+mpBJryZhZQ4zy7OmfLMF/6rZ28GF85nHYpvuEZ2
-7hn1gMX4UWdYOzfscJyB4JGaMssQjIMJvqbEMwMyJn0/NHyOoe54o+rwff0C/5lb
-M9meWH+XKargo+qe3zh4ankIrRAl4kAWU6gnTBbxnIQ9cjKYJQRCCBIg9zZfTu95
-nN3bsUUoIubIzVv7TaEMZHfflg9uD33MLaYHB1+iWspVD/Mh7n3XVUBXAaVDWrXS
-xVGYQjXM9JLa2qyL6UDbhoyfwZ39mNLv/aHQNARTze7FHS/JdSf9kLJwaYhoYaQj
-V2c3VMRY7fKk5kN7ctO0I6IfqbMjBfuhRk29q++meJqQt47vS7F1X0+ll/hdDALY
-eN0QgaPmNvDW1GIo41vlBNJokB4IucdfiMJRsXk1G7hGA7Fq/h77Lv2ONAW+z9Se
-HYb5iSJE2XnitEIgtX0cZUQNMEmNEi1QaNTX7k7vJb+giZwipNKqNTcaVcVCcZvn
-Sikj87IM56tiCj5DYC1T
-=b8si
+iQIcBAEBCgAGBQJUI109AAoJEMW9bI8ildUC+1AQAIb5bYiIgjKeARkusgIBHFMc
+qMrznjhyTy94CGB92fEXOtFS1X0oPq+GVWceTjLNVkxdMIq31yIDXXG39CZYMIX8
+/V54kk7ELn3FLqpqGcyoaLPqxEdfoCvarcSUVT6A/Jxa8iUGiO2qXYAzXgP/gexx
+u74CTPC3CU2xUwYXw+hmjh3kj4L71JuQzP6eg0d3MuDZisf5/6fD7Mu8quYhfuj+
+d25wzHP8EcAu6kxJLh7r1nxVQIERttib6r6UzTT9mqGZhVh+pvRPeYs/Hvg08GdZ
+aQ9JV9bBVWaKdAFEIGlKbxx+B+u2RqwEHKMIDa81xfbe72/xSoNLM4Z/XCOIqu2u
+9o4mAWE9L8lRYCJN7DvnjrC7DPrgogbCEvGKtTclYX5eVrFSdQBv2/OQvvxgXryU
+jAxNSGytJiHm4tDChJ0Y3gyn4pBc78eMogI6DB1l4oU00OK7S3Hy3ogPGw7oXBrJ
+26W8CLlSBNbVlXULkgD3jHM2rICxESYvhVU/mHTtVGWCHBFcLNp4M55IU4Mwfb/c
+CZmcdZlvseSLs6BavPsA193hRf56BlHNoJqpRs7IOLZEEHQoepNoUTFgqn2eNtjo
+W0+CteH77s5XNOVMDFt7pKyc3WEhOit1CLpnyErt/Kgx7hnsyXTnTo7+IFlHDRGX
+hfcrc4G7i4H/Z6cmPSQ7
+=LXcO
 -----END PGP SIGNATURE-----

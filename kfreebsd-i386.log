@@ -1,66 +1,73 @@
-From buildd@finzi.debian.org Sat Mar 30 09:19:27 2013
+From buildd@finzi.debian.org Thu Sep 25 00:34:46 2014
 Return-path: <buildd@finzi.debian.org>
-Received: from merikanto.debian.org ([2001:858:2:2:216:35ff:fec4:a49a])
-	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=merikanto.debian.org,
-	EMAIL=hostmaster@merikanto.debian.org (verified)
-	by grieg.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@finzi.debian.org>)
-	id 1ULrwd-0002uH-7n
-	for logs@buildd.debian.org; Sat, 30 Mar 2013 09:19:27 +0000
-Received: from finzi.debian.org ([206.12.19.111])
-	from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
-	CN=finzi.debian.org, EMAIL=hostmaster@finzi.debian.org (verified)
-	by merikanto.debian.org with esmtps (TLS1.0:RSA_AES_256_CBC_SHA1:32)
-	(Exim 4.72) (envelope-from <buildd@finzi.debian.org>)
-	id 1ULrwb-0001bT-UT; Sat, 30 Mar 2013 09:19:26 +0000
-Received: from buildd by finzi.debian.org with local (Exim 4.72)
-	(envelope-from <buildd@finzi.debian.org>)
-	id 1ULrwZ-0008MU-BL; Sat, 30 Mar 2013 09:19:23 +0000
-Message-Id: <E1ULrwZ-0008MU-BL@finzi.debian.org>
-MIME-Version: 1.0
+Received: from muffat.debian.org ([2607:f8f0:610:4000:6564:a62:ce0c:1392])
+ from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+ CN=muffat.debian.org, EMAIL=hostmaster@muffat.debian.org (verified)
+ by wuiet.debian.org with esmtps (TLS1.2:DHE_RSA_AES_128_CBC_SHA1:128)
+ (Exim 4.80) (envelope-from <buildd@finzi.debian.org>)
+ id 1XWx1C-0008E6-Df
+ for logs@buildd.debian.org; Thu, 25 Sep 2014 00:34:46 +0000
+Received: from finzi.debian.org ([2607:f8f0:610:4000:6564:a62:19:111])
+ from C=NA, ST=NA, L=Ankh Morpork, O=Debian SMTP, OU=Debian SMTP CA,
+ CN=finzi.debian.org, EMAIL=hostmaster@finzi.debian.org (verified)
+ by muffat.debian.org with esmtps (TLS1.2:DHE_RSA_AES_128_CBC_SHA1:128)
+ (Exim 4.80) (envelope-from <buildd@finzi.debian.org>)
+ id 1XWx1A-0005sy-MD; Thu, 25 Sep 2014 00:34:44 +0000
+Received: from buildd by finzi.debian.org with local (Exim 4.80)
+ (envelope-from <buildd@finzi.debian.org>)
+ id 1XWx19-000Ash-NH; Thu, 25 Sep 2014 00:34:43 +0000
 Content-Transfer-Encoding: binary
-X-Mailer: MIME::Lite 3.027 (F2.77; B3.08; Q3.08)
-Date: Sat, 30 Mar 2013 09:19:23 +0000
+MIME-Version: 1.0
+X-Mailer: MIME::Lite 3.028 (F2.82; B3.13; Q3.13)
+Date: Thu, 25 Sep 2014 00:34:43 +0000
 From: buildd on finzi <buildd@finzi.debian.org>
-To: logs@buildd.debian.org,christoph@debian.org
-Subject: Log for successful build of samtools_0.1.19-1 on kfreebsd-i386
-	(dist=sid)
-Key-Id: B31C365A
+To: christoph@debian.org,logs@buildd.debian.org
+Subject: Log for attempted build of samtools_1.1-1 on kfreebsd-i386 (dist=sid)
+Key-Id: A10F7C65
+Message-Id: <E1XWx19-000Ash-NH@finzi.debian.org>
 Delivered-To: logs@buildd.debian.org
 
-sbuild (Debian sbuild) 0.61.0 (23 Feb 2011) on finzi.debian.org
+sbuild (Debian sbuild) 0.64.0 (17 May 2013) on finzi.debian.org
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 0.1.19-1 (kfreebsd-i386)                          30 Mar 2013 09:15 ║
+║ samtools 1.1-1 (kfreebsd-i386)                             25 Sep 2014 00:24 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 0.1.19-1
-Source Version: 0.1.19-1
-Architecture: kfreebsd-i386
-Get:1 http://incoming.debian.org unstable Release.gpg [836 B]
-Get:2 http://incoming.debian.org buildd-unstable Release.gpg [836 B]
-Get:3 http://incoming.debian.org unstable Release [235 kB]
-Get:4 http://mirror-ubc.debian.org unstable Release.gpg [836 B]
-Get:5 http://incoming.debian.org buildd-unstable Release [109 kB]
-Get:6 http://mirror-ubc.debian.org unstable Release [235 kB]
-Get:7 http://mirror-ubc.debian.org unstable/main Sources [6484 kB]
-Get:8 http://incoming.debian.org unstable/main Sources [6484 kB]
-Get:9 http://mirror-ubc.debian.org unstable/contrib Sources [51.0 kB]
-Get:10 http://mirror-ubc.debian.org unstable/non-free Sources [101 kB]
-Get:11 http://mirror-ubc.debian.org unstable/main kfreebsd-i386 Packages [5786 kB]
-Get:12 http://mirror-ubc.debian.org unstable/contrib kfreebsd-i386 Packages [35.4 kB]
-Get:13 http://incoming.debian.org unstable/contrib Sources [51.0 kB]
-Get:14 http://incoming.debian.org unstable/non-free Sources [101 kB]
-Get:15 http://incoming.debian.org unstable/main kfreebsd-i386 Packages [5786 kB]
-Get:16 http://incoming.debian.org unstable/contrib kfreebsd-i386 Packages [35.4 kB]
-Get:17 http://incoming.debian.org buildd-unstable/main Sources [11.2 kB]
-Get:18 http://incoming.debian.org buildd-unstable/contrib Sources [761 B]
-Get:19 http://incoming.debian.org buildd-unstable/non-free Sources [14 B]
-Get:20 http://incoming.debian.org buildd-unstable/main kfreebsd-i386 Packages [13.7 kB]
-Get:21 http://incoming.debian.org buildd-unstable/contrib kfreebsd-i386 Packages [14 B]
-Fetched 25.5 MB in 16s (1552 kB/s)
+Version: 1.1-1
+Source Version: 1.1-1
+Distribution: sid
+Machine Architecture: kfreebsd-i386
+Host Architecture: kfreebsd-i386
+Build Architecture: kfreebsd-i386
+
+I: NOTICE: Log filtering will replace 'build/samtools-qc6QH2/samtools-1.1' with '«PKGBUILDDIR»'
+I: NOTICE: Log filtering will replace 'build/samtools-qc6QH2' with '«BUILDDIR»'
+I: NOTICE: Log filtering will replace 'var/lib/schroot/mount/sid-ki-sbuild-1411604684-24335' with '«CHROOT»'
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Update chroot                                                                │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Get:1 http://mirror-ubc.debian.org unstable InRelease [233 kB]
+Get:2 http://mirror-ubc.debian.org unstable/main Sources [7548 kB]
+Get:3 http://ftp.debian.org unstable InRelease [233 kB]
+Get:4 http://incoming.debian.org buildd-unstable InRelease [110 kB]
+Get:5 http://mirror-ubc.debian.org unstable/contrib Sources [57.1 kB]
+Get:6 http://mirror-ubc.debian.org unstable/non-free Sources [107 kB]
+Get:7 http://mirror-ubc.debian.org unstable/main kfreebsd-i386 Packages [6486 kB]
+Get:8 http://ftp.debian.org unstable/main Sources [7548 kB]
+Get:9 http://mirror-ubc.debian.org unstable/contrib kfreebsd-i386 Packages [39.7 kB]
+Get:10 http://incoming.debian.org buildd-unstable/main Sources [358 kB]
+Get:11 http://incoming.debian.org buildd-unstable/contrib Sources [1136 B]
+Get:12 http://incoming.debian.org buildd-unstable/non-free Sources [1664 B]
+Get:13 http://incoming.debian.org buildd-unstable/main kfreebsd-i386 Packages [291 kB]
+Get:14 http://incoming.debian.org buildd-unstable/contrib kfreebsd-i386 Packages [844 B]
+Get:15 http://ftp.debian.org unstable/contrib Sources [57.1 kB]
+Get:16 http://ftp.debian.org unstable/non-free Sources [107 kB]
+Get:17 http://ftp.debian.org unstable/main kfreebsd-i386 Packages [6486 kB]
+Get:18 http://ftp.debian.org unstable/contrib kfreebsd-i386 Packages [39.7 kB]
+Fetched 29.7 MB in 1min 7s (440 kB/s)
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -78,238 +85,239 @@ Download source files with APT
 
 Reading package lists...
 Building dependency tree...
+Reading state information...
 NOTICE: 'samtools' packaging is maintained in the 'Git' version control system at:
 git://anonscm.debian.org/debian-med/samtools.git
-Need to get 570 kB of source archives.
-Get:1 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 0.1.19-1 (dsc) [2078 B]
-Get:2 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 0.1.19-1 (tar) [558 kB]
-Get:3 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 0.1.19-1 (diff) [10.2 kB]
-Fetched 570 kB in 1s (432 kB/s)
+Need to get 4333 kB of source archives.
+Get:1 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 1.1-1 (dsc) [2104 B]
+Get:2 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 1.1-1 (tar) [4321 kB]
+Get:3 http://incoming.debian.org/debian-buildd/ buildd-unstable/main samtools 1.1-1 (diff) [10.2 kB]
+Fetched 4333 kB in 15s (272 kB/s)
 Download complete and in download only mode
 
 Check arch
 ──────────
 
+Merged Build-Depends: build-essential, fakeroot
+Filtered Build-Depends: build-essential, fakeroot
+dpkg-deb: building package `sbuild-build-depends-core-dummy' in `/«BUILDDIR»/resolver-VZrg5j/apt_archive/sbuild-build-depends-core-dummy.deb'.
+OK
+Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ Install core build dependencies (internal resolver)                          │
+│ Install core build dependencies (apt-based resolver)                         │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Build-Depends: build-essential, fakeroot
-Checking for already installed dependencies...
-build-essential: already installed (11.6)
-fakeroot: already installed (1.18.4-2)
-Checking for dependency conflicts...
-Installing positive dependencies: 
-Reading package lists...
-Building dependency tree...
-0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
-Removing negative dependencies: 
-Reading package lists...
-Building dependency tree...
-0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
-Checking correctness of dependencies...
-
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ Install samtools build dependencies (internal resolver)                      │
-└──────────────────────────────────────────────────────────────────────────────┘
-
-Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, freebsd-utils, grep, gzip, hostname, libc-bin, login, ncurses-base, ncurses-bin, perl-base, sed, sysvinit, sysvinit-utils, tar, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.4.3), g++ (>= 4:4.4.3), make, dpkg-dev (>= 1.13.5), debhelper (>= 9), bash-completion, cdbs, quilt, libncurses5-dev, zlib1g-dev
-Checking for already installed dependencies...
-base-files: already installed (7.1)
-base-passwd: already installed (3.5.26)
-bash: already installed (4.2+dfsg-0.1)
-bsdutils: already installed (1:2.20.1-5.3)
-coreutils: already installed (8.13-3.3)
-dash: already installed (0.5.7-3)
-debianutils: already installed (4.3.4)
-diffutils: already installed (1:3.2-8)
-dpkg: already installed (1.16.10)
-e2fsprogs: already installed (1.42.5-1.1)
-findutils: already installed (4.4.2-5)
-freebsd-utils: already installed (9.0+ds1-10)
-grep: already installed (2.14-1)
-gzip: already installed (1.5-1.1)
-hostname: already installed (3.12)
-libc-bin: already installed (2.13-38)
-login: already installed (1:4.1.5.1-1)
-ncurses-base: already installed (5.9-10)
-ncurses-bin: already installed (5.9-10)
-perl-base: already installed (5.14.2-20)
-sed: already installed (4.2.1-10)
-sysvinit: already installed (2.88dsf-41)
-sysvinit-utils: already installed (2.88dsf-41)
-tar: already installed (1.26+dfsg-0.1)
-util-linux: already installed (2.20.1-5.3)
-libc6-dev: already installed (~*=PROVIDED=*=)
-gcc: already installed (4:4.7.2-1 >= 4:4.4.3 is satisfied)
-g++: already installed (4:4.7.2-1 >= 4:4.4.3 is satisfied)
-make: already installed (3.81-8.2)
-dpkg-dev: already installed (1.16.10 >= 1.13.5 is satisfied)
-debhelper: missing
-Using default version 9.20120909
-bash-completion: missing
-cdbs: missing
-quilt: missing
-libncurses5-dev: missing
-zlib1g-dev: missing
-Checking for dependency conflicts...
-Installing positive dependencies: debhelper bash-completion cdbs quilt libncurses5-dev zlib1g-dev
-Reading package lists...
-Building dependency tree...
-The following extra packages will be installed:
-  bsdmainutils diffstat file gettext gettext-base groff-base html2text
-  intltool-debian libasprintf-dev libasprintf0c2 libcroco3 libffi5
-  libgettextpo-dev libgettextpo0 libglib2.0-0 libmagic1 libpcre3 libpipeline1
-  libtinfo-dev libunistring0 libxml2 man-db po-debconf
-Suggested packages:
-  wamerican wordlist whois vacation devscripts dh-make gettext-doc groff
-  ncurses-doc less www-browser libmail-box-perl procmail graphviz default-mta
-  mail-transport-agent
-Recommended packages:
-  autotools-dev curl wget lynx-cur autopoint libglib2.0-data shared-mime-info
-  xml-core libmail-sendmail-perl
-The following NEW packages will be installed:
-  bash-completion bsdmainutils cdbs debhelper diffstat file gettext
-  gettext-base groff-base html2text intltool-debian libasprintf-dev
-  libasprintf0c2 libcroco3 libffi5 libgettextpo-dev libgettextpo0 libglib2.0-0
-  libmagic1 libncurses5-dev libpcre3 libpipeline1 libtinfo-dev libunistring0
-  libxml2 man-db po-debconf quilt zlib1g-dev
-0 upgraded, 29 newly installed, 0 to remove and 3 not upgraded.
-Need to get 10.2 MB of archives.
-After this operation, 27.3 MB of additional disk space will be used.
-Get:1 http://mirror-ubc.debian.org/debian/ unstable/main libpipeline1 kfreebsd-i386 1.2.2-2 [38.9 kB]
-Get:2 http://mirror-ubc.debian.org/debian/ unstable/main groff-base kfreebsd-i386 1.22.2-1 [733 kB]
-Get:3 http://mirror-ubc.debian.org/debian/ unstable/main bsdmainutils kfreebsd-i386 9.0.4 [205 kB]
-Get:4 http://mirror-ubc.debian.org/debian/ unstable/main man-db kfreebsd-i386 2.6.3-3 [889 kB]
-Get:5 http://mirror-ubc.debian.org/debian/ unstable/main bash-completion all 1:2.0-1 [193 kB]
-Get:6 http://mirror-ubc.debian.org/debian/ unstable/main libasprintf0c2 kfreebsd-i386 0.18.1.1-10 [27.0 kB]
-Get:7 http://mirror-ubc.debian.org/debian/ unstable/main libmagic1 kfreebsd-i386 1:5.11-2.1 [204 kB]
-Get:8 http://mirror-ubc.debian.org/debian/ unstable/main libpcre3 kfreebsd-i386 1:8.31-2 [247 kB]
-Get:9 http://mirror-ubc.debian.org/debian/ unstable/main libxml2 kfreebsd-i386 2.8.0+dfsg1-7+nmu1 [905 kB]
-Get:10 http://mirror-ubc.debian.org/debian/ unstable/main libffi5 kfreebsd-i386 3.0.10-3 [20.3 kB]
-Get:11 http://mirror-ubc.debian.org/debian/ unstable/main libglib2.0-0 kfreebsd-i386 2.33.12+really2.32.4-5 [1819 kB]
-Get:12 http://mirror-ubc.debian.org/debian/ unstable/main libcroco3 kfreebsd-i386 0.6.6-2 [133 kB]
-Get:13 http://mirror-ubc.debian.org/debian/ unstable/main libunistring0 kfreebsd-i386 0.9.3-5 [440 kB]
-Get:14 http://mirror-ubc.debian.org/debian/ unstable/main libgettextpo0 kfreebsd-i386 0.18.1.1-10 [141 kB]
-Get:15 http://mirror-ubc.debian.org/debian/ unstable/main file kfreebsd-i386 1:5.11-2.1 [51.6 kB]
-Get:16 http://mirror-ubc.debian.org/debian/ unstable/main gettext-base kfreebsd-i386 0.18.1.1-10 [131 kB]
-Get:17 http://mirror-ubc.debian.org/debian/ unstable/main cdbs all 0.4.120 [80.4 kB]
-Get:18 http://mirror-ubc.debian.org/debian/ unstable/main html2text kfreebsd-i386 1.3.2a-15 [101 kB]
-Get:19 http://mirror-ubc.debian.org/debian/ unstable/main libasprintf-dev kfreebsd-i386 0.18.1.1-10 [26.6 kB]
-Get:20 http://mirror-ubc.debian.org/debian/ unstable/main libgettextpo-dev kfreebsd-i386 0.18.1.1-10 [170 kB]
-Get:21 http://mirror-ubc.debian.org/debian/ unstable/main gettext kfreebsd-i386 0.18.1.1-10 [1747 kB]
-Get:22 http://mirror-ubc.debian.org/debian/ unstable/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
-Get:23 http://mirror-ubc.debian.org/debian/ unstable/main po-debconf all 1.0.16+nmu2 [224 kB]
-Get:24 http://mirror-ubc.debian.org/debian/ unstable/main debhelper all 9.20120909 [705 kB]
-Get:25 http://mirror-ubc.debian.org/debian/ unstable/main diffstat kfreebsd-i386 1.55-3 [29.0 kB]
-Get:26 http://mirror-ubc.debian.org/debian/ unstable/main libtinfo-dev kfreebsd-i386 5.9-10 [93.1 kB]
-Get:27 http://mirror-ubc.debian.org/debian/ unstable/main libncurses5-dev kfreebsd-i386 5.9-10 [210 kB]
-Get:28 http://mirror-ubc.debian.org/debian/ unstable/main quilt all 0.60-8 [381 kB]
-Get:29 http://mirror-ubc.debian.org/debian/ unstable/main zlib1g-dev kfreebsd-i386 1:1.2.7.dfsg-13 [213 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 10.2 MB in 9s (1081 kB/s)
-Selecting previously unselected package libpipeline1:kfreebsd-i386.
-(Reading database ... 11302 files and directories currently installed.)
-Unpacking libpipeline1:kfreebsd-i386 (from .../libpipeline1_1.2.2-2_kfreebsd-i386.deb) ...
-Selecting previously unselected package groff-base.
-Unpacking groff-base (from .../groff-base_1.22.2-1_kfreebsd-i386.deb) ...
-Selecting previously unselected package bsdmainutils.
-Unpacking bsdmainutils (from .../bsdmainutils_9.0.4_kfreebsd-i386.deb) ...
-Selecting previously unselected package man-db.
-Unpacking man-db (from .../man-db_2.6.3-3_kfreebsd-i386.deb) ...
-Selecting previously unselected package bash-completion.
-Unpacking bash-completion (from .../bash-completion_1%3a2.0-1_all.deb) ...
-Selecting previously unselected package libasprintf0c2:kfreebsd-i386.
-Unpacking libasprintf0c2:kfreebsd-i386 (from .../libasprintf0c2_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package libmagic1:kfreebsd-i386.
-Unpacking libmagic1:kfreebsd-i386 (from .../libmagic1_1%3a5.11-2.1_kfreebsd-i386.deb) ...
-Selecting previously unselected package libpcre3:kfreebsd-i386.
-Unpacking libpcre3:kfreebsd-i386 (from .../libpcre3_1%3a8.31-2_kfreebsd-i386.deb) ...
-Selecting previously unselected package libxml2:kfreebsd-i386.
-Unpacking libxml2:kfreebsd-i386 (from .../libxml2_2.8.0+dfsg1-7+nmu1_kfreebsd-i386.deb) ...
-Selecting previously unselected package libffi5:kfreebsd-i386.
-Unpacking libffi5:kfreebsd-i386 (from .../libffi5_3.0.10-3_kfreebsd-i386.deb) ...
-Selecting previously unselected package libglib2.0-0:kfreebsd-i386.
-Unpacking libglib2.0-0:kfreebsd-i386 (from .../libglib2.0-0_2.33.12+really2.32.4-5_kfreebsd-i386.deb) ...
-Selecting previously unselected package libcroco3:kfreebsd-i386.
-Unpacking libcroco3:kfreebsd-i386 (from .../libcroco3_0.6.6-2_kfreebsd-i386.deb) ...
-Selecting previously unselected package libunistring0:kfreebsd-i386.
-Unpacking libunistring0:kfreebsd-i386 (from .../libunistring0_0.9.3-5_kfreebsd-i386.deb) ...
-Selecting previously unselected package libgettextpo0:kfreebsd-i386.
-Unpacking libgettextpo0:kfreebsd-i386 (from .../libgettextpo0_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package file.
-Unpacking file (from .../file_1%3a5.11-2.1_kfreebsd-i386.deb) ...
-Selecting previously unselected package gettext-base.
-Unpacking gettext-base (from .../gettext-base_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package cdbs.
-Unpacking cdbs (from .../archives/cdbs_0.4.120_all.deb) ...
-Selecting previously unselected package html2text.
-Unpacking html2text (from .../html2text_1.3.2a-15_kfreebsd-i386.deb) ...
-Selecting previously unselected package libasprintf-dev:kfreebsd-i386.
-Unpacking libasprintf-dev:kfreebsd-i386 (from .../libasprintf-dev_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package libgettextpo-dev:kfreebsd-i386.
-Unpacking libgettextpo-dev:kfreebsd-i386 (from .../libgettextpo-dev_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package gettext.
-Unpacking gettext (from .../gettext_0.18.1.1-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package intltool-debian.
-Unpacking intltool-debian (from .../intltool-debian_0.35.0+20060710.1_all.deb) ...
-Selecting previously unselected package po-debconf.
-Unpacking po-debconf (from .../po-debconf_1.0.16+nmu2_all.deb) ...
-Selecting previously unselected package debhelper.
-Unpacking debhelper (from .../debhelper_9.20120909_all.deb) ...
-Selecting previously unselected package diffstat.
-Unpacking diffstat (from .../diffstat_1.55-3_kfreebsd-i386.deb) ...
-Selecting previously unselected package libtinfo-dev:kfreebsd-i386.
-Unpacking libtinfo-dev:kfreebsd-i386 (from .../libtinfo-dev_5.9-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package libncurses5-dev.
-Unpacking libncurses5-dev (from .../libncurses5-dev_5.9-10_kfreebsd-i386.deb) ...
-Selecting previously unselected package quilt.
-Unpacking quilt (from .../archives/quilt_0.60-8_all.deb) ...
-Selecting previously unselected package zlib1g-dev:kfreebsd-i386.
-Unpacking zlib1g-dev:kfreebsd-i386 (from .../zlib1g-dev_1%3a1.2.7.dfsg-13_kfreebsd-i386.deb) ...
-Setting up libpipeline1:kfreebsd-i386 (1.2.2-2) ...
-Setting up groff-base (1.22.2-1) ...
-Setting up bsdmainutils (9.0.4) ...
-update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
-update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
-Setting up man-db (2.6.3-3) ...
-Building database of manual pages ...
-Setting up bash-completion (1:2.0-1) ...
-Setting up libasprintf0c2:kfreebsd-i386 (0.18.1.1-10) ...
-Setting up libmagic1:kfreebsd-i386 (1:5.11-2.1) ...
-Setting up libpcre3:kfreebsd-i386 (1:8.31-2) ...
-Setting up libxml2:kfreebsd-i386 (2.8.0+dfsg1-7+nmu1) ...
-Setting up libffi5:kfreebsd-i386 (3.0.10-3) ...
-Setting up libglib2.0-0:kfreebsd-i386 (2.33.12+really2.32.4-5) ...
-No schema files found: doing nothing.
-Setting up libcroco3:kfreebsd-i386 (0.6.6-2) ...
-Setting up libunistring0:kfreebsd-i386 (0.9.3-5) ...
-Setting up libgettextpo0:kfreebsd-i386 (0.18.1.1-10) ...
-Setting up file (1:5.11-2.1) ...
-Setting up gettext-base (0.18.1.1-10) ...
-Setting up cdbs (0.4.120) ...
-Setting up html2text (1.3.2a-15) ...
-Setting up libasprintf-dev:kfreebsd-i386 (0.18.1.1-10) ...
-Setting up libgettextpo-dev:kfreebsd-i386 (0.18.1.1-10) ...
-Setting up gettext (0.18.1.1-10) ...
-Setting up intltool-debian (0.35.0+20060710.1) ...
-Setting up po-debconf (1.0.16+nmu2) ...
-Setting up debhelper (9.20120909) ...
-Setting up diffstat (1.55-3) ...
-Setting up libtinfo-dev:kfreebsd-i386 (5.9-10) ...
-Setting up libncurses5-dev (5.9-10) ...
-Setting up quilt (0.60-8) ...
-Setting up zlib1g-dev:kfreebsd-i386 (1:1.2.7.dfsg-13) ...
-Removing negative dependencies: 
+Installing build dependencies
 Reading package lists...
 Building dependency tree...
 Reading state information...
-0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
-Checking correctness of dependencies...
-Kernel: GNU/kFreeBSD 8.1-1-686-smp kfreebsd-i386 (i686)
-Toolchain package versions: binutils_2.22-8 dpkg-dev_1.16.10 g++-4.7_4.7.2-5 gcc-4.7_4.7.2-5 kfreebsd-kernel-headers_0.83 libc0.1-dev_2.13-38 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5
-Package versions: apt_0.9.7.8 base-files_7.1 base-passwd_3.5.26 bash_4.2+dfsg-0.1 bash-completion_1:2.0-1 binutils_2.22-8 bsdmainutils_9.0.4 bsdutils_1:2.20.1-5.3 build-essential_11.6 bzip2_1.0.6-4 cdbs_0.4.120 coreutils_8.13-3.3 cpp_4:4.7.2-1 cpp-4.7_4.7.2-5 dash_0.5.7-3 debconf_1.5.49 debconf-i18n_1.5.49 debfoster_2.7-1.2 debhelper_9.20120909 debian-archive-keyring_2012.4 debianutils_4.3.4 diffstat_1.55-3 diffutils_1:3.2-8 dpkg_1.16.10 dpkg-dev_1.16.10 e2fslibs_1.42.5-1.1 e2fsprogs_1.42.5-1.1 fakeroot_1.18.4-2 file_1:5.11-2.1 findutils_4.4.2-5 freebsd-utils_9.0+ds1-10 g++_4:4.7.2-1 g++-4.7_4.7.2-5 gcc_4:4.7.2-1 gcc-4.7_4.7.2-5 gcc-4.7-base_4.7.2-5 gettext_0.18.1.1-10 gettext-base_0.18.1.1-10 gnupg_1.4.12-7 gpgv_1.4.12-7 grep_2.14-1 groff-base_1.22.2-1 gzip_1.5-1.1 hostname_3.12 html2text_1.3.2a-15 initscripts_2.88dsf-41 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.1 kbdcontrol_9.0+ds1-10 kfreebsd-kernel-headers_0.83 libacl1_2.2.51-8 libapt-pkg4.12_0.9.7.8 libasprintf-dev_0.18.1.1-10 libasprintf0c2_0.18.1.1-10 libattr1_1:2.4.46-8 libblkid1_2.20.1-5.3 libbsd0_0.4.2-1 libbz2-1.0_1.0.6-4 libc-bin_2.13-38 libc-dev-bin_2.13-38 libc0.1_2.13-38 libc0.1-dev_2.13-38 libcam6_9.0+ds1-4 libclass-isa-perl_0.36-5 libcomerr2_1.42.5-1.1 libcroco3_0.6.6-2 libdb5.1_5.1.29-5 libdpkg-perl_1.16.10 libexpat1_2.1.0-1 libffi5_3.0.10-3 libgc1c2_1:7.1-9.1 libgcc1_1:4.7.2-5 libgdbm3_1.8.3-11 libgeom1_9.0+ds1-4 libgettextpo-dev_0.18.1.1-10 libgettextpo0_0.18.1.1-10 libglib2.0-0_2.33.12+really2.32.4-5 libgmp10_2:5.0.5+dfsg-2 libgomp1_4.7.2-5 libgssglue1_0.4-2 libjail1_9.0+ds1-4 libkiconv4_9.0+ds1-4 libkvm0_9.0+ds1-4 liblocale-gettext-perl_1.05-7+b1 liblzma5_5.1.1alpha+20120614-2 libmagic1_1:5.11-2.1 libmpc2_0.9-4 libmpfr4_3.1.1-1 libncurses5_5.9-10 libncurses5-dev_5.9-10 libpam-modules_1.1.3-9 libpam-modules-bin_1.1.3-9 libpam-runtime_1.1.3-9 libpam0g_1.1.3-9 libpcre3_1:8.31-2 libpipeline1_1.2.2-2 libquadmath0_4.7.2-5 libreadline6_6.2+dfsg-0.1 libsbuf6_9.0+ds1-4 libslang2_2.2.4-15 libss2_1.42.5-1.1 libstdc++6_4.7.2-5 libstdc++6-4.7-dev_4.7.2-5 libswitch-perl_2.16-2 libtext-charwidth-perl_0.04-7+b1 libtext-iconv-perl_1.7-5 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_1.2000-1 libtinfo-dev_5.9-10 libtinfo5_5.9-10 libtirpc1_0.2.2-5 libunistring0_0.9.3-5 libusb-0.1-4_2:0.1.12-23+nmu1 libuuid1_2.20.1-5.3 libxml2_2.8.0+dfsg1-7+nmu1 login_1:4.1.5.1-1 lsb-base_4.1+Debian9 make_3.81-8.2 man-db_2.6.3-3 mawk_1.3.3-17 multiarch-support_2.13-38 ncurses-base_5.9-10 ncurses-bin_5.9-10 passwd_1:4.1.5.1-1 patch_2.6.1-3 perl_5.14.2-20 perl-base_5.14.2-20 perl-modules_5.14.2-20 po-debconf_1.0.16+nmu2 quilt_0.60-8 readline-common_6.2+dfsg-0.1 sed_4.2.1-10 sensible-utils_0.0.7 sudo_1.8.5p2-1+nmu1 sysv-rc_2.88dsf-41 sysvinit_2.88dsf-41 sysvinit-utils_2.88dsf-41 tar_1.26+dfsg-0.1 tzdata_2013b-1 util-linux_2.20.1-5.3 xz-utils_5.1.1alpha+20120614-2 zlib1g_1:1.2.7.dfsg-13 zlib1g-dev_1:1.2.7.dfsg-13
+The following NEW packages will be installed:
+  sbuild-build-depends-core-dummy
+debconf: delaying package configuration, since apt-utils is not installed
+0 upgraded, 1 newly installed, 0 to remove and 66 not upgraded.
+Need to get 0 B/822 B of archives.
+After this operation, 0 B of additional disk space will be used.
+Selecting previously unselected package sbuild-build-depends-core-dummy.
+(Reading database ... 10755 files and directories currently installed.)
+Preparing to unpack .../sbuild-build-depends-core-dummy.deb ...
+Unpacking sbuild-build-depends-core-dummy (0.invalid.0) ...
+Setting up sbuild-build-depends-core-dummy (0.invalid.0) ...
+Merged Build-Depends: libc6-dev | libc-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libncurses5-dev, libhts-dev (>= 1.0), zlib1g-dev, tabix (>= 1.0)
+Filtered Build-Depends: libc6-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libncurses5-dev, libhts-dev (>= 1.0), zlib1g-dev, tabix (>= 1.0)
+dpkg-deb: building package `sbuild-build-depends-samtools-dummy' in `/«BUILDDIR»/resolver-ZiCUyo/apt_archive/sbuild-build-depends-samtools-dummy.deb'.
+OK
+Reading package lists...
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Install samtools build dependencies (apt-based resolver)                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Installing build dependencies
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  bash-completion bsdmainutils debhelper file gettext gettext-base groff-base
+  intltool-debian libasprintf0c2 libcroco3 libffi6 libglib2.0-0 libhts-dev
+  libhts1 libmagic1 libncurses5 libncurses5-dev libpipeline1 libtinfo-dev
+  libtinfo5 libunistring0 libxml2 man-db ncurses-bin po-debconf tabix
+  zlib1g-dev
+Suggested packages:
+  wamerican wordlist whois vacation dh-make gettext-doc groff ncurses-doc less
+  www-browser libmail-box-perl
+Recommended packages:
+  curl wget lynx-cur autopoint libasprintf-dev libgettextpo-dev
+  libglib2.0-data shared-mime-info xdg-user-dirs xml-core
+  libmail-sendmail-perl
+The following NEW packages will be installed:
+  bash-completion bsdmainutils debhelper file gettext gettext-base groff-base
+  intltool-debian libasprintf0c2 libcroco3 libffi6 libglib2.0-0 libhts-dev
+  libhts1 libmagic1 libncurses5-dev libpipeline1 libtinfo-dev libunistring0
+  libxml2 man-db po-debconf sbuild-build-depends-samtools-dummy tabix
+  zlib1g-dev
+The following packages will be upgraded:
+  libncurses5 libtinfo5 ncurses-bin
+3 upgraded, 25 newly installed, 0 to remove and 63 not upgraded.
+Need to get 10.9 MB/10.9 MB of archives.
+After this operation, 30.3 MB of additional disk space will be used.
+Get:1 http://mirror-ubc.debian.org/debian/ unstable/main ncurses-bin kfreebsd-i386 5.9+20140913-1 [348 kB]
+Get:2 http://mirror-ubc.debian.org/debian/ unstable/main libtinfo5 kfreebsd-i386 5.9+20140913-1 [282 kB]
+Get:3 http://mirror-ubc.debian.org/debian/ unstable/main libncurses5 kfreebsd-i386 5.9+20140913-1 [102 kB]
+Get:4 http://mirror-ubc.debian.org/debian/ unstable/main libpipeline1 kfreebsd-i386 1.3.1-1 [27.7 kB]
+Get:5 http://mirror-ubc.debian.org/debian/ unstable/main groff-base kfreebsd-i386 1.22.2-8 [1073 kB]
+Get:6 http://mirror-ubc.debian.org/debian/ unstable/main bsdmainutils kfreebsd-i386 9.0.5 [205 kB]
+Get:7 http://mirror-ubc.debian.org/debian/ unstable/main man-db kfreebsd-i386 2.7.0.1-1 [1002 kB]
+Get:8 http://mirror-ubc.debian.org/debian/ unstable/main bash-completion all 1:2.1-4 [182 kB]
+Get:9 http://mirror-ubc.debian.org/debian/ unstable/main libasprintf0c2 kfreebsd-i386 0.19.2-2 [30.8 kB]
+Get:10 http://mirror-ubc.debian.org/debian/ unstable/main libmagic1 kfreebsd-i386 1:5.19-2 [242 kB]
+Get:11 http://mirror-ubc.debian.org/debian/ unstable/main libxml2 kfreebsd-i386 2.9.1+dfsg1-4 [833 kB]
+Get:12 http://mirror-ubc.debian.org/debian/ unstable/main libffi6 kfreebsd-i386 3.1-2 [17.3 kB]
+Get:13 http://mirror-ubc.debian.org/debian/ unstable/main libglib2.0-0 kfreebsd-i386 2.42.0-1 [2539 kB]
+Get:14 http://mirror-ubc.debian.org/debian/ unstable/main libcroco3 kfreebsd-i386 0.6.8-3 [140 kB]
+Get:15 http://mirror-ubc.debian.org/debian/ unstable/main libhts1 kfreebsd-i386 1.1-1 [215 kB]
+Get:16 http://mirror-ubc.debian.org/debian/ unstable/main libunistring0 kfreebsd-i386 0.9.3-5.2 [284 kB]
+Get:17 http://mirror-ubc.debian.org/debian/ unstable/main file kfreebsd-i386 1:5.19-2 [58.1 kB]
+Get:18 http://mirror-ubc.debian.org/debian/ unstable/main gettext-base kfreebsd-i386 0.19.2-2 [121 kB]
+Get:19 http://mirror-ubc.debian.org/debian/ unstable/main gettext kfreebsd-i386 0.19.2-2 [1237 kB]
+Get:20 http://mirror-ubc.debian.org/debian/ unstable/main intltool-debian all 0.35.0+20060710.1 [30.8 kB]
+Get:21 http://mirror-ubc.debian.org/debian/ unstable/main po-debconf all 1.0.16+nmu3 [220 kB]
+Get:22 http://mirror-ubc.debian.org/debian/ unstable/main debhelper all 9.20140817 [814 kB]
+Get:23 http://mirror-ubc.debian.org/debian/ unstable/main libhts-dev kfreebsd-i386 1.1-1 [255 kB]
+Get:24 http://mirror-ubc.debian.org/debian/ unstable/main libtinfo-dev kfreebsd-i386 5.9+20140913-1 [75.9 kB]
+Get:25 http://mirror-ubc.debian.org/debian/ unstable/main libncurses5-dev kfreebsd-i386 5.9+20140913-1 [176 kB]
+Get:26 http://mirror-ubc.debian.org/debian/ unstable/main tabix kfreebsd-i386 1.1-1 [198 kB]
+Get:27 http://mirror-ubc.debian.org/debian/ unstable/main zlib1g-dev kfreebsd-i386 1:1.2.8.dfsg-2 [205 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 10.9 MB in 2s (5416 kB/s)
+(Reading database ... 10755 files and directories currently installed.)
+Preparing to unpack .../ncurses-bin_5.9+20140913-1_kfreebsd-i386.deb ...
+Unpacking ncurses-bin (5.9+20140913-1) over (5.9+20140712-2) ...
+Setting up ncurses-bin (5.9+20140913-1) ...
+(Reading database ... 10755 files and directories currently installed.)
+Preparing to unpack .../libtinfo5_5.9+20140913-1_kfreebsd-i386.deb ...
+Unpacking libtinfo5:kfreebsd-i386 (5.9+20140913-1) over (5.9+20140712-2) ...
+Setting up libtinfo5:kfreebsd-i386 (5.9+20140913-1) ...
+Processing triggers for libc-bin (2.19-9) ...
+(Reading database ... 10755 files and directories currently installed.)
+Preparing to unpack .../libncurses5_5.9+20140913-1_kfreebsd-i386.deb ...
+Unpacking libncurses5:kfreebsd-i386 (5.9+20140913-1) over (5.9+20140712-2) ...
+Setting up libncurses5:kfreebsd-i386 (5.9+20140913-1) ...
+Processing triggers for libc-bin (2.19-9) ...
+Selecting previously unselected package libpipeline1:kfreebsd-i386.
+(Reading database ... 10755 files and directories currently installed.)
+Preparing to unpack .../libpipeline1_1.3.1-1_kfreebsd-i386.deb ...
+Unpacking libpipeline1:kfreebsd-i386 (1.3.1-1) ...
+Selecting previously unselected package groff-base.
+Preparing to unpack .../groff-base_1.22.2-8_kfreebsd-i386.deb ...
+Unpacking groff-base (1.22.2-8) ...
+Selecting previously unselected package bsdmainutils.
+Preparing to unpack .../bsdmainutils_9.0.5_kfreebsd-i386.deb ...
+Unpacking bsdmainutils (9.0.5) ...
+Selecting previously unselected package man-db.
+Preparing to unpack .../man-db_2.7.0.1-1_kfreebsd-i386.deb ...
+Unpacking man-db (2.7.0.1-1) ...
+Selecting previously unselected package bash-completion.
+Preparing to unpack .../bash-completion_1%3a2.1-4_all.deb ...
+Unpacking bash-completion (1:2.1-4) ...
+Selecting previously unselected package libasprintf0c2:kfreebsd-i386.
+Preparing to unpack .../libasprintf0c2_0.19.2-2_kfreebsd-i386.deb ...
+Unpacking libasprintf0c2:kfreebsd-i386 (0.19.2-2) ...
+Selecting previously unselected package libmagic1:kfreebsd-i386.
+Preparing to unpack .../libmagic1_1%3a5.19-2_kfreebsd-i386.deb ...
+Unpacking libmagic1:kfreebsd-i386 (1:5.19-2) ...
+Selecting previously unselected package libxml2:kfreebsd-i386.
+Preparing to unpack .../libxml2_2.9.1+dfsg1-4_kfreebsd-i386.deb ...
+Unpacking libxml2:kfreebsd-i386 (2.9.1+dfsg1-4) ...
+Selecting previously unselected package libffi6:kfreebsd-i386.
+Preparing to unpack .../libffi6_3.1-2_kfreebsd-i386.deb ...
+Unpacking libffi6:kfreebsd-i386 (3.1-2) ...
+Selecting previously unselected package libglib2.0-0:kfreebsd-i386.
+Preparing to unpack .../libglib2.0-0_2.42.0-1_kfreebsd-i386.deb ...
+Unpacking libglib2.0-0:kfreebsd-i386 (2.42.0-1) ...
+Selecting previously unselected package libcroco3:kfreebsd-i386.
+Preparing to unpack .../libcroco3_0.6.8-3_kfreebsd-i386.deb ...
+Unpacking libcroco3:kfreebsd-i386 (0.6.8-3) ...
+Selecting previously unselected package libhts1:kfreebsd-i386.
+Preparing to unpack .../libhts1_1.1-1_kfreebsd-i386.deb ...
+Unpacking libhts1:kfreebsd-i386 (1.1-1) ...
+Selecting previously unselected package libunistring0:kfreebsd-i386.
+Preparing to unpack .../libunistring0_0.9.3-5.2_kfreebsd-i386.deb ...
+Unpacking libunistring0:kfreebsd-i386 (0.9.3-5.2) ...
+Selecting previously unselected package file.
+Preparing to unpack .../file_1%3a5.19-2_kfreebsd-i386.deb ...
+Unpacking file (1:5.19-2) ...
+Selecting previously unselected package gettext-base.
+Preparing to unpack .../gettext-base_0.19.2-2_kfreebsd-i386.deb ...
+Unpacking gettext-base (0.19.2-2) ...
+Selecting previously unselected package gettext.
+Preparing to unpack .../gettext_0.19.2-2_kfreebsd-i386.deb ...
+Unpacking gettext (0.19.2-2) ...
+Selecting previously unselected package intltool-debian.
+Preparing to unpack .../intltool-debian_0.35.0+20060710.1_all.deb ...
+Unpacking intltool-debian (0.35.0+20060710.1) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../po-debconf_1.0.16+nmu3_all.deb ...
+Unpacking po-debconf (1.0.16+nmu3) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../debhelper_9.20140817_all.deb ...
+Unpacking debhelper (9.20140817) ...
+Selecting previously unselected package libhts-dev:kfreebsd-i386.
+Preparing to unpack .../libhts-dev_1.1-1_kfreebsd-i386.deb ...
+Unpacking libhts-dev:kfreebsd-i386 (1.1-1) ...
+Selecting previously unselected package libtinfo-dev:kfreebsd-i386.
+Preparing to unpack .../libtinfo-dev_5.9+20140913-1_kfreebsd-i386.deb ...
+Unpacking libtinfo-dev:kfreebsd-i386 (5.9+20140913-1) ...
+Selecting previously unselected package libncurses5-dev:kfreebsd-i386.
+Preparing to unpack .../libncurses5-dev_5.9+20140913-1_kfreebsd-i386.deb ...
+Unpacking libncurses5-dev:kfreebsd-i386 (5.9+20140913-1) ...
+Selecting previously unselected package tabix.
+Preparing to unpack .../tabix_1.1-1_kfreebsd-i386.deb ...
+Unpacking tabix (1.1-1) ...
+Selecting previously unselected package zlib1g-dev:kfreebsd-i386.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2_kfreebsd-i386.deb ...
+Unpacking zlib1g-dev:kfreebsd-i386 (1:1.2.8.dfsg-2) ...
+Selecting previously unselected package sbuild-build-depends-samtools-dummy.
+Preparing to unpack .../sbuild-build-depends-samtools-dummy.deb ...
+Unpacking sbuild-build-depends-samtools-dummy (0.invalid.0) ...
+Setting up libpipeline1:kfreebsd-i386 (1.3.1-1) ...
+Setting up groff-base (1.22.2-8) ...
+Setting up bsdmainutils (9.0.5) ...
+update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
+update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
+Setting up man-db (2.7.0.1-1) ...
+Not building database; man-db/auto-update is not 'true'.
+Setting up bash-completion (1:2.1-4) ...
+Setting up libasprintf0c2:kfreebsd-i386 (0.19.2-2) ...
+Setting up libmagic1:kfreebsd-i386 (1:5.19-2) ...
+Setting up libxml2:kfreebsd-i386 (2.9.1+dfsg1-4) ...
+Setting up libffi6:kfreebsd-i386 (3.1-2) ...
+Setting up libglib2.0-0:kfreebsd-i386 (2.42.0-1) ...
+No schema files found: doing nothing.
+Setting up libcroco3:kfreebsd-i386 (0.6.8-3) ...
+Setting up libhts1:kfreebsd-i386 (1.1-1) ...
+Setting up libunistring0:kfreebsd-i386 (0.9.3-5.2) ...
+Setting up file (1:5.19-2) ...
+Setting up gettext-base (0.19.2-2) ...
+Setting up gettext (0.19.2-2) ...
+Setting up intltool-debian (0.35.0+20060710.1) ...
+Setting up po-debconf (1.0.16+nmu3) ...
+Setting up debhelper (9.20140817) ...
+Setting up libhts-dev:kfreebsd-i386 (1.1-1) ...
+Setting up libtinfo-dev:kfreebsd-i386 (5.9+20140913-1) ...
+Setting up libncurses5-dev:kfreebsd-i386 (5.9+20140913-1) ...
+Setting up tabix (1.1-1) ...
+Setting up zlib1g-dev:kfreebsd-i386 (1:1.2.8.dfsg-2) ...
+Setting up sbuild-build-depends-samtools-dummy (0.invalid.0) ...
+Processing triggers for libc-bin (2.19-9) ...
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ Build environment                                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Kernel: GNU/kFreeBSD 9.0-2-686 kfreebsd-i386 (i386)
+Toolchain package versions: binutils_2.24.51.20140818-1 dpkg-dev_1.17.13 g++-4.9_4.9.1-8 gcc-4.9_4.9.1-8 kfreebsd-kernel-headers_10.0~5 libc0.1-dev_2.19-9 libstdc++-4.9-dev_4.9.1-8 libstdc++6_4.9.1-8
+Package versions: apt_1.0.6 base-files_7.5 base-passwd_3.5.33 bash_4.3-9 bash-completion_1:2.1-4 binutils_2.24.51.20140818-1 bsdmainutils_9.0.5 bsdutils_1:2.20.1-5.8 build-essential_11.7 bzip2_1.0.6-7 coreutils_8.21-1.2 cpp_4:4.9.1-3 cpp-4.9_4.9.1-8 dash_0.5.7-4 debconf_1.5.53 debfoster_2.7-2 debhelper_9.20140817 debian-archive-keyring_2012.4 debianutils_4.4 diffutils_1:3.3-1 dpkg_1.17.13 dpkg-dev_1.17.13 e2fslibs_1.42.11-2 e2fsprogs_1.42.11-2 fakeroot_1.20.1-1.1 file_1:5.19-2 findutils_4.4.2-9 freebsd-utils_10.0+ds1-1 g++_4:4.9.1-3 g++-4.9_4.9.1-8 gcc_4:4.9.1-3 gcc-4.9_4.9.1-8 gcc-4.9-base_4.9.1-8 gettext_0.19.2-2 gettext-base_0.19.2-2 gnupg_1.4.18-2 gpgv_1.4.18-2 grep_2.20-2 groff-base_1.22.2-8 gzip_1.6-3 hostname_3.15 init_1.21 initscripts_2.88dsf-53.4 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.1 kbdcontrol_10.0+ds1-1 kfreebsd-kernel-headers_10.0~5 libacl1_2.2.52-1 libapt-pkg4.12_1.0.6 libasprintf0c2_0.19.2-2 libatomic1_4.9.1-8 libattr1_1:2.4.47-1 libblkid1_2.20.1-5.8 libbsd0_0.7.0-1 libbz2-1.0_1.0.6-7 libc-bin_2.19-9 libc-dev-bin_2.19-9 libc0.1_2.19-9 libc0.1-dev_2.19-9 libcam6_10.0-6 libcloog-isl4_0.18.2-1 libcomerr2_1.42.11-2 libcroco3_0.6.8-3 libdb5.3_5.3.28-5 libdebconfclient0_0.191 libdpkg-perl_1.17.13 libexpat1_2.1.0-6 libfakeroot_1.20.1-1.1 libffi6_3.1-2 libfreebsd-glue-0_0.2.19 libgc1c2_1:7.2d-6.3 libgcc-4.9-dev_4.9.1-8 libgcc1_1:4.9.1-8 libgdbm3_1.8.3-13 libgeom1_10.0-6 libglib2.0-0_2.42.0-1 libgmp10_2:6.0.0+dfsg-6 libgomp1_4.9.1-8 libgssapi-krb5-2_1.12.1+dfsg-7 libhts-dev_1.1-1 libhts1_1.1-1 libisl10_0.12.2-2 libjail1_10.0-6 libk5crypto3_1.12.1+dfsg-7 libkiconv4_10.0-6 libkrb5-3_1.12.1+dfsg-7 libkrb5support0_1.12.1+dfsg-7 libkvm6_10.0-6 liblzma5_5.1.1alpha+20120614-2 libmagic1_1:5.19-2 libmpc3_1.0.2-1 libmpfr4_3.1.2-1 libncurses5_5.9+20140913-1 libncurses5-dev_5.9+20140913-1 libpam-modules_1.1.8-3 libpam-modules-bin_1.1.8-3 libpam-runtime_1.1.8-3 libpam0g_1.1.8-3 libpcre3_1:8.35-3 libpipeline1_1.3.1-1 libquadmath0_4.9.1-8 libreadline6_6.3-8 libsbuf6_10.0-6 libslang2_2.2.4-17 libss2_1.42.11-2 libstdc++-4.9-dev_4.9.1-8 libstdc++6_4.9.1-8 libtimedate-perl_2.3000-2 libtinfo-dev_5.9+20140913-1 libtinfo5_5.9+20140913-1 libtirpc1_0.2.4-2.1 libunistring0_0.9.3-5.2 libusb-0.1-4_2:0.1.12-24 libutil-freebsd-9_10.0-6 libuuid1_2.20.1-5.8 libxml2_2.9.1+dfsg1-4 login_1:4.2-2+b1 lsb-base_4.1+Debian13 make_4.0-8 man-db_2.7.0.1-1 mawk_1.3.3-17 multiarch-support_2.19-9 ncurses-base_5.9+20140712-2 ncurses-bin_5.9+20140913-1 passwd_1:4.2-2+b1 patch_2.7.1-6 perl_5.20.0-4 perl-base_5.20.0-4 perl-modules_5.20.0-4 po-debconf_1.0.16+nmu3 readline-common_6.3-8 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-samtools-dummy_0.invalid.0 sed_4.2.2-4 sensible-utils_0.0.9 startpar_0.59-3 sysv-rc_2.88dsf-53.4 sysvinit-core_2.88dsf-53.4 sysvinit-utils_2.88dsf-53.4 tabix_1.1-1 tar_1.27.1-2 tzdata_2014f-1 util-linux_2.20.1-5.8 xz-utils_5.1.1alpha+20120614-2 zlib1g_1:1.2.8.dfsg-2 zlib1g-dev_1:1.2.8.dfsg-2
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -319,589 +327,1616 @@ Package versions: apt_0.9.7.8 base-files_7.1 base-passwd_3.5.26 bash_4.2+dfsg-0.
 Unpack source
 ─────────────
 
-gpgv: keyblock resource `/home/buildd/.gnupg/trustedkeys.gpg': file open error
-gpgv: Signature made Sat Mar 30 08:51:24 2013 UTC using RSA key ID 2295D502
+gpgv: keyblock resource `/sbuild-nonexistent/.gnupg/trustedkeys.gpg': file open error
+gpgv: Signature made Thu Sep 25 00:09:33 2014 UTC using RSA key ID 2295D502
 gpgv: Can't check signature: public key not found
-dpkg-source: warning: failed to verify signature on ./samtools_0.1.19-1.dsc
-dpkg-source: info: extracting samtools in samtools-0.1.19
-dpkg-source: info: unpacking samtools_0.1.19.orig.tar.gz
-dpkg-source: info: unpacking samtools_0.1.19-1.debian.tar.gz
-dpkg-source: info: applying fix_example_makefile.patch
-dpkg-source: info: applying fix_segfault_with_small_ref.patch
+dpkg-source: warning: failed to verify signature on ./samtools_1.1-1.dsc
+dpkg-source: info: extracting samtools in samtools-1.1
+dpkg-source: info: unpacking samtools_1.1.orig.tar.gz
+dpkg-source: info: unpacking samtools_1.1-1.debian.tar.xz
 dpkg-source: info: applying fix_coverage_cap.patch
+dpkg-source: info: applying fix_segfault_with_small_ref.patch
+dpkg-source: info: applying dynamic-build.patch
+dpkg-source: info: applying debian-changes
 
 Check disc space
 ────────────────
 
+Sufficient free space for build
+
+User Environment
+────────────────
+
+DEB_BUILD_OPTIONS=parallel=2
+HOME=/sbuild-nonexistent
+LOGNAME=buildd
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+SCHROOT_ALIAS_NAME=sid-kfreebsd-i386-sbuild
+SCHROOT_CHROOT_NAME=sid-ki-sbuild
+SCHROOT_COMMAND=env
+SCHROOT_GID=1009
+SCHROOT_GROUP=buildd
+SCHROOT_SESSION_ID=sid-ki-sbuild-1411604684-24335
+SCHROOT_UID=2952
+SCHROOT_USER=buildd
+SHELL=/bin/sh
+USER=buildd
 
 dpkg-buildpackage
 ─────────────────
 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 0.1.19-1
- dpkg-source --before-build samtools-0.1.19
+dpkg-buildpackage: source version 1.1-1
+dpkg-buildpackage: source distribution unstable
+ dpkg-source --before-build samtools-1.1
 dpkg-buildpackage: host architecture kfreebsd-i386
+dpkg-source: info: using options from samtools-1.1/debian/source/options: --single-debian-patch
  fakeroot debian/rules clean
-test -x debian/rules
-dh_testroot
-rm -f debian/stamp-makefile-build debian/stamp-makefile-install
-/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -k clean
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-rm -fr gmon.out *.o a.out *.exe *.dSYM razip bgzip samtools *~ *.a *.so.* *.so *.dylib
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-rm -fr gmon.out *.o a.out *.dSYM bcftools *~ *.a bcf.aux bcf.log bcf.pdf *.class libbcf.*.dylib libbcf.so*
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-rm -fr gmon.out *.o a.out *.exe *.dSYM md5sum-lite md5fa maq2sam-short maq2sam-long ace2sam wgsim bamcheck *~ *.a
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-rm -f debian/stamp-makefile-check
-dh_clean 
-/usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-if [ -d "." ]; then \
-	  cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/debian/patches quilt --quiltrc /dev/null pop -a -R || test $? = 2 ; \
-	fi
-Removing patch fix_coverage_cap.patch
-Restoring bam2depth.c
-
-Removing patch fix_segfault_with_small_ref.patch
-Restoring bam_plcmd.c
-
-Removing patch fix_example_makefile.patch
-Restoring examples/Makefile
-
-No patches applied
-rm -rf ./.pc
-rm -f debian/stamp-patch*
-rm -f examples/calDepth examples/ex1.bam examples/ex1.bam.bai examples/ex1.fa.fai examples/ex1.glf examples/ex1.glfview.gz examples/ex1.pileup.gz examples/ex1a.bam examples/ex1b.bam examples/ex1f-rmduppe.bam examples/ex1f-rmdupse.bam examples/ex1f.bam examples/ex1f.rg examples/ex1.bcf
+dh clean --parallel
+   dh_testdir -O--parallel
+   dh_auto_clean -O--parallel
+	make -j2 distclean
+make[1]: Entering directory '/«PKGBUILDDIR»'
+rm -f test/*.new test/*.tmp test/*/*.new test/*/*.tmp
+cd test/mpileup && rm -f FAIL-*.out* PASS-*.out* anomalous.[bc]*am indels.[bc]*am mpileup.*.[cs]*am mpileup.*.crai overlap50.[bc]*am expected/1.out
+rm -f *.o misc/*.o test/*.o test/*/*.o version.h
+rm -f samtools libbam.a misc/ace2sam misc/maq2sam-long misc/maq2sam-short misc/md5fa misc/md5sum-lite misc/wgsim test/merge/test_bam_translate test/merge/test_pretty_header test/merge/test_rtrans_build test/merge/test_trans_tbl_init test/split/test_count_rg test/split/test_expand_format_string test/split/test_filter_header_rg test/split/test_parse_args test/vcf-miniview
+rm -f TAGS
+make[1]: Leaving directory '/«PKGBUILDDIR»'
+   dh_clean -O--parallel
+	rm -f debian/samtools.substvars
+	rm -f debian/samtools.*.debhelper
+	rm -rf debian/samtools/
+	rm -f debian/samtools-test.substvars
+	rm -f debian/samtools-test.*.debhelper
+	rm -rf debian/samtools-test/
+	rm -f debian/*.debhelper.log
+	rm -f debian/files
+	find .  \( \( -type f -a \
+	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
+		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
+		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
+		 -o -name TAGS -o \( -path '*/.deps/*' -a -name '*.P' \) \
+		\) -exec rm -f {} + \) -o \
+		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
+	rm -f *-stamp
  debian/rules build-arch
-test -x debian/rules
-mkdir -p "."
-/usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
-/usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_COMPRESS_EXCLUDE is a deprecated variable
-/usr/bin/make -f debian/rules reverse-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[1]: Nothing to be done for `reverse-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-cd . && QUILT_PATCHES=/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/debian/patches quilt --quiltrc /dev/null push -a || test $? = 2
-Applying patch fix_example_makefile.patch
-patching file examples/Makefile
-
-Applying patch fix_segfault_with_small_ref.patch
-patching file bam_plcmd.c
-
-Applying patch fix_coverage_cap.patch
-patching file bam2depth.c
-
-Now at patch fix_coverage_cap.patch
-touch debian/stamp-patched
-/usr/bin/make -f debian/rules update-config
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[1]: Nothing to be done for `update-config'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  all all-recur razip lib
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -DBGZF_CACHE -I. bgzf.c -o bgzf.o
-bgzf.c: In function 'worker_aux':
-bgzf.c:392:9: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
-bgzf.c: In function 'bgzf_close':
-bgzf.c:572:11: warning: variable 'count' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kstring.c -o kstring.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_aux.c -o bam_aux.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam.c -o bam.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_import.c -o bam_import.o
-bam_import.c: In function 'append_text':
-bam_import.c:179:13: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'size_t' [-Wformat]
-bam_import.c:186:9: warning: format '%ld' expects argument of type 'long int', but argument 3 has type 'uint32_t' [-Wformat]
-bam_import.c:186:9: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'size_t' [-Wformat]
-bam_import.c:186:9: warning: format '%ld' expects argument of type 'long int', but argument 6 has type 'size_t' [-Wformat]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam.c -o sam.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_index.c -o bam_index.o
-bam_index.c: In function 'bam_index_load_core':
-bam_index.c:335:7: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:342:7: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:355:8: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:358:9: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:362:9: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:366:9: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:376:8: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-bam_index.c:380:8: warning: ignoring return value of 'fread', declared with attribute warn_unused_result [-Wunused-result]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_pileup.c -o bam_pileup.o
-bam_pileup.c: In function 'resolve_cigar2':
-bam_pileup.c:75:9: warning: variable 'is_head' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_lpileup.c -o bam_lpileup.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_md.c -o bam_md.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razf.c -o razf.o
-razf.c: In function 'razf_close':
-razf.c:804:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:805:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:808:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:810:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c: In function 'razf_end_flush':
-razf.c:258:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c: In function '_razf_write':
-razf.c:201:8: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c: In function 'save_zindex':
-razf.c:96:17: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:99:8: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:106:7: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:107:7: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c: In function 'razf_flush':
-razf.c:221:8: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razf.c:234:9: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. faidx.c -o faidx.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bedidx.c -o bedidx.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. knetfile.c -o knetfile.o
-knetfile.c: In function 'khttp_connect_file':
-knetfile.c:415:2: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-knetfile.c: In function 'kftp_send_cmd':
-knetfile.c:236:2: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_sort.c -o bam_sort.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_header.c -o sam_header.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_reheader.c -o bam_reheader.o
-bam_reheader.c: In function 'bam_reheader':
-bam_reheader.c:12:16: warning: variable 'old' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kprobaln.c -o kprobaln.o
-kprobaln.c: In function 'kpa_glocal':
-kprobaln.c:78:21: warning: variable 'is_diff' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_cat.c -o bam_cat.o
-ar -csru libbam.a bgzf.o kstring.o bam_aux.o bam.o bam_import.o sam.o bam_index.o bam_pileup.o bam_lpileup.o bam_md.o razf.o faidx.o bedidx.o knetfile.o bam_sort.o sam_header.o bam_reheader.o kprobaln.o bam_cat.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf.c -o bcf.o
-bcf.c: In function 'bcf_fmt_core':
-bcf.c:233:9: warning: variable 'iPL' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. vcf.c -o vcf.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcfutils.c -o bcfutils.o
-bcfutils.c: In function 'bcf_fit_alt':
-bcfutils.c:119:9: warning: variable 'ipl' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. prob1.c -o prob1.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. em.c -o em.o
-em.c: In function 'bcf_em1':
-em.c:174:12: warning: variable 'n2' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kfunc.c -o kfunc.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. kmin.c -o kmin.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. index.c -o index.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. fet.c -o fet.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. mut.c -o mut.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. bcf2qcall.c -o bcf2qcall.o
-ar -csru libbcf.a bcf.o vcf.o bcfutils.o prob1.o em.o kfunc.o kmin.o index.o fet.o mut.o bcf2qcall.o
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-make[2]: Nothing to be done for `lib'.
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview.c -o bam_tview.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_plcmd.c -o bam_plcmd.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sam_view.c -o sam_view.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdup.c -o bam_rmdup.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_rmdupse.c -o bam_rmdupse.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_mate.c -o bam_mate.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_stat.c -o bam_stat.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_color.c -o bam_color.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bamtk.c -o bamtk.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. kaln.c -o kaln.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf.c -o bam2bcf.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2bcf_indel.c -o bam2bcf_indel.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. errmod.c -o errmod.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. sample.c -o sample.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. cut_target.c -o cut_target.o
-cut_target.c: In function 'main_cut_target':
-cut_target.c:137:36: warning: variable 'lastpos' set but not used [-Wunused-but-set-variable]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. phase.c -o phase.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam2depth.c -o bam2depth.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. padding.c -o padding.o
+dh build-arch --parallel
+   dh_testdir -a -O--parallel
+   dh_auto_configure -a -O--parallel
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/«PKGBUILDDIR»'
+dh_auto_build -- \
+  HTSDIR="/usr/include" \
+  HTSLIB=/usr/lib/i386-kfreebsd-gnu/libhts.a \
+  CFLAGS="$(dpkg-buildflags --get CFLAGS)" \
+  CPPFLAGS="\$(DFLAGS) \$(INCLUDES) $(dpkg-buildflags --get CPPFLAGS)" \
+  LDFLAGS="$(dpkg-buildflags --get LDFLAGS)" \
+  LDLIBS="-lhts"
+	make -j2 HTSDIR=/usr/include HTSLIB=/usr/lib/i386-kfreebsd-gnu/libhts.a "CFLAGS=-g -O2 -fstack-protector-strong -Wformat -Werror=format-security" "CPPFLAGS=\$(DFLAGS) \$(INCLUDES) -D_FORTIFY_SOURCE=2" LDFLAGS=-Wl,-z,relro LDLIBS=-lhts
+make[2]: Entering directory '/«PKGBUILDDIR»'
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_index.o bam_index.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_plcmd.o bam_plcmd.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o sam_view.o sam_view.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_cat.o bam_cat.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_md.o bam_md.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_reheader.o bam_reheader.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_sort.o bam_sort.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bedidx.o bedidx.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o kprobaln.o kprobaln.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_rmdup.o bam_rmdup.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_rmdupse.o bam_rmdupse.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_mate.o bam_mate.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_stat.o bam_stat.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_color.o bam_color.c
+echo '#define SAMTOOLS_VERSION "1.1"' > version.h
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o kaln.o kaln.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam2bcf.o bam2bcf.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam2bcf_indel.o bam2bcf_indel.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o errmod.o errmod.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o sample.o sample.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o cut_target.o cut_target.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o phase.o phase.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam2depth.o bam2depth.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o padding.o padding.c
 padding.c: In function 'bam_pad2unpad':
-padding.c:173:5: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'size_t' [-Wformat]
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bedcov.c -o bedcov.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bamshuf.c -o bamshuf.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview_curses.c -o bam_tview_curses.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. bam_tview_html.c -o bam_tview_html.o
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o padding.o bedcov.o bamshuf.o bam_tview_curses.o bam_tview_html.o -Wl,-z,relro libbam.a -Lbcftools -lbcf  -lcurses  -lm -lz -lpthread
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[3]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[3]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-make[3]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-make[3]: Nothing to be done for `lib'.
-make[3]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o samtools bam_tview.o bam_plcmd.o sam_view.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o padding.o bedcov.o bamshuf.o bam_tview_curses.o bam_tview_html.o -Wl,-z,relro libbam.a -Lbcftools -lbcf  -lcurses  -lm -lz -lpthread
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. call1.c -o call1.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I.. -I. main.c -o main.o
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o bcftools call1.o main.o ../kstring.o ../bgzf.o ../knetfile.o ../bedidx.o -L.  -lbcf -lm -lz -lpthread
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/bcftools'
-make[2]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -DMD5SUM_MAIN -o md5sum-lite.o md5.c
-md5.c: In function 'MD5Final':
-md5.c:149:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-md5.c:150:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o md5sum-lite md5sum-lite.o
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. md5.c -o md5.o
-md5.c: In function 'MD5Final':
-md5.c:149:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-md5.c:150:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -c -I.. -o md5fa.o md5fa.c
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o md5fa md5.o md5fa.o -lz
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o maq2sam-short maq2sam.c -lz
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -DMAQ_LONGREADS -o maq2sam-long maq2sam.c -lz
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -c -I.. -o ace2sam.o ace2sam.c
-ace2sam.c: In function 'main':
-ace2sam.c:112:4: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'size_t' [-Wformat]
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o ace2sam ace2sam.o -lz
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -c -I.. -o wgsim.o wgsim.c
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o wgsim wgsim.o -lm -lz
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -c -I.. -o bamcheck.o bamcheck.c
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o bamcheck bamcheck.o -L.. -lm -lbam -lpthread -lz
-make[2]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/misc'
-gcc -c -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_USE_KNETFILE -D_CURSES_LIB=1 -I. razip.c -o razip.o
-razip.c: In function 'main':
-razip.c:131:10: warning: ignoring return value of 'write', declared with attribute warn_unused_result [-Wunused-result]
-razip.c: In function 'write_open':
-razip.c:32:9: warning: ignoring return value of 'scanf', declared with attribute warn_unused_result [-Wunused-result]
-gcc -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2 -o razip razip.o razf.o knetfile.o -lz
-make[1]: Nothing to be done for `lib'.
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19'
-touch debian/stamp-makefile-build
-/usr/bin/make  -C . CFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall -fPIC -Wl,-z,relro -D_FORTIFY_SOURCE=2" CXXFLAGS="-g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -Wall" CPPFLAGS="-D_FORTIFY_SOURCE=2" LDFLAGS="-Wl,-z,relro"  -C examples all
-make[1]: Entering directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/examples'
-../samtools faidx ex1.fa
-../samtools import ex1.fa.fai ex1.sam.gz ex1.bam
-[sam_header_read2] 2 sequences loaded.
-../samtools index ex1.bam
-../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"a";print}}' | ../samtools view -bS - > ex1a.bam
-[samopen] SAM header is present: 2 sequences.
-../samtools view -h ex1.bam | awk 'BEGIN{FS=OFS="\t"}{if(/^@/)print;else{$1=$1"b";print}}' | ../samtools view -bS - > ex1b.bam
-[samopen] SAM header is present: 2 sequences.
-(echo "@RG	ID:ex1	LB:ex1	SM:ex1"; echo "@RG	ID:ex1a	LB:ex1	SM:ex1"; echo "@RG	ID:ex1b	LB:ex1b	SM:ex1b") > ex1f.rg
-../samtools merge -rh ex1f.rg ex1f.bam ex1.bam ex1a.bam ex1b.bam
-../samtools rmdup ex1f.bam ex1f-rmduppe.bam
-[bam_rmdup_core] processing reference seq1...
-[bam_rmdup_core] processing reference seq2...
-[bam_rmdup_core] 1572 / 3144 = 0.5000 in library 'ex1'
-[bam_rmdup_core] 0 / 1572 = 0.0000 in library 'ex1b'
-../samtools rmdup -S ex1f.bam ex1f-rmdupse.bam
-[bam_rmdupse_core] 4145 / 6542 = 0.6336 in library 'ex1'
-[bam_rmdupse_core] 874 / 3271 = 0.2672 in library 'ex1b'
-../samtools mpileup -gf ex1.fa ex1.bam > ex1.bcf
-[mpileup] 1 samples in 1 input files
-<mpileup> Set max per-file depth to 8000
-gcc -g -Wall -O2 -I.. calDepth.c -o calDepth -L.. -lbam -lm -lz -lpthread
+padding.c:199:17: warning: format '%ld' expects argument of type 'long int', but argument 5 has type 'size_t' [-Wformat=]
+                 fprintf(stderr, "[depad] ERROR: (Padded) length of '%s' is %d in BAM header, but %ld in embedded reference\n", bam1_qname(b), h->target_len[r_tid], r.l);
+                 ^
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bedcov.o bedcov.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bamshuf.o bamshuf.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o faidx.o faidx.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o stats.o stats.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o stats_isize.o stats_isize.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_flags.o bam_flags.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_split.o bam_split.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_tview.o bam_tview.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_tview_curses.o bam_tview_curses.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_tview_html.o bam_tview_html.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_lpileup.o bam_lpileup.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_aux.o bam_aux.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam.o bam.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_import.o bam_import.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o sam.o sam.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o sam_header.o sam_header.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_plbuf.o bam_plbuf.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/ace2sam.o misc/ace2sam.c
+misc/ace2sam.c: In function 'main':
+misc/ace2sam.c:112:13: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'size_t' [-Wformat=]
+             fprintf(stderr, "H @SQ\tSN:%s\tLN:%ld\n", t[0].s, t[is_padded?1:2].l); // The SAM header line
+             ^
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -DMAQ_LONGREADS -c -o misc/maq2sam-long.o misc/maq2sam.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/maq2sam-short.o misc/maq2sam.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/md5fa.o misc/md5fa.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/md5.o misc/md5.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -DMD5SUM_MAIN -c -o misc/md5sum-lite.o misc/md5.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/wgsim.o misc/wgsim.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/merge/test_bam_translate.o test/merge/test_bam_translate.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/test.o test/test.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/merge/test_pretty_header.o test/merge/test_pretty_header.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/merge/test_rtrans_build.o test/merge/test_rtrans_build.c
+test/merge/test_rtrans_build.c: In function 'main':
+test/merge/test_rtrans_build.c:79:29: warning: overflow in implicit constant conversion [-Woverflow]
+     const long GIMIC_SEED = 0x1234abcd330e;
+                             ^
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/merge/test_trans_tbl_init.o test/merge/test_trans_tbl_init.c
+test/merge/test_trans_tbl_init.c: In function 'main':
+test/merge/test_trans_tbl_init.c:323:31: warning: overflow in implicit constant conversion [-Woverflow]
+     const long GIMMICK_SEED = 0x1234abcd330e;
+                               ^
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/split/test_count_rg.o test/split/test_count_rg.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/split/test_expand_format_string.o test/split/test_expand_format_string.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/split/test_filter_header_rg.o test/split/test_filter_header_rg.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/split/test_parse_args.o test/split/test_parse_args.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o test/vcf-miniview.o test/vcf-miniview.c
+gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bamtk.o bamtk.c
+ar -csru libbam.a bam_aux.o bam.o bam_import.o sam.o sam_header.o bam_plbuf.o
+gcc -Wl,-z,relro -o misc/ace2sam misc/ace2sam.o -lhts -lz
+gcc -Wl,-z,relro -o misc/maq2sam-long misc/maq2sam-long.o -lhts -lz
+gcc -Wl,-z,relro -o misc/maq2sam-short misc/maq2sam-short.o -lhts -lz
+gcc -Wl,-z,relro -o misc/md5fa misc/md5fa.o misc/md5.o -lhts -lz
+gcc -Wl,-z,relro -o misc/md5sum-lite misc/md5sum-lite.o -lhts
+gcc -Wl,-z,relro -o misc/wgsim misc/wgsim.o -lhts -lm -lz
+gcc -pthread -Wl,-z,relro -o test/merge/test_bam_translate test/merge/test_bam_translate.o test/test.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/merge/test_pretty_header test/merge/test_pretty_header.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/merge/test_rtrans_build test/merge/test_rtrans_build.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/merge/test_trans_tbl_init test/merge/test_trans_tbl_init.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/split/test_count_rg test/split/test_count_rg.o test/test.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/split/test_expand_format_string test/split/test_expand_format_string.o test/test.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/split/test_filter_header_rg test/split/test_filter_header_rg.o test/test.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/split/test_parse_args test/split/test_parse_args.o test/test.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o test/vcf-miniview test/vcf-miniview.o /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lz
+gcc -pthread -Wl,-z,relro -o samtools bam_index.o bam_plcmd.o sam_view.o bam_cat.o bam_md.o bam_reheader.o bam_sort.o bedidx.o kprobaln.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o padding.o bedcov.o bamshuf.o faidx.o stats.o stats_isize.o bam_flags.o bam_split.o bam_tview.o bam_tview_curses.o bam_tview_html.o bam_lpileup.o libbam.a /usr/lib/i386-kfreebsd-gnu/libhts.a -lhts -lcurses  -lm -lz
+make[2]: Leaving directory '/«PKGBUILDDIR»'
+make[1]: Leaving directory '/«PKGBUILDDIR»'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/«PKGBUILDDIR»'
+dh_auto_test -- \
+  HTSDIR="/usr/include" \
+  HTSLIB=/usr/lib/i386-kfreebsd-gnu/libhts.a \
+  BGZIP=/usr/bin/bgzip
+	make -j2 test HTSDIR=/usr/include HTSLIB=/usr/lib/i386-kfreebsd-gnu/libhts.a BGZIP=/usr/bin/bgzip
+make[2]: Entering directory '/«PKGBUILDDIR»'
+REF_PATH=: test/test.pl --exec bgzip=/usr/bin/bgzip
+/usr/bin/bgzip -c -b 65272 -s 5 /tmp/pJK7mljtU5/bgzip.dat.gz
+.. ok
 
-# You can now launch the viewer with: 'samtools tview ex1.bam ex1.fa'
+/usr/bin/bgzip -c -b 979200 -s 6 /tmp/pJK7mljtU5/bgzip.dat.gz
+.. ok
 
-make[1]: Leaving directory `/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/examples'
-touch debian/stamp-makefile-check
- fakeroot debian/rules binary-arch
-test -x debian/rules
-dh_testroot
-dh_prep 
-dh_installdirs -A 
-mkdir -p "."
-/usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_DH_BUILDDEB_ARGS is a deprecated variable
-/usr/share/cdbs/1/rules/buildcore.mk:109: WARNING:  DEB_COMPRESS_EXCLUDE is a deprecated variable
-DEB_MAKE_INSTALL_TARGET unset, skipping default makefile.mk common-install target
-Adding cdbs dependencies to debian/samtools.substvars
-dh_installdirs -psamtools 
-Adding cdbs dependencies to debian/libbam-dev.substvars
-dh_installdirs -plibbam-dev 
-dh_installdocs -psamtools ./NEWS ./AUTHORS 
-dh_installexamples -psamtools 
-dh_installman -psamtools  
-dh_installinfo -psamtools  
-dh_installmenu -psamtools 
-dh_installcron -psamtools 
-dh_installinit -psamtools  
-dh_installdebconf -psamtools 
-dh_installemacsen -psamtools   
-dh_installcatalogs -psamtools 
-dh_installpam -psamtools 
-dh_installlogrotate -psamtools 
-dh_installlogcheck -psamtools 
-dh_installchangelogs -psamtools  NEWS 
-dh_installudev -psamtools 
-dh_lintian -psamtools 
-dh_bugfiles -psamtools 
-dh_install -psamtools  
-dh_link -psamtools  
-dh_installmime -psamtools 
-dh_installgsettings -psamtools 
-install -m 644 bcftools/README /build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/debian/samtools/usr/share/doc/samtools/README.bcftools
-ln -s samtools.1.gz /build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/debian/samtools/usr/share/man/man1/bcftools.1.gz
-dh_bash-completion
-dh_bash-completion: file-list parsing failed, installing as proper snippet
-dh_installdocs -plibbam-dev ./NEWS ./AUTHORS 
-dh_installexamples -plibbam-dev 
-dh_installman -plibbam-dev  
-dh_installinfo -plibbam-dev  
-dh_installmenu -plibbam-dev 
-dh_installcron -plibbam-dev 
-dh_installinit -plibbam-dev  
-dh_installdebconf -plibbam-dev 
-dh_installemacsen -plibbam-dev   
-dh_installcatalogs -plibbam-dev 
-dh_installpam -plibbam-dev 
-dh_installlogrotate -plibbam-dev 
-dh_installlogcheck -plibbam-dev 
-dh_installchangelogs -plibbam-dev  NEWS 
-dh_installudev -plibbam-dev 
-dh_lintian -plibbam-dev 
-dh_bugfiles -plibbam-dev 
-dh_install -plibbam-dev  
-dh_link -plibbam-dev  
-dh_installmime -plibbam-dev 
-dh_installgsettings -plibbam-dev 
-dh_strip -psamtools  
-dh_compress -psamtools -X .bam 
-dh_fixperms -psamtools  
-dh_makeshlibs -psamtools  
-sed -i 's|^#!/software/bin/python|#!/usr/bin/python|' /build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM/samtools-0.1.19/debian/samtools/usr/share/samtools/varfilter.py
-dh_strip -plibbam-dev  
-dh_compress -plibbam-dev -X .bam 
-dh_fixperms -plibbam-dev  
-dh_makeshlibs -plibbam-dev  
-dh_installdeb -psamtools 
-dh_perl -psamtools 
-dh_shlibdeps -psamtools    
-dh_installdeb -plibbam-dev 
-dh_perl -plibbam-dev 
-dh_shlibdeps -plibbam-dev    
-dh_gencontrol -psamtools  
-dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
-dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
-dh_md5sums -psamtools 
-dh_builddeb -psamtools -- -Z=xz
-dpkg-deb: building package `samtools' in `../samtools_0.1.19-1_kfreebsd-i386.deb'.
-dh_gencontrol -plibbam-dev  
-dpkg-gencontrol: warning: Depends field of package libbam-dev: unknown substitution variable ${shlibs:Depends}
-dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
-dh_md5sums -plibbam-dev 
-dh_builddeb -plibbam-dev -- -Z=xz
-dpkg-deb: building package `libbam-dev' in `../libbam-dev_0.1.19-1_kfreebsd-i386.deb'.
- dpkg-genchanges -B -mkfreebsd-i386 Build Daemon (finzi) <buildd_kfreebsd-i386-finzi@buildd.debian.org> >../samtools_0.1.19-1_kfreebsd-i386.changes
-dpkg-genchanges: arch-specific upload - not including arch-independent packages
-dpkg-genchanges: binary-only upload - not including any source code
- dpkg-source --after-build samtools-0.1.19
-dpkg-buildpackage: binary only upload (no source included)
+/usr/bin/bgzip -c -b 652804 -s 6 /tmp/pJK7mljtU5/bgzip.dat.gz
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa 3:11-13 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa.gz 3:11-13 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa 2:998-1003 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa.gz 2:998-1003 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa 1:100-104 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa.gz 1:100-104 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa 1:99998-100007 | grep -v '^>'
+.. ok
+
+/«PKGBUILDDIR»/samtools faidx /tmp/pJK7mljtU5/faidx.fa.gz 1:99998-100007 | grep -v '^>'
+.. ok
+
+test_index:
+	/«PKGBUILDDIR»/samtools index /tmp/pJK7mljtU5/large_chrom.bam
+
+.. expected failure
+
+test_index:
+	/«PKGBUILDDIR»/samtools view /tmp/pJK7mljtU5/large_chrom.bam ref2
+
+	The outputs stdout differ:
+		/«PKGBUILDDIR»/test/dat/large_chrom.out
+		/«PKGBUILDDIR»/test/dat/large_chrom.out.new
+.. expected failure
+
+test_index:
+	/«PKGBUILDDIR»/samtools view /tmp/pJK7mljtU5/large_chrom.bam ref2:1-541556283
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -b /tmp/pJK7mljtU5/mpileup.bam.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-150
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -b /tmp/pJK7mljtU5/mpileup.cram.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-150
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/pJK7mljtU5/mpileup.bam.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/pJK7mljtU5/mpileup.cram.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/pJK7mljtU5/mpileup.cram.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/pJK7mljtU5/mpileup.cram.list -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:1050-1060 /tmp/pJK7mljtU5/mpileup.1.bam | grep -v mpileup
+.. ok
+
+test_mpileup:
+	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/pJK7mljtU5/mpileup.ref.fa.gz -r17:1050-1060 /tmp/pJK7mljtU5/mpileup.1.cram | grep -v mpileup
+test/test.pl: module IO::Pty not found; skipping usage tests
+.. ok
+
+test_usage:
+	samtools
+test_view:
+	Generating test data file .................. done
+	1: SAM -> BAM -> SAM                                        
+	SAM files differ at /tmp/pJK7mljtU5/view.test001.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test001.bam -b /tmp/pJK7mljtU5/view.001.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test001.bam.sam /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	2: SAM -> uncompressed BAM                                  .. ok
+
+	3: uncompressed BAM -> SAM and compare                      
+	SAM files differ at /tmp/pJK7mljtU5/view.test003.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test003.sam -h /tmp/pJK7mljtU5/view.test002.bam
+
+
+.. failed ...
+
+	4: SAM -> fast compressed BAM                               .. ok
+
+	5: fast compressed BAM -> SAM and compare                   
+	SAM files differ at /tmp/pJK7mljtU5/view.test005.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test005.sam -h /tmp/pJK7mljtU5/view.test004.bam
+
+
+.. failed ...
+
+	6: SAM -> CRAM -> SAM (UR header tags)                      
+	SAM files differ at /tmp/pJK7mljtU5/view.test006.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test006.cram -C /tmp/pJK7mljtU5/view.001.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test006.cram.sam /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	7: SAM -> CRAM -> SAM (M5 header tags)                      
+	SAM files differ at /tmp/pJK7mljtU5/view.test007.cram.sam : 34 / /«PKGBUILDDIR»/test/dat/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test007.cram -C /«PKGBUILDDIR»/test/dat/view.001.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test007.cram.sam /tmp/pJK7mljtU5/view.test007.cram
+
+
+.. failed ...
+
+	8: BAM -> CRAM with UR -> SAM                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test008.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test008.cram -C /tmp/pJK7mljtU5/view.test001.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test008.cram.sam /tmp/pJK7mljtU5/view.test008.cram
+
+
+.. failed ...
+
+	9: SAM -> BAM (M5 header tags)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test009.bam.sam : 34 / /«PKGBUILDDIR»/test/dat/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test009.bam -b /«PKGBUILDDIR»/test/dat/view.001.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test009.bam.sam /tmp/pJK7mljtU5/view.test009.bam
+
+
+.. failed ...
+
+	10: SAM -> BAM -> CRAM -> SAM (M5 header tags)              
+	SAM files differ at /tmp/pJK7mljtU5/view.test010.cram.sam : 34 / /«PKGBUILDDIR»/test/dat/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test010.cram -C /tmp/pJK7mljtU5/view.test009.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test010.cram.sam /tmp/pJK7mljtU5/view.test010.cram
+
+
+.. failed ...
+
+	11: CRAM -> BAM with UR                                     
+	SAM files differ at /tmp/pJK7mljtU5/view.test011.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test011.bam -b /tmp/pJK7mljtU5/view.test008.cram && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test011.bam.sam /tmp/pJK7mljtU5/view.test011.bam
+
+
+.. failed ...
+
+	12: CRAM -> BAM with M5                                     
+	SAM files differ at /tmp/pJK7mljtU5/view.test012.bam.sam : 34 / /«PKGBUILDDIR»/test/dat/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test012.bam -b /tmp/pJK7mljtU5/view.test010.cram && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test012.bam.sam /tmp/pJK7mljtU5/view.test012.bam
+
+
+.. failed ...
+
+	13: SAM -> SAM via stdout                                   
+	SAM files differ at /tmp/pJK7mljtU5/view.test013.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -h /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	14: SAM -> BAM via stdout                                   .. ok
+
+	15: SAM -> CRAM via stdout                                  
+	SAM files differ at /tmp/pJK7mljtU5/view.test015.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -C /tmp/pJK7mljtU5/view.001.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test015.cram.sam /tmp/pJK7mljtU5/view.test015.cram
+
+
+.. failed ...
+
+	16: SAM from stdin -> SAM                                   
+	SAM files differ at /tmp/pJK7mljtU5/view.test016.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test016.sam -h -
+
+
+.. failed ...
+
+	17: BAM from stdin -> SAM                                   
+	SAM files differ at /tmp/pJK7mljtU5/view.test017.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test017.sam -h -
+
+
+.. failed ...
+
+	18: CRAM from stdin -> SAM                                  
+	SAM files differ at /tmp/pJK7mljtU5/view.test018.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test018.sam -h -
+
+
+.. failed ...
+
+	19: samtools view -H (SAM input)                            .. ok
+
+	20: samtools view -H (BAM input)                            .. ok
+
+	21: samtools view -H (CRAM input)                           .. ok
+
+	22: No headers (SAM input)                                  
+	SAM files differ at /tmp/pJK7mljtU5/view.test022.body : 6 / /tmp/pJK7mljtU5/view.001.body.sam : 6
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test022.body /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	23: No headers (BAM input)                                  
+	SAM files differ at /tmp/pJK7mljtU5/view.test023.body : 6 / /tmp/pJK7mljtU5/view.001.body.sam : 6
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test023.body /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	24: No headers (CRAM input)                                 
+	SAM files differ at /tmp/pJK7mljtU5/view.test024.body : 6 / /tmp/pJK7mljtU5/view.001.body.sam : 6
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test024.body /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	25: Filter -f 128 (SAM input)                               .. ok
+
+	26: Count -f 128 (SAM input)                                .. ok
+
+	27: Filter -f 128 (BAM input)                               .. ok
+
+	28: Count -f 128 (BAM input)                                .. ok
+
+	29: Filter -f 128 (CRAM input)                              .. ok
+
+	30: Count -f 128 (CRAM input)                               .. ok
+
+	31: Filter -F 128 (SAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test031.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test031.sam -h -F 128 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	32: Count -F 128 (SAM input)                                .. ok
+
+	33: Filter -F 128 (BAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test033.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test033.sam -h -F 128 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	34: Count -F 128 (BAM input)                                .. ok
+
+	35: Filter -F 128 (CRAM input)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test035.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test035.sam -h -F 128 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	36: Count -F 128 (CRAM input)                               .. ok
+
+	37: Filter -F 128 -f 2 (SAM input)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test037.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128req2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test037.sam -h -F 128 -f 2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	38: Count -F 128 -f 2 (SAM input)                           .. ok
+
+	39: Filter -F 128 -f 2 (BAM input)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test039.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128req2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test039.sam -h -F 128 -f 2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	40: Count -F 128 -f 2 (BAM input)                           .. ok
+
+	41: Filter -F 128 -f 2 (CRAM input)                         
+	SAM files differ at /tmp/pJK7mljtU5/view.test041.sam : 34 / /tmp/pJK7mljtU5/view.001.rej128req2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test041.sam -h -F 128 -f 2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	42: Count -F 128 -f 2 (CRAM input)                          .. ok
+
+	43: Filter -r grp2 (SAM input)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test043.sam : 29 / /tmp/pJK7mljtU5/view.001.rg_grp2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test043.sam -h -r grp2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	44: Count -r grp2 (SAM input)                               .. ok
+
+	45: Filter -r grp2 (BAM input)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test045.sam : 29 / /tmp/pJK7mljtU5/view.001.rg_grp2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test045.sam -h -r grp2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	46: Count -r grp2 (BAM input)                               .. ok
+
+	47: Filter -r grp2 (CRAM input)                             
+	SAM files differ at /tmp/pJK7mljtU5/view.test047.sam : 29 / /tmp/pJK7mljtU5/view.001.rg_grp2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test047.sam -h -r grp2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	48: Count -r grp2 (CRAM input)                              .. ok
+
+	49: Filter -R /tmp/pJK7mljtU5/view.001.fogn (SAM input)     .. ok
+
+	50: Count -R /tmp/pJK7mljtU5/view.001.fogn (SAM input)      .. ok
+
+	51: Filter -R /tmp/pJK7mljtU5/view.001.fogn (BAM input)     .. ok
+
+	52: Count -R /tmp/pJK7mljtU5/view.001.fogn (BAM input)      .. ok
+
+	53: Filter -R /tmp/pJK7mljtU5/view.001.fogn (CRAM input)    .. ok
+
+	54: Count -R /tmp/pJK7mljtU5/view.001.fogn (CRAM input)     .. ok
+
+	55: Filter -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (SAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test055.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test055.sam -h -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	56: Count -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (SAM input).. ok
+
+	57: Filter -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test057.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test057.sam -h -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	58: Count -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (BAM input).. ok
+
+	59: Filter -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test059.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test059.sam -h -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	60: Count -R /tmp/pJK7mljtU5/view.001.fogn -r grp2 (CRAM input).. ok
+
+	61: Filter -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (SAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test061.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test061.sam -h -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	62: Count -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (SAM input).. ok
+
+	63: Filter -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test063.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test063.sam -h -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	64: Count -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (BAM input).. ok
+
+	65: Filter -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test065.sam : 34 / /tmp/pJK7mljtU5/view.001.rg_both2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test065.sam -h -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	66: Count -r grp2 -R /tmp/pJK7mljtU5/view.001.fogn (CRAM input).. ok
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	67: Filter -l Library 2 (SAM input)                         	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test067.sam -h -l Library 2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. expected failure
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	68: Count -l Library 2 (SAM input)                          	Failed command:
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. expected failure
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	69: Filter -l Library 2 (BAM input)                         	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test069.sam -h -l Library 2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. expected failure
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	70: Count -l Library 2 (BAM input)                          	Failed command:
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. expected failure
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	71: Filter -l Library 2 (CRAM input)                        	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test071.sam -h -l Library 2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. expected failure
+
+Samtools-htslib-API: bam_get_library() not yet implemented
+	72: Count -l Library 2 (CRAM input)                         	Failed command:
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. expected failure
+
+	73: Filter -q 50 (SAM input)                                .. ok
+
+	74: Count -q 50 (SAM input)                                 .. ok
+
+	75: Filter -q 50 (BAM input)                                .. ok
+
+	76: Count -q 50 (BAM input)                                 .. ok
+
+	77: Filter -q 50 (CRAM input)                               .. ok
+
+	78: Count -q 50 (CRAM input)                                .. ok
+
+	79: Filter -q 99 (SAM input)                                .. ok
+
+	80: Count -q 99 (SAM input)                                 .. ok
+
+	81: Filter -q 99 (BAM input)                                .. ok
+
+	82: Count -q 99 (BAM input)                                 .. ok
+
+	83: Filter -q 99 (CRAM input)                               .. ok
+
+	84: Count -q 99 (CRAM input)                                .. ok
+
+	85: Filter -q 100 (SAM input)                               .. ok
+
+	86: Count -q 100 (SAM input)                                .. ok
+
+	87: Filter -q 100 (BAM input)                               .. ok
+
+	88: Count -q 100 (BAM input)                                .. ok
+
+	89: Filter -q 100 (CRAM input)                              .. ok
+
+	90: Count -q 100 (CRAM input)                               .. ok
+
+	91: Filter -x fa (SAM input)                                
+	SAM files differ at /tmp/pJK7mljtU5/view.test091.sam : 34 / /tmp/pJK7mljtU5/view.001.tags1.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test091.sam -h -x fa /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	92: Count -x fa (SAM input)                                 .. ok
+
+	93: Filter -x fa (BAM input)                                
+	SAM files differ at /tmp/pJK7mljtU5/view.test093.sam : 34 / /tmp/pJK7mljtU5/view.001.tags1.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test093.sam -h -x fa /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	94: Count -x fa (BAM input)                                 .. ok
+
+	95: Filter -x fa (CRAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test095.sam : 34 / /tmp/pJK7mljtU5/view.001.tags1.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test095.sam -h -x fa /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	96: Count -x fa (CRAM input)                                .. ok
+
+	97: Filter -x fa -x ha (SAM input)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test097.sam : 34 / /tmp/pJK7mljtU5/view.001.tags2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test097.sam -h -x fa -x ha /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	98: Count -x fa -x ha (SAM input)                           .. ok
+
+	99: Filter -x fa -x ha (BAM input)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test099.sam : 34 / /tmp/pJK7mljtU5/view.001.tags2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test099.sam -h -x fa -x ha /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	100: Count -x fa -x ha (BAM input)                          .. ok
+
+	101: Filter -x fa -x ha (CRAM input)                        
+	SAM files differ at /tmp/pJK7mljtU5/view.test101.sam : 34 / /tmp/pJK7mljtU5/view.001.tags2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test101.sam -h -x fa -x ha /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	102: Count -x fa -x ha (CRAM input)                         .. ok
+
+	103: Filter -x fa -r grp2 (SAM input)                       
+	SAM files differ at /tmp/pJK7mljtU5/view.test103.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg1.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test103.sam -h -x fa -r grp2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	104: Count -x fa -r grp2 (SAM input)                        .. ok
+
+	105: Filter -x fa -r grp2 (BAM input)                       
+	SAM files differ at /tmp/pJK7mljtU5/view.test105.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg1.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test105.sam -h -x fa -r grp2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	106: Count -x fa -r grp2 (BAM input)                        .. ok
+
+	107: Filter -x fa -r grp2 (CRAM input)                      
+	SAM files differ at /tmp/pJK7mljtU5/view.test107.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg1.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test107.sam -h -x fa -r grp2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	108: Count -x fa -r grp2 (CRAM input)                       .. ok
+
+	109: Filter -x RG -r grp2 (SAM input)                       
+	SAM files differ at /tmp/pJK7mljtU5/view.test109.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test109.sam -h -x RG -r grp2 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	110: Count -x RG -r grp2 (SAM input)                        .. ok
+
+	111: Filter -x RG -r grp2 (BAM input)                       
+	SAM files differ at /tmp/pJK7mljtU5/view.test111.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test111.sam -h -x RG -r grp2 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	112: Count -x RG -r grp2 (BAM input)                        .. ok
+
+	113: Filter -x RG -r grp2 (CRAM input)                      
+	SAM files differ at /tmp/pJK7mljtU5/view.test113.sam : 29 / /tmp/pJK7mljtU5/view.001.tags_rg2.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test113.sam -h -x RG -r grp2 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	114: Count -x RG -r grp2 (CRAM input)                       .. ok
+
+	115: Filter -m 10 (SAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test115.sam : 34 / /tmp/pJK7mljtU5/view.001.qlen10.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test115.sam -h -m 10 /tmp/pJK7mljtU5/view.001.sam
+
+
+.. failed ...
+
+	116: Count -m 10 (SAM input)                                .. ok
+
+	117: Filter -m 10 (BAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test117.sam : 34 / /tmp/pJK7mljtU5/view.001.qlen10.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test117.sam -h -m 10 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	118: Count -m 10 (BAM input)                                .. ok
+
+	119: Filter -m 10 (CRAM input)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test119.sam : 34 / /tmp/pJK7mljtU5/view.001.qlen10.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test119.sam -h -m 10 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	120: Count -m 10 (CRAM input)                               .. ok
+
+	121: Filter -m 11 (SAM input)                               .. ok
+
+	122: Count -m 11 (SAM input)                                .. ok
+
+	123: Filter -m 11 (BAM input)                               .. ok
+
+	124: Count -m 11 (BAM input)                                .. ok
+
+	125: Filter -m 11 (CRAM input)                              .. ok
+
+	126: Count -m 11 (CRAM input)                               .. ok
+
+	127: Filter -m 15 (SAM input)                               .. ok
+
+	128: Count -m 15 (SAM input)                                .. ok
+
+	129: Filter -m 15 (BAM input)                               .. ok
+
+	130: Count -m 15 (BAM input)                                .. ok
+
+	131: Filter -m 15 (CRAM input)                              .. ok
+
+	132: Count -m 15 (CRAM input)                               .. ok
+
+	133: Filter -m 16 (SAM input)                               .. ok
+
+	134: Count -m 16 (SAM input)                                .. ok
+
+	135: Filter -m 16 (BAM input)                               .. ok
+
+	136: Count -m 16 (BAM input)                                .. ok
+
+	137: Filter -m 16 (CRAM input)                              .. ok
+
+	138: Count -m 16 (CRAM input)                               .. ok
+
+	139: 1bp reads file SAM -> BAM -> SAM                       .. ok
+
+	140: 1bp reads file SAM -> CRAM -> SAM                      .. ok
+
+	140: Region  Z (BAM input)                                  .. ok
+
+	141: Count  Z (BAM input)                                   .. ok
+
+	142: Region  Z (CRAM input)                                 .. ok
+
+	143: Count  Z (CRAM input)                                  .. ok
+
+	144: Region  Z:30 (BAM input)                               .. ok
+
+	145: Count  Z:30 (BAM input)                                .. ok
+
+	146: Region  Z:30 (CRAM input)                              .. ok
+
+	147: Count  Z:30 (CRAM input)                               .. ok
+
+	148: Region  Z:20-40 (BAM input)                            .. ok
+
+	149: Count  Z:20-40 (BAM input)                             .. ok
+
+	150: Region  Z:20-40 (CRAM input)                           .. ok
+
+	151: Count  Z:20-40 (CRAM input)                            .. ok
+
+	152: Region  ref1 (BAM input)                               
+	SAM files differ at /tmp/pJK7mljtU5/view.test152.sam : 34 / /tmp/pJK7mljtU5/view.reg1.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test152.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1
+
+
+.. failed ...
+
+	153: Count  ref1 (BAM input)                                .. ok
+
+	154: Region  ref1 (CRAM input)                              
+	SAM files differ at /tmp/pJK7mljtU5/view.test154.sam : 34 / /tmp/pJK7mljtU5/view.reg1.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test154.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1
+
+
+.. failed ...
+
+	155: Count  ref1 (CRAM input)                               .. ok
+
+	156: Region  ref1:15 (BAM input)                            
+	SAM files differ at /tmp/pJK7mljtU5/view.test156.sam : 31 / /tmp/pJK7mljtU5/view.reg2.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test156.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15
+
+
+.. failed ...
+
+	157: Count  ref1:15 (BAM input)                             .. ok
+
+	158: Region  ref1:15 (CRAM input)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test158.sam : 31 / /tmp/pJK7mljtU5/view.reg2.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test158.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15
+
+
+.. failed ...
+
+	159: Count  ref1:15 (CRAM input)                            .. ok
+
+	160: Region  ref1:15-45 (BAM input)                         
+	SAM files differ at /tmp/pJK7mljtU5/view.test160.sam : 31 / /tmp/pJK7mljtU5/view.reg3.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test160.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15-45
+
+
+.. failed ...
+
+	161: Count  ref1:15-45 (BAM input)                          .. ok
+
+	162: Region  ref1:15-45 (CRAM input)                        
+	SAM files differ at /tmp/pJK7mljtU5/view.test162.sam : 31 / /tmp/pJK7mljtU5/view.reg3.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test162.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15-45
+
+
+.. failed ...
+
+	163: Count  ref1:15-45 (CRAM input)                         .. ok
+
+	164: Region  ref1:15-45 ref2 (BAM input)                    
+	SAM files differ at /tmp/pJK7mljtU5/view.test164.sam : 31 / /tmp/pJK7mljtU5/view.reg4.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test164.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15-45 ref2
+
+
+.. failed ...
+
+	165: Count  ref1:15-45 ref2 (BAM input)                     .. ok
+
+	166: Region  ref1:15-45 ref2 (CRAM input)                   
+	SAM files differ at /tmp/pJK7mljtU5/view.test166.sam : 31 / /tmp/pJK7mljtU5/view.reg4.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test166.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15-45 ref2
+
+
+.. failed ...
+
+	167: Count  ref1:15-45 ref2 (CRAM input)                    .. ok
+
+	168: Region  ref1:15-45 ref2:16 (BAM input)                 
+	SAM files differ at /tmp/pJK7mljtU5/view.test168.sam : 31 / /tmp/pJK7mljtU5/view.reg5.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test168.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15-45 ref2:16
+
+
+.. failed ...
+
+	169: Count  ref1:15-45 ref2:16 (BAM input)                  .. ok
+
+	170: Region  ref1:15-45 ref2:16 (CRAM input)                
+	SAM files differ at /tmp/pJK7mljtU5/view.test170.sam : 31 / /tmp/pJK7mljtU5/view.reg5.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test170.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15-45 ref2:16
+
+
+.. failed ...
+
+	171: Count  ref1:15-45 ref2:16 (CRAM input)                 .. ok
+
+	172: Region  ref1:15-45 ref2:16-31 (BAM input)              
+	SAM files differ at /tmp/pJK7mljtU5/view.test172.sam : 31 / /tmp/pJK7mljtU5/view.reg6.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test172.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15-45 ref2:16-31
+
+
+.. failed ...
+
+	173: Count  ref1:15-45 ref2:16-31 (BAM input)               .. ok
+
+	174: Region  ref1:15-45 ref2:16-31 (CRAM input)             
+	SAM files differ at /tmp/pJK7mljtU5/view.test174.sam : 31 / /tmp/pJK7mljtU5/view.reg6.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test174.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15-45 ref2:16-31
+
+
+.. failed ...
+
+	175: Count  ref1:15-45 ref2:16-31 (CRAM input)              .. ok
+
+	176: Region  ref1:15-15 ref1:45-45 (BAM input)              
+	SAM files differ at /tmp/pJK7mljtU5/view.test176.sam : 31 / /tmp/pJK7mljtU5/view.reg7.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test176.sam -h /tmp/pJK7mljtU5/view.test001.bam ref1:15-15 ref1:45-45
+
+
+.. failed ...
+
+	177: Count  ref1:15-15 ref1:45-45 (BAM input)               .. ok
+
+	178: Region  ref1:15-15 ref1:45-45 (CRAM input)             
+	SAM files differ at /tmp/pJK7mljtU5/view.test178.sam : 31 / /tmp/pJK7mljtU5/view.reg7.sam : 31
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test178.sam -h /tmp/pJK7mljtU5/view.test006.cram ref1:15-15 ref1:45-45
+
+
+.. failed ...
+
+	179: Count  ref1:15-15 ref1:45-45 (CRAM input)              .. ok
+
+	180: Region -f 128 ref1 (BAM input)                         .. ok
+
+	181: Count -f 128 ref1 (BAM input)                          .. ok
+
+	182: Region -f 128 ref1 (CRAM input)                        .. ok
+
+	183: Count -f 128 ref1 (CRAM input)                         .. ok
+
+	184: Region -q 50 ref1:15-45 (BAM input)                    .. ok
+
+	185: Count -q 50 ref1:15-45 (BAM input)                     .. ok
+
+	186: Region -q 50 ref1:15-45 (CRAM input)                   .. ok
+
+	187: Count -q 50 ref1:15-45 (CRAM input)                    .. ok
+
+	188: Region -r grp2 ref1:15-45 (BAM input)                  
+	SAM files differ at /tmp/pJK7mljtU5/view.test188.sam : 28 / /tmp/pJK7mljtU5/view.reg10.sam : 28
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test188.sam -h -r grp2 /tmp/pJK7mljtU5/view.test001.bam ref1:15-45
+
+
+.. failed ...
+
+	189: Count -r grp2 ref1:15-45 (BAM input)                   .. ok
+
+	190: Region -r grp2 ref1:15-45 (CRAM input)                 
+	SAM files differ at /tmp/pJK7mljtU5/view.test190.sam : 28 / /tmp/pJK7mljtU5/view.reg10.sam : 28
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test190.sam -h -r grp2 /tmp/pJK7mljtU5/view.test006.cram ref1:15-45
+
+
+.. failed ...
+
+	191: Count -r grp2 ref1:15-45 (CRAM input)                  .. ok
+
+	192: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed  (BAM input).. ok
+
+	193: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed  (BAM input).. ok
+
+	194: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed  (CRAM input).. ok
+
+	195: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed  (CRAM input).. ok
+
+	196: Region -L /«PKGBUILDDIR»/test/dat/view.002.02.bed  (BAM input).. ok
+
+	197: Count -L /«PKGBUILDDIR»/test/dat/view.002.02.bed  (BAM input).. ok
+
+	198: Region -L /«PKGBUILDDIR»/test/dat/view.002.02.bed  (CRAM input).. ok
+
+	199: Count -L /«PKGBUILDDIR»/test/dat/view.002.02.bed  (CRAM input).. ok
+
+	200: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed  (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test200.sam : 33 / /tmp/pJK7mljtU5/view.bed1.sam : 33
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test200.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	201: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed  (BAM input).. ok
+
+	202: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed  (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test202.sam : 33 / /tmp/pJK7mljtU5/view.bed1.sam : 33
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test202.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	203: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed  (CRAM input).. ok
+
+	204: Region -L /«PKGBUILDDIR»/test/dat/view.001.02.bed  (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test204.sam : 34 / /tmp/pJK7mljtU5/view.bed2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test204.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.02.bed /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	205: Count -L /«PKGBUILDDIR»/test/dat/view.001.02.bed  (BAM input).. ok
+
+	206: Region -L /«PKGBUILDDIR»/test/dat/view.001.02.bed  (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test206.sam : 34 / /tmp/pJK7mljtU5/view.bed2.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test206.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.02.bed /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	207: Count -L /«PKGBUILDDIR»/test/dat/view.001.02.bed  (CRAM input).. ok
+
+	208: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z (BAM input).. ok
+
+	209: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z (BAM input).. ok
+
+	210: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z (CRAM input).. ok
+
+	211: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z (CRAM input).. ok
+
+	212: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:30 (BAM input).. ok
+
+	213: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:30 (BAM input).. ok
+
+	214: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:30 (CRAM input).. ok
+
+	215: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:30 (CRAM input).. ok
+
+	216: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:10-30 (BAM input).. ok
+
+	217: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:10-30 (BAM input).. ok
+
+	218: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:10-30 (CRAM input).. ok
+
+	219: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:10-30 (CRAM input).. ok
+
+	220: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:25-35 (BAM input).. ok
+
+	221: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:25-35 (BAM input).. ok
+
+	222: Region -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:25-35 (CRAM input).. ok
+
+	223: Count -L /«PKGBUILDDIR»/test/dat/view.002.01.bed Z:25-35 (CRAM input).. ok
+
+	224: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref1:11-16 (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test224.sam : 33 / /tmp/pJK7mljtU5/view.bed1r1.sam : 33
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test224.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed /tmp/pJK7mljtU5/view.test001.bam ref1:11-16
+
+
+.. failed ...
+
+	225: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref1:11-16 (BAM input).. ok
+
+	226: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref1:11-16 (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test226.sam : 33 / /tmp/pJK7mljtU5/view.bed1r1.sam : 33
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test226.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed /tmp/pJK7mljtU5/view.test006.cram ref1:11-16
+
+
+.. failed ...
+
+	227: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref1:11-16 (CRAM input).. ok
+
+	228: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref2 (BAM input).. ok
+
+	229: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref2 (BAM input).. ok
+
+	230: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref2 (CRAM input).. ok
+
+	231: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed ref2 (CRAM input).. ok
+
+	232: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1  (BAM input).. ok
+
+	233: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1  (BAM input).. ok
+
+	234: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1  (CRAM input).. ok
+
+	235: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1  (CRAM input).. ok
+
+	236: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -f 128  (BAM input).. ok
+
+	237: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -f 128  (BAM input).. ok
+
+	238: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -f 128  (CRAM input).. ok
+
+	239: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -f 128  (CRAM input).. ok
+
+	240: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5  (BAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test240.sam : 29 / /tmp/pJK7mljtU5/view.bed1f3.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test240.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5 /tmp/pJK7mljtU5/view.test001.bam
+
+
+.. failed ...
+
+	241: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5  (BAM input).. ok
+
+	242: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5  (CRAM input)
+	SAM files differ at /tmp/pJK7mljtU5/view.test242.sam : 29 / /tmp/pJK7mljtU5/view.bed1f3.sam : 29
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test242.sam -h -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5 /tmp/pJK7mljtU5/view.test006.cram
+
+
+.. failed ...
+
+	243: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -q 5  (CRAM input).. ok
+
+	244: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1 ref1:11-16 (BAM input).. ok
+
+	245: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1 ref1:11-16 (BAM input).. ok
+
+	246: Region -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1 ref1:11-16 (CRAM input).. ok
+
+	247: Count -L /«PKGBUILDDIR»/test/dat/view.001.01.bed -r grp1 ref1:11-16 (CRAM input).. ok
+
+	248: Make BAM with no M5/UR tags                            
+	SAM files differ at /tmp/pJK7mljtU5/view.001.no_sq.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.001.no_sq.bam -b /tmp/pJK7mljtU5/view.001.no_m5.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.001.no_sq.bam.sam /tmp/pJK7mljtU5/view.001.no_sq.bam
+
+
+.. failed ...
+
+	249: Add @SQ with -t (SAM -> SAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test249.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test249.sam -h -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.sam
+
+
+.. failed ...
+
+	250: Add @SQ with -T (SAM -> SAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test250.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test250.sam -h -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.sam
+
+
+.. failed ...
+
+	251: Add @SQ with -t (BAM -> SAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test251.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test251.sam -h -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.bam
+
+
+.. failed ...
+
+	252: Add @SQ with -T (BAM -> SAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test252.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test252.sam -h -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.bam
+
+
+.. failed ...
+
+	253: Add @SQ with -t (SAM -> BAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test253.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test253.bam -b -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test253.bam.sam /tmp/pJK7mljtU5/view.test253.bam
+
+
+.. failed ...
+
+	254: Add @SQ with -T (SAM -> BAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test254.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test254.bam -b -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test254.bam.sam /tmp/pJK7mljtU5/view.test254.bam
+
+
+.. failed ...
+
+	255: Add @SQ with -t (BAM -> BAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test255.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test255.bam -b -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test255.bam.sam /tmp/pJK7mljtU5/view.test255.bam
+
+
+.. failed ...
+
+	256: Add @SQ with -T (BAM -> BAM)                           
+	SAM files differ at /tmp/pJK7mljtU5/view.test256.bam.sam : 34 / /tmp/pJK7mljtU5/view.001.no_m5.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test256.bam -b -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test256.bam.sam /tmp/pJK7mljtU5/view.test256.bam
+
+
+.. failed ...
+
+	257: Add @SQ with -t (SAM -> CRAM)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test257.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test257.cram -C -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test257.cram.sam /tmp/pJK7mljtU5/view.test257.cram
+
+
+.. failed ...
+
+	258: Add @SQ with -T (SAM -> CRAM)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test258.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test258.cram -C -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.sam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test258.cram.sam /tmp/pJK7mljtU5/view.test258.cram
+
+
+.. failed ...
+
+	259: Add @SQ with -t (BAM -> CRAM)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test259.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test259.cram -C -t /«PKGBUILDDIR»/test/dat/view.001.fa.fai /tmp/pJK7mljtU5/view.001.no_sq.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test259.cram.sam /tmp/pJK7mljtU5/view.test259.cram
+
+
+.. failed ...
+
+	260: Add @SQ with -T (BAM -> CRAM)                          
+	SAM files differ at /tmp/pJK7mljtU5/view.test260.cram.sam : 34 / /tmp/pJK7mljtU5/view.001.sam : 34
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/view.test260.cram -C -T /«PKGBUILDDIR»/test/dat/view.001.fa /tmp/pJK7mljtU5/view.001.no_sq.bam && /«PKGBUILDDIR»/samtools view -h -o /tmp/pJK7mljtU5/view.test260.cram.sam /tmp/pJK7mljtU5/view.test260.cram
+
+
+.. failed ...
+
+	261: CIGAR B-operator removal                               .. ok
+
+	262: Big SAM -> BAM                                         .. ok
+
+	263: Big SAM -> BAM (2 threads)                             .. ok
+
+	264: Big SAM -> BAM (4 threads)                             .. ok
+
+	265: Big SAM -> CRAM                                        .. ok
+
+	266: Big SAM -> CRAM (2 threads)                            .. ok
+
+	267: Big SAM -> CRAM (4 threads)                            .. ok
+
+	268: Subsample 0.2 (SAM input) ............ ok
+
+	269: Subsample 0.5 (SAM input) ............ ok
+
+	270: Subsample 0.8 (SAM input) ............ ok
+
+	271: Subsample 0.2 (BAM input) ............ ok
+
+	272: Subsample 0.5 (BAM input) ............ ok
+
+	273: Subsample 0.8 (BAM input) ............ ok
+
+	274: Subsample 0.2 (CRAM input) ............ ok
+
+	275: Subsample 0.5 (CRAM input) ............ ok
+
+	276: Subsample 0.8 (CRAM input) ............ ok
+
+test_cat:
+	Generating test data file .................. done
+	Generate BAM file #1                                        .. ok
+
+	Generating test data file .................. done
+	Generate BAM file #2                                        .. ok
+
+	Generating test data file .................. done
+	Generate BAM file #3                                        .. ok
+
+	Generating test data file .................. done
+	Generate BAM file #4                                        .. ok
+
+	1: cat BAM files                                            .. ok
+
+	2: cat recompressed BAM files                               .. ok
+
+	3: cat BAM files to stdout                                  .. ok
+
+	4: cat recompressed BAM files to stdout                     .. ok
+
+	5: cat BAM files with new header                            .. ok
+
+	6: cat recompressed BAM files with new header               .. ok
+
+test_bam2fq:
+	Generate BAM file                                           
+	SAM files differ at GLOB(0x84f07d8) : 45 / /«PKGBUILDDIR»/test/dat/bam2fq.001.sam : 45
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/bam2fq.001.bam -b /«PKGBUILDDIR»/test/dat/bam2fq.001.sam && /«PKGBUILDDIR»/samtools view -h /tmp/pJK7mljtU5/bam2fq.001.bam
+
+
+.. failed ...
+
+	Generate CRAM file                                          
+	SAM files differ at GLOB(0x85ff1a8) : 45 / /«PKGBUILDDIR»/test/dat/bam2fq.001.sam : 45
+	Failed command:
+	/«PKGBUILDDIR»/samtools view -o /tmp/pJK7mljtU5/bam2fq.001.cram -C /«PKGBUILDDIR»/test/dat/bam2fq.001.sam && /«PKGBUILDDIR»/samtools view -h /tmp/pJK7mljtU5/bam2fq.001.cram
+
+
+.. failed ...
+
+[M::main_bam2fq] processed 36 reads
+	1: bam2fq  (SAM input)                                      .. ok
+
+[M::main_bam2fq] processed 36 reads
+	2: bam2fq -n (SAM input)                                    .. ok
+
+[M::main_bam2fq] processed 36 reads
+	3: bam2fq  (BAM input)                                      .. ok
+
+[M::main_bam2fq] processed 36 reads
+	4: bam2fq -n (BAM input)                                    .. ok
+
+[M::main_bam2fq] processed 36 reads
+	5: bam2fq  (CRAM input)                                     .. ok
+
+[M::main_bam2fq] processed 36 reads
+	6: bam2fq -n (CRAM input)                                   .. ok
+
+test_depad:
+	Generate BAM file                                           .. ok
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad  (SAM input)                                          	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa /«PKGBUILDDIR»/test/dat/depad.001p.sam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -s (SAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -s /«PKGBUILDDIR»/test/dat/depad.001p.sam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -u (SAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -u /«PKGBUILDDIR»/test/dat/depad.001p.sam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -1 (SAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -1 /«PKGBUILDDIR»/test/dat/depad.001p.sam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad  (BAM input)                                          	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa /tmp/pJK7mljtU5/depad.001p.bam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -s (BAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -s /tmp/pJK7mljtU5/depad.001p.bam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -u (BAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -u /tmp/pJK7mljtU5/depad.001p.bam
+
+
+.. expected failure
+
+Samtools-htslib: fix_header() header parsing not yet implemented
+	depad -1 (BAM input)                                        	Failed command:
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -1 /tmp/pJK7mljtU5/depad.001p.bam
+
+
+.. expected failure
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa /«PKGBUILDDIR»/test/stat/1_map_cigar.sam | tail -n+3
+.. ok
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa /«PKGBUILDDIR»/test/stat/2_equal_cigar_full_seq.sam | tail -n+3
+.. ok
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa /«PKGBUILDDIR»/test/stat/3_map_cigar_equal_seq.sam | tail -n+3
+.. ok
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa /«PKGBUILDDIR»/test/stat/4_X_cigar_full_seq.sam | tail -n+3
+.. ok
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa /«PKGBUILDDIR»/test/stat/5_insert_cigar.sam | tail -n+3
+.. ok
+
+test_stats:
+	/«PKGBUILDDIR»/samtools stats -r /«PKGBUILDDIR»/test/stat/test.fa -i 0 /«PKGBUILDDIR»/test/stat/5_insert_cigar.sam | tail -n+3
+.. ok
+
+test_merge:
+	/«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.sam /«PKGBUILDDIR»/test/dat/test_input_1_b.sam /«PKGBUILDDIR»/test/dat/test_input_1_c.sam
+/bin/bash: line 1: 41286 Aborted                 ( /«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.sam /«PKGBUILDDIR»/test/dat/test_input_1_b.sam /«PKGBUILDDIR»/test/dat/test_input_1_c.sam ) 2> /tmp/DcqMtJB7dl
+
+.. expected failure
+
+test_merge:
+	/«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.bam /«PKGBUILDDIR»/test/dat/test_input_1_b.bam /«PKGBUILDDIR»/test/dat/test_input_1_c.bam
+.. ok
+
+test_merge:
+	/«PKGBUILDDIR»/samtools merge -s 1 -b /tmp/V7O4LqEkef - /«PKGBUILDDIR»/test/dat/test_input_1_a.bam
+.. ok
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -O sam /«PKGBUILDDIR»/test/fixmate/1_coord_sort.sam -
+
+.. expected failure
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -O sam /«PKGBUILDDIR»/test/fixmate/2_isize_overflow.sam -
+.. ok
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -O sam /«PKGBUILDDIR»/test/fixmate/3_reverse_read_pp_lt.sam -
+.. ok
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -O sam /«PKGBUILDDIR»/test/fixmate/4_reverse_read_pp_equal.sam -
+.. ok
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -cO sam /«PKGBUILDDIR»/test/fixmate/5_ct.sam -
+.. ok
+
+test_fixmate:
+	/«PKGBUILDDIR»/samtools fixmate -cO sam /«PKGBUILDDIR»/test/fixmate/6_ct_replace.sam -
+.. ok
+
+test_idxstat:
+	/«PKGBUILDDIR»/samtools idxstats /«PKGBUILDDIR»/test/dat/test_input_1_a.bam
+.. ok
+
+
+Number of tests:
+    total            .. 342
+    passed           .. 237
+    failed           .. 87
+    expected failure .. 18
+    unexpected pass  .. 0
+
+Makefile:183: recipe for target 'test' failed
+make[2]: *** [test] Error 1
+make[2]: Leaving directory '/«PKGBUILDDIR»'
+dh_auto_test: make -j2 test HTSDIR=/usr/include HTSLIB=/usr/lib/i386-kfreebsd-gnu/libhts.a BGZIP=/usr/bin/bgzip returned exit code 2
+debian/rules:18: recipe for target 'override_dh_auto_test' failed
+make[1]: *** [override_dh_auto_test] Error 2
+make[1]: Leaving directory '/«PKGBUILDDIR»'
+debian/rules:6: recipe for target 'build-arch' failed
+make: *** [build-arch] Error 2
+dpkg-buildpackage: error: debian/rules build-arch gave error exit status 2
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20130330-0919
+Build finished at 20140925-0034
 
-samtools_0.1.19-1_kfreebsd-i386.changes:
-Format: 1.8
-Date: Sat, 30 Mar 2013 17:31:47 +0900
-Source: samtools
-Binary: samtools libbam-dev
-Architecture: kfreebsd-i386
-Version: 0.1.19-1
-Distribution: sid
-Urgency: low
-Maintainer: kfreebsd-i386 Build Daemon (finzi) <buildd_kfreebsd-i386-finzi@buildd.debian.org>
-Changed-By: Charles Plessy <plessy@debian.org>
-Description: 
- libbam-dev - manipulates nucleotide sequence alignments in BAM or SAM format
- samtools   - processing sequence alignments in SAM and BAM formats
-Changes: 
- samtools (0.1.19-1) unstable; urgency=low
- .
-   cb9bd50 Imported https://github.com/samtools/samtools/archive/0.1.19.tar.gz
-   1e6d442 new tools ace2sam, bamcheck, plot-bamcheck, r2plot.lua, vcfutils.lua.
-   2f2d5c5 debian/copyright: collapsed copyright notices from main holders.
-   e194f9e Removed fix_float_tag.patch, corrected upstream.
-   9c0e543 Refreshed patches.
-   3e7e0ec Renamed no-pileup-tests.patch fix_example_makefile.patch.
-   8d8550e example/Makefile: pass -lpthread when compiling calDepth.
-   fc32243 harden by concatenating Debian's LDFLAGS and CPPFLAGS in CFLAGS.
-   6f75b48 debian/control: normalised with cme.
-   e13bb5e debian/control: normalised VCS URLs.
-   a1b1b00 debian/control: deleted DM-Upload-Allowed field.
-   ddcd54e Use NEWS as upstream changelog.
-   81ad760 Conforms to Policy version 3.9.4.
-Checksums-Sha1: 
- 27b9febcc040764f37a46813eba6a7ad4cf0e829 563422 samtools_0.1.19-1_kfreebsd-i386.deb
- e6a74f1cd847e4b67206ba343a2f880ceaf269fd 126860 libbam-dev_0.1.19-1_kfreebsd-i386.deb
-Checksums-Sha256: 
- 0728e1915c932f365f494d7561232329b2b908d090e06dc8fcd2e54fa41a7236 563422 samtools_0.1.19-1_kfreebsd-i386.deb
- 126393589b66b1279cec18a24dd5b8e58ba5ffe25d7e76baf409934ef41b2c1c 126860 libbam-dev_0.1.19-1_kfreebsd-i386.deb
-Files: 
- 57b519fdea3b23c74169e55f1638881c 563422 science optional samtools_0.1.19-1_kfreebsd-i386.deb
- c94271270f5dd96bcf856e8b2f4ce86b 126860 libdevel optional libbam-dev_0.1.19-1_kfreebsd-i386.deb
+Finished
+────────
+
+E: Build failure (dpkg-buildpackage died)
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ Package contents                                                             │
+│ Cleanup                                                                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-
-samtools_0.1.19-1_kfreebsd-i386.deb
-───────────────────────────────────
-
- new debian package, version 2.0.
- size 563422 bytes: control archive= 1941 bytes.
-      32 bytes,     1 lines      conffiles            
-     802 bytes,    16 lines      control              
-    2766 bytes,    42 lines      md5sums              
- Package: samtools
- Version: 0.1.19-1
- Architecture: kfreebsd-i386
- Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 1298
- Depends: libc0.1 (>= 2.7), libncurses5 (>= 5.5-5~), libtinfo5, zlib1g (>= 1:1.2.3.3)
- Suggests: python
- Section: science
- Priority: optional
- Homepage: http://samtools.sourceforge.net
- Description: processing sequence alignments in SAM and BAM formats
-  Samtools is a set of utilities that manipulate nucleotide sequence alignments
-  in the binary BAM format. It imports from and exports to the ascii SAM
-  (Sequence Alignment/Map) format, does sorting, merging and indexing, and allows
-  to retrieve reads in any regions swiftly. It is designed to work on a stream,
-  and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
-
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/doc/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/doc/samtools/
--rw-r--r-- root/root       916 2013-03-18 14:43 ./usr/share/doc/samtools/AUTHORS
--rw-r--r-- root/root       592 2012-01-09 02:59 ./usr/share/doc/samtools/reference
--rw-r--r-- root/root      1031 2012-01-09 02:59 ./usr/share/doc/samtools/README.Debian
--rw-r--r-- root/root      5012 2013-03-30 07:03 ./usr/share/doc/samtools/copyright
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/doc/samtools/examples/
--rw-r--r-- root/root    126580 2013-03-30 09:18 ./usr/share/doc/samtools/examples/ex1.bam
--rw-r--r-- root/root      3225 2013-03-18 14:43 ./usr/share/doc/samtools/examples/ex1.fa
--rw-r--r-- root/root    114565 2013-03-18 14:43 ./usr/share/doc/samtools/examples/ex1.sam.gz
--rw-r--r-- root/root       886 2013-03-18 14:43 ./usr/share/doc/samtools/examples/00README.txt
--rw-r--r-- root/root        98 2013-03-18 14:43 ./usr/share/doc/samtools/examples/toy.fa
--rw-r--r-- root/root       786 2013-03-18 14:43 ./usr/share/doc/samtools/examples/toy.sam
--rw-r--r-- root/root     10421 2013-03-18 14:43 ./usr/share/doc/samtools/changelog.gz
--rw-r--r-- root/root      1966 2013-03-30 09:19 ./usr/share/doc/samtools/README.bcftools
--rw-r--r-- root/root     10421 2013-03-18 14:43 ./usr/share/doc/samtools/NEWS.gz
--rw-r--r-- root/root      2466 2013-03-30 08:32 ./usr/share/doc/samtools/changelog.Debian.gz
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/man/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/man/man1/
--rw-r--r-- root/root       430 2013-03-30 09:19 ./usr/share/man/man1/razip.1.gz
--rw-r--r-- root/root     10654 2013-03-30 09:19 ./usr/share/man/man1/samtools.1.gz
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/samtools/
--rwxr-xr-x root/root     15707 2013-03-18 14:43 ./usr/share/samtools/vcfutils.pl
--rwxr-xr-x root/root      2415 2013-03-18 14:43 ./usr/share/samtools/blast2sam.pl
--rwxr-xr-x root/root      2112 2013-03-18 14:43 ./usr/share/samtools/bowtie2sam.pl
--rwxr-xr-x root/root     18572 2013-03-18 14:43 ./usr/share/samtools/export2sam.pl
--rwxr-xr-x root/root      4996 2013-03-18 14:43 ./usr/share/samtools/interpolate_sam.pl
--rwxr-xr-x root/root      5989 2013-03-18 14:43 ./usr/share/samtools/novo2sam.pl
--rwxr-xr-x root/root      2022 2013-03-18 14:43 ./usr/share/samtools/psl2sam.pl
--rwxr-xr-x root/root      7881 2013-03-18 14:43 ./usr/share/samtools/sam2vcf.pl
--rwxr-xr-x root/root     14299 2013-03-18 14:43 ./usr/share/samtools/samtools.pl
--rwxr-xr-x root/root      2696 2013-03-18 14:43 ./usr/share/samtools/soap2sam.pl
--rwxr-xr-x root/root      2729 2013-03-18 14:43 ./usr/share/samtools/wgsim_eval.pl
--rwxr-xr-x root/root      2397 2013-03-18 14:43 ./usr/share/samtools/zoom2sam.pl
--rwxr-xr-x root/root      5778 2013-03-30 09:19 ./usr/share/samtools/varfilter.py
--rwxr-xr-x root/root      2685 2013-03-18 14:43 ./usr/share/samtools/r2plot.lua
--rwxr-xr-x root/root     21028 2013-03-18 14:43 ./usr/share/samtools/vcfutils.lua
--rwxr-xr-x root/root     29649 2013-03-18 14:43 ./usr/share/samtools/plot-bamcheck
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/bin/
--rwxr-xr-x root/root    157732 2013-03-30 09:19 ./usr/bin/bcftools
--rwxr-xr-x root/root     26152 2013-03-30 09:19 ./usr/bin/razip
--rwxr-xr-x root/root    439700 2013-03-30 09:19 ./usr/bin/samtools
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/lib/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/lib/samtools/
--rwxr-xr-x root/root     17896 2013-03-30 09:19 ./usr/lib/samtools/wgsim
--rwxr-xr-x root/root     17840 2013-03-30 09:19 ./usr/lib/samtools/ace2sam
--rwxr-xr-x root/root    187448 2013-03-30 09:19 ./usr/lib/samtools/bamcheck
--rwxr-xr-x root/root      9628 2013-03-30 09:19 ./usr/lib/samtools/maq2sam-long
--rwxr-xr-x root/root      9628 2013-03-30 09:19 ./usr/lib/samtools/maq2sam-short
--rwxr-xr-x root/root     13728 2013-03-30 09:19 ./usr/lib/samtools/md5fa
--rwxr-xr-x root/root      9604 2013-03-30 09:19 ./usr/lib/samtools/md5sum-lite
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./etc/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./etc/bash_completion.d/
--rw-r--r-- root/root       576 2012-07-26 21:52 ./etc/bash_completion.d/samtools
-lrwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/man/man1/bcftools.1.gz -> samtools.1.gz
-
-
-libbam-dev_0.1.19-1_kfreebsd-i386.deb
-─────────────────────────────────────
-
- new debian package, version 2.0.
- size 126860 bytes: control archive= 931 bytes.
-     720 bytes,    17 lines      control              
-     715 bytes,    11 lines      md5sums              
- Package: libbam-dev
- Source: samtools
- Version: 0.1.19-1
- Architecture: kfreebsd-i386
- Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 373
- Section: libdevel
- Priority: optional
- Homepage: http://samtools.sourceforge.net
- Description: manipulates nucleotide sequence alignments in BAM or SAM format
-  The BAM library provides I/O and various operations on manipulating nucleotide
-  sequence alignments in the BAM (Binary Alignment/Mapping) or SAM (Sequence
-  Alignment/Map) format. It now supports importing from or exporting to SAM,
-  sorting, merging, generating pileup, and quickly retrieval of reads overlapped
-  with a specified region.
-  .
-  This library is part of SAMtools.
-
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/doc/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/share/doc/libbam-dev/
--rw-r--r-- root/root       916 2013-03-18 14:43 ./usr/share/doc/libbam-dev/AUTHORS
--rw-r--r-- root/root      5012 2013-03-30 07:03 ./usr/share/doc/libbam-dev/copyright
--rw-r--r-- root/root     10421 2013-03-18 14:43 ./usr/share/doc/libbam-dev/changelog.gz
--rw-r--r-- root/root     10421 2013-03-18 14:43 ./usr/share/doc/libbam-dev/NEWS.gz
--rw-r--r-- root/root      2466 2013-03-30 08:32 ./usr/share/doc/libbam-dev/changelog.Debian.gz
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/lib/
--rw-r--r-- root/root    291856 2013-03-30 09:19 ./usr/lib/libbam.a
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/include/
-drwxr-xr-x root/root         0 2013-03-30 09:19 ./usr/include/samtools/
--rw-r--r-- root/root     25788 2013-03-18 14:43 ./usr/include/samtools/bam.h
--rw-r--r-- root/root      6326 2013-03-18 14:43 ./usr/include/samtools/bgzf.h
--rw-r--r-- root/root     17815 2013-03-18 14:43 ./usr/include/samtools/khash.h
--rw-r--r-- root/root      3188 2013-03-18 14:43 ./usr/include/samtools/faidx.h
--rw-r--r-- root/root      2688 2013-03-18 14:43 ./usr/include/samtools/sam.h
-
-
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ Finished                                                                     │
-└──────────────────────────────────────────────────────────────────────────────┘
-
-Built successfully
-────────────────────────────────────────────────────────────────────────────────
-
-┌──────────────────────────────────────────────────────────────────────────────┐
-│ Post Build                                                                   │
-└──────────────────────────────────────────────────────────────────────────────┘
-
-Purging /var/lib/schroot/mount/sid-ki-sbuild-1364634959-29231/build/buildd-samtools_0.1.19-1-kfreebsd-i386-xI3hSM
+Purging /«BUILDDIR»
 Not cleaning session: cloned chroot in use
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Summary                                                                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Architecture: kfreebsd-i386
-Build-Space: 13164
-Build-Time: 75
+Build Architecture: kfreebsd-i386
+Build-Space: 20484
+Build-Time: 297
 Distribution: sid
-Install-Time: 34
-Job: samtools_0.1.19-1
+Fail-Stage: build
+Host Architecture: kfreebsd-i386
+Install-Time: 112
+Job: samtools_1.1-1
+Machine Architecture: kfreebsd-i386
 Package: samtools
-Package-Time: 199
-Source-Version: 0.1.19-1
-Space: 13164
-Status: successful
-Version: 0.1.19-1
+Package-Time: 586
+Source-Version: 1.1-1
+Space: 20484
+Status: attempted
+Version: 1.1-1
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20130330-0919
-Build needed 00:03:19, 13164k disc space
-Signature with key 'B31C365A' requested:
+Finished at 20140925-0034
+Build needed 00:09:46, 20484k disc space
