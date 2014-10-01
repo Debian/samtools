@@ -1,2 +1,3 @@
 Tests: samtools-test
+Depends: @, tabix
 Restrictions: allow-stderr
