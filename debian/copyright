@@ -1,8 +1,8 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Source: https://github.com/samtools/samtools/archive/1.0.tar.gz
+Source: https://github.com/samtools/samtools/archive/1.2.tar.gz
 
 Files: *
-Copyright: © 2008–2014, Genome Research Ltd. (GRL)
+Copyright: © 2008–2015, Genome Research Ltd. (GRL)
            © 2003–2006, 2008–2011, by Heng Li <lh3lh3@live.co.uk>
            © 2009–2012 Broad Institute
            © 2010 Illumina, Inc.

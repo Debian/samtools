@@ -1,5 +1,6 @@
-samtools (1.1-2) UNRELEASED; urgency=medium
+samtools (1.2-1) UNRELEASED; urgency=medium
 
+  a5f28a0 Merge tag '1.2' into debian/unstable 
   6c2d9cd Build-depend and recommend libio-pty-perl.
           (Needed for the regression tests.)
 
