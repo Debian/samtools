@@ -2,9 +2,11 @@ Description: disable inclusion of accessory makefile needed for static build
 Forwarded: https://github.com/samtools/samtools/issues/275
 Author: Charles Plessy
 
---- a/Makefile
-+++ b/Makefile
-@@ -82,7 +82,7 @@
+Index: samtools/Makefile
+===================================================================
+--- samtools.orig/Makefile
++++ samtools/Makefile
+@@ -83,7 +83,7 @@ all: $(PROGRAMS) $(BUILT_MISC_PROGRAMS)
  
  # Adjust $(HTSDIR) to point to your top-level htslib directory
  HTSDIR = ../htslib
