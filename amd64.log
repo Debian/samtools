@@ -1,20 +1,20 @@
-sbuild (Debian sbuild) 0.64.1 (13 Oct 2013) on aqwa.igloo
+sbuild (Debian sbuild) 0.65.2 (24 Mar 2015) on aqwa.igloo
 
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║ samtools 1.1-1 (amd64)                                   25 sept. 2014 09:05 ║
+║ samtools 1.2-1 (amd64)                                    16 juin 2015 06:14 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 Package: samtools
-Version: 1.1-1
-Source Version: 1.1-1
+Version: 1.2-1
+Source Version: 1.2-1
 Distribution: unstable
 Machine Architecture: amd64
 Host Architecture: amd64
 Build Architecture: amd64
 
-I: NOTICE: Log filtering will replace 'build/samtools-No0uS_/samtools-1.1' with '«PKGBUILDDIR»'
-I: NOTICE: Log filtering will replace 'build/samtools-No0uS_' with '«BUILDDIR»'
-I: NOTICE: Log filtering will replace 'var/lib/schroot/mount/unstable-amd64-sbuild-3e8fcdc5-336b-4691-bf43-e99b6e156ad7' with '«CHROOT»'
+I: NOTICE: Log filtering will replace 'build/samtools-HI9FCU/samtools-1.2' with '«PKGBUILDDIR»'
+I: NOTICE: Log filtering will replace 'build/samtools-HI9FCU' with '«BUILDDIR»'
+I: NOTICE: Log filtering will replace 'var/lib/schroot/mount/unstable-amd64-sbuild-f5de7d7c-936b-47a6-bda9-e4ff8c4e4fc1' with '«CHROOT»'
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Update chroot                                                                │
@@ -24,7 +24,7 @@ Hit http://ftp.jp.debian.org unstable InRelease
 Get:1 http://ftp.jp.debian.org unstable/main Sources/DiffIndex [7876 B]
 Get:2 http://ftp.jp.debian.org unstable/main amd64 Packages/DiffIndex [7876 B]
 Get:3 http://ftp.jp.debian.org unstable/main Translation-en/DiffIndex [7876 B]
-Fetched 23.6 kB in 1s (12.1 kB/s)
+Fetched 23.6 kB in 1s (12.7 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -39,15 +39,24 @@ Reading state information...
 Local sources
 ─────────────
 
-samtools_1.1-1.dsc exists in .; copying to chroot
+samtools_1.2-1.dsc exists in .; copying to chroot
 
-Check arch
-──────────
+Check architectures
+───────────────────
+
+
+Check dependencies
+──────────────────
 
 Merged Build-Depends: build-essential, fakeroot
 Filtered Build-Depends: build-essential, fakeroot
-dpkg-deb: building package `sbuild-build-depends-core-dummy' in `/«BUILDDIR»/resolver-5QNb6M/apt_archive/sbuild-build-depends-core-dummy.deb'.
+dpkg-deb: building package 'sbuild-build-depends-core-dummy' in '/«BUILDDIR»/resolver-GsDMvZ/apt_archive/sbuild-build-depends-core-dummy.deb'.
 OK
+Ign file: ./ InRelease
+Get:1 file: ./ Release.gpg [299 B]
+Get:2 file: ./ Release [2119 B]
+Ign file: ./ Translation-en
+Reading package lists...
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -62,17 +71,22 @@ The following NEW packages will be installed:
   sbuild-build-depends-core-dummy
 debconf: delaying package configuration, since apt-utils is not installed
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0 B/820 B of archives.
+Need to get 0 B/772 B of archives.
 After this operation, 0 B of additional disk space will be used.
 Selecting previously unselected package sbuild-build-depends-core-dummy.
-(Reading database ... 11169 files and directories currently installed.)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11516 files and directories currently installed.)
 Preparing to unpack .../sbuild-build-depends-core-dummy.deb ...
 Unpacking sbuild-build-depends-core-dummy (0.invalid.0) ...
 Setting up sbuild-build-depends-core-dummy (0.invalid.0) ...
-Merged Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, init, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit-utils, tar, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libncurses5-dev, libhts-dev (>= 1.0), zlib1g-dev, tabix (>= 1.0)
-Filtered Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, init, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit-utils, tar, util-linux, libc6-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libncurses5-dev, libhts-dev (>= 1.0), zlib1g-dev, tabix (>= 1.0)
-dpkg-deb: building package `sbuild-build-depends-samtools-dummy' in `/«BUILDDIR»/resolver-aSqs1T/apt_archive/sbuild-build-depends-samtools-dummy.deb'.
+Merged Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, init, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit-utils, tar, util-linux, libc6-dev | libc-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libio-pty-perl, libncurses5-dev, libhts-dev (>= 1.2), zlib1g-dev, tabix (>= 1.0)
+Filtered Build-Depends: base-files, base-passwd, bash, bsdutils, coreutils, dash, debianutils, diffutils, dpkg, e2fsprogs, findutils, grep, gzip, hostname, init, libc-bin, login, mount, ncurses-base, ncurses-bin, perl-base, sed, sysvinit-utils, tar, util-linux, libc6-dev, gcc (>= 4:4.9.1), g++ (>= 4:4.9.1), make, dpkg-dev (>= 1.17.11), debhelper (>= 9), bash-completion, libio-pty-perl, libncurses5-dev, libhts-dev (>= 1.2), zlib1g-dev, tabix (>= 1.0)
+dpkg-deb: building package 'sbuild-build-depends-samtools-dummy' in '/«BUILDDIR»/resolver-0gU_bo/apt_archive/sbuild-build-depends-samtools-dummy.deb'.
 OK
+Ign file: ./ InRelease
+Get:1 file: ./ Release.gpg [299 B]
+Get:2 file: ./ Release [2119 B]
+Ign file: ./ Translation-en
+Reading package lists...
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -86,8 +100,8 @@ Reading state information...
 The following extra packages will be installed:
   bash-completion bsdmainutils debhelper file gettext gettext-base groff-base
   intltool-debian libasprintf0c2 libcroco3 libffi6 libglib2.0-0 libhts-dev
-  libhts1 libmagic1 libncurses5-dev libpipeline1 libtinfo-dev libunistring0
-  libxml2 man-db po-debconf tabix zlib1g-dev
+  libhts1 libicu52 libio-pty-perl libmagic1 libncurses5-dev libpipeline1
+  libtinfo-dev libunistring0 libxml2 man-db po-debconf tabix zlib1g-dev
 Suggested packages:
   wamerican wordlist whois vacation dh-make gettext-doc groff ncurses-doc less
   www-browser libmail-box-perl
@@ -98,127 +112,140 @@ Recommended packages:
 The following NEW packages will be installed:
   bash-completion bsdmainutils debhelper file gettext gettext-base groff-base
   intltool-debian libasprintf0c2 libcroco3 libffi6 libglib2.0-0 libhts-dev
-  libhts1 libmagic1 libncurses5-dev libpipeline1 libtinfo-dev libunistring0
-  libxml2 man-db po-debconf sbuild-build-depends-samtools-dummy tabix
-  zlib1g-dev
+  libhts1 libicu52 libio-pty-perl libmagic1 libncurses5-dev libpipeline1
+  libtinfo-dev libunistring0 libxml2 man-db po-debconf
+  sbuild-build-depends-samtools-dummy tabix zlib1g-dev
+0 upgraded, 27 newly installed, 0 to remove and 0 not upgraded.
+Need to get 910 kB/17.3 MB of archives.
+After this operation, 61.3 MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org/debian/ unstable/main bash-completion all 1:2.1-4.1 [180 kB]
+Get:2 http://ftp.jp.debian.org/debian/ unstable/main libhts1 amd64 1.2.1-1 [229 kB]
+Get:3 http://ftp.jp.debian.org/debian/ unstable/main libhts-dev amd64 1.2.1-1 [278 kB]
+Get:4 http://ftp.jp.debian.org/debian/ unstable/main tabix amd64 1.2.1-1 [223 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-0 upgraded, 25 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0 B/10.2 MB of archives.
-After this operation, 31.7 MB of additional disk space will be used.
+Fetched 910 kB in 0s (1474 kB/s)
 Selecting previously unselected package libpipeline1:amd64.
-(Reading database ... 11169 files and directories currently installed.)
-Preparing to unpack .../libpipeline1_1.3.1-1_amd64.deb ...
-Unpacking libpipeline1:amd64 (1.3.1-1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11516 files and directories currently installed.)
+Preparing to unpack .../libpipeline1_1.4.0-1_amd64.deb ...
+Unpacking libpipeline1:amd64 (1.4.0-1) ...
 Selecting previously unselected package groff-base.
-Preparing to unpack .../groff-base_1.22.2-8_amd64.deb ...
-Unpacking groff-base (1.22.2-8) ...
+Preparing to unpack .../groff-base_1.22.3-1_amd64.deb ...
+Unpacking groff-base (1.22.3-1) ...
 Selecting previously unselected package bsdmainutils.
-Preparing to unpack .../bsdmainutils_9.0.5_amd64.deb ...
-Unpacking bsdmainutils (9.0.5) ...
+Preparing to unpack .../bsdmainutils_9.0.6_amd64.deb ...
+Unpacking bsdmainutils (9.0.6) ...
 Selecting previously unselected package man-db.
-Preparing to unpack .../man-db_2.7.0.1-1_amd64.deb ...
-Unpacking man-db (2.7.0.1-1) ...
+Preparing to unpack .../man-db_2.7.0.2-5_amd64.deb ...
+Unpacking man-db (2.7.0.2-5) ...
 Selecting previously unselected package bash-completion.
-Preparing to unpack .../bash-completion_1%3a2.1-4_all.deb ...
-Unpacking bash-completion (1:2.1-4) ...
+Preparing to unpack .../bash-completion_1%3a2.1-4.1_all.deb ...
+Unpacking bash-completion (1:2.1-4.1) ...
 Selecting previously unselected package libasprintf0c2:amd64.
-Preparing to unpack .../libasprintf0c2_0.19.2-2_amd64.deb ...
-Unpacking libasprintf0c2:amd64 (0.19.2-2) ...
+Preparing to unpack .../libasprintf0c2_0.19.4-1_amd64.deb ...
+Unpacking libasprintf0c2:amd64 (0.19.4-1) ...
 Selecting previously unselected package libmagic1:amd64.
-Preparing to unpack .../libmagic1_1%3a5.19-2_amd64.deb ...
-Unpacking libmagic1:amd64 (1:5.19-2) ...
+Preparing to unpack .../libmagic1_1%3a5.22+15-2_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.22+15-2) ...
+Selecting previously unselected package libicu52:amd64.
+Preparing to unpack .../libicu52_52.1-9_amd64.deb ...
+Unpacking libicu52:amd64 (52.1-9) ...
 Selecting previously unselected package libxml2:amd64.
-Preparing to unpack .../libxml2_2.9.1+dfsg1-4_amd64.deb ...
-Unpacking libxml2:amd64 (2.9.1+dfsg1-4) ...
+Preparing to unpack .../libxml2_2.9.2+dfsg1-3_amd64.deb ...
+Unpacking libxml2:amd64 (2.9.2+dfsg1-3) ...
 Selecting previously unselected package libffi6:amd64.
-Preparing to unpack .../libffi6_3.1-2_amd64.deb ...
-Unpacking libffi6:amd64 (3.1-2) ...
+Preparing to unpack .../libffi6_3.1-2+b2_amd64.deb ...
+Unpacking libffi6:amd64 (3.1-2+b2) ...
 Selecting previously unselected package libglib2.0-0:amd64.
-Preparing to unpack .../libglib2.0-0_2.42.0-1_amd64.deb ...
-Unpacking libglib2.0-0:amd64 (2.42.0-1) ...
+Preparing to unpack .../libglib2.0-0_2.44.1-1_amd64.deb ...
+Unpacking libglib2.0-0:amd64 (2.44.1-1) ...
 Selecting previously unselected package libcroco3:amd64.
-Preparing to unpack .../libcroco3_0.6.8-3_amd64.deb ...
-Unpacking libcroco3:amd64 (0.6.8-3) ...
-Selecting previously unselected package libhts1:amd64.
-Preparing to unpack .../libhts1_1.1-1_amd64.deb ...
-Unpacking libhts1:amd64 (1.1-1) ...
+Preparing to unpack .../libcroco3_0.6.8-3+b1_amd64.deb ...
+Unpacking libcroco3:amd64 (0.6.8-3+b1) ...
 Selecting previously unselected package libunistring0:amd64.
-Preparing to unpack .../libunistring0_0.9.3-5.2_amd64.deb ...
-Unpacking libunistring0:amd64 (0.9.3-5.2) ...
+Preparing to unpack .../libunistring0_0.9.3-5.2+b1_amd64.deb ...
+Unpacking libunistring0:amd64 (0.9.3-5.2+b1) ...
 Selecting previously unselected package file.
-Preparing to unpack .../file_1%3a5.19-2_amd64.deb ...
-Unpacking file (1:5.19-2) ...
+Preparing to unpack .../file_1%3a5.22+15-2_amd64.deb ...
+Unpacking file (1:5.22+15-2) ...
 Selecting previously unselected package gettext-base.
-Preparing to unpack .../gettext-base_0.19.2-2_amd64.deb ...
-Unpacking gettext-base (0.19.2-2) ...
+Preparing to unpack .../gettext-base_0.19.4-1_amd64.deb ...
+Unpacking gettext-base (0.19.4-1) ...
 Selecting previously unselected package gettext.
-Preparing to unpack .../gettext_0.19.2-2_amd64.deb ...
-Unpacking gettext (0.19.2-2) ...
+Preparing to unpack .../gettext_0.19.4-1_amd64.deb ...
+Unpacking gettext (0.19.4-1) ...
 Selecting previously unselected package intltool-debian.
-Preparing to unpack .../intltool-debian_0.35.0+20060710.1_all.deb ...
-Unpacking intltool-debian (0.35.0+20060710.1) ...
+Preparing to unpack .../intltool-debian_0.35.0+20060710.2_all.deb ...
+Unpacking intltool-debian (0.35.0+20060710.2) ...
 Selecting previously unselected package po-debconf.
-Preparing to unpack .../po-debconf_1.0.16+nmu3_all.deb ...
-Unpacking po-debconf (1.0.16+nmu3) ...
+Preparing to unpack .../po-debconf_1.0.18_all.deb ...
+Unpacking po-debconf (1.0.18) ...
 Selecting previously unselected package debhelper.
-Preparing to unpack .../debhelper_9.20140817_all.deb ...
-Unpacking debhelper (9.20140817) ...
+Preparing to unpack .../debhelper_9.20150507_all.deb ...
+Unpacking debhelper (9.20150507) ...
+Selecting previously unselected package libhts1:amd64.
+Preparing to unpack .../libhts1_1.2.1-1_amd64.deb ...
+Unpacking libhts1:amd64 (1.2.1-1) ...
 Selecting previously unselected package libhts-dev:amd64.
-Preparing to unpack .../libhts-dev_1.1-1_amd64.deb ...
-Unpacking libhts-dev:amd64 (1.1-1) ...
+Preparing to unpack .../libhts-dev_1.2.1-1_amd64.deb ...
+Unpacking libhts-dev:amd64 (1.2.1-1) ...
+Selecting previously unselected package libio-pty-perl.
+Preparing to unpack .../libio-pty-perl_1%3a1.08-1+b4_amd64.deb ...
+Unpacking libio-pty-perl (1:1.08-1+b4) ...
 Selecting previously unselected package libtinfo-dev:amd64.
-Preparing to unpack .../libtinfo-dev_5.9+20140913-1_amd64.deb ...
-Unpacking libtinfo-dev:amd64 (5.9+20140913-1) ...
+Preparing to unpack .../libtinfo-dev_5.9+20150516-2_amd64.deb ...
+Unpacking libtinfo-dev:amd64 (5.9+20150516-2) ...
 Selecting previously unselected package libncurses5-dev:amd64.
-Preparing to unpack .../libncurses5-dev_5.9+20140913-1_amd64.deb ...
-Unpacking libncurses5-dev:amd64 (5.9+20140913-1) ...
+Preparing to unpack .../libncurses5-dev_5.9+20150516-2_amd64.deb ...
+Unpacking libncurses5-dev:amd64 (5.9+20150516-2) ...
 Selecting previously unselected package tabix.
-Preparing to unpack .../archives/tabix_1.1-1_amd64.deb ...
-Unpacking tabix (1.1-1) ...
+Preparing to unpack .../tabix_1.2.1-1_amd64.deb ...
+Unpacking tabix (1.2.1-1) ...
 Selecting previously unselected package zlib1g-dev:amd64.
-Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2_amd64.deb ...
-Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2) ...
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2+b1_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2+b1) ...
 Selecting previously unselected package sbuild-build-depends-samtools-dummy.
 Preparing to unpack .../sbuild-build-depends-samtools-dummy.deb ...
 Unpacking sbuild-build-depends-samtools-dummy (0.invalid.0) ...
-Setting up libpipeline1:amd64 (1.3.1-1) ...
-Setting up groff-base (1.22.2-8) ...
-Setting up bsdmainutils (9.0.5) ...
+Setting up libpipeline1:amd64 (1.4.0-1) ...
+Setting up groff-base (1.22.3-1) ...
+Setting up bsdmainutils (9.0.6) ...
 update-alternatives: using /usr/bin/bsd-write to provide /usr/bin/write (write) in auto mode
 update-alternatives: using /usr/bin/bsd-from to provide /usr/bin/from (from) in auto mode
-Setting up man-db (2.7.0.1-1) ...
+Setting up man-db (2.7.0.2-5) ...
 Not building database; man-db/auto-update is not 'true'.
-Setting up bash-completion (1:2.1-4) ...
-Setting up libasprintf0c2:amd64 (0.19.2-2) ...
-Setting up libmagic1:amd64 (1:5.19-2) ...
-Setting up libxml2:amd64 (2.9.1+dfsg1-4) ...
-Setting up libffi6:amd64 (3.1-2) ...
-Setting up libglib2.0-0:amd64 (2.42.0-1) ...
+Setting up bash-completion (1:2.1-4.1) ...
+Setting up libasprintf0c2:amd64 (0.19.4-1) ...
+Setting up libmagic1:amd64 (1:5.22+15-2) ...
+Setting up libicu52:amd64 (52.1-9) ...
+Setting up libxml2:amd64 (2.9.2+dfsg1-3) ...
+Setting up libffi6:amd64 (3.1-2+b2) ...
+Setting up libglib2.0-0:amd64 (2.44.1-1) ...
 No schema files found: doing nothing.
-Setting up libcroco3:amd64 (0.6.8-3) ...
-Setting up libhts1:amd64 (1.1-1) ...
-Setting up libunistring0:amd64 (0.9.3-5.2) ...
-Setting up file (1:5.19-2) ...
-Setting up gettext-base (0.19.2-2) ...
-Setting up gettext (0.19.2-2) ...
-Setting up intltool-debian (0.35.0+20060710.1) ...
-Setting up po-debconf (1.0.16+nmu3) ...
-Setting up debhelper (9.20140817) ...
-Setting up libhts-dev:amd64 (1.1-1) ...
-Setting up libtinfo-dev:amd64 (5.9+20140913-1) ...
-Setting up libncurses5-dev:amd64 (5.9+20140913-1) ...
-Setting up tabix (1.1-1) ...
-Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2) ...
+Setting up libcroco3:amd64 (0.6.8-3+b1) ...
+Setting up libunistring0:amd64 (0.9.3-5.2+b1) ...
+Setting up file (1:5.22+15-2) ...
+Setting up gettext-base (0.19.4-1) ...
+Setting up gettext (0.19.4-1) ...
+Setting up intltool-debian (0.35.0+20060710.2) ...
+Setting up po-debconf (1.0.18) ...
+Setting up debhelper (9.20150507) ...
+Setting up libhts1:amd64 (1.2.1-1) ...
+Setting up libhts-dev:amd64 (1.2.1-1) ...
+Setting up libio-pty-perl (1:1.08-1+b4) ...
+Setting up libtinfo-dev:amd64 (5.9+20150516-2) ...
+Setting up libncurses5-dev:amd64 (5.9+20150516-2) ...
+Setting up tabix (1.2.1-1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2+b1) ...
 Setting up sbuild-build-depends-samtools-dummy (0.invalid.0) ...
-Processing triggers for libc-bin (2.19-11) ...
+Processing triggers for libc-bin (2.19-18) ...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build environment                                                            │
 └──────────────────────────────────────────────────────────────────────────────┘
 
-Kernel: Linux 3.16-1-amd64 amd64 (x86_64)
-Toolchain package versions: binutils_2.24.51.20140918-1 dpkg-dev_1.17.13 g++-4.9_4.9.1-15 gcc-4.9_4.9.1-15 libc6-dev_2.19-11 libstdc++-4.9-dev_4.9.1-15 libstdc++6_4.9.1-15 linux-libc-dev_3.16.3-2
-Package versions: apt_1.0.9.1 base-files_7.5 base-passwd_3.5.36 bash_4.3-9.1 bash-completion_1:2.1-4 binutils_2.24.51.20140918-1 bsdmainutils_9.0.5 bsdutils_1:2.20.1-5.8 build-essential_11.7 bzip2_1.0.6-7 coreutils_8.23-2 cpp_4:4.9.1-4 cpp-4.9_4.9.1-15 dash_0.5.7-4 debconf_1.5.53 debconf-i18n_1.5.53 debfoster_2.7-2 debhelper_9.20140817 debian-archive-keyring_2014.1 debianutils_4.4 diffutils_1:3.3-1 dpkg_1.17.13 dpkg-dev_1.17.13 e2fslibs_1.42.12-1 e2fsprogs_1.42.12-1 eatmydata_26-2 fakeroot_1.20.1-1.1 file_1:5.19-2 findutils_4.4.2-9 g++_4:4.9.1-4 g++-4.9_4.9.1-15 gcc_4:4.9.1-4 gcc-4.9_4.9.1-15 gcc-4.9-base_4.9.1-15 gettext_0.19.2-2 gettext-base_0.19.2-2 gnupg_1.4.18-4 gpgv_1.4.18-4 grep_2.20-3 groff-base_1.22.2-8 gzip_1.6-3 hostname_3.15 init_1.21 initscripts_2.88dsf-53.4 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.1 libacl1_2.2.52-2 libalgorithm-c3-perl_0.09-1 libapt-pkg4.12_1.0.9.1 libarchive-extract-perl_0.72-1 libasan1_4.9.1-15 libasprintf0c2_0.19.2-2 libatomic1_4.9.1-15 libattr1_1:2.4.47-2 libaudit-common_1:2.4-1 libaudit1_1:2.4-1 libblkid1_2.20.1-5.8 libbz2-1.0_1.0.6-7 libc-bin_2.19-11 libc-dev-bin_2.19-11 libc6_2.19-11 libc6-dev_2.19-11 libcap2_1:2.24-5 libcgi-fast-perl_1:2.02-1 libcgi-pm-perl_4.03-1 libcilkrts5_4.9.1-15 libclass-c3-perl_0.26-1 libclass-c3-xs-perl_0.13-2+b1 libclass-isa-perl_0.36-5 libcloog-isl4_0.18.2-1 libcomerr2_1.42.12-1 libcpan-meta-perl_2.142060-1 libcroco3_0.6.8-3 libdata-optlist-perl_0.109-1 libdata-section-perl_0.200006-1 libdb5.1_5.1.29-7 libdb5.3_5.3.28-6 libdebconfclient0_0.192 libdpkg-perl_1.17.13 libfakeroot_1.20.1-1.1 libfcgi-perl_0.77-1+b1 libffi6_3.1-2 libgc1c2_1:7.2d-6.3 libgcc-4.9-dev_4.9.1-15 libgcc1_1:4.9.1-15 libgdbm3_1.8.3-13 libglib2.0-0_2.42.0-1 libgmp10_2:6.0.0+dfsg-6 libgomp1_4.9.1-15 libhts-dev_1.1-1 libhts1_1.1-1 libisl10_0.12.2-2 libitm1_4.9.1-15 liblocale-gettext-perl_1.05-8+b1 liblog-message-perl_0.8-1 liblog-message-simple-perl_0.10-2 liblsan0_4.9.1-15 liblzma5_5.1.1alpha+20120614-2 libmagic1_1:5.19-2 libmodule-build-perl_0.421000-2 libmodule-pluggable-perl_5.1-1 libmodule-signature-perl_0.73-1 libmount1_2.20.1-5.8 libmpc3_1.0.2-1 libmpfr4_3.1.2-1 libmro-compat-perl_0.12-1 libncurses5_5.9+20140913-1 libncurses5-dev_5.9+20140913-1 libpackage-constants-perl_0.04-1 libpam-modules_1.1.8-3.1 libpam-modules-bin_1.1.8-3.1 libpam-runtime_1.1.8-3.1 libpam0g_1.1.8-3.1 libparams-util-perl_1.07-2+b1 libpcre3_1:8.35-3 libpipeline1_1.3.1-1 libpod-latex-perl_0.61-1 libpod-readme-perl_0.11-1 libquadmath0_4.9.1-15 libreadline6_6.3-8 libregexp-common-perl_2013031301-1 libselinux1_2.3-2 libsemanage-common_2.3-1 libsemanage1_2.3-1 libsepol1_2.3-2 libslang2_2.3.0-1 libsoftware-license-perl_0.103010-2 libss2_1.42.12-1 libstdc++-4.9-dev_4.9.1-15 libstdc++6_4.9.1-15 libsub-exporter-perl_0.986-1 libsub-install-perl_0.928-1 libswitch-perl_2.17-2 libterm-ui-perl_0.42-1 libtext-charwidth-perl_0.04-7+b3 libtext-iconv-perl_1.7-5+b2 libtext-soundex-perl_3.4-1+b2 libtext-template-perl_1.46-1 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_2.3000-2 libtinfo-dev_5.9+20140913-1 libtinfo5_5.9+20140913-1 libtsan0_4.9.1-15 libubsan0_4.9.1-15 libunistring0_0.9.3-5.2 libusb-0.1-4_2:0.1.12-24 libustr-1.0-1_1.0.4-3 libuuid1_2.20.1-5.8 libxml2_2.9.1+dfsg1-4 linux-libc-dev_3.16.3-2 login_1:4.2-2+b1 lsb-base_4.1+Debian13 make_4.0-8 man-db_2.7.0.1-1 mawk_1.3.3-17 mount_2.20.1-5.8 multiarch-support_2.19-11 ncurses-base_5.9+20140913-1 ncurses-bin_5.9+20140913-1 passwd_1:4.2-2+b1 patch_2.7.1-6 perl_5.20.1-1 perl-base_5.20.1-1 perl-modules_5.20.1-1 po-debconf_1.0.16+nmu3 readline-common_6.3-8 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-samtools-dummy_0.invalid.0 sed_4.2.2-4 sensible-utils_0.0.9 startpar_0.59-3 sysv-rc_2.88dsf-53.4 sysvinit_2.88dsf-53.4 sysvinit-core_2.88dsf-53.4 sysvinit-utils_2.88dsf-53.4 tabix_1.1-1 tar_1.27.1-2 tzdata_2014g-1 util-linux_2.20.1-5.8 xz-utils_5.1.1alpha+20120614-2 zlib1g_1:1.2.8.dfsg-2 zlib1g-dev_1:1.2.8.dfsg-2
+Kernel: Linux 3.16.0-4-amd64 amd64 (x86_64)
+Toolchain package versions: binutils_2.25-8 dpkg-dev_1.18.1 g++-4.9_4.9.2-21 gcc-4.9_4.9.2-21 libc6-dev_2.19-18 libstdc++-4.9-dev_4.9.2-21 libstdc++6_5.1.1-10 linux-libc-dev_4.0.2-1
+Package versions: apt_1.0.9.10 base-files_9.2 base-passwd_3.5.37 bash_4.3-12 bash-completion_1:2.1-4.1 binutils_2.25-8 bsdmainutils_9.0.6 bsdutils_1:2.26.2-6 build-essential_11.7 bzip2_1.0.6-8 coreutils_8.23-4 cpp_4:4.9.2-4 cpp-4.9_4.9.2-21 dash_0.5.7-4+b1 debconf_1.5.56 debconf-i18n_1.5.56 debfoster_2.7-2 debhelper_9.20150507 debian-archive-keyring_2014.3 debianutils_4.5.1 diffutils_1:3.3-1+b1 dpkg_1.18.1 dpkg-dev_1.18.1 e2fslibs_1.42.13-1 e2fsprogs_1.42.13-1 eatmydata_82-6 fakeroot_1.20.2-1 file_1:5.22+15-2 findutils_4.4.2-9+b1 g++_4:4.9.2-4 g++-4.9_4.9.2-21 gcc_4:4.9.2-4 gcc-4.9_4.9.2-21 gcc-4.9-base_4.9.2-21 gcc-5-base_5.1.1-10 gettext_0.19.4-1 gettext-base_0.19.4-1 gnupg_1.4.19-3 gpgv_1.4.19-3 grep_2.20-4.1 groff-base_1.22.3-1 gzip_1.6-4 hostname_3.15 init_1.23 initscripts_2.88dsf-59.2 insserv_1.14.0-5 intltool-debian_0.35.0+20060710.2 libacl1_2.2.52-2 libalgorithm-c3-perl_0.09-1 libapt-pkg4.12_1.0.9.10 libarchive-extract-perl_0.74-1 libasan1_4.9.2-21 libasprintf0c2_0.19.4-1 libatomic1_5.1.1-10 libattr1_1:2.4.47-2 libaudit-common_1:2.4.2-1 libaudit1_1:2.4.2-1 libblkid1_2.26.2-6 libbz2-1.0_1.0.6-8 libc-bin_2.19-18 libc-dev-bin_2.19-18 libc6_2.19-18 libc6-dev_2.19-18 libcap2_1:2.24-9 libcgi-fast-perl_1:2.09-1 libcgi-pm-perl_4.15-1 libcilkrts5_5.1.1-10 libclass-c3-perl_0.26-1 libclass-c3-xs-perl_0.13-2+b1 libclass-isa-perl_0.36-5 libcloog-isl4_0.18.3-1 libcomerr2_1.42.13-1 libcpan-meta-perl_2.150001-1 libcroco3_0.6.8-3+b1 libdata-optlist-perl_0.109-1 libdata-section-perl_0.200006-1 libdb5.1_5.1.29-7 libdb5.3_5.3.28-9 libdebconfclient0_0.194 libdpkg-perl_1.18.1 libeatmydata1_82-6 libencode-locale-perl_1.03-1 libfakeroot_1.20.2-1 libfcgi-perl_0.77-1+b1 libfdisk1_2.26.2-6 libffi6_3.1-2+b2 libgc1c2_1:7.2d-6.4 libgcc-4.9-dev_4.9.2-21 libgcc1_1:5.1.1-10 libgcrypt20_1.6.3-2 libgdbm3_1.8.3-13.1 libglib2.0-0_2.44.1-1 libgmp10_2:6.0.0+dfsg-6 libgomp1_5.1.1-10 libgpg-error0_1.19-2 libhtml-parser-perl_3.71-2 libhtml-tagset-perl_3.20-2 libhts-dev_1.2.1-1 libhts1_1.2.1-1 libhttp-date-perl_6.02-1 libhttp-message-perl_6.06-1 libicu52_52.1-9 libio-html-perl_1.001-1 libio-pty-perl_1:1.08-1+b4 libisl10_0.12.2-2 libisl13_0.14-2 libitm1_5.1.1-10 liblocale-gettext-perl_1.05-9 liblog-message-perl_0.8-1 liblog-message-simple-perl_0.10-2 liblsan0_5.1.1-10 liblwp-mediatypes-perl_6.02-1 liblzma5_5.1.1alpha+20120614-2+b3 libmagic1_1:5.22+15-2 libmodule-build-perl_0.421100-2 libmodule-pluggable-perl_5.1-2 libmodule-signature-perl_0.79-1 libmount1_2.26.2-6 libmpc3_1.0.3-1 libmpfr4_3.1.2-3 libmro-compat-perl_0.12-1 libncurses5_5.9+20150516-2 libncurses5-dev_5.9+20150516-2 libpackage-constants-perl_0.04-1 libpam-modules_1.1.8-3.1 libpam-modules-bin_1.1.8-3.1 libpam-runtime_1.1.8-3.1 libpam0g_1.1.8-3.1 libparams-util-perl_1.07-2+b1 libpcre3_2:8.35-6 libpipeline1_1.4.0-1 libpod-latex-perl_0.61-2 libpod-readme-perl_0.11-1 libquadmath0_5.1.1-10 libreadline6_6.3-8+b3 libregexp-common-perl_2013031301-1 libselinux1_2.3-2 libsemanage-common_2.3-1 libsemanage1_2.3-1+b1 libsepol1_2.3-2 libslang2_2.3.0-2 libsmartcols1_2.26.2-6 libsoftware-license-perl_0.103010-3 libss2_1.42.13-1 libstdc++-4.9-dev_4.9.2-21 libstdc++6_5.1.1-10 libsub-exporter-perl_0.986-1 libsub-install-perl_0.928-1 libswitch-perl_2.17-2 libsystemd0_220-6 libterm-ui-perl_0.42-1 libtext-charwidth-perl_0.04-7+b3 libtext-iconv-perl_1.7-5+b2 libtext-soundex-perl_3.4-1+b2 libtext-template-perl_1.46-1 libtext-wrapi18n-perl_0.06-7 libtimedate-perl_2.3000-2 libtinfo-dev_5.9+20150516-2 libtinfo5_5.9+20150516-2 libtsan0_5.1.1-10 libubsan0_5.1.1-10 libunistring0_0.9.3-5.2+b1 liburi-perl_1.64-1 libusb-0.1-4_2:0.1.12-25 libustr-1.0-1_1.0.4-5 libuuid1_2.26.2-6 libxml2_2.9.2+dfsg1-3 linux-libc-dev_4.0.2-1 login_1:4.2-3 lsb-base_4.1+Debian13+nmu1 make_4.0-8.1 man-db_2.7.0.2-5 mawk_1.3.3-17 mount_2.26.2-6 multiarch-support_2.19-18 ncurses-base_5.9+20150516-2 ncurses-bin_5.9+20150516-2 passwd_1:4.2-3 patch_2.7.5-1 perl_5.20.2-6 perl-base_5.20.2-6 perl-modules_5.20.2-6 po-debconf_1.0.18 readline-common_6.3-8 sbuild-build-depends-core-dummy_0.invalid.0 sbuild-build-depends-samtools-dummy_0.invalid.0 sed_4.2.2-6 sensible-utils_0.0.9 startpar_0.59-3 sysv-rc_2.88dsf-59.2 sysvinit_2.88dsf-59.2 sysvinit-core_2.88dsf-59.2 sysvinit-utils_2.88dsf-59.2 tabix_1.2.1-1 tar_1.27.1-2+b1 tzdata_2015d-1 util-linux_2.26.2-6 xz-utils_5.1.1alpha+20120614-2+b3 zlib1g_1:1.2.8.dfsg-2+b1 zlib1g-dev_1:1.2.8.dfsg-2+b1
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Build                                                                        │
@@ -228,11 +255,10 @@ Package versions: apt_1.0.9.1 base-files_7.5 base-passwd_3.5.36 bash_4.3-9.1 bas
 Unpack source
 ─────────────
 
-dpkg-source: warning: extracting unsigned source package (samtools_1.1-1.dsc)
-dpkg-source: info: extracting samtools in samtools-1.1
-dpkg-source: info: unpacking samtools_1.1.orig.tar.gz
-dpkg-source: info: unpacking samtools_1.1-1.debian.tar.xz
-dpkg-source: info: applying fix_coverage_cap.patch
+dpkg-source: warning: extracting unsigned source package (samtools_1.2-1.dsc)
+dpkg-source: info: extracting samtools in samtools-1.2
+dpkg-source: info: unpacking samtools_1.2.orig.tar.gz
+dpkg-source: info: unpacking samtools_1.2-1.debian.tar.xz
 dpkg-source: info: applying fix_segfault_with_small_ref.patch
 dpkg-source: info: applying dynamic-build.patch
 dpkg-source: info: applying debian-changes
@@ -253,7 +279,7 @@ SCHROOT_CHROOT_NAME=unstable-amd64-sbuild
 SCHROOT_COMMAND=env
 SCHROOT_GID=1000
 SCHROOT_GROUP=charles
-SCHROOT_SESSION_ID=unstable-amd64-sbuild-3e8fcdc5-336b-4691-bf43-e99b6e156ad7
+SCHROOT_SESSION_ID=unstable-amd64-sbuild-f5de7d7c-936b-47a6-bda9-e4ff8c4e4fc1
 SCHROOT_UID=1000
 SCHROOT_USER=charles
 SHELL=/bin/sh
@@ -262,19 +288,19 @@ USER=charles
 USERNAME=charles
 XDG_RUNTIME_DIR=/run/user/1000
 XDG_SEAT=seat0
-XDG_SESSION_ID=115
+XDG_SESSION_ID=3
 XDG_VTNR=7
 
 dpkg-buildpackage
 ─────────────────
 
 dpkg-buildpackage: source package samtools
-dpkg-buildpackage: source version 1.1-1
+dpkg-buildpackage: source version 1.2-1
 dpkg-buildpackage: source distribution unstable
 dpkg-buildpackage: source changed by Charles Plessy <plessy@debian.org>
- dpkg-source --before-build samtools-1.1
+ dpkg-source --before-build samtools-1.2
 dpkg-buildpackage: host architecture amd64
-dpkg-source: info: using options from samtools-1.1/debian/source/options: --single-debian-patch
+dpkg-source: info: using options from samtools-1.2/debian/source/options: --single-debian-patch
  fakeroot debian/rules clean
 dh clean --parallel
    dh_testdir -O--parallel
@@ -296,7 +322,8 @@ make[1]: Leaving directory '/«PKGBUILDDIR»'
 	rm -rf debian/samtools-test/
 	rm -f debian/*.debhelper.log
 	rm -f debian/files
-	find .  \( \( -type f -a \
+	find .  \( \( \
+		\( -path .\*/.git -o -path .\*/.svn -o -path .\*/.bzr -o -path .\*/.hg -o -path .\*/CVS \) -prune -o -type f -a \
 	        \( -name '#*#' -o -name '.*~' -o -name '*~' -o -name DEADJOE \
 		 -o -name '*.orig' -o -name '*.rej' -o -name '*.bak' \
 		 -o -name '.*.orig' -o -name .*.rej -o -name '.SUMS' \
@@ -304,18 +331,16 @@ make[1]: Leaving directory '/«PKGBUILDDIR»'
 		\) -exec rm -f {} + \) -o \
 		\( -type d -a -name autom4te.cache -prune -exec rm -rf {} + \) \)
 	rm -f *-stamp
- dpkg-source -b samtools-1.1
-dpkg-source: info: using options from samtools-1.1/debian/source/options: --single-debian-patch
-dpkg-source: info: using source format `3.0 (quilt)'
-dpkg-source: info: building samtools using existing ./samtools_1.1.orig.tar.gz
+ dpkg-source -b samtools-1.2
+dpkg-source: info: using options from samtools-1.2/debian/source/options: --single-debian-patch
+dpkg-source: info: using source format '3.0 (quilt)'
+dpkg-source: info: building samtools using existing ./samtools_1.2.orig.tar.gz
 dpkg-source: info: local changes detected, the modified files are:
- samtools-1.1/.travis.yml
- samtools-1.1/README.md
- samtools-1.1/bam.h
- samtools-1.1/test/test.pl
-dpkg-source: info: local changes have been recorded in a new patch: samtools-1.1/debian/patches/debian-changes
-dpkg-source: info: building samtools in samtools_1.1-1.debian.tar.xz
-dpkg-source: info: building samtools in samtools_1.1-1.dsc
+ samtools-1.2/.travis.yml
+ samtools-1.2/README.md
+dpkg-source: info: local changes have been recorded in a new patch: samtools-1.2/debian/patches/debian-changes
+dpkg-source: info: building samtools in samtools_1.2-1.debian.tar.xz
+dpkg-source: info: building samtools in samtools_1.2-1.dsc
  debian/rules build
 dh build --parallel
    dh_testdir -O--parallel
@@ -345,9 +370,8 @@ gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFF
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_mate.o bam_mate.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_stat.o bam_stat.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_color.o bam_color.c
-echo '#define SAMTOOLS_VERSION "1.1"' > version.h
+echo '#define SAMTOOLS_VERSION "1.2"' > version.h
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bamtk.o bamtk.c
-gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o kaln.o kaln.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam2bcf.o bam2bcf.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam2bcf_indel.o bam2bcf_indel.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o errmod.o errmod.c
@@ -374,7 +398,8 @@ gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFF
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o sam_header.o sam_header.c
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o bam_plbuf.o bam_plbuf.c
 ar -csru libbam.a bam_aux.o bam.o bam_import.o sam.o sam_header.o bam_plbuf.o
-gcc -pthread -Wl,-z,relro -o samtools bam_index.o bam_plcmd.o sam_view.o bam_cat.o bam_md.o bam_reheader.o bam_sort.o bedidx.o kprobaln.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o kaln.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o padding.o bedcov.o bamshuf.o faidx.o stats.o stats_isize.o bam_flags.o bam_split.o bam_tview.o bam_tview_curses.o bam_tview_html.o bam_lpileup.o libbam.a /usr/lib/x86_64-linux-gnu/libhts.a -lhts -lcurses  -lm -lz
+ar: `u' modifier ignored since `D' is the default (see `U')
+gcc -pthread -Wl,-z,relro -o samtools bam_index.o bam_plcmd.o sam_view.o bam_cat.o bam_md.o bam_reheader.o bam_sort.o bedidx.o kprobaln.o bam_rmdup.o bam_rmdupse.o bam_mate.o bam_stat.o bam_color.o bamtk.o bam2bcf.o bam2bcf_indel.o errmod.o sample.o cut_target.o phase.o bam2depth.o padding.o bedcov.o bamshuf.o faidx.o stats.o stats_isize.o bam_flags.o bam_split.o bam_tview.o bam_tview_curses.o bam_tview_html.o bam_lpileup.o libbam.a /usr/lib/x86_64-linux-gnu/libhts.a -lhts -lcurses  -lm -lz
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -c -o misc/ace2sam.o misc/ace2sam.c
 gcc -Wl,-z,relro -o misc/ace2sam misc/ace2sam.o -lhts -lz
 gcc -g -O2 -fstack-protector-strong -Wformat -Werror=format-security -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_CURSES_LIB=1 -I. -I/usr/include -D_FORTIFY_SOURCE=2 -DMAQ_LONGREADS -c -o misc/maq2sam-long.o misc/maq2sam.c
@@ -418,91 +443,213 @@ dh_auto_test -- \
 	make -j1 test HTSDIR=/usr/include HTSLIB=/usr/lib/x86_64-linux-gnu/libhts.a BGZIP=/usr/bin/bgzip
 make[2]: Entering directory '/«PKGBUILDDIR»'
 REF_PATH=: test/test.pl --exec bgzip=/usr/bin/bgzip
-/usr/bin/bgzip -c -b 65272 -s 5 /tmp/BddoP4EvN2/bgzip.dat.gz
+/usr/bin/bgzip -c -b 65272 -s 5 /tmp/bIZ9VxwNgp/bgzip.dat.gz
 .. ok
 
-/usr/bin/bgzip -c -b 979200 -s 6 /tmp/BddoP4EvN2/bgzip.dat.gz
+/usr/bin/bgzip -c -b 979200 -s 6 /tmp/bIZ9VxwNgp/bgzip.dat.gz
 .. ok
 
-/usr/bin/bgzip -c -b 652804 -s 6 /tmp/BddoP4EvN2/bgzip.dat.gz
+/usr/bin/bgzip -c -b 652804 -s 6 /tmp/bIZ9VxwNgp/bgzip.dat.gz
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa 3:11-13 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa 3:11-13 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa.gz 3:11-13 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa.gz 3:11-13 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa 2:998-1003 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa 2:998-1003 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa.gz 2:998-1003 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa.gz 2:998-1003 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa 1:100-104 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa 1:100-104 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa.gz 1:100-104 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa.gz 1:100-104 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa 1:99998-100007 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa 1:99998-100007 | grep -v '^>'
 .. ok
 
-/«PKGBUILDDIR»/samtools faidx /tmp/BddoP4EvN2/faidx.fa.gz 1:99998-100007 | grep -v '^>'
+/«PKGBUILDDIR»/samtools faidx /tmp/bIZ9VxwNgp/faidx.fa.gz 1:99998-100007 | grep -v '^>'
 .. ok
 
 test_index:
-	/«PKGBUILDDIR»/samtools index /tmp/BddoP4EvN2/large_chrom.bam
+	/«PKGBUILDDIR»/samtools index /tmp/bIZ9VxwNgp/large_chrom.bam
 
 .. expected failure
 
 test_index:
-	/«PKGBUILDDIR»/samtools view /tmp/BddoP4EvN2/large_chrom.bam ref2
-
-	The outputs stdout differ:
-		/«PKGBUILDDIR»/test/dat/large_chrom.out
-		/«PKGBUILDDIR»/test/dat/large_chrom.out.new
-.. expected failure
+	/«PKGBUILDDIR»/samtools view /tmp/bIZ9VxwNgp/large_chrom.bam ref2
+.. ok
 
 test_index:
-	/«PKGBUILDDIR»/samtools view /tmp/BddoP4EvN2/large_chrom.bam ref2:1-541556283
+	/«PKGBUILDDIR»/samtools view /tmp/bIZ9VxwNgp/large_chrom.bam ref2:1-541556283
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -b /tmp/BddoP4EvN2/mpileup.bam.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-150
+	/«PKGBUILDDIR»/samtools mpileup -b /tmp/bIZ9VxwNgp/mpileup.bam.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-150
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -b /tmp/BddoP4EvN2/mpileup.cram.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-150
+	/«PKGBUILDDIR»/samtools mpileup -b /tmp/bIZ9VxwNgp/mpileup.cram.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-150
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/BddoP4EvN2/mpileup.bam.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/bIZ9VxwNgp/mpileup.bam.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/BddoP4EvN2/mpileup.cram.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+	/«PKGBUILDDIR»/samtools mpileup -uvDV -b /tmp/bIZ9VxwNgp/mpileup.cram.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/BddoP4EvN2/mpileup.cram.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/bIZ9VxwNgp/mpileup.cram.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/BddoP4EvN2/mpileup.cram.list -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
+	/«PKGBUILDDIR»/samtools mpileup -uv -t DP,DPR,DV,DP4,INFO/DPR,SP -b /tmp/bIZ9VxwNgp/mpileup.cram.list -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:100-600| grep -v ^##samtools | grep -v ^##ref
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:1050-1060 /tmp/BddoP4EvN2/mpileup.1.bam | grep -v mpileup
+	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:1050-1060 /tmp/bIZ9VxwNgp/mpileup.1.bam | grep -v mpileup
 .. ok
 
 test_mpileup:
-	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/BddoP4EvN2/mpileup.ref.fa.gz -r17:1050-1060 /tmp/BddoP4EvN2/mpileup.1.cram | grep -v mpileup
-test/test.pl: module IO::Pty not found; skipping usage tests
+	/«PKGBUILDDIR»/samtools mpileup -B --ff 0x14 -f /tmp/bIZ9VxwNgp/mpileup.ref.fa.gz -r17:1050-1060 /tmp/bIZ9VxwNgp/mpileup.1.cram | grep -v mpileup
 .. ok
 
 test_usage:
 	samtools
+	samtools has subcommands: faidx, index, calmd, fixmate, reheader, rmdup, targetcut, bamshuf, cat, merge, mpileup, sort, split, bam2fq, bedcov, depth, flagstat, idxstats, phase, stats, flags, tview, view
+.. ok
+
+test_usage_subcommand:
+	samtools faidx
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools index
+.. ok
+
+test_usage_subcommand:
+	samtools calmd
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools fixmate
+.. ok
+
+test_usage_subcommand:
+	samtools reheader
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools rmdup
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools targetcut
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools bamshuf
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools cat
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools merge
+.. ok
+
+test_usage_subcommand:
+	samtools mpileup
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools sort
+.. ok
+
+test_usage_subcommand:
+	samtools split
+.. ok
+
+test_usage_subcommand:
+	samtools bam2fq
+.. ok
+
+test_usage_subcommand:
+	samtools bedcov
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools depth
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools flagstat
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools idxstats
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools phase
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools stats
+.. ok
+
+test_usage_subcommand:
+	samtools flags
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools tview
+
+	Usage on stderr rather than stdout
+.. expected failure
+
+test_usage_subcommand:
+	samtools view
+
+	Usage on stderr rather than stdout
+.. expected failure
+
 test_view:
 	Generating test data file .................. done
 	1: SAM -> BAM -> SAM                                        .. ok
@@ -601,80 +748,80 @@ test_view:
 
 	48: Count -r grp2 (CRAM input)                              .. ok
 
-	49: Filter -R /tmp/BddoP4EvN2/view.001.fogn (SAM input)     .. ok
+	49: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn (SAM input)     .. ok
 
-	50: Count -R /tmp/BddoP4EvN2/view.001.fogn (SAM input)      .. ok
+	50: Count -R /tmp/bIZ9VxwNgp/view.001.fogn (SAM input)      .. ok
 
-	51: Filter -R /tmp/BddoP4EvN2/view.001.fogn (BAM input)     .. ok
+	51: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn (BAM input)     .. ok
 
-	52: Count -R /tmp/BddoP4EvN2/view.001.fogn (BAM input)      .. ok
+	52: Count -R /tmp/bIZ9VxwNgp/view.001.fogn (BAM input)      .. ok
 
-	53: Filter -R /tmp/BddoP4EvN2/view.001.fogn (CRAM input)    .. ok
+	53: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn (CRAM input)    .. ok
 
-	54: Count -R /tmp/BddoP4EvN2/view.001.fogn (CRAM input)     .. ok
+	54: Count -R /tmp/bIZ9VxwNgp/view.001.fogn (CRAM input)     .. ok
 
-	55: Filter -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (SAM input).. ok
+	55: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (SAM input).. ok
 
-	56: Count -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (SAM input).. ok
+	56: Count -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (SAM input).. ok
 
-	57: Filter -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (BAM input).. ok
+	57: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (BAM input).. ok
 
-	58: Count -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (BAM input).. ok
+	58: Count -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (BAM input).. ok
 
-	59: Filter -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (CRAM input).. ok
+	59: Filter -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (CRAM input).. ok
 
-	60: Count -R /tmp/BddoP4EvN2/view.001.fogn -r grp2 (CRAM input).. ok
+	60: Count -R /tmp/bIZ9VxwNgp/view.001.fogn -r grp2 (CRAM input).. ok
 
-	61: Filter -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (SAM input).. ok
+	61: Filter -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (SAM input).. ok
 
-	62: Count -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (SAM input).. ok
+	62: Count -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (SAM input).. ok
 
-	63: Filter -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (BAM input).. ok
+	63: Filter -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (BAM input).. ok
 
-	64: Count -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (BAM input).. ok
+	64: Count -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (BAM input).. ok
 
-	65: Filter -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (CRAM input).. ok
+	65: Filter -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (CRAM input).. ok
 
-	66: Count -r grp2 -R /tmp/BddoP4EvN2/view.001.fogn (CRAM input).. ok
+	66: Count -r grp2 -R /tmp/bIZ9VxwNgp/view.001.fogn (CRAM input).. ok
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	67: Filter -l Library 2 (SAM input)                         	Failed command:
-	/«PKGBUILDDIR»/samtools view -o /tmp/BddoP4EvN2/view.test067.sam -h -l Library 2 /tmp/BddoP4EvN2/view.001.sam
+	/«PKGBUILDDIR»/samtools view -o /tmp/bIZ9VxwNgp/view.test067.sam -h -l Library 2 /tmp/bIZ9VxwNgp/view.001.sam
 
 
 .. expected failure
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	68: Count -l Library 2 (SAM input)                          	Failed command:
-	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/BddoP4EvN2/view.001.sam
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/bIZ9VxwNgp/view.001.sam
 
 
 .. expected failure
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	69: Filter -l Library 2 (BAM input)                         	Failed command:
-	/«PKGBUILDDIR»/samtools view -o /tmp/BddoP4EvN2/view.test069.sam -h -l Library 2 /tmp/BddoP4EvN2/view.test001.bam
+	/«PKGBUILDDIR»/samtools view -o /tmp/bIZ9VxwNgp/view.test069.sam -h -l Library 2 /tmp/bIZ9VxwNgp/view.test001.bam
 
 
 .. expected failure
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	70: Count -l Library 2 (BAM input)                          	Failed command:
-	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/BddoP4EvN2/view.test001.bam
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/bIZ9VxwNgp/view.test001.bam
 
 
 .. expected failure
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	71: Filter -l Library 2 (CRAM input)                        	Failed command:
-	/«PKGBUILDDIR»/samtools view -o /tmp/BddoP4EvN2/view.test071.sam -h -l Library 2 /tmp/BddoP4EvN2/view.test006.cram
+	/«PKGBUILDDIR»/samtools view -o /tmp/bIZ9VxwNgp/view.test071.sam -h -l Library 2 /tmp/bIZ9VxwNgp/view.test006.cram
 
 
 .. expected failure
 
 Samtools-htslib-API: bam_get_library() not yet implemented
 	72: Count -l Library 2 (CRAM input)                         	Failed command:
-	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/BddoP4EvN2/view.test006.cram
+	/«PKGBUILDDIR»/samtools view -c -l Library 2 /tmp/bIZ9VxwNgp/view.test006.cram
 
 
 .. expected failure
@@ -1057,37 +1204,41 @@ Samtools-htslib-API: bam_get_library() not yet implemented
 
 	260: Add @SQ with -T (BAM -> CRAM)                          .. ok
 
-	261: CIGAR B-operator removal                               .. ok
+	261: Make CRAM with no UR field                             .. ok
 
-	262: Big SAM -> BAM                                         .. ok
+	262: Decoding CRAM with no UR field via -T                  .. ok
 
-	263: Big SAM -> BAM (2 threads)                             .. ok
+	263: CIGAR B-operator removal                               .. ok
 
-	264: Big SAM -> BAM (4 threads)                             .. ok
+	264: Big SAM -> BAM                                         .. ok
 
-	265: Big SAM -> CRAM                                        .. ok
+	265: Big SAM -> BAM (2 threads)                             .. ok
 
-	266: Big SAM -> CRAM (2 threads)                            .. ok
+	266: Big SAM -> BAM (4 threads)                             .. ok
 
-	267: Big SAM -> CRAM (4 threads)                            .. ok
+	267: Big SAM -> CRAM                                        .. ok
 
-	268: Subsample 0.2 (SAM input) ............ ok
+	268: Big SAM -> CRAM (2 threads)                            .. ok
 
-	269: Subsample 0.5 (SAM input) ............ ok
+	269: Big SAM -> CRAM (4 threads)                            .. ok
 
-	270: Subsample 0.8 (SAM input) ............ ok
+	270: Subsample 0.2 (SAM input) ............ ok
 
-	271: Subsample 0.2 (BAM input) ............ ok
+	271: Subsample 0.5 (SAM input) ............ ok
 
-	272: Subsample 0.5 (BAM input) ............ ok
+	272: Subsample 0.8 (SAM input) ............ ok
 
-	273: Subsample 0.8 (BAM input) ............ ok
+	273: Subsample 0.2 (BAM input) ............ ok
 
-	274: Subsample 0.2 (CRAM input) ............ ok
+	274: Subsample 0.5 (BAM input) ............ ok
 
-	275: Subsample 0.5 (CRAM input) ............ ok
+	275: Subsample 0.8 (BAM input) ............ ok
 
-	276: Subsample 0.8 (CRAM input) ............ ok
+	276: Subsample 0.2 (CRAM input) ............ ok
+
+	277: Subsample 0.5 (CRAM input) ............ ok
+
+	278: Subsample 0.8 (CRAM input) ............ ok
 
 test_cat:
 	Generating test data file .................. done
@@ -1117,6 +1268,7 @@ test_cat:
 test_bam2fq:
 	Generate BAM file                                           .. ok
 
+Unsorted mode enabled
 	Generate CRAM file                                          .. ok
 
 [M::main_bam2fq] processed 36 reads
@@ -1170,28 +1322,28 @@ Samtools-htslib: fix_header() header parsing not yet implemented
 
 Samtools-htslib: fix_header() header parsing not yet implemented
 	depad  (BAM input)                                          	Failed command:
-	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa /tmp/BddoP4EvN2/depad.001p.bam
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa /tmp/bIZ9VxwNgp/depad.001p.bam
 
 
 .. expected failure
 
 Samtools-htslib: fix_header() header parsing not yet implemented
 	depad -s (BAM input)                                        	Failed command:
-	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -s /tmp/BddoP4EvN2/depad.001p.bam
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -s /tmp/bIZ9VxwNgp/depad.001p.bam
 
 
 .. expected failure
 
 Samtools-htslib: fix_header() header parsing not yet implemented
 	depad -u (BAM input)                                        	Failed command:
-	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -u /tmp/BddoP4EvN2/depad.001p.bam
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -u /tmp/bIZ9VxwNgp/depad.001p.bam
 
 
 .. expected failure
 
 Samtools-htslib: fix_header() header parsing not yet implemented
 	depad -1 (BAM input)                                        	Failed command:
-	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -1 /tmp/BddoP4EvN2/depad.001p.bam
+	/«PKGBUILDDIR»/samtools depad -T /«PKGBUILDDIR»/test/dat/depad.001.fa -1 /tmp/bIZ9VxwNgp/depad.001p.bam
 
 
 .. expected failure
@@ -1222,16 +1374,14 @@ test_stats:
 
 test_merge:
 	/«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.sam /«PKGBUILDDIR»/test/dat/test_input_1_b.sam /«PKGBUILDDIR»/test/dat/test_input_1_c.sam
-/bin/bash: line 1: 22576 Aborted                 ( /«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.sam /«PKGBUILDDIR»/test/dat/test_input_1_b.sam /«PKGBUILDDIR»/test/dat/test_input_1_c.sam ) 2> /tmp/9DPBsRA8JA
-
-.. expected failure
+.. ok
 
 test_merge:
 	/«PKGBUILDDIR»/samtools merge -s 1 - /«PKGBUILDDIR»/test/dat/test_input_1_a.bam /«PKGBUILDDIR»/test/dat/test_input_1_b.bam /«PKGBUILDDIR»/test/dat/test_input_1_c.bam
 .. ok
 
 test_merge:
-	/«PKGBUILDDIR»/samtools merge -s 1 -b /tmp/qFPGXMuTXZ - /«PKGBUILDDIR»/test/dat/test_input_1_a.bam
+	/«PKGBUILDDIR»/samtools merge -s 1 -b /tmp/wud9kRQhJZ - /«PKGBUILDDIR»/test/dat/test_input_1_a.bam
 .. ok
 
 test_fixmate:
@@ -1265,10 +1415,10 @@ test_idxstat:
 
 
 Number of tests:
-    total            .. 342
-    passed           .. 324
+    total            .. 368
+    passed           .. 336
     failed           .. 0
-    expected failure .. 18
+    expected failure .. 32
     unexpected pass  .. 0
 
 test/merge/test_bam_translate test/merge/test_bam_translate.tmp
@@ -1326,25 +1476,25 @@ make[2]: Leaving directory '/«PKGBUILDDIR»'
 make[1]: Leaving directory '/«PKGBUILDDIR»'
    dh_install -O--parallel
 	install -d debian/samtools//usr
-	cp -a debian/tmp/usr/bin debian/samtools//usr/
+	cp --reflink=auto -a debian/tmp/usr/bin debian/samtools//usr/
 	install -d debian/samtools//usr/share/man
-	cp -a debian/tmp/usr/share/man/man1 debian/samtools//usr/share/man/
+	cp --reflink=auto -a debian/tmp/usr/share/man/man1 debian/samtools//usr/share/man/
 	install -d debian/samtools-test/usr/share/samtools
-	cp -a ./test debian/samtools-test/usr/share/samtools/
+	cp --reflink=auto -a ./test debian/samtools-test/usr/share/samtools/
    dh_installdocs -O--parallel
-	install -g 0 -o 0 -d debian/samtools/usr/share/doc/samtools
-	cp -a AUTHORS debian/samtools/usr/share/doc/samtools
-	cp -a debian/reference debian/samtools/usr/share/doc/samtools
+	install -d debian/samtools/usr/share/doc/samtools
+	cp --reflink=auto -a AUTHORS debian/samtools/usr/share/doc/samtools
+	cp --reflink=auto -a debian/reference debian/samtools/usr/share/doc/samtools
 	chown -R 0:0 debian/samtools/usr/share/doc
 	chmod -R go=rX debian/samtools/usr/share/doc
 	chmod -R u\+rw debian/samtools/usr/share/doc
-	install -g 0 -o 0 -m 644 -p debian/README.Debian debian/samtools/usr/share/doc/samtools/README.Debian
-	install -g 0 -o 0 -m 644 -p debian/copyright debian/samtools/usr/share/doc/samtools/copyright
-	install -g 0 -o 0 -d debian/samtools-test/usr/share/doc/samtools-test
-	install -g 0 -o 0 -m 644 -p debian/copyright debian/samtools-test/usr/share/doc/samtools-test/copyright
+	install -p -m0644 debian/README.Debian debian/samtools/usr/share/doc/samtools/README.Debian
+	install -p -m0644 debian/copyright debian/samtools/usr/share/doc/samtools/copyright
+	install -d debian/samtools-test/usr/share/doc/samtools-test
+	install -p -m0644 debian/copyright debian/samtools-test/usr/share/doc/samtools-test/copyright
    dh_installchangelogs -O--parallel
-	install -o 0 -g 0 -p -m644 debian/changelog debian/samtools/usr/share/doc/samtools/changelog.Debian
-	install -o 0 -g 0 -p -m644 debian/changelog debian/samtools-test/usr/share/doc/samtools-test/changelog.Debian
+	install -p -m0644 debian/changelog debian/samtools/usr/share/doc/samtools/changelog.Debian
+	install -p -m0644 debian/changelog debian/samtools-test/usr/share/doc/samtools-test/changelog.Debian
    dh_installman -O--parallel
 	man --recode UTF-8 ./samtools\.1 > samtools\.1\.new
 	chmod 644 samtools.1.new
@@ -1367,25 +1517,25 @@ make[1]: Leaving directory '/«PKGBUILDDIR»'
    dh_fixperms -O--parallel
 	find debian/samtools  -print0 2>/dev/null | xargs -0r chown --no-dereference 0:0
 	find debian/samtools ! -type l  -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
-	find debian/samtools/usr/share/doc -type f  ! -regex 'debian/samtools/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools/usr/share/doc -type d  -print0 2>/dev/null | xargs -0r chmod 755
-	find debian/samtools/usr/share/man debian/samtools/usr/man/ debian/samtools/usr/X11*/man/ -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools -perm -5 -type f \( -name '*.so.*' -or -name '*.so' -or -name '*.la' -or -name '*.a' \)  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools/usr/include -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools/usr/share/applications -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools -perm -5 -type f \( -name '*.cmxs' \)  -print0 2>/dev/null | xargs -0r chmod 644
+	find debian/samtools/usr/share/doc -type f  ! -regex 'debian/samtools/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools/usr/share/doc -type d  -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/samtools/usr/share/man debian/samtools/usr/man/ debian/samtools/usr/X11*/man/ -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools -perm -5 -type f \( -name '*.so.*' -or -name '*.so' -or -name '*.la' -or -name '*.a' \)  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools/usr/include -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools/usr/share/applications -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools -perm -5 -type f \( -name '*.cmxs' \)  -print0 2>/dev/null | xargs -0r chmod 0644
 	find debian/samtools/usr/lib/x86_64-linux-gnu/perl5/5.20 debian/samtools/usr/share/perl5 -type f -perm -5 -name '*.pm'  -print0 2>/dev/null | xargs -0r chmod a-X
 	find debian/samtools/usr/bin -type f  -print0 2>/dev/null | xargs -0r chmod a+x
 	find debian/samtools/usr/lib -type f -name '*.ali'  -print0 2>/dev/null | xargs -0r chmod uga-w
 	find debian/samtools-test  -print0 2>/dev/null | xargs -0r chown --no-dereference 0:0
 	find debian/samtools-test ! -type l  -print0 2>/dev/null | xargs -0r chmod go=rX,u+rw,a-s
-	find debian/samtools-test/usr/share/doc -type f  ! -regex 'debian/samtools-test/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools-test/usr/share/doc -type d  -print0 2>/dev/null | xargs -0r chmod 755
-	find debian/samtools-test/usr/share/man debian/samtools-test/usr/man/ debian/samtools-test/usr/X11*/man/ -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools-test -perm -5 -type f \( -name '*.so.*' -or -name '*.so' -or -name '*.la' -or -name '*.a' \)  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools-test/usr/include -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools-test/usr/share/applications -type f  -print0 2>/dev/null | xargs -0r chmod 644
-	find debian/samtools-test -perm -5 -type f \( -name '*.cmxs' \)  -print0 2>/dev/null | xargs -0r chmod 644
+	find debian/samtools-test/usr/share/doc -type f  ! -regex 'debian/samtools-test/usr/share/doc/[^/]*/examples/.*' -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools-test/usr/share/doc -type d  -print0 2>/dev/null | xargs -0r chmod 0755
+	find debian/samtools-test/usr/share/man debian/samtools-test/usr/man/ debian/samtools-test/usr/X11*/man/ -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools-test -perm -5 -type f \( -name '*.so.*' -or -name '*.so' -or -name '*.la' -or -name '*.a' \)  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools-test/usr/include -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools-test/usr/share/applications -type f  -print0 2>/dev/null | xargs -0r chmod 0644
+	find debian/samtools-test -perm -5 -type f \( -name '*.cmxs' \)  -print0 2>/dev/null | xargs -0r chmod 0644
 	find debian/samtools-test/usr/lib/x86_64-linux-gnu/perl5/5.20 debian/samtools-test/usr/share/perl5 -type f -perm -5 -name '*.pm'  -print0 2>/dev/null | xargs -0r chmod a-X
 	find debian/samtools-test/usr/lib -type f -name '*.ali'  -print0 2>/dev/null | xargs -0r chmod uga-w
    dh_strip -O--parallel
@@ -1400,43 +1550,45 @@ make[1]: Leaving directory '/«PKGBUILDDIR»'
 	rm -f debian/samtools/DEBIAN/shlibs
 	rm -f debian/samtools-test/DEBIAN/shlibs
    dh_shlibdeps -O--parallel
-	install -o 0 -g 0 -d debian/samtools/DEBIAN
+	install -d debian/samtools/DEBIAN
 	dpkg-shlibdeps -Tdebian/samtools.substvars debian/samtools/usr/bin/md5fa debian/samtools/usr/bin/md5sum-lite debian/samtools/usr/bin/maq2sam-long debian/samtools/usr/bin/wgsim debian/samtools/usr/bin/samtools debian/samtools/usr/bin/ace2sam debian/samtools/usr/bin/maq2sam-short
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/samtools/usr/bin/wgsim debian/samtools/usr/bin/maq2sam-short debian/samtools/usr/bin/samtools debian/samtools/usr/bin/ace2sam debian/samtools/usr/bin/md5sum-lite debian/samtools/usr/bin/maq2sam-long debian/samtools/usr/bin/md5fa were not linked against libhts.so.1 (they use none of the library's symbols)
-	install -o 0 -g 0 -d debian/samtools-test/DEBIAN
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/samtools/usr/bin/md5sum-lite debian/samtools/usr/bin/ace2sam debian/samtools/usr/bin/maq2sam-short debian/samtools/usr/bin/md5fa debian/samtools/usr/bin/wgsim debian/samtools/usr/bin/samtools debian/samtools/usr/bin/maq2sam-long were not linked against libhts.so.1 (they use none of the library's symbols)
+	install -d debian/samtools-test/DEBIAN
    dh_installdeb -O--parallel
    dh_gencontrol -O--parallel
 	echo misc:Depends= >> debian/samtools.substvars
+	echo misc:Pre-Depends= >> debian/samtools.substvars
 	dpkg-gencontrol -psamtools -ldebian/changelog -Tdebian/samtools.substvars -Pdebian/samtools
 dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
 dpkg-gencontrol: warning: package samtools: unused substitution variable ${perl:Depends}
-	chmod 644 debian/samtools/DEBIAN/control
+	chmod 0644 debian/samtools/DEBIAN/control
 	chown 0:0 debian/samtools/DEBIAN/control
 	echo misc:Depends= >> debian/samtools-test.substvars
+	echo misc:Pre-Depends= >> debian/samtools-test.substvars
 	dpkg-gencontrol -psamtools-test -ldebian/changelog -Tdebian/samtools-test.substvars -Pdebian/samtools-test
 dpkg-gencontrol: warning: File::FcntlLock not available; using flock which is not NFS-safe
 dpkg-gencontrol: warning: package samtools-test: unused substitution variable ${perl:Depends}
-	chmod 644 debian/samtools-test/DEBIAN/control
+	chmod 0644 debian/samtools-test/DEBIAN/control
 	chown 0:0 debian/samtools-test/DEBIAN/control
    dh_md5sums -O--parallel
 	(cd debian/samtools >/dev/null ; find . -type f  ! -regex './DEBIAN/.*' -printf '%P\0' | LC_ALL=C sort -z | xargs -r0 md5sum > DEBIAN/md5sums) >/dev/null
-	chmod 644 debian/samtools/DEBIAN/md5sums
+	chmod 0644 debian/samtools/DEBIAN/md5sums
 	chown 0:0 debian/samtools/DEBIAN/md5sums
 	(cd debian/samtools-test >/dev/null ; find . -type f  ! -regex './DEBIAN/.*' -printf '%P\0' | LC_ALL=C sort -z | xargs -r0 md5sum > DEBIAN/md5sums) >/dev/null
-	chmod 644 debian/samtools-test/DEBIAN/md5sums
+	chmod 0644 debian/samtools-test/DEBIAN/md5sums
 	chown 0:0 debian/samtools-test/DEBIAN/md5sums
    dh_builddeb -O--parallel
 	dpkg-deb --build debian/samtools ..
-dpkg-deb: building package `samtools' in `../samtools_1.1-1_amd64.deb'.
+dpkg-deb: building package 'samtools' in '../samtools_1.2-1_amd64.deb'.
 	dpkg-deb --build debian/samtools-test ..
-dpkg-deb: building package `samtools-test' in `../samtools-test_1.1-1_all.deb'.
- dpkg-genchanges  >../samtools_1.1-1_amd64.changes
+dpkg-deb: building package 'samtools-test' in '../samtools-test_1.2-1_all.deb'.
+ dpkg-genchanges  >../samtools_1.2-1_amd64.changes
 dpkg-genchanges: including full source code in upload
- dpkg-source --after-build samtools-1.1
-dpkg-source: info: using options from samtools-1.1/debian/source/options: --single-debian-patch
+ dpkg-source --after-build samtools-1.2
+dpkg-source: info: using options from samtools-1.2/debian/source/options: --single-debian-patch
 dpkg-buildpackage: full upload (original source is included)
 ────────────────────────────────────────────────────────────────────────────────
-Build finished at 20140925-0908
+Build finished at 20150616-0617
 
 Finished
 ────────
@@ -1453,8 +1605,13 @@ lintian
 
 Merged Build-Depends: lintian
 Filtered Build-Depends: lintian
-dpkg-deb: building package `sbuild-build-depends-lintian-dummy' in `/«BUILDDIR»/resolver-jRfKH3/apt_archive/sbuild-build-depends-lintian-dummy.deb'.
+dpkg-deb: building package 'sbuild-build-depends-lintian-dummy' in '/«BUILDDIR»/resolver-MYREbF/apt_archive/sbuild-build-depends-lintian-dummy.deb'.
 OK
+Ign file: ./ InRelease
+Get:1 file: ./ Release.gpg [299 B]
+Get:2 file: ./ Release [2119 B]
+Ign file: ./ Translation-en
+Reading package lists...
 Reading package lists...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -1468,69 +1625,73 @@ Reading state information...
 The following extra packages will be installed:
   diffstat hardening-includes libapt-pkg-perl libarchive-zip-perl
   libclass-accessor-perl libclone-perl libdigest-hmac-perl libemail-valid-perl
-  libfile-basedir-perl libio-pty-perl libio-socket-inet6-perl
+  libexporter-tiny-perl libfile-basedir-perl libio-socket-inet6-perl
   libio-socket-ssl-perl libio-string-perl libipc-run-perl
-  liblist-moreutils-perl libmailtools-perl libnet-dns-perl
-  libnet-domain-tld-perl libnet-ip-perl libnet-smtp-ssl-perl
+  libipc-system-simple-perl liblist-moreutils-perl libmailtools-perl
+  libnet-dns-perl libnet-domain-tld-perl libnet-ip-perl libnet-smtp-ssl-perl
   libnet-ssleay-perl libparse-debianchangelog-perl libsocket6-perl libssl1.0.0
-  libsub-name-perl libtext-levenshtein-perl liburi-perl lintian netbase
-  patchutils t1utils
+  libsub-name-perl libtext-levenshtein-perl lintian netbase patchutils t1utils
 Suggested packages:
-  ca-certificates libhtml-parser-perl libhtml-template-perl libxml-simple-perl
-  libwww-perl binutils-multiarch libyaml-perl
+  ca-certificates libhtml-template-perl libxml-simple-perl binutils-multiarch
+  libyaml-perl
 Recommended packages:
   libauthen-sasl-perl libperlio-gzip-perl ifupdown
 The following NEW packages will be installed:
   diffstat hardening-includes libapt-pkg-perl libarchive-zip-perl
   libclass-accessor-perl libclone-perl libdigest-hmac-perl libemail-valid-perl
-  libfile-basedir-perl libio-pty-perl libio-socket-inet6-perl
+  libexporter-tiny-perl libfile-basedir-perl libio-socket-inet6-perl
   libio-socket-ssl-perl libio-string-perl libipc-run-perl
-  liblist-moreutils-perl libmailtools-perl libnet-dns-perl
-  libnet-domain-tld-perl libnet-ip-perl libnet-smtp-ssl-perl
+  libipc-system-simple-perl liblist-moreutils-perl libmailtools-perl
+  libnet-dns-perl libnet-domain-tld-perl libnet-ip-perl libnet-smtp-ssl-perl
   libnet-ssleay-perl libparse-debianchangelog-perl libsocket6-perl libssl1.0.0
-  libsub-name-perl libtext-levenshtein-perl liburi-perl lintian netbase
-  patchutils sbuild-build-depends-lintian-dummy t1utils
-debconf: delaying package configuration, since apt-utils is not installed
+  libsub-name-perl libtext-levenshtein-perl lintian netbase patchutils
+  sbuild-build-depends-lintian-dummy t1utils
 0 upgraded, 32 newly installed, 0 to remove and 0 not upgraded.
-Need to get 0 B/3597 kB of archives.
-After this operation, 12.0 MB of additional disk space will be used.
+Need to get 1376 kB/3884 kB of archives.
+After this operation, 12.5 MB of additional disk space will be used.
+Get:1 http://ftp.jp.debian.org/debian/ unstable/main libssl1.0.0 amd64 1.0.2c-1 [1273 kB]
+Get:2 http://ftp.jp.debian.org/debian/ unstable/main libipc-system-simple-perl all 1.25-2 [26.7 kB]
+Get:3 http://ftp.jp.debian.org/debian/ unstable/main libfile-basedir-perl all 0.07-1 [17.5 kB]
+Get:4 http://ftp.jp.debian.org/debian/ unstable/main libparse-debianchangelog-perl all 1.2.0-4 [58.9 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 1376 kB in 3s (360 kB/s)
 Selecting previously unselected package libssl1.0.0:amd64.
-(Reading database ... 13304 files and directories currently installed.)
-Preparing to unpack .../libssl1.0.0_1.0.1i-2_amd64.deb ...
-Unpacking libssl1.0.0:amd64 (1.0.1i-2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 13712 files and directories currently installed.)
+Preparing to unpack .../libssl1.0.0_1.0.2c-1_amd64.deb ...
+Unpacking libssl1.0.0:amd64 (1.0.2c-1) ...
 Selecting previously unselected package netbase.
-Preparing to unpack .../archives/netbase_5.2_all.deb ...
-Unpacking netbase (5.2) ...
+Preparing to unpack .../archives/netbase_5.3_all.deb ...
+Unpacking netbase (5.3) ...
 Selecting previously unselected package diffstat.
 Preparing to unpack .../diffstat_1.58-1_amd64.deb ...
 Unpacking diffstat (1.58-1) ...
 Selecting previously unselected package hardening-includes.
-Preparing to unpack .../hardening-includes_2.5+nmu1_all.deb ...
-Unpacking hardening-includes (2.5+nmu1) ...
+Preparing to unpack .../hardening-includes_2.7_all.deb ...
+Unpacking hardening-includes (2.7) ...
 Selecting previously unselected package libapt-pkg-perl.
 Preparing to unpack .../libapt-pkg-perl_0.1.29+b2_amd64.deb ...
 Unpacking libapt-pkg-perl (0.1.29+b2) ...
 Selecting previously unselected package libarchive-zip-perl.
-Preparing to unpack .../libarchive-zip-perl_1.38-1_all.deb ...
-Unpacking libarchive-zip-perl (1.38-1) ...
+Preparing to unpack .../libarchive-zip-perl_1.39-1_all.deb ...
+Unpacking libarchive-zip-perl (1.39-1) ...
 Selecting previously unselected package libsub-name-perl.
-Preparing to unpack .../libsub-name-perl_0.07-1+b1_amd64.deb ...
-Unpacking libsub-name-perl (0.07-1+b1) ...
+Preparing to unpack .../libsub-name-perl_0.12-1_amd64.deb ...
+Unpacking libsub-name-perl (0.12-1) ...
 Selecting previously unselected package libclass-accessor-perl.
 Preparing to unpack .../libclass-accessor-perl_0.34-1_all.deb ...
 Unpacking libclass-accessor-perl (0.34-1) ...
 Selecting previously unselected package libclone-perl.
-Preparing to unpack .../libclone-perl_0.37-1+b1_amd64.deb ...
-Unpacking libclone-perl (0.37-1+b1) ...
+Preparing to unpack .../libclone-perl_0.38-1_amd64.deb ...
+Unpacking libclone-perl (0.38-1) ...
 Selecting previously unselected package libdigest-hmac-perl.
 Preparing to unpack .../libdigest-hmac-perl_1.03+dfsg-1_all.deb ...
 Unpacking libdigest-hmac-perl (1.03+dfsg-1) ...
 Selecting previously unselected package libnet-ssleay-perl.
-Preparing to unpack .../libnet-ssleay-perl_1.65-1+b1_amd64.deb ...
-Unpacking libnet-ssleay-perl (1.65-1+b1) ...
+Preparing to unpack .../libnet-ssleay-perl_1.68-1_amd64.deb ...
+Unpacking libnet-ssleay-perl (1.68-1) ...
 Selecting previously unselected package libio-socket-ssl-perl.
-Preparing to unpack .../libio-socket-ssl-perl_1.998-1_all.deb ...
-Unpacking libio-socket-ssl-perl (1.998-1) ...
+Preparing to unpack .../libio-socket-ssl-perl_2.016-1_all.deb ...
+Unpacking libio-socket-ssl-perl (2.016-1) ...
 Selecting previously unselected package libnet-smtp-ssl-perl.
 Preparing to unpack .../libnet-smtp-ssl-perl_1.01-3_all.deb ...
 Unpacking libnet-smtp-ssl-perl (1.01-3) ...
@@ -1541,96 +1702,96 @@ Selecting previously unselected package libsocket6-perl.
 Preparing to unpack .../libsocket6-perl_0.25-1+b1_amd64.deb ...
 Unpacking libsocket6-perl (0.25-1+b1) ...
 Selecting previously unselected package libio-socket-inet6-perl.
-Preparing to unpack .../libio-socket-inet6-perl_2.72-1_all.deb ...
-Unpacking libio-socket-inet6-perl (2.72-1) ...
+Preparing to unpack .../libio-socket-inet6-perl_2.72-2_all.deb ...
+Unpacking libio-socket-inet6-perl (2.72-2) ...
 Selecting previously unselected package libnet-ip-perl.
 Preparing to unpack .../libnet-ip-perl_1.26-1_all.deb ...
 Unpacking libnet-ip-perl (1.26-1) ...
 Selecting previously unselected package libnet-dns-perl.
-Preparing to unpack .../libnet-dns-perl_0.79-2_amd64.deb ...
-Unpacking libnet-dns-perl (0.79-2) ...
+Preparing to unpack .../libnet-dns-perl_0.81-2_amd64.deb ...
+Unpacking libnet-dns-perl (0.81-2) ...
 Selecting previously unselected package libnet-domain-tld-perl.
-Preparing to unpack .../libnet-domain-tld-perl_1.72-1_all.deb ...
-Unpacking libnet-domain-tld-perl (1.72-1) ...
+Preparing to unpack .../libnet-domain-tld-perl_1.73-1_all.deb ...
+Unpacking libnet-domain-tld-perl (1.73-1) ...
 Selecting previously unselected package libemail-valid-perl.
 Preparing to unpack .../libemail-valid-perl_1.195-1_all.deb ...
 Unpacking libemail-valid-perl (1.195-1) ...
+Selecting previously unselected package libexporter-tiny-perl.
+Preparing to unpack .../libexporter-tiny-perl_0.042-1_all.deb ...
+Unpacking libexporter-tiny-perl (0.042-1) ...
+Selecting previously unselected package libipc-system-simple-perl.
+Preparing to unpack .../libipc-system-simple-perl_1.25-2_all.deb ...
+Unpacking libipc-system-simple-perl (1.25-2) ...
 Selecting previously unselected package libfile-basedir-perl.
-Preparing to unpack .../libfile-basedir-perl_0.03-1_all.deb ...
-Unpacking libfile-basedir-perl (0.03-1) ...
-Selecting previously unselected package libio-pty-perl.
-Preparing to unpack .../libio-pty-perl_1%3a1.08-1+b4_amd64.deb ...
-Unpacking libio-pty-perl (1:1.08-1+b4) ...
+Preparing to unpack .../libfile-basedir-perl_0.07-1_all.deb ...
+Unpacking libfile-basedir-perl (0.07-1) ...
 Selecting previously unselected package libio-string-perl.
 Preparing to unpack .../libio-string-perl_1.08-3_all.deb ...
 Unpacking libio-string-perl (1.08-3) ...
 Selecting previously unselected package libipc-run-perl.
-Preparing to unpack .../libipc-run-perl_0.92-1_all.deb ...
-Unpacking libipc-run-perl (0.92-1) ...
+Preparing to unpack .../libipc-run-perl_0.94-1_all.deb ...
+Unpacking libipc-run-perl (0.94-1) ...
 Selecting previously unselected package liblist-moreutils-perl.
-Preparing to unpack .../liblist-moreutils-perl_0.33-2+b1_amd64.deb ...
-Unpacking liblist-moreutils-perl (0.33-2+b1) ...
+Preparing to unpack .../liblist-moreutils-perl_0.410-1_amd64.deb ...
+Unpacking liblist-moreutils-perl (0.410-1) ...
 Selecting previously unselected package libparse-debianchangelog-perl.
-Preparing to unpack .../libparse-debianchangelog-perl_1.2.0-1.1_all.deb ...
-Unpacking libparse-debianchangelog-perl (1.2.0-1.1) ...
+Preparing to unpack .../libparse-debianchangelog-perl_1.2.0-4_all.deb ...
+Unpacking libparse-debianchangelog-perl (1.2.0-4) ...
 Selecting previously unselected package libtext-levenshtein-perl.
-Preparing to unpack .../libtext-levenshtein-perl_0.09-1_all.deb ...
-Unpacking libtext-levenshtein-perl (0.09-1) ...
-Selecting previously unselected package liburi-perl.
-Preparing to unpack .../liburi-perl_1.64-1_all.deb ...
-Unpacking liburi-perl (1.64-1) ...
+Preparing to unpack .../libtext-levenshtein-perl_0.12-1_all.deb ...
+Unpacking libtext-levenshtein-perl (0.12-1) ...
 Selecting previously unselected package patchutils.
-Preparing to unpack .../patchutils_0.3.3-1_amd64.deb ...
-Unpacking patchutils (0.3.3-1) ...
+Preparing to unpack .../patchutils_0.3.4-1_amd64.deb ...
+Unpacking patchutils (0.3.4-1) ...
 Selecting previously unselected package t1utils.
-Preparing to unpack .../t1utils_1.37-2.1_amd64.deb ...
-Unpacking t1utils (1.37-2.1) ...
+Preparing to unpack .../t1utils_1.38-4_amd64.deb ...
+Unpacking t1utils (1.38-4) ...
 Selecting previously unselected package lintian.
-Preparing to unpack .../lintian_2.5.27_all.deb ...
-Unpacking lintian (2.5.27) ...
+Preparing to unpack .../lintian_2.5.31_all.deb ...
+Unpacking lintian (2.5.31) ...
 Selecting previously unselected package sbuild-build-depends-lintian-dummy.
 Preparing to unpack .../sbuild-build-depends-lintian-dummy.deb ...
 Unpacking sbuild-build-depends-lintian-dummy (0.invalid.0) ...
-Processing triggers for man-db (2.7.0.1-1) ...
+Processing triggers for man-db (2.7.0.2-5) ...
 Not building database; man-db/auto-update is not 'true'.
-Setting up libssl1.0.0:amd64 (1.0.1i-2) ...
-Setting up netbase (5.2) ...
+Setting up libssl1.0.0:amd64 (1.0.2c-1) ...
+Setting up netbase (5.3) ...
 Setting up diffstat (1.58-1) ...
-Setting up hardening-includes (2.5+nmu1) ...
+Setting up hardening-includes (2.7) ...
 Setting up libapt-pkg-perl (0.1.29+b2) ...
-Setting up libarchive-zip-perl (1.38-1) ...
-Setting up libsub-name-perl (0.07-1+b1) ...
+Setting up libarchive-zip-perl (1.39-1) ...
+Setting up libsub-name-perl (0.12-1) ...
 Setting up libclass-accessor-perl (0.34-1) ...
-Setting up libclone-perl (0.37-1+b1) ...
+Setting up libclone-perl (0.38-1) ...
 Setting up libdigest-hmac-perl (1.03+dfsg-1) ...
-Setting up libnet-ssleay-perl (1.65-1+b1) ...
-Setting up libio-socket-ssl-perl (1.998-1) ...
+Setting up libnet-ssleay-perl (1.68-1) ...
+Setting up libio-socket-ssl-perl (2.016-1) ...
 Setting up libnet-smtp-ssl-perl (1.01-3) ...
 Setting up libmailtools-perl (2.13-1) ...
 Setting up libsocket6-perl (0.25-1+b1) ...
-Setting up libio-socket-inet6-perl (2.72-1) ...
+Setting up libio-socket-inet6-perl (2.72-2) ...
 Setting up libnet-ip-perl (1.26-1) ...
-Setting up libnet-dns-perl (0.79-2) ...
-Setting up libnet-domain-tld-perl (1.72-1) ...
+Setting up libnet-dns-perl (0.81-2) ...
+Setting up libnet-domain-tld-perl (1.73-1) ...
 Setting up libemail-valid-perl (1.195-1) ...
-Setting up libfile-basedir-perl (0.03-1) ...
-Setting up libio-pty-perl (1:1.08-1+b4) ...
+Setting up libexporter-tiny-perl (0.042-1) ...
+Setting up libipc-system-simple-perl (1.25-2) ...
+Setting up libfile-basedir-perl (0.07-1) ...
 Setting up libio-string-perl (1.08-3) ...
-Setting up libipc-run-perl (0.92-1) ...
-Setting up liblist-moreutils-perl (0.33-2+b1) ...
-Setting up libparse-debianchangelog-perl (1.2.0-1.1) ...
-Setting up libtext-levenshtein-perl (0.09-1) ...
-Setting up liburi-perl (1.64-1) ...
-Setting up patchutils (0.3.3-1) ...
-Setting up t1utils (1.37-2.1) ...
-Setting up lintian (2.5.27) ...
+Setting up libipc-run-perl (0.94-1) ...
+Setting up liblist-moreutils-perl (0.410-1) ...
+Setting up libparse-debianchangelog-perl (1.2.0-4) ...
+Setting up libtext-levenshtein-perl (0.12-1) ...
+Setting up patchutils (0.3.4-1) ...
+Setting up t1utils (1.38-4) ...
+Setting up lintian (2.5.31) ...
 Setting up sbuild-build-depends-lintian-dummy (0.invalid.0) ...
-Processing triggers for libc-bin (2.19-11) ...
+Processing triggers for libc-bin (2.19-18) ...
 I: samtools source: quilt-patch-using-template-description debian-changes
-W: samtools source: newer-standards-version 3.9.6 (current is 3.9.5)
 P: samtools source: debian-watch-may-check-gpg-signature
 P: samtools-test: no-upstream-changelog
 I: samtools-test: description-synopsis-might-not-be-phrased-properly
+I: samtools: spelling-error-in-binary usr/bin/samtools compres compress
 P: samtools: no-upstream-changelog
 W: samtools: script-with-language-extension usr/bin/blast2sam.pl
 W: samtools: script-with-language-extension usr/bin/bowtie2sam.pl
@@ -1685,15 +1846,15 @@ I: Lintian run was successful.
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-samtools_1.1-1_amd64.changes:
+samtools_1.2-1_amd64.changes:
 ─────────────────────────────
 
 Format: 1.8
-Date: Thu, 25 Sep 2014 09:04:20 +0900
+Date: Tue, 16 Jun 2015 06:12:12 +0900
 Source: samtools
 Binary: samtools samtools-test
-Architecture: source amd64 all
-Version: 1.1-1
+Architecture: source all amd64
+Version: 1.2-1
 Distribution: unstable
 Urgency: medium
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
@@ -1702,51 +1863,308 @@ Description:
  samtools   - processing sequence alignments in SAM and BAM formats
  samtools-test - test files for the samtools package.
 Changes:
- samtools (1.1-1) unstable; urgency=medium
+ samtools (1.2-1) unstable; urgency=medium
  .
-   c448d48 Merge tag '1.1' into debian/unstable
-   d12ab1e Merge branch 'develop' into debian/unstable to solve issue
-           with regression tests needing a pseudo-terminal.
-           See https://github.com/samtools/samtools/issues/300
-   c87f8ce Add autopkg tests.
-   7c50b7b Removed python-wrong-path-for-interpreter.patch
-           (issue solved upstream).
+   a5f28a0 Merge tag '1.2' into debian/unstable
+   c542e84 Build-depend on libhts-dev 1.2.
+   6c2d9cd Build-depend and recommend libio-pty-perl.
+           (Needed for the regression tests.)
+   23e44a4 Removed fix_coverage_cap.patch, obsoleted by -d option.
+   1091aab Refreshed fuzzy patches.
 Checksums-Sha1:
- f58cc8cdc87a5fe44cae59e10c47ff48c9b0225f 1235 samtools_1.1-1.dsc
- ca446ec24eabd2f71605dde55a787f182cb50f13 4320951 samtools_1.1.orig.tar.gz
- 0e4de8be00fb4dd375048b1b1dc05e2f120e2ead 10164 samtools_1.1-1.debian.tar.xz
- 3424183e6577c856a09f4f838c1a398c8e5744ba 378168 samtools_1.1-1_amd64.deb
- f2542cc1d07aef31d216d43630c87c9edf38cabd 2644466 samtools-test_1.1-1_all.deb
+ 08ea4f543ece1659a28623f439098622561070ec 1248 samtools_1.2-1.dsc
+ 9fabb4903b9d1521aeea8a5538e64aefe8e85526 4318615 samtools_1.2.orig.tar.gz
+ a91e9483810ed9ed0e979138febf467b6db6956d 9596 samtools_1.2-1.debian.tar.xz
+ 5af2830490b1588c6e2bcd3021733c0681cddfb4 2644688 samtools-test_1.2-1_all.deb
+ 5d97f7b4d27954e75904cd4a6155422f65022e57 392492 samtools_1.2-1_amd64.deb
 Checksums-Sha256:
- 51d2a985b0ac982d983f5766c2287081186e2f89e3fdbd9c5e0f02b07ae4790a 1235 samtools_1.1-1.dsc
- cee231e33b7290be8e07dea43a99b885d9df79d957625ac84879b47ff91cda69 4320951 samtools_1.1.orig.tar.gz
- 50e5d2299c2d99ce53647fc0cb08eee53bc31d08bfa7d7cc981e6fae28ab231b 10164 samtools_1.1-1.debian.tar.xz
- 55ca7fb40430ba8c17967568f5c48ee19379bdbae3cb218456dae7fed5ea107d 378168 samtools_1.1-1_amd64.deb
- 5fb20f9d61452c8863e6ff42d2ea0d9ec72211fb9dd43cca3b55eeeb49985196 2644466 samtools-test_1.1-1_all.deb
+ ab7f8b120ba2abc420c04197fc70b7b6e6d501cc063feaa96c309427f7936dac 1248 samtools_1.2-1.dsc
+ e4be60ad24fe0324b9384fe58ec2ab7359fe926fbee3115d869c447eb01a9e47 4318615 samtools_1.2.orig.tar.gz
+ c3a6bead979cd8bb0b8fec3e9d6b2bb352db21ae4fdac8ad214757aed72bad23 9596 samtools_1.2-1.debian.tar.xz
+ 5a3017e37793e4dc1daa7f8c029cb943d98001cd580d110bf569093b0bbb7e2d 2644688 samtools-test_1.2-1_all.deb
+ 5af217333dd6c66de5667be1c7a3edb695f370a5add22458081747a7b8968856 392492 samtools_1.2-1_amd64.deb
 Files:
- 1d7d68a126fe90d8366eb3fed809230c 378168 science optional samtools_1.1-1_amd64.deb
- 9ffe69f7310c265243d2fd553c322435 2644466 science optional samtools-test_1.1-1_all.deb
- 55da7a41c3b167afed4063667eaed949 1235 science optional samtools_1.1-1.dsc
- 5fda5c175d04bff39c56078aea7cd3b1 4320951 science optional samtools_1.1.orig.tar.gz
- 40b3a1f31e22323c8d247e1bff1a9c52 10164 science optional samtools_1.1-1.debian.tar.xz
+ 391c4f642dbc7d9c48cadc02d924644b 1248 science optional samtools_1.2-1.dsc
+ 2748356ef392c0694ca1142de37cf2aa 4318615 science optional samtools_1.2.orig.tar.gz
+ af3dbbae0acff0b7f989b54455839b56 9596 science optional samtools_1.2-1.debian.tar.xz
+ 31a29a2c1ccf9235d4967d0582e25b51 2644688 science optional samtools-test_1.2-1_all.deb
+ d7ce058d6c3b4d64fc6530615c960f6e 392492 science optional samtools_1.2-1_amd64.deb
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Package contents                                                             │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 
-samtools_1.1-1_amd64.deb
+samtools-test_1.2-1_all.deb
+───────────────────────────
+
+ new debian package, version 2.0.
+ size 2644688 bytes: control archive=5620 bytes.
+     494 bytes,    15 lines      control              
+   17627 bytes,   215 lines      md5sums              
+ Package: samtools-test
+ Source: samtools
+ Version: 1.2-1
+ Architecture: all
+ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+ Installed-Size: 9222
+ Recommends: libio-pty-perl
+ Section: science
+ Priority: optional
+ Homepage: http://www.htslib.org/
+ Description: test files for the samtools package.
+  Samtools is a set of utilities that manipulate nucleotide sequence alignments
+  in the binary BAM format.
+  .
+  This package contains test files for the samtools package.
+
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/doc/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/doc/samtools-test/
+-rw-r--r-- root/root      3392 2015-06-16 06:12 ./usr/share/doc/samtools-test/changelog.Debian.gz
+-rw-r--r-- root/root      3462 2015-06-15 21:30 ./usr/share/doc/samtools-test/copyright
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/test/
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/dat/
+-rw-r--r-- root/root      5280 2015-02-03 00:18 ./usr/share/samtools/test/dat/bam2fq.001.sam
+-rw-r--r-- root/root      1292 2015-02-03 00:18 ./usr/share/samtools/test/dat/cat.hdr
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/dat/cram_md5/
+-rw-r--r-- root/root        57 2015-02-03 00:18 ./usr/share/samtools/test/dat/cram_md5/08c04d512d4797d9ba2a156c1daba468
+-rw-r--r-- root/root        61 2015-02-03 00:18 ./usr/share/samtools/test/dat/cram_md5/7c35feac7036c1cdef3bee0cc4b21437
+-rw-r--r-- root/root        36 2015-02-03 00:18 ./usr/share/samtools/test/dat/cram_md5/89b96de7acc5918c2858ef92710be7d4
+-rw-r--r-- root/root        31 2015-02-03 00:18 ./usr/share/samtools/test/dat/cram_md5/8a3d8deb9edd4ce3346b6061fcee6d0b
+-rw-r--r-- root/root        42 2015-02-03 00:18 ./usr/share/samtools/test/dat/depad.001.fa
+-rw-r--r-- root/root        16 2015-02-03 00:18 ./usr/share/samtools/test/dat/depad.001.fa.fai
+-rw-r--r-- root/root      7908 2015-02-03 00:18 ./usr/share/samtools/test/dat/depad.001p.sam
+-rw-r--r-- root/root      7914 2015-02-03 00:18 ./usr/share/samtools/test/dat/depad.001u.sam
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/dat/empty.expected
+-rw-r--r-- root/root       624 2015-02-03 00:18 ./usr/share/samtools/test/dat/large_chrom.out
+-rw-r--r-- root/root      5090 2015-02-03 00:18 ./usr/share/samtools/test/dat/large_chrom.sam
+-rw-r--r-- root/root        92 2015-02-03 00:18 ./usr/share/samtools/test/dat/large_chrom_bai_index.err
+-rw-r--r-- root/root    351091 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.1.sam
+-rw-r--r-- root/root    104866 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.2.sam
+-rw-r--r-- root/root    105843 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.3.sam
+-rw-r--r-- root/root        78 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.err.1
+-rw-r--r-- root/root      2716 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.out.1
+-rw-r--r-- root/root     81484 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.out.2
+-rw-r--r-- root/root       295 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.out.3
+-rw-r--r-- root/root    113722 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.out.4
+-rw-r--r-- root/root      4284 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.ref.fa
+-rw-r--r-- root/root        17 2015-02-03 00:18 ./usr/share/samtools/test/dat/mpileup.ref.fa.fai
+-rw-r--r-- root/root       758 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_a.bam
+-rw-r--r-- root/root       264 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_a.bam.bai
+-rw-r--r-- root/root      1429 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_a.sam
+-rw-r--r-- root/root       687 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_b.bam
+-rw-r--r-- root/root       192 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_b.bam.bai
+-rw-r--r-- root/root      1252 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_b.sam
+-rw-r--r-- root/root       655 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_c.bam
+-rw-r--r-- root/root       176 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_c.bam.bai
+-rw-r--r-- root/root      1253 2015-02-03 00:18 ./usr/share/samtools/test/dat/test_input_1_c.sam
+-rw-r--r-- root/root      1335 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.001.01.bed
+-rw-r--r-- root/root      1134 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.001.02.bed
+-rw-r--r-- root/root       130 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.001.fa
+-rw-r--r-- root/root        33 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.001.fa.fai
+-rw-r--r-- root/root      5073 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.001.sam
+-rw-r--r-- root/root      1313 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.002.01.bed
+-rw-r--r-- root/root      1302 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.002.02.bed
+-rw-r--r-- root/root        64 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.002.fa
+-rw-r--r-- root/root        13 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.002.fa.fai
+-rw-r--r-- root/root      3692 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.002.sam
+-rw-r--r-- root/root      2142 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.003.expected.sam
+-rw-r--r-- root/root      2224 2015-02-03 00:18 ./usr/share/samtools/test/dat/view.003.sam
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/
+-rw-r--r-- root/root       894 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/1_coord_sort.sam
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/1_coord_sort.sam.expected
+-rw-r--r-- root/root        82 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/1_coord_sort.sam.expected.err
+-rw-r--r-- root/root      1047 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/2_isize_overflow.sam
+-rw-r--r-- root/root      1102 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/2_isize_overflow.sam.expected
+-rw-r--r-- root/root       715 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/3_reverse_read_pp_lt.sam
+-rw-r--r-- root/root       715 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/3_reverse_read_pp_lt.sam.expected
+-rw-r--r-- root/root       715 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/4_reverse_read_pp_equal.sam
+-rw-r--r-- root/root       715 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/4_reverse_read_pp_equal.sam.expected
+-rw-r--r-- root/root       715 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/5_ct.sam
+-rw-r--r-- root/root       735 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/5_ct.sam.expected
+-rw-r--r-- root/root       735 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/6_ct_replace.sam
+-rw-r--r-- root/root       735 2015-02-03 00:18 ./usr/share/samtools/test/fixmate/6_ct_replace.sam.expected
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/idxstats/
+-rw-r--r-- root/root        58 2015-02-03 00:18 ./usr/share/samtools/test/idxstats/test_input_1_a.bam.expected
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/idxstats/test_input_1_a.bam.expected.err
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/test/merge/
+-rw-r--r-- root/root      1181 2015-02-03 00:18 ./usr/share/samtools/test/merge/2.merge.expected.bam
+-rw-r--r-- root/root      1199 2015-02-03 00:18 ./usr/share/samtools/test/merge/3.merge.expected.bam
+-rw-r--r-- root/root       525 2015-02-03 00:18 ./usr/share/samtools/test/merge/3.merge.expected.err
+-rw-r--r-- root/root        46 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_3.fofn
+-rw-r--r-- root/root     15673 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_bam_translate.c
+-rw-r--r-- root/root       184 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_header.sam
+-rw-r--r-- root/root      2482 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_pretty_header.c
+-rw-r--r-- root/root      3531 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_rtrans_build.c
+-rw-r--r-- root/root     15077 2015-02-03 00:18 ./usr/share/samtools/test/merge/test_trans_tbl_init.c
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/test/mpileup/
+-rw-r--r-- root/root       525 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/1read.bam
+-rw-r--r-- root/root         5 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/1read.sam
+-rw-r--r-- root/root      1886 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/anomalous.sam
+-rw-r--r-- root/root       293 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#ID.bam
+-rw-r--r-- root/root       377 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#ID2.bam
+-rw-r--r-- root/root       265 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#clip.bam
+-rw-r--r-- root/root       299 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#pad1.bam
+-rw-r--r-- root/root       349 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#pad2.bam
+-rw-r--r-- root/root       382 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1#pad3.bam
+-rw-r--r-- root/root        29 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1.fa
+-rw-r--r-- root/root        26 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/c1.fa.fai
+-rw-r--r-- root/root       557 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#5b.bam
+-rw-r--r-- root/root       416 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#5b.bam.bai
+-rw-r--r-- root/root     13183 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#5b.cram
+-rw-r--r-- root/root        75 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#5b.cram.crai
+-rw-r--r-- root/root      2033 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#5b.sam
+-rw-r--r-- root/root    345315 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#large_seq.bam
+-rw-r--r-- root/root       233 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#unmap.bam
+-rw-r--r-- root/root       896 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#unmap1.bam
+-rw-r--r-- root/root      1344 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce#unmap2.bam
+-rw-r--r-- root/root   1060702 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce.fa
+-rw-r--r-- root/root       230 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/ce.fa.fai
+-rw-r--r-- root/root    252022 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/deep.sam
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/test/mpileup/expected/
+-rw-r--r-- root/root   1336220 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/1.out.xz
+-rw-r--r-- root/root       607 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/10.out
+-rw-r--r-- root/root       238 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/11.out
+-rw-r--r-- root/root       306 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/12.out
+-rw-r--r-- root/root    163523 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/13.out
+-rw-r--r-- root/root    282158 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/14.out
+-rw-r--r-- root/root    282158 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/15.out
+-rw-r--r-- root/root    163385 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/16.out
+-rw-r--r-- root/root    163523 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/17.out
+-rw-r--r-- root/root    163523 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/18.out
+-rw-r--r-- root/root    163385 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/19.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/2.out
+-rw-r--r-- root/root     58067 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/20.out
+-rw-r--r-- root/root    163385 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/21.out
+-rw-r--r-- root/root    163385 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/22.out
+-rw-r--r-- root/root      2252 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/23.out
+-rw-r--r-- root/root      2352 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/24.out
+-rw-r--r-- root/root      2352 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/25.out
+-rw-r--r-- root/root      1706 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/26.out
+-rw-r--r-- root/root      2112 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/27.out
+-rw-r--r-- root/root    165459 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/28.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/29.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/3.out
+-rw-r--r-- root/root      1501 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/30.out
+-rw-r--r-- root/root      1503 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/31.out
+-rw-r--r-- root/root      1501 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/32.out
+-rw-r--r-- root/root       176 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/33.out
+-rw-r--r-- root/root       176 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/34.out
+-rw-r--r-- root/root     59199 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/35.out
+-rw-r--r-- root/root    163523 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/37.out
+-rw-r--r-- root/root      2882 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/38.out
+-rw-r--r-- root/root       475 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/39.out
+-rw-r--r-- root/root      4352 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/4.out
+-rw-r--r-- root/root      2155 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/40.out
+-rw-r--r-- root/root       559 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/41.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/42.out
+-rw-r--r-- root/root    103144 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/43.out
+-rw-r--r-- root/root    103144 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/44.out
+-rw-r--r-- root/root    111941 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/45.out
+-rw-r--r-- root/root    111941 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/46.out
+-rw-r--r-- root/root         5 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/47.out
+-rw-r--r-- root/root    384139 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/48.out
+-rw-r--r-- root/root    384139 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/49.out
+-rw-r--r-- root/root       244 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/5.out
+-rw-r--r-- root/root    428319 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/50.out
+-rw-r--r-- root/root    404654 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/51.out
+-rw-r--r-- root/root        37 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/52.out
+-rw-r--r-- root/root       138 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/53.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/54.out
+-rw-r--r-- root/root       139 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/55.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/56.out
+-rw-r--r-- root/root       139 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/57.out
+-rw-r--r-- root/root       138 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/58.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/59.out
+-rw-r--r-- root/root       362 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/6.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/60.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/61.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/62.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/63.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/64.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/65.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/66.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/67.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/68.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/69.out
+-rw-r--r-- root/root       458 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/7.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/70.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/71.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/72.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/73.out
+-rw-r--r-- root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/74.out
+-rw-r--r-- root/root       140 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/75.out
+-rw-r--r-- root/root    221725 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/76.out
+-rw-r--r-- root/root    318473 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/77.out
+-rw-r--r-- root/root       204 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/8.out
+-rw-r--r-- root/root       137 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/expected/9.out
+-rw-r--r-- root/root      1561 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/indels.sam
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/
+-rw-r--r-- root/root       200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/02099b2aad2cfe707759353724fb40ae
+-rw-r--r-- root/root       200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/0d4dfc45807d6a11439e858605cb364d
+-rw-r--r-- root/root      4200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/351f64d4f4f9ddd45b35336ad97aa6de
+-rw-r--r-- root/root       200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/6ec590eb82c361a61e6baabce20109bc
+-rw-r--r-- root/root       200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/6f60cdf4c739651ae72d53e2e94825c1
+-rw-r--r-- root/root       200 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/md5/73d180d5cb3860a2713927b6812eab0e
+-rw-r--r-- root/root       280 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup-E.bam
+-rw-r--r-- root/root     71637 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.1.bam
+-rw-r--r-- root/root       776 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.1.bam.bai
+-rw-r--r-- root/root     31556 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.2.bam
+-rw-r--r-- root/root     31216 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.3.bam
+-rw-r--r-- root/root      4284 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.ref.fa
+-rw-r--r-- root/root        17 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.ref.fa.fai
+-rw-r--r-- root/root      7616 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/mpileup.reg
+-rw-r--r-- root/root       793 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/overlap50.sam
+-rw-r--r-- root/root       583 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/overlapIllumina.bam
+-rw-r--r-- root/root       250 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/regions
+-rwxr-xr-x root/root      4687 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/regression.sh
+-rw-r--r-- root/root       215 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/xx#minimal.bam
+-rw-r--r-- root/root       247 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/xx#triplet.bam
+-rw-r--r-- root/root        56 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/xx.fa
+-rw-r--r-- root/root        29 2015-02-03 00:18 ./usr/share/samtools/test/mpileup/xx.fa.fai
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/samtools/test/split/
+-rw-r--r-- root/root      3597 2015-02-03 00:18 ./usr/share/samtools/test/split/test_count_rg.c
+-rw-r--r-- root/root      3951 2015-02-03 00:18 ./usr/share/samtools/test/split/test_expand_format_string.c
+-rw-r--r-- root/root      5173 2015-02-03 00:18 ./usr/share/samtools/test/split/test_filter_header_rg.c
+-rw-r--r-- root/root      6815 2015-02-03 00:18 ./usr/share/samtools/test/split/test_parse_args.c
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/stat/
+-rw-r--r-- root/root     61486 2015-02-03 00:18 ./usr/share/samtools/test/stat/1.stats.expected
+-rw-r--r-- root/root       232 2015-02-03 00:18 ./usr/share/samtools/test/stat/1_map_cigar.sam
+-rw-r--r-- root/root     61485 2015-02-03 00:18 ./usr/share/samtools/test/stat/2.stats.expected
+-rw-r--r-- root/root       232 2015-02-03 00:18 ./usr/share/samtools/test/stat/2_equal_cigar_full_seq.sam
+-rw-r--r-- root/root     60454 2015-02-03 00:18 ./usr/share/samtools/test/stat/3.stats.expected
+-rw-r--r-- root/root       232 2015-02-03 00:18 ./usr/share/samtools/test/stat/3_map_cigar_equal_seq.sam
+-rw-r--r-- root/root     61486 2015-02-03 00:18 ./usr/share/samtools/test/stat/4.stats.expected
+-rw-r--r-- root/root       234 2015-02-03 00:18 ./usr/share/samtools/test/stat/4_X_cigar_full_seq.sam
+-rw-r--r-- root/root     61508 2015-02-03 00:18 ./usr/share/samtools/test/stat/5.stats.expected
+-rw-r--r-- root/root       236 2015-02-03 00:18 ./usr/share/samtools/test/stat/5_insert_cigar.sam
+-rw-r--r-- root/root     61508 2015-02-03 00:18 ./usr/share/samtools/test/stat/6.stats.expected
+-rw-r--r-- root/root       109 2015-02-03 00:18 ./usr/share/samtools/test/stat/test.fa
+-rw-r--r-- root/root        18 2015-02-03 00:18 ./usr/share/samtools/test/stat/test.fa.fai
+-rw-r--r-- root/root      1990 2015-02-03 00:18 ./usr/share/samtools/test/test.c
+-rw-r--r-- root/root      1361 2015-02-03 00:18 ./usr/share/samtools/test/test.h
+-rwxr-xr-x root/root     83362 2015-02-03 00:18 ./usr/share/samtools/test/test.pl
+drwxr-xr-x root/root         0 2015-02-03 00:18 ./usr/share/samtools/test/tview/
+-rw-r--r-- root/root      2424 2015-02-03 00:18 ./usr/share/samtools/test/tview/test_get_rg_sample.c
+-rw-r--r-- root/root      3455 2015-02-03 00:18 ./usr/share/samtools/test/vcf-miniview.c
+
+
+samtools_1.2-1_amd64.deb
 ────────────────────────
 
  new debian package, version 2.0.
- size 378168 bytes: control archive=1555 bytes.
+ size 392492 bytes: control archive=1488 bytes.
      801 bytes,    16 lines      control              
     1557 bytes,    27 lines      md5sums              
  Package: samtools
- Version: 1.1-1
+ Version: 1.2-1
  Architecture: amd64
  Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 1040
+ Installed-Size: 1066
  Depends: libc6 (>= 2.15), libhts1 (>= 1.0), libncurses5 (>= 5.5-5~), libtinfo5, zlib1g (>= 1:1.2.3.3)
  Recommends: python
  Section: science
@@ -1759,298 +2177,41 @@ samtools_1.1-1_amd64.deb
   to retrieve reads in any regions swiftly. It is designed to work on a stream,
   and is able to open a BAM (not SAM) file on a remote FTP or HTTP server.
 
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/bin/
--rwxr-xr-x root/root     22664 2014-09-25 09:08 ./usr/bin/ace2sam
--rwxr-xr-x root/root      5328 2014-09-20 00:51 ./usr/bin/blast2sam.pl
--rwxr-xr-x root/root      3364 2014-09-20 00:51 ./usr/bin/bowtie2sam.pl
--rwxr-xr-x root/root     18032 2014-09-20 00:51 ./usr/bin/export2sam.pl
--rwxr-xr-x root/root      6125 2014-09-20 00:51 ./usr/bin/interpolate_sam.pl
--rwxr-xr-x root/root     10336 2014-09-25 09:08 ./usr/bin/maq2sam-long
--rwxr-xr-x root/root     10336 2014-09-25 09:08 ./usr/bin/maq2sam-short
--rwxr-xr-x root/root     14440 2014-09-25 09:08 ./usr/bin/md5fa
--rwxr-xr-x root/root     10280 2014-09-25 09:08 ./usr/bin/md5sum-lite
--rwxr-xr-x root/root      6773 2014-09-20 00:51 ./usr/bin/novo2sam.pl
--rwxr-xr-x root/root     48023 2014-09-20 00:51 ./usr/bin/plot-bamstats
--rwxr-xr-x root/root      3208 2014-09-20 00:51 ./usr/bin/psl2sam.pl
--rwxr-xr-x root/root      8961 2014-09-20 00:51 ./usr/bin/sam2vcf.pl
--rwxr-xr-x root/root    767928 2014-09-25 09:08 ./usr/bin/samtools
--rwxr-xr-x root/root     16478 2014-09-20 00:51 ./usr/bin/samtools.pl
--rwxr-xr-x root/root     10789 2014-09-20 00:51 ./usr/bin/seq_cache_populate.pl
--rwxr-xr-x root/root      3909 2014-09-20 00:51 ./usr/bin/soap2sam.pl
--rwxr-xr-x root/root      7888 2014-09-20 00:51 ./usr/bin/varfilter.py
--rwxr-xr-x root/root     22752 2014-09-25 09:08 ./usr/bin/wgsim
--rwxr-xr-x root/root      4157 2014-09-20 00:51 ./usr/bin/wgsim_eval.pl
--rwxr-xr-x root/root      3583 2014-09-20 00:51 ./usr/bin/zoom2sam.pl
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/doc/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/doc/samtools/
--rw-r--r-- root/root       828 2014-09-20 00:51 ./usr/share/doc/samtools/AUTHORS
--rw-r--r-- root/root      1031 2014-09-25 08:56 ./usr/share/doc/samtools/README.Debian
--rw-r--r-- root/root      3270 2014-09-25 09:05 ./usr/share/doc/samtools/changelog.Debian.gz
--rw-r--r-- root/root      3462 2014-09-25 08:56 ./usr/share/doc/samtools/copyright
--rw-r--r-- root/root       592 2014-09-25 08:56 ./usr/share/doc/samtools/reference
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/man/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/man/man1/
--rw-r--r-- root/root     12774 2014-09-25 09:08 ./usr/share/man/man1/samtools.1.gz
-
-
-samtools-test_1.1-1_all.deb
-───────────────────────────
-
- new debian package, version 2.0.
- size 2644466 bytes: control archive=6161 bytes.
-     467 bytes,    14 lines      control              
-   17627 bytes,   215 lines      md5sums              
- Package: samtools-test
- Source: samtools
- Version: 1.1-1
- Architecture: all
- Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
- Installed-Size: 9148
- Section: science
- Priority: optional
- Homepage: http://www.htslib.org/
- Description: test files for the samtools package.
-  Samtools is a set of utilities that manipulate nucleotide sequence alignments
-  in the binary BAM format.
-  .
-  This package contains test files for the samtools package.
-
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/doc/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/doc/samtools-test/
--rw-r--r-- root/root      3270 2014-09-25 09:05 ./usr/share/doc/samtools-test/changelog.Debian.gz
--rw-r--r-- root/root      3462 2014-09-25 08:56 ./usr/share/doc/samtools-test/copyright
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/dat/
--rw-r--r-- root/root      5280 2014-09-20 00:51 ./usr/share/samtools/test/dat/bam2fq.001.sam
--rw-r--r-- root/root      1292 2014-09-20 00:51 ./usr/share/samtools/test/dat/cat.hdr
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/dat/cram_md5/
--rw-r--r-- root/root        57 2014-09-20 00:51 ./usr/share/samtools/test/dat/cram_md5/08c04d512d4797d9ba2a156c1daba468
--rw-r--r-- root/root        61 2014-09-20 00:51 ./usr/share/samtools/test/dat/cram_md5/7c35feac7036c1cdef3bee0cc4b21437
--rw-r--r-- root/root        36 2014-09-20 00:51 ./usr/share/samtools/test/dat/cram_md5/89b96de7acc5918c2858ef92710be7d4
--rw-r--r-- root/root        31 2014-09-20 00:51 ./usr/share/samtools/test/dat/cram_md5/8a3d8deb9edd4ce3346b6061fcee6d0b
--rw-r--r-- root/root        42 2014-09-20 00:51 ./usr/share/samtools/test/dat/depad.001.fa
--rw-r--r-- root/root        16 2014-09-20 00:51 ./usr/share/samtools/test/dat/depad.001.fa.fai
--rw-r--r-- root/root      7908 2014-09-20 00:51 ./usr/share/samtools/test/dat/depad.001p.sam
--rw-r--r-- root/root      7914 2014-09-20 00:51 ./usr/share/samtools/test/dat/depad.001u.sam
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/dat/empty.expected
--rw-r--r-- root/root       624 2014-09-20 00:51 ./usr/share/samtools/test/dat/large_chrom.out
--rw-r--r-- root/root      5090 2014-09-20 00:51 ./usr/share/samtools/test/dat/large_chrom.sam
--rw-r--r-- root/root        92 2014-09-20 00:51 ./usr/share/samtools/test/dat/large_chrom_bai_index.err
--rw-r--r-- root/root    351091 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.1.sam
--rw-r--r-- root/root    104866 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.2.sam
--rw-r--r-- root/root    105843 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.3.sam
--rw-r--r-- root/root        78 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.err.1
--rw-r--r-- root/root      2716 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.out.1
--rw-r--r-- root/root     81484 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.out.2
--rw-r--r-- root/root       295 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.out.3
--rw-r--r-- root/root    113722 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.out.4
--rw-r--r-- root/root      4284 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.ref.fa
--rw-r--r-- root/root        17 2014-09-20 00:51 ./usr/share/samtools/test/dat/mpileup.ref.fa.fai
--rw-r--r-- root/root       758 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_a.bam
--rw-r--r-- root/root       264 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_a.bam.bai
--rw-r--r-- root/root      1429 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_a.sam
--rw-r--r-- root/root       687 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_b.bam
--rw-r--r-- root/root       192 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_b.bam.bai
--rw-r--r-- root/root      1252 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_b.sam
--rw-r--r-- root/root       655 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_c.bam
--rw-r--r-- root/root       176 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_c.bam.bai
--rw-r--r-- root/root      1253 2014-09-20 00:51 ./usr/share/samtools/test/dat/test_input_1_c.sam
--rw-r--r-- root/root      1335 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.001.01.bed
--rw-r--r-- root/root      1134 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.001.02.bed
--rw-r--r-- root/root       130 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.001.fa
--rw-r--r-- root/root        33 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.001.fa.fai
--rw-r--r-- root/root      5073 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.001.sam
--rw-r--r-- root/root      1313 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.002.01.bed
--rw-r--r-- root/root      1302 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.002.02.bed
--rw-r--r-- root/root        64 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.002.fa
--rw-r--r-- root/root        13 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.002.fa.fai
--rw-r--r-- root/root      3692 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.002.sam
--rw-r--r-- root/root      2142 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.003.expected.sam
--rw-r--r-- root/root      2224 2014-09-20 00:51 ./usr/share/samtools/test/dat/view.003.sam
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/
--rw-r--r-- root/root       894 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/1_coord_sort.sam
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/1_coord_sort.sam.expected
--rw-r--r-- root/root        82 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/1_coord_sort.sam.expected.err
--rw-r--r-- root/root      1047 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/2_isize_overflow.sam
--rw-r--r-- root/root      1102 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/2_isize_overflow.sam.expected
--rw-r--r-- root/root       715 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/3_reverse_read_pp_lt.sam
--rw-r--r-- root/root       715 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/3_reverse_read_pp_lt.sam.expected
--rw-r--r-- root/root       715 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/4_reverse_read_pp_equal.sam
--rw-r--r-- root/root       715 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/4_reverse_read_pp_equal.sam.expected
--rw-r--r-- root/root       715 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/5_ct.sam
--rw-r--r-- root/root       735 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/5_ct.sam.expected
--rw-r--r-- root/root       735 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/6_ct_replace.sam
--rw-r--r-- root/root       735 2014-09-20 00:51 ./usr/share/samtools/test/fixmate/6_ct_replace.sam.expected
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/idxstats/
--rw-r--r-- root/root        58 2014-09-20 00:51 ./usr/share/samtools/test/idxstats/test_input_1_a.bam.expected
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/idxstats/test_input_1_a.bam.expected.err
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/merge/
--rw-r--r-- root/root      1181 2014-09-20 00:51 ./usr/share/samtools/test/merge/2.merge.expected.bam
--rw-r--r-- root/root      1199 2014-09-20 00:51 ./usr/share/samtools/test/merge/3.merge.expected.bam
--rw-r--r-- root/root       525 2014-09-20 00:51 ./usr/share/samtools/test/merge/3.merge.expected.err
--rw-r--r-- root/root        46 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_3.fofn
--rw-r--r-- root/root     15673 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_bam_translate.c
--rw-r--r-- root/root       184 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_header.sam
--rw-r--r-- root/root      2482 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_pretty_header.c
--rw-r--r-- root/root      3531 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_rtrans_build.c
--rw-r--r-- root/root     15081 2014-09-20 00:51 ./usr/share/samtools/test/merge/test_trans_tbl_init.c
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/mpileup/
--rw-r--r-- root/root       525 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/1read.bam
--rw-r--r-- root/root         5 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/1read.sam
--rw-r--r-- root/root      1886 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/anomalous.sam
--rw-r--r-- root/root       293 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#ID.bam
--rw-r--r-- root/root       377 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#ID2.bam
--rw-r--r-- root/root       265 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#clip.bam
--rw-r--r-- root/root       299 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#pad1.bam
--rw-r--r-- root/root       349 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#pad2.bam
--rw-r--r-- root/root       382 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1#pad3.bam
--rw-r--r-- root/root        29 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1.fa
--rw-r--r-- root/root        26 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/c1.fa.fai
--rw-r--r-- root/root       557 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#5b.bam
--rw-r--r-- root/root       416 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#5b.bam.bai
--rw-r--r-- root/root     13183 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#5b.cram
--rw-r--r-- root/root        75 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#5b.cram.crai
--rw-r--r-- root/root      2033 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#5b.sam
--rw-r--r-- root/root    345315 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#large_seq.bam
--rw-r--r-- root/root       233 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#unmap.bam
--rw-r--r-- root/root       896 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#unmap1.bam
--rw-r--r-- root/root      1344 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce#unmap2.bam
--rw-r--r-- root/root   1060702 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce.fa
--rw-r--r-- root/root       230 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/ce.fa.fai
--rw-r--r-- root/root    252022 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/deep.sam
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/mpileup/expected/
--rw-r--r-- root/root   1336220 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/1.out.xz
--rw-r--r-- root/root       607 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/10.out
--rw-r--r-- root/root       238 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/11.out
--rw-r--r-- root/root       306 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/12.out
--rw-r--r-- root/root    163523 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/13.out
--rw-r--r-- root/root    282158 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/14.out
--rw-r--r-- root/root    282158 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/15.out
--rw-r--r-- root/root    163385 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/16.out
--rw-r--r-- root/root    163523 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/17.out
--rw-r--r-- root/root    163523 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/18.out
--rw-r--r-- root/root    163385 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/19.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/2.out
--rw-r--r-- root/root     58067 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/20.out
--rw-r--r-- root/root    163385 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/21.out
--rw-r--r-- root/root    163385 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/22.out
--rw-r--r-- root/root      2252 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/23.out
--rw-r--r-- root/root      2352 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/24.out
--rw-r--r-- root/root      2352 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/25.out
--rw-r--r-- root/root      1706 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/26.out
--rw-r--r-- root/root      2112 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/27.out
--rw-r--r-- root/root    165459 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/28.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/29.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/3.out
--rw-r--r-- root/root      1501 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/30.out
--rw-r--r-- root/root      1503 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/31.out
--rw-r--r-- root/root      1501 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/32.out
--rw-r--r-- root/root       176 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/33.out
--rw-r--r-- root/root       176 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/34.out
--rw-r--r-- root/root     59199 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/35.out
--rw-r--r-- root/root    163523 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/37.out
--rw-r--r-- root/root      2882 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/38.out
--rw-r--r-- root/root       475 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/39.out
--rw-r--r-- root/root      4352 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/4.out
--rw-r--r-- root/root      2155 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/40.out
--rw-r--r-- root/root       559 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/41.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/42.out
--rw-r--r-- root/root    103144 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/43.out
--rw-r--r-- root/root    103144 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/44.out
--rw-r--r-- root/root    111941 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/45.out
--rw-r--r-- root/root    111941 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/46.out
--rw-r--r-- root/root         5 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/47.out
--rw-r--r-- root/root    384139 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/48.out
--rw-r--r-- root/root    384139 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/49.out
--rw-r--r-- root/root       244 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/5.out
--rw-r--r-- root/root    428319 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/50.out
--rw-r--r-- root/root    404654 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/51.out
--rw-r--r-- root/root        37 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/52.out
--rw-r--r-- root/root       138 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/53.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/54.out
--rw-r--r-- root/root       139 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/55.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/56.out
--rw-r--r-- root/root       139 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/57.out
--rw-r--r-- root/root       138 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/58.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/59.out
--rw-r--r-- root/root       362 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/6.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/60.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/61.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/62.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/63.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/64.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/65.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/66.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/67.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/68.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/69.out
--rw-r--r-- root/root       458 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/7.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/70.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/71.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/72.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/73.out
--rw-r--r-- root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/74.out
--rw-r--r-- root/root       140 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/75.out
--rw-r--r-- root/root    221725 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/76.out
--rw-r--r-- root/root    318473 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/77.out
--rw-r--r-- root/root       204 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/8.out
--rw-r--r-- root/root       137 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/expected/9.out
--rw-r--r-- root/root      1561 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/indels.sam
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/
--rw-r--r-- root/root       200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/02099b2aad2cfe707759353724fb40ae
--rw-r--r-- root/root       200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/0d4dfc45807d6a11439e858605cb364d
--rw-r--r-- root/root      4200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/351f64d4f4f9ddd45b35336ad97aa6de
--rw-r--r-- root/root       200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/6ec590eb82c361a61e6baabce20109bc
--rw-r--r-- root/root       200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/6f60cdf4c739651ae72d53e2e94825c1
--rw-r--r-- root/root       200 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/md5/73d180d5cb3860a2713927b6812eab0e
--rw-r--r-- root/root       280 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup-E.bam
--rw-r--r-- root/root     71637 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.1.bam
--rw-r--r-- root/root       776 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.1.bam.bai
--rw-r--r-- root/root     31556 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.2.bam
--rw-r--r-- root/root     31216 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.3.bam
--rw-r--r-- root/root      4284 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.ref.fa
--rw-r--r-- root/root        17 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.ref.fa.fai
--rw-r--r-- root/root      7616 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/mpileup.reg
--rw-r--r-- root/root       793 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/overlap50.sam
--rw-r--r-- root/root       583 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/overlapIllumina.bam
--rw-r--r-- root/root       250 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/regions
--rwxr-xr-x root/root      4376 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/regression.sh
--rw-r--r-- root/root       215 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/xx#minimal.bam
--rw-r--r-- root/root       247 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/xx#triplet.bam
--rw-r--r-- root/root        56 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/xx.fa
--rw-r--r-- root/root        29 2014-09-20 00:51 ./usr/share/samtools/test/mpileup/xx.fa.fai
-drwxr-xr-x root/root         0 2014-09-25 09:08 ./usr/share/samtools/test/split/
--rw-r--r-- root/root      3597 2014-09-20 00:51 ./usr/share/samtools/test/split/test_count_rg.c
--rw-r--r-- root/root      3951 2014-09-20 00:51 ./usr/share/samtools/test/split/test_expand_format_string.c
--rw-r--r-- root/root      5173 2014-09-20 00:51 ./usr/share/samtools/test/split/test_filter_header_rg.c
--rw-r--r-- root/root      6815 2014-09-20 00:51 ./usr/share/samtools/test/split/test_parse_args.c
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/stat/
--rw-r--r-- root/root     61473 2014-09-20 00:51 ./usr/share/samtools/test/stat/1.stats.expected
--rw-r--r-- root/root       232 2014-09-20 00:51 ./usr/share/samtools/test/stat/1_map_cigar.sam
--rw-r--r-- root/root     61472 2014-09-20 00:51 ./usr/share/samtools/test/stat/2.stats.expected
--rw-r--r-- root/root       232 2014-09-20 00:51 ./usr/share/samtools/test/stat/2_equal_cigar_full_seq.sam
--rw-r--r-- root/root     60441 2014-09-20 00:51 ./usr/share/samtools/test/stat/3.stats.expected
--rw-r--r-- root/root       232 2014-09-20 00:51 ./usr/share/samtools/test/stat/3_map_cigar_equal_seq.sam
--rw-r--r-- root/root     61473 2014-09-20 00:51 ./usr/share/samtools/test/stat/4.stats.expected
--rw-r--r-- root/root       234 2014-09-20 00:51 ./usr/share/samtools/test/stat/4_X_cigar_full_seq.sam
--rw-r--r-- root/root     61495 2014-09-20 00:51 ./usr/share/samtools/test/stat/5.stats.expected
--rw-r--r-- root/root       236 2014-09-20 00:51 ./usr/share/samtools/test/stat/5_insert_cigar.sam
--rw-r--r-- root/root     61495 2014-09-20 00:51 ./usr/share/samtools/test/stat/6.stats.expected
--rw-r--r-- root/root       109 2014-09-20 00:51 ./usr/share/samtools/test/stat/test.fa
--rw-r--r-- root/root        18 2014-09-20 00:51 ./usr/share/samtools/test/stat/test.fa.fai
--rw-r--r-- root/root      1990 2014-09-20 00:51 ./usr/share/samtools/test/test.c
--rw-r--r-- root/root      1361 2014-09-20 00:51 ./usr/share/samtools/test/test.h
--rwxr-xr-x root/root     82575 2014-09-25 09:06 ./usr/share/samtools/test/test.pl
-drwxr-xr-x root/root         0 2014-09-20 00:51 ./usr/share/samtools/test/tview/
--rw-r--r-- root/root      2424 2014-09-20 00:51 ./usr/share/samtools/test/tview/test_get_rg_sample.c
--rw-r--r-- root/root      3455 2014-09-20 00:51 ./usr/share/samtools/test/vcf-miniview.c
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/bin/
+-rwxr-xr-x root/root     22664 2015-06-16 06:17 ./usr/bin/ace2sam
+-rwxr-xr-x root/root      5328 2015-02-03 00:18 ./usr/bin/blast2sam.pl
+-rwxr-xr-x root/root      3364 2015-02-03 00:18 ./usr/bin/bowtie2sam.pl
+-rwxr-xr-x root/root     18032 2015-02-03 00:18 ./usr/bin/export2sam.pl
+-rwxr-xr-x root/root      6125 2015-02-03 00:18 ./usr/bin/interpolate_sam.pl
+-rwxr-xr-x root/root     10336 2015-06-16 06:17 ./usr/bin/maq2sam-long
+-rwxr-xr-x root/root     10336 2015-06-16 06:17 ./usr/bin/maq2sam-short
+-rwxr-xr-x root/root     14440 2015-06-16 06:17 ./usr/bin/md5fa
+-rwxr-xr-x root/root     10280 2015-06-16 06:17 ./usr/bin/md5sum-lite
+-rwxr-xr-x root/root      6773 2015-02-03 00:18 ./usr/bin/novo2sam.pl
+-rwxr-xr-x root/root     48036 2015-02-03 00:18 ./usr/bin/plot-bamstats
+-rwxr-xr-x root/root      3208 2015-02-03 00:18 ./usr/bin/psl2sam.pl
+-rwxr-xr-x root/root      8961 2015-02-03 00:18 ./usr/bin/sam2vcf.pl
+-rwxr-xr-x root/root    806520 2015-06-16 06:17 ./usr/bin/samtools
+-rwxr-xr-x root/root     16478 2015-02-03 00:18 ./usr/bin/samtools.pl
+-rwxr-xr-x root/root     11105 2015-02-03 00:18 ./usr/bin/seq_cache_populate.pl
+-rwxr-xr-x root/root      3909 2015-02-03 00:18 ./usr/bin/soap2sam.pl
+-rwxr-xr-x root/root      7888 2015-02-03 00:18 ./usr/bin/varfilter.py
+-rwxr-xr-x root/root     22752 2015-06-16 06:17 ./usr/bin/wgsim
+-rwxr-xr-x root/root      4157 2015-02-03 00:18 ./usr/bin/wgsim_eval.pl
+-rwxr-xr-x root/root      3583 2015-02-03 00:18 ./usr/bin/zoom2sam.pl
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/doc/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/doc/samtools/
+-rw-r--r-- root/root       828 2015-02-03 00:18 ./usr/share/doc/samtools/AUTHORS
+-rw-r--r-- root/root      1031 2015-06-15 21:23 ./usr/share/doc/samtools/README.Debian
+-rw-r--r-- root/root      3392 2015-06-16 06:12 ./usr/share/doc/samtools/changelog.Debian.gz
+-rw-r--r-- root/root      3462 2015-06-15 21:30 ./usr/share/doc/samtools/copyright
+-rw-r--r-- root/root       592 2015-06-15 21:23 ./usr/share/doc/samtools/reference
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/man/
+drwxr-xr-x root/root         0 2015-06-16 06:17 ./usr/share/man/man1/
+-rw-r--r-- root/root     12907 2015-06-16 06:17 ./usr/share/man/man1/samtools.1.gz
 
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
@@ -2075,114 +2236,118 @@ The following packages will be REMOVED:
   gettext-base* groff-base* hardening-includes* intltool-debian*
   libapt-pkg-perl* libarchive-zip-perl* libasprintf0c2*
   libclass-accessor-perl* libclone-perl* libcroco3* libdigest-hmac-perl*
-  libemail-valid-perl* libffi6* libfile-basedir-perl* libglib2.0-0*
-  libhts-dev* libhts1* libio-pty-perl* libio-socket-inet6-perl*
-  libio-socket-ssl-perl* libio-string-perl* libipc-run-perl*
-  liblist-moreutils-perl* libmagic1* libmailtools-perl* libncurses5-dev*
-  libnet-dns-perl* libnet-domain-tld-perl* libnet-ip-perl*
-  libnet-smtp-ssl-perl* libnet-ssleay-perl* libparse-debianchangelog-perl*
-  libpipeline1* libsocket6-perl* libssl1.0.0* libsub-name-perl*
-  libtext-levenshtein-perl* libtinfo-dev* libunistring0* liburi-perl* libxml2*
-  lintian* man-db* netbase* patchutils* po-debconf*
-  sbuild-build-depends-core-dummy* sbuild-build-depends-lintian-dummy*
-  sbuild-build-depends-samtools-dummy* t1utils* tabix* zlib1g-dev*
-0 upgraded, 0 newly installed, 58 to remove and 0 not upgraded.
-After this operation, 43.6 MB disk space will be freed.
-(Reading database ... 14528 files and directories currently installed.)
+  libemail-valid-perl* libexporter-tiny-perl* libffi6* libfile-basedir-perl*
+  libglib2.0-0* libhts-dev* libhts1* libicu52* libio-pty-perl*
+  libio-socket-inet6-perl* libio-socket-ssl-perl* libio-string-perl*
+  libipc-run-perl* libipc-system-simple-perl* liblist-moreutils-perl*
+  libmagic1* libmailtools-perl* libncurses5-dev* libnet-dns-perl*
+  libnet-domain-tld-perl* libnet-ip-perl* libnet-smtp-ssl-perl*
+  libnet-ssleay-perl* libparse-debianchangelog-perl* libpipeline1*
+  libsocket6-perl* libssl1.0.0* libsub-name-perl* libtext-levenshtein-perl*
+  libtinfo-dev* libunistring0* libxml2* lintian* man-db* netbase* patchutils*
+  po-debconf* sbuild-build-depends-core-dummy*
+  sbuild-build-depends-lintian-dummy* sbuild-build-depends-samtools-dummy*
+  t1utils* tabix* zlib1g-dev*
+0 upgraded, 0 newly installed, 60 to remove and 0 not upgraded.
+After this operation, 73.8 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14907 files and directories currently installed.)
 Removing sbuild-build-depends-samtools-dummy (0.invalid.0) ...
-Removing bash-completion (1:2.1-4) ...
-Purging configuration files for bash-completion (1:2.1-4) ...
+Removing bash-completion (1:2.1-4.1) ...
+Purging configuration files for bash-completion (1:2.1-4.1) ...
 Removing sbuild-build-depends-lintian-dummy (0.invalid.0) ...
-Removing lintian (2.5.27) ...
-Purging configuration files for lintian (2.5.27) ...
-Removing debhelper (9.20140817) ...
-Removing man-db (2.7.0.1-1) ...
-Purging configuration files for man-db (2.7.0.1-1) ...
-Removing bsdmainutils (9.0.5) ...
-Purging configuration files for bsdmainutils (9.0.5) ...
+Removing lintian (2.5.31) ...
+Purging configuration files for lintian (2.5.31) ...
+Removing debhelper (9.20150507) ...
+Removing man-db (2.7.0.2-5) ...
+Purging configuration files for man-db (2.7.0.2-5) ...
+Removing bsdmainutils (9.0.6) ...
+Purging configuration files for bsdmainutils (9.0.6) ...
 Removing diffstat (1.58-1) ...
-Removing file (1:5.19-2) ...
-Removing po-debconf (1.0.16+nmu3) ...
-Removing intltool-debian (0.35.0+20060710.1) ...
-Removing gettext (0.19.2-2) ...
-Removing gettext-base (0.19.2-2) ...
-Removing groff-base (1.22.2-8) ...
-Purging configuration files for groff-base (1.22.2-8) ...
-Removing hardening-includes (2.5+nmu1) ...
+Removing file (1:5.22+15-2) ...
+Removing po-debconf (1.0.18) ...
+Removing intltool-debian (0.35.0+20060710.2) ...
+Removing gettext (0.19.4-1) ...
+Removing gettext-base (0.19.4-1) ...
+Removing groff-base (1.22.3-1) ...
+Purging configuration files for groff-base (1.22.3-1) ...
+Removing hardening-includes (2.7) ...
 Removing libapt-pkg-perl (0.1.29+b2) ...
-Removing libarchive-zip-perl (1.38-1) ...
-Removing libasprintf0c2:amd64 (0.19.2-2) ...
-Removing libparse-debianchangelog-perl (1.2.0-1.1) ...
+Removing libarchive-zip-perl (1.39-1) ...
+Removing libasprintf0c2:amd64 (0.19.4-1) ...
+Removing libparse-debianchangelog-perl (1.2.0-4) ...
 Removing libclass-accessor-perl (0.34-1) ...
-Removing libclone-perl (0.37-1+b1) ...
-Removing libcroco3:amd64 (0.6.8-3) ...
-Purging configuration files for libcroco3:amd64 (0.6.8-3) ...
+Removing libclone-perl (0.38-1) ...
+Removing libcroco3:amd64 (0.6.8-3+b1) ...
+Purging configuration files for libcroco3:amd64 (0.6.8-3+b1) ...
 Removing libemail-valid-perl (1.195-1) ...
-Removing libnet-dns-perl (0.79-2) ...
+Removing libnet-dns-perl (0.81-2) ...
 Removing libdigest-hmac-perl (1.03+dfsg-1) ...
-Removing libglib2.0-0:amd64 (2.42.0-1) ...
-Purging configuration files for libglib2.0-0:amd64 (2.42.0-1) ...
-Removing libffi6:amd64 (3.1-2) ...
-Purging configuration files for libffi6:amd64 (3.1-2) ...
-Removing libfile-basedir-perl (0.03-1) ...
-Removing libhts-dev:amd64 (1.1-1) ...
-Removing libhts1:amd64 (1.1-1) ...
-Purging configuration files for libhts1:amd64 (1.1-1) ...
-Removing libipc-run-perl (0.92-1) ...
+Removing liblist-moreutils-perl (0.410-1) ...
+Removing libexporter-tiny-perl (0.042-1) ...
+Removing libglib2.0-0:amd64 (2.44.1-1) ...
+Purging configuration files for libglib2.0-0:amd64 (2.44.1-1) ...
+Removing libffi6:amd64 (3.1-2+b2) ...
+Purging configuration files for libffi6:amd64 (3.1-2+b2) ...
+Removing libfile-basedir-perl (0.07-1) ...
+Removing libhts-dev:amd64 (1.2.1-1) ...
+Removing libhts1:amd64 (1.2.1-1) ...
+Purging configuration files for libhts1:amd64 (1.2.1-1) ...
+Removing libxml2:amd64 (2.9.2+dfsg1-3) ...
+Purging configuration files for libxml2:amd64 (2.9.2+dfsg1-3) ...
+Removing libicu52:amd64 (52.1-9) ...
+Purging configuration files for libicu52:amd64 (52.1-9) ...
+Removing libipc-run-perl (0.94-1) ...
 Removing libio-pty-perl (1:1.08-1+b4) ...
-Removing libio-socket-inet6-perl (2.72-1) ...
+Removing libio-socket-inet6-perl (2.72-2) ...
 Removing libmailtools-perl (2.13-1) ...
 Removing libnet-smtp-ssl-perl (1.01-3) ...
-Removing libio-socket-ssl-perl (1.998-1) ...
+Removing libio-socket-ssl-perl (2.016-1) ...
 Removing libio-string-perl (1.08-3) ...
-Removing liblist-moreutils-perl (0.33-2+b1) ...
-Removing libmagic1:amd64 (1:5.19-2) ...
-Purging configuration files for libmagic1:amd64 (1:5.19-2) ...
-Removing libncurses5-dev:amd64 (5.9+20140913-1) ...
-Removing libnet-domain-tld-perl (1.72-1) ...
+Removing libipc-system-simple-perl (1.25-2) ...
+Removing libmagic1:amd64 (1:5.22+15-2) ...
+Purging configuration files for libmagic1:amd64 (1:5.22+15-2) ...
+Removing libncurses5-dev:amd64 (5.9+20150516-2) ...
+Removing libnet-domain-tld-perl (1.73-1) ...
 Removing libnet-ip-perl (1.26-1) ...
-Removing libnet-ssleay-perl (1.65-1+b1) ...
-Removing libpipeline1:amd64 (1.3.1-1) ...
-Purging configuration files for libpipeline1:amd64 (1.3.1-1) ...
+Removing libnet-ssleay-perl (1.68-1) ...
+Removing libpipeline1:amd64 (1.4.0-1) ...
+Purging configuration files for libpipeline1:amd64 (1.4.0-1) ...
 Removing libsocket6-perl (0.25-1+b1) ...
-Removing libssl1.0.0:amd64 (1.0.1i-2) ...
-Purging configuration files for libssl1.0.0:amd64 (1.0.1i-2) ...
-Removing libsub-name-perl (0.07-1+b1) ...
-Removing libtext-levenshtein-perl (0.09-1) ...
-Removing libtinfo-dev:amd64 (5.9+20140913-1) ...
-Removing libunistring0:amd64 (0.9.3-5.2) ...
-Purging configuration files for libunistring0:amd64 (0.9.3-5.2) ...
-Removing liburi-perl (1.64-1) ...
-Removing libxml2:amd64 (2.9.1+dfsg1-4) ...
-Purging configuration files for libxml2:amd64 (2.9.1+dfsg1-4) ...
-Removing netbase (5.2) ...
-Purging configuration files for netbase (5.2) ...
-Removing patchutils (0.3.3-1) ...
+Removing libssl1.0.0:amd64 (1.0.2c-1) ...
+Purging configuration files for libssl1.0.0:amd64 (1.0.2c-1) ...
+Removing libsub-name-perl (0.12-1) ...
+Removing libtext-levenshtein-perl (0.12-1) ...
+Removing libtinfo-dev:amd64 (5.9+20150516-2) ...
+Removing libunistring0:amd64 (0.9.3-5.2+b1) ...
+Purging configuration files for libunistring0:amd64 (0.9.3-5.2+b1) ...
+Removing netbase (5.3) ...
+Purging configuration files for netbase (5.3) ...
+Removing patchutils (0.3.4-1) ...
 Removing sbuild-build-depends-core-dummy (0.invalid.0) ...
-Removing t1utils (1.37-2.1) ...
-Removing tabix (1.1-1) ...
-Removing zlib1g-dev:amd64 (1:1.2.8.dfsg-2) ...
-Processing triggers for libc-bin (2.19-11) ...
+Removing t1utils (1.38-4) ...
+Removing tabix (1.2.1-1) ...
+Removing zlib1g-dev:amd64 (1:1.2.8.dfsg-2+b1) ...
+Processing triggers for libc-bin (2.19-18) ...
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │ Summary                                                                      │
 └──────────────────────────────────────────────────────────────────────────────┘
 
 Build Architecture: amd64
-Build-Space: 32068
-Build-Time: 128
+Build-Space: 32080
+Build-Time: 125
 Distribution: unstable
 Host Architecture: amd64
-Install-Time: 15
-Job: samtools_1.1-1.dsc
+Install-Time: 18
+Job: samtools_1.2-1.dsc
 Lintian: pass
 Machine Architecture: amd64
 Package: samtools
 Package-Time: 151
-Source-Version: 1.1-1
-Space: 32068
+Source-Version: 1.2-1
+Space: 32080
 Status: successful
-Version: 1.1-1
+Version: 1.2-1
 ────────────────────────────────────────────────────────────────────────────────
-Finished at 20140925-0908
-Build needed 00:02:31, 32068k disc space
+Finished at 20150616-0617
+Build needed 00:02:31, 32080k disc space

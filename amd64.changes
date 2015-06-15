@@ -2,11 +2,11 @@
 Hash: SHA512
 
 Format: 1.8
-Date: Thu, 25 Sep 2014 09:04:20 +0900
+Date: Tue, 16 Jun 2015 06:12:12 +0900
 Source: samtools
 Binary: samtools samtools-test
-Architecture: source amd64 all
-Version: 1.1-1
+Architecture: source all amd64
+Version: 1.2-1
 Distribution: unstable
 Urgency: medium
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
@@ -15,48 +15,47 @@ Description:
  samtools   - processing sequence alignments in SAM and BAM formats
  samtools-test - test files for the samtools package.
 Changes:
- samtools (1.1-1) unstable; urgency=medium
+ samtools (1.2-1) unstable; urgency=medium
  .
-   c448d48 Merge tag '1.1' into debian/unstable
-   d12ab1e Merge branch 'develop' into debian/unstable to solve issue
-           with regression tests needing a pseudo-terminal.
-           See https://github.com/samtools/samtools/issues/300
-   c87f8ce Add autopkg tests.
-   7c50b7b Removed python-wrong-path-for-interpreter.patch
-           (issue solved upstream).
+   a5f28a0 Merge tag '1.2' into debian/unstable
+   c542e84 Build-depend on libhts-dev 1.2.
+   6c2d9cd Build-depend and recommend libio-pty-perl.
+           (Needed for the regression tests.)
+   23e44a4 Removed fix_coverage_cap.patch, obsoleted by -d option.
+   1091aab Refreshed fuzzy patches.
 Checksums-Sha1:
- 388015e08bb5a845321b7658cc55cef2e5613d9e 2104 samtools_1.1-1.dsc
- ca446ec24eabd2f71605dde55a787f182cb50f13 4320951 samtools_1.1.orig.tar.gz
- 0e4de8be00fb4dd375048b1b1dc05e2f120e2ead 10164 samtools_1.1-1.debian.tar.xz
- 3424183e6577c856a09f4f838c1a398c8e5744ba 378168 samtools_1.1-1_amd64.deb
- f2542cc1d07aef31d216d43630c87c9edf38cabd 2644466 samtools-test_1.1-1_all.deb
+ fba84572a2c3f7fc652cfe530bbad24b9957b28f 2117 samtools_1.2-1.dsc
+ 9fabb4903b9d1521aeea8a5538e64aefe8e85526 4318615 samtools_1.2.orig.tar.gz
+ a91e9483810ed9ed0e979138febf467b6db6956d 9596 samtools_1.2-1.debian.tar.xz
+ 5af2830490b1588c6e2bcd3021733c0681cddfb4 2644688 samtools-test_1.2-1_all.deb
+ 5d97f7b4d27954e75904cd4a6155422f65022e57 392492 samtools_1.2-1_amd64.deb
 Checksums-Sha256:
- ce8fe3ddb71817ba6d655ed6ac7d667c2d0b3a2664f78ae5fd0382da3fd307b1 2104 samtools_1.1-1.dsc
- cee231e33b7290be8e07dea43a99b885d9df79d957625ac84879b47ff91cda69 4320951 samtools_1.1.orig.tar.gz
- 50e5d2299c2d99ce53647fc0cb08eee53bc31d08bfa7d7cc981e6fae28ab231b 10164 samtools_1.1-1.debian.tar.xz
- 55ca7fb40430ba8c17967568f5c48ee19379bdbae3cb218456dae7fed5ea107d 378168 samtools_1.1-1_amd64.deb
- 5fb20f9d61452c8863e6ff42d2ea0d9ec72211fb9dd43cca3b55eeeb49985196 2644466 samtools-test_1.1-1_all.deb
+ 56421ef07a64a3c54c557dd0d91dcbc7d9b5b08dc204ee09d852949db9900653 2117 samtools_1.2-1.dsc
+ e4be60ad24fe0324b9384fe58ec2ab7359fe926fbee3115d869c447eb01a9e47 4318615 samtools_1.2.orig.tar.gz
+ c3a6bead979cd8bb0b8fec3e9d6b2bb352db21ae4fdac8ad214757aed72bad23 9596 samtools_1.2-1.debian.tar.xz
+ 5a3017e37793e4dc1daa7f8c029cb943d98001cd580d110bf569093b0bbb7e2d 2644688 samtools-test_1.2-1_all.deb
+ 5af217333dd6c66de5667be1c7a3edb695f370a5add22458081747a7b8968856 392492 samtools_1.2-1_amd64.deb
 Files:
- 1d7d68a126fe90d8366eb3fed809230c 378168 science optional samtools_1.1-1_amd64.deb
- 9ffe69f7310c265243d2fd553c322435 2644466 science optional samtools-test_1.1-1_all.deb
- 148939471e917dfe65acde2ec02d10e0 2104 science optional samtools_1.1-1.dsc
- 5fda5c175d04bff39c56078aea7cd3b1 4320951 science optional samtools_1.1.orig.tar.gz
- 40b3a1f31e22323c8d247e1bff1a9c52 10164 science optional samtools_1.1-1.debian.tar.xz
+ 57b89f47bc3977ee7cbdd2c0edac73b6 2117 science optional samtools_1.2-1.dsc
+ 2748356ef392c0694ca1142de37cf2aa 4318615 science optional samtools_1.2.orig.tar.gz
+ af3dbbae0acff0b7f989b54455839b56 9596 science optional samtools_1.2-1.debian.tar.xz
+ 31a29a2c1ccf9235d4967d0582e25b51 2644688 science optional samtools-test_1.2-1_all.deb
+ d7ce058d6c3b4d64fc6530615c960f6e 392492 science optional samtools_1.2-1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iQIcBAEBCgAGBQJUI109AAoJEMW9bI8ildUC+1AQAIb5bYiIgjKeARkusgIBHFMc
-qMrznjhyTy94CGB92fEXOtFS1X0oPq+GVWceTjLNVkxdMIq31yIDXXG39CZYMIX8
-/V54kk7ELn3FLqpqGcyoaLPqxEdfoCvarcSUVT6A/Jxa8iUGiO2qXYAzXgP/gexx
-u74CTPC3CU2xUwYXw+hmjh3kj4L71JuQzP6eg0d3MuDZisf5/6fD7Mu8quYhfuj+
-d25wzHP8EcAu6kxJLh7r1nxVQIERttib6r6UzTT9mqGZhVh+pvRPeYs/Hvg08GdZ
-aQ9JV9bBVWaKdAFEIGlKbxx+B+u2RqwEHKMIDa81xfbe72/xSoNLM4Z/XCOIqu2u
-9o4mAWE9L8lRYCJN7DvnjrC7DPrgogbCEvGKtTclYX5eVrFSdQBv2/OQvvxgXryU
-jAxNSGytJiHm4tDChJ0Y3gyn4pBc78eMogI6DB1l4oU00OK7S3Hy3ogPGw7oXBrJ
-26W8CLlSBNbVlXULkgD3jHM2rICxESYvhVU/mHTtVGWCHBFcLNp4M55IU4Mwfb/c
-CZmcdZlvseSLs6BavPsA193hRf56BlHNoJqpRs7IOLZEEHQoepNoUTFgqn2eNtjo
-W0+CteH77s5XNOVMDFt7pKyc3WEhOit1CLpnyErt/Kgx7hnsyXTnTo7+IFlHDRGX
-hfcrc4G7i4H/Z6cmPSQ7
-=LXcO
+iQIcBAEBCgAGBQJVf0lbAAoJEMW9bI8ildUCkeIP/A/kRXygPbnk9kS066FdBDQT
+jm7QKOUAvBDlNnAC4ZyM1DbTmu/p44z+KRNX/ZOY53AAC3RaWhVt/9F9iO1UyjRo
+a/OikqtZQQX/nuKx4z23vpPbPnr/uLolx8uYSfwcaHakJLXeWJ/D7sc5DGNrExEW
+VXqF3vp/P3JBcIJ4jPp6V9+l4aWEi15IobH1vyb9JcAEogALlLYCgrE2HPjF7wah
+qI/l1rwXW/t5hzM0xjhtyTzeb0E7EoJwbnS9RdgKiaVAZEwVMNdJ1O8BtcaxV5rW
+czxJd0yBDYfQCoT4ESnOtYAE+J8Wb2RGtA9gMbSrxXZdbO4FL+gazKZZY+rznSII
+FKxiW9i/QckfgOmwZqOE/Dmv+BtDulL9UUuuhU2s/di1DHwARnl44NFC95647aE6
+ao+ObVD3ecq1Ey7OClpQWCaILm4Deq9tV7l1dvOpTwXi9tB2PcYRvpMb6Svc1dB9
+mOH/4NZH3q7NxufBVTv/y75SfO+tK95W8NLhkAZap0kR+Eu2e5fbPzNNXpRrkGeV
+Rofll/JDRfrQcQRBuqsACQeVzHr4HQtqE8LmFluRz5uny+fryy+8TMzmsG+qKZk3
+2r19PGhIA7M+XRIfK4QJkwUfsqnHIZnn0fE1r/m2na52YDtShLEBVnGDyQA4omdp
+dr1ieed45Djj766FQiRS
+=FLCx
 -----END PGP SIGNATURE-----
