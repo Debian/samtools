@@ -1,3 +1,2 @@
-fix_coverage_cap.patch
 fix_segfault_with_small_ref.patch
 dynamic-build.patch
