@@ -1,4 +1,4 @@
-samtools (1.2-1) UNRELEASED; urgency=medium
+samtools (1.2-1) unstable; urgency=medium
 
   a5f28a0 Merge tag '1.2' into debian/unstable 
   c542e84 Build-depend on libhts-dev 1.2.
@@ -7,7 +7,7 @@ samtools (1.2-1) UNRELEASED; urgency=medium
   23e44a4 Removed fix_coverage_cap.patch, obsoleted by -d option.
   1091aab Refreshed fuzzy patches.
 
- -- Charles Plessy <plessy@debian.org>  Thu, 25 Sep 2014 21:39:37 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 16 Jun 2015 06:12:12 +0900
 
 samtools (1.1-1) unstable; urgency=medium
 
