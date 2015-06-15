@@ -1,8 +1,11 @@
 samtools (1.2-1) UNRELEASED; urgency=medium
 
   a5f28a0 Merge tag '1.2' into debian/unstable 
+  c542e84 Build-depend on libhts-dev 1.2.
   6c2d9cd Build-depend and recommend libio-pty-perl.
           (Needed for the regression tests.)
+  23e44a4 Removed fix_coverage_cap.patch, obsoleted by -d option.
+  1091aab Refreshed fuzzy patches.
 
  -- Charles Plessy <plessy@debian.org>  Thu, 25 Sep 2014 21:39:37 +0900
 
