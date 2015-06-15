@@ -9,7 +9,7 @@ Build-Depends: debhelper (>= 9),
 #              libio-pty-perl is needed by the regression test.
                libio-pty-perl,
                libncurses5-dev,
-               libhts-dev (>= 1.0),
+               libhts-dev (>= 1.2),
                zlib1g-dev,
                tabix (>= 1.0)
 # tabix is needed for the regression tests.
