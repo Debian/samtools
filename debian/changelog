@@ -1,15 +1,18 @@
 samtools (1.2-2) unstable; urgency=medium
 
-  * Team upload.
-  * [eb56918] Add patch to fix building on i386
-  * [702d289] Remove source files not present in upstream tarball
-  * [7afd302] Allow all scripts to be called without language extensions
+  [ Afif Elghraoui ]
+  eb56918 Add patch to fix building on i386
+  702d289 Remove source files not present in upstream tarball
+  7afd302 Allow all scripts to be called without language extensions
 
- -- Afif Elghraoui <afif@ghraoui.name>  Sun, 13 Sep 2015 22:21:39 -0700
+  [ Charles Plessy ]
+  876f680 Document the update workflow of the source package's repository.
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 17 Sep 2015 20:21:15 +0900
 
 samtools (1.2-1) unstable; urgency=medium
 
-  a5f28a0 Merge tag '1.2' into debian/unstable 
+  a5f28a0 Merge tag '1.2' into debian/unstable
   c542e84 Build-depend on libhts-dev 1.2.
   6c2d9cd Build-depend and recommend libio-pty-perl.
           (Needed for the regression tests.)
