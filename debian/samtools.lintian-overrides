@@ -1,0 +1,4 @@
+# Even if there is a conflict with Debian policy samtools internally
+# relies on these extensions (see #799698)
+samtools: script-with-language-extension usr/bin/*.pl
+samtools: script-with-language-extension usr/bin/*.py
