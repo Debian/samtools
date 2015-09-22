@@ -1,5 +1,6 @@
 samtools (1.2-4) UNRELEASED; urgency=medium
 
+  * Team upload
   * Fix synopsis
   * Fix Vcs-Browser
   * Add lintian-override to document that the language extensions are used
