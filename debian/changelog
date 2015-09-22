@@ -1,3 +1,12 @@
+samtools (1.2-3) unstable; urgency=medium
+
+  * Team upload.
+  [19de55e] Revert "Allow all scripts to be called without language extensions"
+    (Closes: #799698)
+  [658179c] Revert "Remove source files not present in upstream tarball"
+
+ -- Afif Elghraoui <afif@ghraoui.name>  Tue, 22 Sep 2015 06:42:01 -0700
+
 samtools (1.2-2) unstable; urgency=medium
 
   [ Afif Elghraoui ]
