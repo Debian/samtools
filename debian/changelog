@@ -4,6 +4,7 @@ samtools (1.2-4) UNRELEASED; urgency=medium
   * Fix Vcs-Browser
   * Add lintian-override to document that the language extensions are used
     internally
+  * Fix spelling
 
  -- Andreas Tille <tille@debian.org>  Tue, 22 Sep 2015 16:14:20 +0200
 
