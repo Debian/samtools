@@ -1,4 +1,4 @@
-samtools (1.2-4) UNRELEASED; urgency=medium
+samtools (1.2-4) unstable; urgency=medium
 
   * Team upload
   * Fix synopsis
@@ -10,7 +10,7 @@ samtools (1.2-4) UNRELEASED; urgency=medium
     Closes: #716199, #716197
   * Provide some more manpages
 
- -- Andreas Tille <tille@debian.org>  Mon, 21 Dec 2015 13:20:46 +0100
+ -- Andreas Tille <tille@debian.org>  Mon, 21 Dec 2015 13:49:05 +0100
 
 samtools (1.2-3) unstable; urgency=medium
 
