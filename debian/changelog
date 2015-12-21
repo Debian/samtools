@@ -8,6 +8,7 @@ samtools (1.2-4) UNRELEASED; urgency=medium
   * Fix spelling
   * Fix Mayhem issues caused by unlimited reads of gz input
     Closes: #716199, #716197
+  * Provide some more manpages
 
  -- Andreas Tille <tille@debian.org>  Mon, 21 Dec 2015 13:20:46 +0100
 
