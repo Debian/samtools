@@ -6,8 +6,10 @@ samtools (1.2-4) UNRELEASED; urgency=medium
   * Add lintian-override to document that the language extensions are used
     internally
   * Fix spelling
+  * Fix Mayhem issues caused by unlimited reads of gz input
+    Closes: #716199, #716197
 
- -- Andreas Tille <tille@debian.org>  Tue, 22 Sep 2015 16:14:20 +0200
+ -- Andreas Tille <tille@debian.org>  Mon, 21 Dec 2015 13:20:46 +0100
 
 samtools (1.2-3) unstable; urgency=medium
 
