@@ -1,0 +1,4 @@
+This package track Upstream's GitHub repository directly; see the
+debian/README.source file from the htslib package for details.
+
+ -- Charles Plessy <plessy@debian.org>  Thu, 17 Sep 2015 20:17:51 +0900:

@@ -1,0 +1,44 @@
+.TH WGSIM "1" "December 2015" "wgsim 1.2" "User Commands"
+.SH NAME
+wgsim \- short read simulator
+.SH SYNOPSIS
+.B wgsim
+[\fI\,options\/\fR] \fI\,<in.ref.fa> <out.read1.fq> <out.read2.fq>\/\fR
+.SH OPTIONS
+.TP
+\fB\-e\fR FLOAT
+base error rate [0.020]
+.TP
+\fB\-d\fR INT
+outer distance between the two ends [500]
+.TP
+\fB\-s\fR INT
+standard deviation [50]
+.TP
+\fB\-N\fR INT
+number of read pairs [1000000]
+.TP
+\fB\-1\fR INT
+length of the first read [70]
+.TP
+\fB\-2\fR INT
+length of the second read [70]
+.TP
+\fB\-r\fR FLOAT
+rate of mutations [0.0010]
+.TP
+\fB\-R\fR FLOAT
+fraction of indels [0.15]
+.TP
+\fB\-X\fR FLOAT
+probability an indel is extended [0.30]
+.TP
+\fB\-S\fR INT
+seed for random generator [\-1]
+.TP
+\fB\-h\fR
+haplotype mode
+.SH AUTHOR
+The software was written by Heng Li <lh3@sanger.ac.uk>
+.P
+This manpage was written by Andreas Tille for the Debian distribution and can be used for any other usage of the program.
