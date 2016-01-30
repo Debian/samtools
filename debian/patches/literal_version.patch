@@ -1,3 +1,8 @@
+Description: do not use make to extract version
+ Without a valid config.mk, trying to call m4_esyscmd_s() to run
+ make results in weird error messages. This patch avoids having
+ to run make just to extract this value.
+Author: Sascha Steinbiss <sascha@steinbiss.name>
 --- a/configure.ac
 +++ b/configure.ac
 @@ -23,7 +23,7 @@
