@@ -1,8 +1,17 @@
 samtools (1.3-1) UNRELEASED; urgency=medium
 
+  [ Charles Plessy ]
   95c561d Merge tag '1.3' into debian/unstable
 
- -- Charles Plessy <plessy@debian.org>  Thu, 24 Dec 2015 13:56:52 +0900
+  [ Sascha Steinbiss ]
+  * Team upload
+  * Adapt to new build system
+  * Use secure Vcs-Git
+  * Patch autoconf not to use make to extract version
+  * Clean up d/copyright
+  * Fix spelling
+
+ -- Sascha Steinbiss <sascha@steinbiss.name>  Wed, 03 Feb 2016 09:26:52 +0000
 
 samtools (1.2-4) unstable; urgency=medium
 
