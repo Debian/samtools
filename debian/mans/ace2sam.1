@@ -1,0 +1,24 @@
+.TH ACE2SAM "1" "December 2015" "ace2sam 1.2" "User Commands"
+.SH NAME
+ace2sam \- ace to sam converter
+.SH SYNOPSIS
+.B ace2sam
+[\fI\,-pc\/\fR] \fI\,<in.ace>\/\fR
+.SH OPTIONS
+.TP
+\fB\-p\fR
+output padded SAM
+.TP
+\fB\-c\fR
+write the contig sequence in SAM
+.TP
+Notes:
+1. Fields must appear in the following order: (CO\->[BQ]\->(AF)\->(RD\->QA))
+.IP
+2. The order of reads in AF and in RD must be identical
+.IP
+3. Except in BQ, words and numbers must be separated by a single SPACE or TAB
+.IP
+4. This program writes the headerless SAM to stdout and header to stderr
+.SH AUTHOR
+This manpage was written by Andreas Tille for the Debian distribution and can be used for any other usage of the program.

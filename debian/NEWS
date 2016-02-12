@@ -1,0 +1,9 @@
+samtools (1.3-1) unstable; urgency=medium
+
+  Samtools 1.3 introduces various changes to the command line tools.
+  Most importantly, the legacy syntax for 'samtools sort' has been dropped,
+  and the 'bamshuf' tool has been renamed to 'collate'. Please see the
+  full upstream change log at:
+   https://github.com/samtools/samtools/releases/tag/1.3
+
+ -- Sascha Steinbiss <sascha@steinbiss.name>  Fri, 05 Feb 2016 08:26:05 +0000

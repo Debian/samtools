@@ -5,24 +5,27 @@ export DH_VERBOSE=1
 %:
 	dh $@ --parallel
 
+override_dh_auto_clean:
+	touch config.mk
+	dh_auto_clean --
+
+override_dh_auto_configure:
+	touch config.mk
+	aclocal --force -I /usr/share/aclocal/ -I debian/
+	autoconf
+	dh_auto_configure -- --with-htslib=system
+
 override_dh_auto_build:
 	dh_auto_build -- \
-	  HTSDIR="/usr/include" \
-	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}') \
 	  CFLAGS="$$(dpkg-buildflags --get CFLAGS)" \
 	  CPPFLAGS="\$$(DFLAGS) \$$(INCLUDES) $$(dpkg-buildflags --get CPPFLAGS)" \
-	  LDFLAGS="$$(dpkg-buildflags --get LDFLAGS)" \
-	  LDLIBS="-lhts"
+	  LDFLAGS="$$(dpkg-buildflags --get LDFLAGS)"
 
 override_dh_auto_test:
 	dh_auto_test -- \
-	  HTSDIR="/usr/include" \
-	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}') \
 	  BGZIP=/usr/bin/bgzip
 
 override_dh_auto_install:
 	dh_auto_install -- \
-	  prefix=/usr \
-	  HTSDIR="/usr/include" \
-	  HTSLIB=$(shell dpkg -S libhts.a | awk '{print $$2}')
+	  prefix=/usr
 	make clean
