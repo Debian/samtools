@@ -10,15 +10,6 @@ placed in ‘/usr/share/samtools’ for the Perl and Python scripts, and
 ‘/usr/lib/samtools’ for the binary executables.
 
 
-The BAM library.
-────────────────
-
-Currently, the BAM library only exists in static version. It (actually the
-whole package) is built with the -fPIC option, to allow the compilation of the
-Bio::SamTools Perl module on the amd64 platform (Debian package
-libbio-samtools-perl).
-
-
 Note about how this package is tested.
 ──────────────────────────────────────
 
