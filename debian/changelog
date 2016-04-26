@@ -1,8 +1,9 @@
-samtools (1.3.1-1) UNRELEASED; urgency=medium
+samtools (1.3.1-1) unstable; urgency=medium
 
   0c961b2 Merge tag '1.3.1' into debian/unstable
+  3666b08 Conforms with Policy version 3.9.8.
 
- -- Charles Plessy <plessy@debian.org>  Tue, 26 Apr 2016 20:41:32 +0900
+ -- Charles Plessy <plessy@debian.org>  Tue, 26 Apr 2016 21:12:05 +0900
 
 samtools (1.3-1) unstable; urgency=medium
 
