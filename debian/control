@@ -15,7 +15,7 @@ Build-Depends: debhelper (>= 9),
                autoconf-archive,
                tabix (>= 1.0)
 # tabix is needed for the regression tests.
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/cgit/debian-med/samtools.git
 Vcs-Git: https://anonscm.debian.org/git/debian-med/samtools.git
 Homepage: http://www.htslib.org/
