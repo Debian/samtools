@@ -1,3 +1,9 @@
+samtools (1.3.1-2) UNRELEASED; urgency=medium
+
+  952da10 Build-depends on htslib 1.3.1. (Closes: #822701)
+
+ -- Charles Plessy <plessy@debian.org>  Wed, 27 Apr 2016 10:02:42 +0900
+
 samtools (1.3.1-1) unstable; urgency=medium
 
   0c961b2 Merge tag '1.3.1' into debian/unstable
